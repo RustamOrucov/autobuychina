@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.auc-hed{
+    background: rgb(26, 26, 26);
+    width: 100%;
+    padding: 1.2rem;
+    position: relative;
+}
+.auc-hed span{
+    margin-left: 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.auc-back-btn{
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-image-width: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    left: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/assets/img/ico_back_white\ \(1\).svg)
+}
+
+
+.auc-car-img{
+    padding: 0 1rem;
+}
+.auc-car-detail{
+    margin-top: 15px;
+}
+
+.auc-slide{
+    height: 12rem;
+}
+
+.auc-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}

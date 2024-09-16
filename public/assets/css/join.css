@@ -1,0 +1,2030 @@
+/* SIGNIN */
+.member .section {
+    margin: 60px auto;
+    width: 1240px;
+}
+
+.member .section h3 img {
+    display: block;
+    margin: 0 auto 35px;
+    width: 240px
+}
+
+.member .login {
+    margin-top: 80px
+}
+
+.member .login ul {
+    margin: 0 auto;
+    width: 30%;
+}
+
+.member .login li {
+    position: relative;
+    margin: 15px 0;
+}
+
+.member .login li input[type="text"],
+.member .login li input[type="password"] {
+    height: 50px;
+    line-height: 50px
+}
+
+.member .dbl {
+    text-align: left
+}
+
+.member .dbl button {
+    float: right;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 300
+}
+
+.member .dbl button:hover {
+    font-weight: bold;
+    text-decoration: underline
+}
+
+.member .login .signup {
+    margin: 25px 0;
+}
+
+.member .login .signup p {
+    padding-bottom: 8px
+}
+
+.member .login .signup a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 10px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.member .login .signup a:hover {
+    font-weight: 500
+}
+
+.member .login .signup a span {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 10px;
+    line-height: 15px;
+    color: #aaa;
+    font-weight: 300;
+    vertical-align: top
+}
+
+.member .error {
+    display: none;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #e0000c;
+    text-align: left
+}
+
+.member .addT {
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    color: #666;
+    text-align: left
+}
+
+.member .result {
+    display: none;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    text-align: left
+}
+
+.member .login_limit {
+    margin: 0 auto 36px;
+    width: 30%;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 36px;
+}
+
+.member .login_limit p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: bold
+}
+
+.member .login_limit .btn_area {
+    margin: 0 30px
+}
+
+.member .limit {
+    width: 30%
+}
+
+.member .limit dl {
+    padding-top: 130px;
+    background: url(../images/content/ico_limit.svg) center 40px no-repeat;
+}
+
+.member .limit dt {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: bold
+}
+
+.member .limit .btn_area {
+    display: flex;
+    align-items: center;
+    margin-top: 60px
+}
+
+.member .limit .btn_red {
+    flex: 4;
+    margin: 0
+}
+
+.member .limit .btn_Bwhite {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* SIGNUP */
+.stepSt {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.stepSt:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 70%;
+    height: 1px;
+    background: #aaa
+}
+
+.stepSt:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 70%;
+    height: 1px;
+    background: #aaa
+}
+
+.stepSt li {
+    display: inline-block;
+    position: relative;
+    margin: 0 25px;
+    padding: 0 10px;
+    background: #f4f4f4;
+    z-index: 1
+}
+
+.stepSt li img {
+    width: 30px
+}
+
+.member .join {
+    margin: 50px auto 0;
+    width: 1240px;
+}
+
+.member .join h3 {
+    margin-bottom: 16px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+}
+
+.member .join p {
+    margin-bottom: 3px;
+    color: #666666;
+    font-size: 15px;
+}
+
+.member .join .sltArea {
+    margin: 50px auto;
+    padding: 45px 0;
+    width: 65%;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1)
+}
+
+.member .join .sltArea li {
+    float: left;
+    padding: 0 50px;
+    width: 50%;
+}
+
+.member .join .sltArea li:last-child {
+    border-left: 1px solid #d0d0d0
+}
+
+.member .join .sltArea dt {
+    font-size: 23px;
+    font-weight: 600
+}
+
+.member .join .sltArea dt span {
+    display: block;
+    padding: 3px 0 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666
+}
+
+.member .join .sltArea dd img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.member .join .sltArea dd em {
+    font-weight: 700
+}
+
+.member .join .sltArea button:disabled {
+    cursor: default
+}
+
+.member .join .sltB {
+    width: 76%
+}
+
+.member .join .sltB dt {
+    margin-bottom: 15px;
+    font-size: 20px
+}
+
+.member .join .sltB dt img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 70px;
+}
+
+.member .join .sltB dt span {
+    color: #e0000c
+}
+
+.member .join .sltB dd button {
+    margin-top: 15px;
+}
+
+.member .join .sltS {
+    padding: 45px 0 30px;
+    width: 90%
+}
+
+.member .join .sltS li {
+    padding: 0 50px;
+    width: 32%;
+    text-align: left;
+    border: none;
+}
+
+.member .join .sltS li:last-child {
+    border: none;
+}
+
+.member .join .sltS .lft {
+    padding: 0 60px;
+    width: 68%;
+    border-right: 1px solid #d0d0d0;
+}
+
+.member .join .sltS dl {
+    margin-bottom: 20px;
+}
+
+.member .join .sltS dt {
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: left
+}
+
+.member .join .sltS dd {
+    padding: 20px 0 0;
+    font-size: 16px;
+    font-weight: 600
+}
+
+.member .join .sltS dd span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #808080;
+    font-weight: 300
+}
+
+.member .join .sltS .lft dt {
+    color: #e0000c
+}
+
+.member .join .sltS .lft dd {
+    padding: 0 0 0 35px;
+    font-size: 14px;
+    font-weight: 400
+}
+
+.member .join .sltS .lft .last {
+    margin-bottom: 0
+}
+
+.member .join .bottom {
+    margin: 0 auto;
+    width: 35%
+}
+
+.member .join .info {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    margin: 16px auto 0;
+    color: #606060
+}
+
+.member .join select {
+    height: 52px;
+    background-color: #fff;
+    border: solid 1px #dddddd;
+    color: #999;
+    font-size: 15px;
+}
+
+.member .join input {
+    height: 52px;
+    border: solid 1px #ddd;
+    font-size: 15px;
+    color: #111;
+    padding-right: 44px;
+}
+
+.member .join input::placeholder {
+    font-size: 15px;
+    color: #999;
+}
+
+.member .join .signupNt {
+    display: inline-block;
+    margin: 30px 50px 0 0;
+    vertical-align: top;
+}
+
+.member .join .signup {
+    display: inline-block;
+    margin: 20px 20px;
+    width: 30%;
+    vertical-align: top
+}
+
+.member .join .signup li {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.member .join .signup li label {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.member .join .signup li .req:after {
+    display: inline-block;
+    content: '*';
+    position: relative;
+    top: -2px;
+    right: -4px;
+    font-size: 12px;
+    color: #e0000c;
+}
+
+.member .join .signup .btn_area {
+    margin: 20px 0;
+}
+
+.member .join .signup .info a {
+    display: inline-block;
+    color: #0b83e6;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+/*.member .join .signup .info a:hover{border-bottom:1px solid #e0000c}*/
+.member .join .signup .inputTel {
+    margin: 0 0 5px 0
+}
+
+.member .join .signup .inputTel input {
+    float: left;
+    padding: 0 10px;
+    margin-left: 5px;
+    width: 22%;
+    text-align: center
+}
+
+.member .join .signup .inputTel select {
+    float: left;
+    margin-top: 1px;
+    width: 22%;
+    height: 52px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.member .join .signup .inputTel.on input {
+    width: 32%
+}
+
+.member .join .signup .inputTel button {
+    display: block;
+    float: right;
+    margin-top: 1px;
+    width: 107px;
+    height: 52px;
+    line-height: 52px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center
+}
+
+.member .join .signup .telC {
+    display: none;
+}
+
+.member .join .signup .telC span {
+    display: inline-block;
+    float: left;
+    padding-right: 10px;
+    font-size: 12px;
+    height: 45px;
+    line-height: 40px;
+    background: #fff
+}
+
+.member .join .signup .telC span em {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e0000c
+}
+
+.member .join .signup .telC input {
+    float: left;
+    width: 55%;
+    border: none
+}
+
+.member .join .signup .telC button {
+    display: block;
+    float: right;
+    margin-top: 1px;
+    width: 107px;
+    height: 43px;
+    line-height: 43px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center
+}
+
+.member .join .signup .inputAddr input {
+    margin-bottom: 4px;
+}
+
+.member .join .signup .inputAddr .zipcode {
+    float: left;
+    width: 70%;
+}
+
+.member .join .signup .inputAddr button {
+    display: block;
+    float: right;
+    margin-top: 1px;
+    width: 107px;
+    height: 52px;
+    line-height: 52px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center
+}
+
+.member .join .signup .btn_area button.btn_red {
+    font-size: 16px;
+    background: #ef3231;
+    border: 1px solid #ef3231;
+    color: #FFFFFF
+}
+
+.member .join .signup .radio-container {
+    margin-top: 13px;
+    margin-bottom: 22px;
+}
+
+.member .join .signup .radio-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400
+}
+
+.member .join .signup .radio-label+.radio-label {
+    margin-left: 62px
+}
+
+.member .join .signup .radio-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer
+}
+
+.member .join .signup .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: solid 1.8px #ccc
+}
+
+.member .join .signup .radio-label input:checked~.checkmark {
+    border-color: #ef3231
+}
+
+.member .join .signup .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.member .join .signup .radio-label input:checked~.checkmark:after {
+    display: block
+}
+
+.member .join .signup .radio-label .checkmark:after {
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ef3231;
+    transform: translate(-50%, -50%)
+}
+
+.member .join .signup li .check_msg:before {
+    content: '✓';
+    display: inline-block;
+    transform: scale(1.5, 1.3);
+    margin-right: 8px;
+}
+
+.member .join .signup li .check_msg {
+    color: #24b200 !important;
+}
+
+.member .join .signup li .x_msg:before {
+    content: '✕';
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* find pw */
+.member .findPw {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.member .join .findPw .fir {
+    padding-bottom: 10px
+}
+
+.findPw .signup .info {
+    padding-bottom: 10px
+}
+
+.findPw .signup .info strong {
+    font-size: 14px;
+}
+
+.findPw .signup .info em {
+    display: block;
+    margin-top: 10px
+}
+
+.findPw .signup .info b {
+    text-decoration: underline
+}
+
+.find_pw_contents {
+    background: #fff
+}
+
+.find_pw_contents .findPw h3 {
+    font-size: 32px;
+    color: #111;
+    font-weight: 700
+}
+
+.find_pw_contents .findPw p {
+    color: #333;
+    margin-bottom: 42px
+}
+
+.member .findPw .findPw_box {
+    width: 500px;
+    border: solid 1px #eee;
+    margin: 0;
+    padding: 48px 48px 56px
+}
+
+.findPw_box li {
+    margin: 0 0 32px
+}
+
+.member .findPw .findPw_box li label {
+    margin-bottom: 8px
+}
+
+.member .findPw .findPw_box li .req:after {
+    display: none
+}
+
+.member .findPw input {
+    width: 100%;
+    color: #111
+}
+
+.member .findPw select {
+    background: center right 12px / 16px no-repeat url(../images/findpw/ico-selectbox-big.png);
+    margin-top: 0
+}
+
+.member .findPw select:focus {
+    background: center right 12px / 16px no-repeat url(../images/findpw/ico-selectbox-big-on.png)
+}
+
+.member .findPw .findPw_box .btn_area {
+    margin: 32px 0 0
+}
+
+.member .findPw .findPw_box .btn_area button {
+    font-size: 17px;
+    font-weight: 700;
+    color: #999;
+    height: 60px;
+    background-color: #ddd
+}
+
+.member .findPw .findPw_box .btn_area button.active {
+    background: #e82020;
+    color: #fff
+}
+
+.findPw_box .failed_msg {
+    display: none;
+    margin-top: 6px;
+    text-align: left
+}
+
+.findPw_box .failed_msg_wrap {
+    font-size: 13px;
+    color: #db3500;
+    display: flex;
+    align-items: center
+}
+
+.findPw_box .failed_msg_wrap img {
+    width: 16px;
+    margin-right: 6px
+}
+
+.error_show .failed_msg {
+    display: block
+}
+
+.findPw_box .error_show input,
+.findPw_box .error_show select {
+    border: 1px solid #fa3c00
+}
+
+.findPw_box .vali_msg {
+    display: none;
+    margin-top: 6px
+}
+
+.vali_show .vali_msg {
+    display: block
+}
+
+.findPw .mail_icon_wrap {
+    display: flex;
+    width: 96px;
+    height: 96px;
+    background-color: #f8f8f8;
+    margin: 32px auto 24px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center
+}
+
+.findPw .mail_icon_wrap img {
+    width: 52px
+}
+
+.find_pw_contents .findPw .temp_info .fir {
+    position: relative
+}
+
+.find_pw_contents .findPw .temp_info .fir label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    font-size: 15px;
+    color: #777;
+    font-weight: 400;
+    transform: translateY(-50%)
+}
+
+.member .findPw .temp_info input {
+    text-align: right;
+    padding-right: 20px;
+    background: #f8f8f8;
+    border: none
+}
+
+.member .findPw .info {
+    width: 100%;
+    color: #777;
+    padding-bottom: 42px;
+    margin: 16px 0 0
+}
+
+.member .findPw .temp_info .btn_area button.btn_red {
+    background: #e82020;
+    border: 1px solid #e82020;
+    font-size: 17px;
+    font-weight: 700
+}
+
+.find_pw_contents .findPw .temp_info,
+.find_pw_contents .findPw .temp_info li {
+    margin: 0
+}
+
+/* find-password-change */
+.member .findPw .findPw_box .err_msg {
+    margin-top: 6px
+}
+
+.check_icon_wrap {
+    display: flex;
+    align-items: center
+}
+
+.findPw_box .err_msg img {
+    width: 16px;
+    margin-right: 6px
+}
+
+li.focus .focus_msg {
+    display: block;
+    color: #777 !important
+}
+
+li.focus input {
+    border: 1px solid #111 !important
+}
+
+li.unmatch .unmatch_msg {
+    display: block;
+    color: #db3500 !important
+}
+
+li.unmatch input {
+    border: 1px solid #db3500 !important
+}
+
+li.accurate .accurate_msg {
+    display: block;
+    color: #1b8500 !important
+}
+
+li.accurate input {
+    border: 1px solid #ddd
+}
+
+/* 190701*/
+.member .join .signup .err_msg {
+    ;
+    visibility: visible;
+    text-align: left;
+    color: #e0000c;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.member .join .signup input[type=text]:focus {
+    border: 1px #111 solid
+}
+
+.member .join .signup input[type=password]:focus {
+    border: 1px #111 solid
+}
+
+.member .join .signup input[type=tel]:focus {
+    border: 1px #111 solid
+}
+
+.member .join .signup select:focus {
+    border: 1px #111 solid
+}
+
+/* mypage 공통*/
+.mypage {
+    padding: 0 40px;
+    margin: 0 auto;
+    width: 1240px;
+    text-align: left
+}
+
+.mypage h3 {
+    padding: 60px 0 20px;
+    font-size: 32px;
+    color: #303030;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: center
+}
+
+.mypage h4 {
+    margin-bottom: 15px;
+    font-size: 18px
+}
+
+.mypage h4 span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #808080;
+    font-weight: 300;
+    letter-spacing: 0.3px
+}
+
+.mypage .topInfo {
+    margin-bottom: 60px;
+}
+
+.mypage .topInfo ul {
+    padding: 15px 20px;
+    border: 5px solid #e4e4e4
+}
+
+.mypage .topInfo li {
+    position: relative;
+    margin: 10px 0 10px 15px;
+    font-size: 15px;
+}
+
+.mypage .topInfo li:after {
+    display: block;
+    content: '-';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    font-size: 14px;
+}
+
+.mypage .topInfo li:last-child:after {
+    display: none;
+}
+
+.mypage .req:after {
+    display: inline-block;
+    content: '*';
+    position: absolute;
+    top: -2px;
+    right: -8px;
+    font-size: 12px;
+    color: #e0000c;
+}
+
+/* myinformation */
+.myInfo .inner {
+    margin: 20px auto 0;
+    width: 70%
+}
+
+.myInfo .basic {
+    float: left;
+    width: 47%
+}
+
+.myInfo .addInfo {
+    float: right;
+    width: 47%
+}
+
+.myInfo li {
+    position: relative;
+    padding: 6px 0;
+}
+
+.myInfo li label {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 12px
+}
+
+.myInfo li input[type="text"] {
+    background: #fff;
+    border-color: #f4f4f4
+}
+
+/*.myInfo li input[type="text"]:focus{background:#fff;border-color:#000}*/
+.myInfo li input:disabled {
+    background: #e0e0e0;
+}
+
+.myInfo li select {
+    margin-top: 0;
+    background-color: #fff;
+    border-color: #f4f4f4
+}
+
+.myInfo li .same {
+    padding: 10px 0 3px;
+    float: right
+}
+
+.myInfo li .same label {
+    line-height: 17px
+}
+
+.myInfo li textarea {
+    height: 80px;
+    background: #fff
+}
+
+.myInfo li .error {
+    display: none;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #e0000c;
+    text-align: left
+}
+
+.myInfo li .addT {
+    display: block;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #aaa;
+    text-align: left
+}
+
+.myInfo li .result {
+    display: none;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    text-align: left
+}
+
+.myInfo .btn_area button {
+    height: 43px;
+    line-height: 43px;
+}
+
+.myInfo .pwChange {
+    margin: 70px 0 20px;
+    padding: 30px 40px;
+    background: #fff;
+}
+
+.myInfo .pwChange h4 {
+    float: left;
+    margin: 0;
+    padding: 12px 0;
+    width: 30%
+}
+
+.myInfo .pwChange ul {
+    float: right;
+    width: 70%
+}
+
+.myInfo .pwChange input[type="text"],
+.myInfo .pwChange input[type="password"] {
+    background: #f4f4f4
+}
+
+.myInfo .pwChange .inputPw {
+    display: inline-block;
+    width: 70%;
+}
+
+.myInfo .pwChange .btnInput {
+    display: inline-block;
+    margin-left: 10px;
+    width: 25%;
+    height: 45px;
+    line-height: 45px;
+    background: #000;
+    color: #fff
+}
+
+.myInfo .join_withdraw {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.myInfo .join_withdraw span {
+    margin-right: 24px;
+    color: #606060
+}
+
+.myInfo .join_withdraw button {
+    flex: 1;
+    text-align: right;
+    color: #606060;
+    text-decoration: underline
+}
+
+/* myInformation_s */
+.myInfo .inputTel {
+    margin: 0 0 5px -5px
+}
+
+.myInfo .inputTel input {
+    float: left;
+    padding: 0 10px;
+    margin-left: 5px;
+    width: 32%;
+    text-align: center
+}
+
+.myInfo .inputAddr input {
+    margin-bottom: 4px;
+}
+
+.myInfo .inputAddr .zipcode {
+    float: left;
+    width: 70%;
+}
+
+.myInfo .inputAddr button {
+    display: block;
+    float: right;
+    margin-top: 1px;
+    width: 28%;
+    height: 43px;
+    line-height: 43px;
+    background: #1f1f1f;
+    color: #fff;
+    text-align: center
+}
+
+/* myInformation_staff */
+.myInfo .possible .sub {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 400
+}
+
+.myInfo .possible .chkPoint {
+    padding: 12px 16px;
+    background: #e0e0e0
+}
+
+.myInfo .possible label {
+    display: inline-block;
+    margin: 0;
+    width: 45%;
+    text-align: left
+}
+
+.newStaff .possible .chkPoint {
+    background: #fff
+}
+
+.newStaff .btn_area {
+    margin-top: 25px
+}
+
+/* myStaff*/
+.myStaff>p {
+    text-align: center;
+    line-height: 1.8
+}
+
+.myStaff ul {
+    margin: 30px 0;
+    text-align: center
+}
+
+.myStaff li {
+    display: inline-block;
+    margin: 8px 5px;
+    width: 48%;
+    vertical-align: top
+}
+
+.myStaff li a {
+    display: block;
+    position: relative;
+    padding: 19px 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    border: 1px solid #d0d0d0;
+    background: #fff
+}
+
+.myStaff li a .hvImg {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px
+}
+
+.myStaff li a dl {
+    padding: 0 30px;
+}
+
+.myStaff li a dd {
+    float: left;
+    margin: 5px 0;
+    width: 40%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden
+}
+
+.myStaff li a .wide {
+    width: 60%;
+}
+
+.myStaff li a dd span {
+    display: inline-block;
+    width: 80px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.myStaff li a:hover {
+    border-color: #e0000c
+}
+
+.myStaff li a:hover .hvImg {
+    display: block
+}
+
+.myStaff .addStaff a {
+    padding: 45px 0;
+    min-height: 164px;
+    border: 1px dashed #ccc;
+    background: #f4f4f4;
+    text-align: center
+}
+
+.myStaff .addStaff a img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 30px;
+}
+
+.myStaff .addStaff a:hover {
+    background: #fff;
+    border-color: #ccc
+}
+
+/* membership */
+.mypage .upgrade {
+    margin-bottom: 50px;
+}
+
+.mypage td {
+    padding: 30px;
+    background: #fff;
+}
+
+.mypage .status {
+    font-size: 26px;
+    color: #303030;
+    border-right: 2px solid #f4f4f4
+}
+
+.mypage .status span {
+    display: block;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.mypage .status span em {
+    color: #e0000c;
+    font-weight: 600
+}
+
+.mypage .step {
+    padding: 30px 0
+}
+
+.mypage .step ul {
+    display: flex;
+}
+
+.mypage .step li {
+    position: relative;
+    flex: 1;
+    width: 20%;
+    text-align: center
+}
+
+.mypage .step li:before {
+    display: block;
+    content: '';
+    position: relative;
+    margin: 0 auto 10px;
+    width: 30px;
+    height: 30px;
+    background: url(https://image.autowini.com/resources/IMG/common/ico_stepC_grey.png) center no-repeat;
+    background-size: 30px;
+    z-index: 1
+}
+
+.mypage .step li:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 50%;
+    width: 100%;
+    height: 1px;
+    background: #ccc
+}
+
+.mypage .step li:first-child:after {
+    display: none
+}
+
+.mypage .step li.on:before {
+    background: url(https://image.autowini.com/resources/IMG/common/ico_stepC.png) center no-repeat;
+    background-size: 30px
+}
+
+.mypage .step li.on:after {
+    background: #e0000c
+}
+
+.mypage .step li span {
+    display: block;
+    margin: 15px 0;
+    color: #909090
+}
+
+.mn .mypage .step li span {
+    background: none;
+    font-size: 12px;
+}
+
+.mypage .step li.on span {
+    font-weight: 600;
+    color: #101010
+}
+
+.mypage .step li:last-child span {
+    background: none
+}
+
+.mypage .step li a {
+    display: inline-block;
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    background: #ccc;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.mypage .step li.on a {
+    background: #e0000c;
+    border-color: #e0000c
+}
+
+.mypage .step li.complete a {
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #606060;
+    font-weight: 500
+}
+
+.mypage .benefit {
+    margin-bottom: 60px;
+}
+
+.mypage .benefit table {
+    float: left;
+    width: 68%;
+    text-align: center;
+    border-top: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0
+}
+
+.mypage .benefit th {
+    padding: 10px;
+    border-bottom: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+    background: #f0f0f0
+}
+
+.mypage .benefit td {
+    padding: 14px;
+    border-bottom: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0
+}
+
+.mypage .benefit td img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle
+}
+
+.mypage .benefit .inquiry {
+    float: right;
+    width: 30%;
+}
+
+.mypage .benefit .inquiry .tit {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #303030;
+}
+
+.mypage .benefit .grayBox {
+    margin-top: 30px;
+    padding: 14px 40px;
+    width: 788px;
+    border: 5px solid #e4e4e4;
+    border-radius: 8px
+}
+
+.mypage .benefit .grayBox dl {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.mypage .benefit .grayBox dt {
+    flex: 1;
+    padding-left: 18px;
+    font-size: 15px;
+    font-weight: 500;
+    background: url(https://image.autowini.com/resources/IMG/common/radiobtn_off.png) 0 center no-repeat;
+    background-size: 6px;
+}
+
+.mypage .benefit .grayBox dd {
+    flex: 3;
+    text-align: left
+}
+
+.mypage .benefit .chk {
+    position: relative;
+    display: inline-block;
+    z-index: 1
+}
+
+.mypage .benefit .chk:before {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    height: 6px;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    background: #e0000c;
+    opacity: 0.3;
+    z-index: -1
+}
+
+.mypage .inquiry {
+    padding: 20px 20px;
+    background: #fff;
+    border: 1px solid #d0d0d0
+}
+
+.mypage .inquiry dt {
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #303030
+}
+
+.mypage .inquiry dt span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.mypage .inquiry dd {
+    margin-top: 20px;
+}
+
+.mypage .inquiry dd span {
+    display: block;
+    margin: 3px 0;
+}
+
+.mypage .inquiry .staff {
+    font-size: 16px;
+    font-weight: 600
+}
+
+.mypage .inquiry .staff em {
+    display: inline-block;
+    padding: 2px 5px;
+    margin-right: 5px;
+    background: #1f1f1f;
+    font-size: 11px;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mypage .inquiry .staff strong {
+    font-size: 16px;
+    font-weight: 500
+}
+
+.mypage .inquiry .worktime {
+    font-size: 13px;
+    line-height: 15px;
+    color: #808080;
+    font-weight: 300
+}
+
+.mypage .inquiry .worktime img {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.mypage .inquiry p {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.mypage .inquiry .compCsBuyer li dl {
+    width: 45%;
+}
+
+.mypage .inquiry .compCsBuyer li dl dt {
+    font-size: 15px;
+}
+
+.mypage .inquiry .compCsBuyer li dl dd {
+    font-size: 14px;
+}
+
+.mypage .inquiry .compCsBuyer li .box_btn {
+    width: 55%;
+}
+
+/* my-deposit */
+.mypage .payment .info {
+    float: left;
+    width: 68%;
+    background: #fff;
+    border: 1px solid #d0d0d0
+}
+
+.mypage .payment .info li {
+    position: relative;
+    padding: 30px;
+}
+
+.mypage .payment .info dt {
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #303030;
+}
+
+.mypage .payment .info dd img {
+    display: block;
+    margin: 15px 0 5px;
+    width: 200px;
+}
+
+.mypage .payment .info .credit {
+    border-bottom: 1px solid #d0d0d0
+}
+
+.mypage .payment .info .credit .btnCredit {
+    position: absolute;
+    top: 65px;
+    right: 30px
+}
+
+.mypage .payment .info .credit .btnCredit button {
+    display: block;
+    padding: 10px 30px 10px 50px;
+    background: #0070ba url(../images/content/ico_paypal.png) 20px center no-repeat;
+    background-size: 20px;
+    font-size: 15px;
+    color: #fff
+}
+
+.mypage .payment .info .credit .btnCredit button:hover {
+    background-color: #005ea6;
+}
+
+.mypage .payment .info .credit .btnCredit button.disabled {
+    opacity: 0.3;
+    cursor: default
+}
+
+.mypage .payment .info .bank {
+    padding-bottom: 45px;
+}
+
+.mypage .payment .info .bank dd {
+    position: relative;
+    margin: 10px 0 10px 15px;
+}
+
+.mypage .payment .info .bank dd:after {
+    display: block;
+    content: '-';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    font-size: 14px;
+}
+
+.mypage .payment .info .bank table {
+    margin-top: 30px;
+}
+
+.mypage .payment .info .bank th {
+    padding: 11px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #d0d0d0
+}
+
+.mypage .payment .info .bank .title {
+    padding: 15px 0;
+    font-size: 17px;
+    background: #fff
+}
+
+.mypage .payment .info .bank td {
+    padding: 11px;
+    border-bottom: 1px solid #d0d0d0
+}
+
+.mypage .payment .myDeposit {
+    float: right;
+    margin-bottom: 30px;
+    width: 30%;
+}
+
+.mypage .payment .myDeposit dl {
+    padding: 30px 30px 10px;
+    background: #fff;
+    border: 1px solid #d0d0d0
+}
+
+.mypage .payment .myDeposit dt {
+    padding-bottom: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #303030;
+    border-bottom: 1px solid #d0d0d0
+}
+
+.mypage .payment .myDeposit dd {
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+.mypage .payment .myDeposit dd p {
+    margin: 5px 0;
+}
+
+.mypage .payment .myDeposit dd span {
+    float: left;
+}
+
+.mypage .payment .myDeposit dd em {
+    float: right;
+    font-size: 15px;
+}
+
+.mypage .payment .myDeposit .total {
+    border-top: 1px solid #d0d0d0;
+    line-height: 33px;
+}
+
+.mypage .payment .myDeposit .total em {
+    font-size: 25px;
+    color: #e0000c;
+    letter-spacing: -1px
+}
+
+.mypage .payment .myDeposit .addInfo {
+    margin-top: 16px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 15px;
+    color: #e0000c;
+    background: #fff;
+    padding: 16px 24px;
+    border: 1px solid #d0d0d0;
+}
+
+.mypage .payment .inquiry {
+    float: right;
+    width: 30%
+}
+
+/* deposit complete */
+.mypageEnd h3 img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.mypageEnd h3 em {
+    font-size: 38px;
+    color: #e0000c;
+}
+
+.mypageEnd p {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5
+}
+
+.mypageEnd p span {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.mypageEnd p strong {
+    position: relative;
+}
+
+.mypageEnd .inquiry {
+    margin: 0 200px;
+    padding: 30px 60px;
+}
+
+.mypageEnd .inquiry dt {
+    float: inherit;
+    width: 100%;
+}
+
+.mypageEnd .inquiry dt span {
+    display: block;
+    padding-bottom: 23px;
+    font-weight: 400;
+    color: #666;
+    border-bottom: 1px solid #eee
+}
+
+.mypageEnd .inquiry dd {
+    float: left;
+    margin: 15px 0 5px;
+    width: 50%
+}
+
+/* Photo ID Upload */
+.mypage .photoID {
+    padding: 80px 0 20px
+}
+
+.mypage .photoID .btn_area {
+    margin-top: 30px;
+    text-align: center
+}
+
+.mypage .photoID .btn_area button {
+    display: inline-block;
+    width: 20%
+}
+
+.mypage .photoID ul {
+    padding: 30px 40px;
+    background: #fff;
+    border: 1px solid #d0d0d0
+}
+
+.mypage .photoArea {
+    float: left;
+    width: 48%
+}
+
+.mypage .photoArea li dt {
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    color: #e0000c
+}
+
+.mypage .photoArea li dt img {
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 5px;
+    vertical-align: middle
+}
+
+.mypage .photoArea li dd {
+    position: relative;
+    margin: 5px 0 5px 15px;
+}
+
+.mypage .photoArea li dd:after {
+    display: block;
+    content: '-';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    font-size: 14px;
+}
+
+.mypage .fileUpload {
+    padding: 10px 0
+}
+
+.mypage .fileUpload .imgPart {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: #f4f4f4;
+    text-align: center
+}
+
+.mypage .fileUpload .imgPart p {
+    padding-top: 75px;
+    width: 100%;
+    color: #ccc
+}
+
+.mypage .fileUpload .imgPart p img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 100px
+}
+
+.mypage .fileUpload .thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px
+}
+
+.mypage .fileUpload .file {
+    margin-top: 13px
+}
+
+.mypage .fileUpload input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border-radius: 0
+}
+
+.mypage .fileUpload label {
+    display: inline-block;
+    float: right;
+    width: 23%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+    text-align: center
+}
+
+.mypage .fileUpload .neg {
+    background-color: #808080
+}
+
+.mypage .fileUpload .uploadNm {
+    display: inline-block;
+    float: left;
+    width: 75%;
+    padding: 0 15px;
+    height: 40px;
+    font-size: 13px;
+    line-height: 40px;
+    color: #999;
+    background: #f4f4f4;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.mypage .fileUpload .examID .status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    background: #e0000c;
+    border: none
+}
+
+.mypage .fileUpload .examID dl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    width: 100%;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.mypage .fileUpload .examID dd {
+    color: #fff;
+    font-size: 12px;
+}
+
+.mypage .photoID .addInfo {
+    float: right;
+    width: 48%
+}
+
+.mypage .photoID .addInfo li {
+    position: relative;
+    padding: 12px 0;
+}
+
+.mypage .photoID .addInfo li label {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 12px
+}
+
+.mypage .photoID .addInfo li input[type="text"] {
+    background: #f4f4f4;
+    border-color: #f4f4f4
+}
+
+.mypage .photoID .addInfo li input[type="text"]:focus {
+    background: #fff;
+    border-color: #000
+}
+
+.mypage .photoID .addInfo li .same {
+    padding-top: 10px;
+    float: right
+}
+
+.mypage .photoID .addInfo li .same label {
+    line-height: 17px
+}
+
+.mypage .photoID .addInfo li textarea {
+    height: 103px
+}
+
+.mypage .photoID .addInfo li .error {
+    display: none;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #e0000c;
+    text-align: left
+}
+
+.mypage .photoID .addInfo li .addT {
+    display: block;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #aaa;
+    text-align: left
+}
+
+.mypage .photoID .addInfo li .result {
+    display: none;
+    margin: 8px 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    text-align: left
+}
+
+.err_msg {
+    margin-top: 3px;
+    visibility: visible;
+    display: block;
+    text-align: left;
+    color: #e0000c;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+span.err_msg {
+    margin-top: 3px;
+    display: block;
+}
+
+.error_msg {
+    ;
+    visibility: visible;
+    text-align: left;
+    color: #e0000c;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.join-step3s .sltS li {
+    width: 100%;
+}
+
+.join-step3s .sltArea {
+    padding: 40px !important;
+}
+
+.join-step3s dl {
+    margin-bottom: 24px;
+}
+
+.join-step3s dl:last-child {
+    margin-bottom: 0;
+}
+
+.join-step3s dt {
+    float: left;
+    width: 30%;
+    text-align: left;
+}
+
+.join-step3s dd {
+    float: left;
+    width: 70%;
+    text-align: left;
+}
+
+.mypage .operInfo {
+    margin-bottom: 32px;
+}
+
+.mypage .operInfo h3 {
+    padding-bottom: 6px;
+}
+
+.mypage .operInfo .subTxt {
+    color: #888;
+    text-align: center;
+}
+
+.mypage .seller_save_info {
+    margin-top: 32px;
+    width: 200px !important;
+    margin: 0 auto;
+    height: 48px !important;
+    line-height: 48px !important;
+}

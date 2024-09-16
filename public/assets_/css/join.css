@@ -1,0 +1,990 @@
+/* member s */
+.step_area h3 {
+    position: relative;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #303030;
+    background: #f4f4f4;
+}
+
+.scroll_box {
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 8px 8px;
+    overflow-y: auto;
+}
+
+.member_inner {
+    padding: 30px 20px 30px;
+}
+
+.faq_inner {
+    padding: 0 !important;
+}
+
+.faq_inner .cm_tit {
+    padding: 30px 20px 30px;
+}
+
+.mb_tit {
+    color: #303030;
+    padding-bottom: 30px;
+}
+
+.mb_tit dt {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mb_tit dd {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.mb_tit dd.mb_ttxt {
+    margin-top: 5px !important;
+}
+
+.mb_tit dd.udline {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.mb_tit dd.tit {
+    font-size: 20px;
+    margin-top: 0
+}
+
+.mb_tit dd:last-child {
+    margin-top: 0;
+}
+
+.mb_tit dd span.under {
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.member_area {
+    margin-bottom: 10px;
+}
+
+.member_area li {
+    margin-top: 8px
+}
+
+.member_area li:first-child {
+    margin-top: 0 !important
+}
+
+/* .member_area input[type="text"],.member_area input[type="password"],.member_area input[type="tel"]{font-size: 14px;color:rgba(0,0,0,0.5);border:1px solid #f4f4f4;background:#f4f4f4;line-height:40px;height:40px;}
+.member_area input[type="text"].err,.member_area input[type="password"].err{border-color:#e0000c} */
+.btn_findPwIn {
+    text-align: center;
+    margin: 0px 15px 0
+}
+
+.btn_findPw {
+    font-size: 12px;
+    color: #303030;
+    font-weight: 300;
+    text-align: center;
+    display: inline-block;
+}
+
+.login_remb {
+    margin-bottom: 15px;
+}
+
+.login_info {
+    text-align: center;
+    margin-top: 80px;
+    color: #303030
+}
+
+.login_info dt {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.login_info dd button {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 5px;
+    border-bottom: 1px solid #000
+}
+
+.err_msg {
+    
+    /* visibility: visible;
+    text-align: left;
+    color: #e0000c;
+    font-size: 12px;
+    font-weight: 400; */
+}
+
+.error_msg {
+    
+    /* visibility: visible;
+    text-align: left;
+    color: #e0000c;
+    font-size: 12px;
+    font-weight: 400; */
+}
+
+.member_area .err_msg {
+    position: relative;
+    ;
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.member_area .err_msg:after {
+    content: '!';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    background: #e0000c;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.member_area .p_msg {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.member_area .step1_err.error_msg {
+    margin-top: 8px !important;
+}
+
+.member_area .p_tmsg {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.member_area .p_bmsg {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.rd_inner {
+    padding-top: 10px;
+}
+
+.find_psInfo {
+    font-size: 16px;
+    font-weight: 300;
+    color: #303030;
+    margin-bottom: 50px;
+}
+
+.find_psInfo a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #303030;
+    text-decoration: underline;
+}
+
+.complete_top {
+    width: 100%;
+    height: 90px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/content/ico_card.png) no-repeat center;
+    background-size: 111px 74px;
+    margin-bottom: 15px;
+}
+
+.ul_bl li {
+    font-size: 16px;
+    font-weight: 300;
+    color: #303030;
+    margin-top: 5px;
+    padding-left: 9px;
+    text-indent: -9px
+}
+
+.ul_bl li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #303030
+}
+
+.ul_bl li:first-child {
+    margin-top: 0;
+}
+
+.cont_reg {
+    margin-top: 20px;
+}
+
+.join_area dt {
+    font-size: 12px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+
+.join_area dd+dd {
+    margin-top: 5px;
+}
+
+.join_area dt.mem_tit {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.join_area dd.mem_txt {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.join_area dt span.imp {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #e0000c
+}
+
+.join_area .member_area>li {
+    margin-top: 20px
+}
+
+.join_area .member_area>li:first-child {
+    margin-top: 0;
+}
+
+.member_area .ck_inner {
+    margin-top: 5px
+}
+
+.join_p {
+    font-size: 12px;
+    color: #303030;
+    font-weight: 300;
+    margin-top: 5px
+}
+
+.tit_termC,
+.tit_termD {
+    border-top: 1px solid #dedede;
+}
+
+.tit_term {
+    font-size: 14px;
+    color: #303030;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+.term_area {
+    font-size: 14px;
+    font-weight: 400;
+    color: #303030;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.join_list_selector li.off button {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.2)
+}
+
+.joinus_step1 {
+    padding-top: 50px;
+}
+
+.join_overseas {
+    margin-top: -20px
+}
+
+.join_overseas li {
+    position: relative;
+    margin: 30px 0;
+    padding-left: 70px;
+}
+
+.join_overseas li img {
+    position: absolute;
+    top: 0;
+    left: 4px
+}
+
+.join_overseas li strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333
+}
+
+.join_overseas li span {
+    display: block;
+}
+
+.step1_next p {
+    margin: 50px 0 30px;
+    color: #7c7c7c
+}
+
+.step1_next a {
+    color: #0B83E6;
+    text-decoration: underline;
+}
+
+.con_navTop {
+    padding: 0 20px
+}
+
+.con_navTopIn {
+    height: 40px;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 0 50px
+}
+
+.con_navTopIn h3 {
+    text-align: center;
+    font-size: 16px;
+    color: #303030;
+    line-height: 40px
+}
+
+.con_navTopIn .btn_back {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -15px;
+}
+
+.con_ctg {
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+
+.con_ctg ul {
+    display: inline-block;
+}
+
+.con_ctg ul li {
+    float: left;
+    padding-left: 15px;
+    margin-left: 5px;
+    position: relative;
+    font-size: 11px;
+}
+
+.con_ctg ul li.act span {
+    text-decoration: underline;
+}
+
+.con_ctg ul li:after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-top: -3px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transform: rotate(45deg);
+}
+
+.con_ctg ul li:first-child {
+    padding-left: 0
+}
+
+.con_ctg ul li:first-child:after {
+    content: none
+}
+
+.phone_dl dt {
+    position: relative;
+    display: block;
+}
+
+.phone_dl dt button {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    padding: 3px 5px;
+    font-size: 11px;
+    background: #ccc;
+    height: 26px;
+    border-radius: 3px
+}
+
+.join_area .phone_dl dd.phone_input>ul {
+    margin-left: -5px
+}
+
+.join_area .phone_dl dd.phone_input>ul>li {
+    float: left;
+    padding-left: 5px;
+    width: 33.33%;
+    margin-top: 0
+}
+
+/*   .join_area .phone_dl dd.phone_input > ul > .select_area select{margin-top:0} */
+.phone_complate {
+    margin-top: 5px
+}
+
+.phone_complate p {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.join_area .phone_dl dd.phone_complate>ul {
+    margin-left: -5px
+}
+
+.join_area .phone_dl dd.phone_complate>ul>li {
+    float: left;
+    padding-left: 5px;
+    width: 67%;
+    margin-top: 0;
+    position: relative;
+}
+
+.join_area .phone_dl dd.phone_complate>ul>li input[type="text"] {
+    padding-right: 80px;
+}
+
+.join_area .phone_dl dd.phone_complate>ul>li .phone_min {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 1;
+}
+
+.join_area .phone_dl dd.phone_complate>ul>li+li {
+    float: left;
+    padding-left: 5px;
+    width: 33%;
+    margin-top: 0
+}
+
+.join_area .phone_dl dd.phone_complate p.phone_cpinfo {
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+.two_fl {
+    margin-left: -5px;
+}
+
+.two_fl li {
+    float: left;
+    padding-left: 5px;
+    width: 67%;
+}
+
+.two_fl li+li {
+    float: left;
+    margin-top: 0;
+    padding-left: 5px;
+    width: 33%;
+}
+
+.two_fl li+li button {
+    width: 100%;
+    margin-top: 0;
+    background: #1f1f1f;
+    height: 40px;
+    color: #fff
+}
+
+.join_area .zip_dl dd.zip_input>ul {
+    margin-left: -5px
+}
+
+.join_area .zip_dl dd.zip_input>ul>li {
+    float: left;
+    padding-left: 5px;
+    width: 67%;
+    margin-top: 0
+}
+
+.join_area .zip_dl dd.zip_input>ul>li+li {
+    float: left;
+    padding-left: 5px;
+    width: 33%;
+    margin-top: 0
+}
+
+.join_area .zip_dl dd.zip_addinput {
+    margin-top: 5px
+}
+
+.join_area .zip_dl dd.zip_addinput>ul>li {
+    margin-top: 5px
+}
+
+.join_area .tabbtn {
+    margin-left: -10px;
+}
+
+.join_area .tabbtn li {
+    width: 50%;
+    margin: 0;
+    padding-left: 10px;
+    float: left
+}
+
+.join_area .tabbtn li.on button {
+    background: #fff;
+    border: 1px solid #e0000c;
+    color: #e0000c;
+}
+
+.join_area .select_area.selected select {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.joinus_step2 .join_area .tabbtn button.btn_mLgray {
+    height: 42px;
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd
+}
+
+.joinus_step2 .join_area .tabbtn li.on button {
+    background: #fff1f0;
+    border: 1px solid #ef3231;
+    color: #ef3231;
+    font-weight: 700
+}
+
+.join_step3 dl {
+    position: relative;
+}
+
+.join_step3 dl dt {
+    font-size: 13px;
+}
+
+.join_step3 dl dd {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 11px;
+    color: #a8a8a8;
+}
+
+.interset_top {
+    margin-bottom: 30px;
+}
+
+.interset_top ol {
+    margin-left: -8px;
+    margin-top: 10px
+}
+
+.interset_top ol li {
+    padding: 0 0 10px 8px;
+    float: left
+}
+
+.interset_top ol li button {
+    padding: 0 20px;
+    height: 30px;
+    background: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    color: #c3c3c3;
+    border-radius: 3px
+}
+
+.interset_top ol li button.on {
+    background: #fff;
+    border: 1px solid #000;
+    color: #303030;
+    border-radius: 3px
+}
+
+.interset_top ol li label {
+    padding: 0 20px;
+    width: 100%;
+    height: 30px;
+    background: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    color: #c3c3c3;
+    border-radius: 3px;
+    display: block;
+    line-height: 28px;
+    text-align: center;
+}
+
+.interset_top ol li label.on {
+    background: #fff;
+    border: 1px solid #000;
+    color: #303030;
+    border-radius: 3px
+}
+
+.interset_top ol.interset_seller li {
+    float: none;
+    width: 100%
+}
+
+.interset_top ol.interset_seller li button {
+    width: 100%
+}
+
+.interset_bottom {
+    margin-bottom: 50px;
+}
+
+.interset_bottom ul {
+    margin-top: 10px;
+    margin-left: -8px;
+    position: relative;
+}
+
+.interset_bottom ul li:nth-child(1) {
+    width: 50%;
+    float: left;
+    padding-left: 8px
+}
+
+.interset_bottom ul li:nth-child(2) {
+    width: 50%;
+    float: left;
+    padding-left: 8px
+}
+
+.interset_bottom ul li select {
+    margin-top: 0
+}
+
+.interset_bottom ul li.btn_area {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 77px
+}
+
+.interset_bottom ul li.btn_area button {
+    height: 40px;
+}
+
+.interset_bottom p {
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+/* member e */
+
+/* help s */
+.step {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.step:last-child {
+    border: none
+}
+
+.step>.left {
+    float: left;
+    width: 50px;
+    text-align: center;
+}
+
+.step .left img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.step .left span {
+    display: block;
+}
+
+.step>.right {
+    float: left;
+    width: 75%;
+    margin-left: 5%;
+}
+
+.step .right h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step .right .btn {
+    margin-top: 10px;
+}
+
+.step .right .btn a {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.step3 .right .coupon {
+    width: 240px;
+    height: 82px;
+    margin-top: 20px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/content/bg_coupon.jpg) no-repeat left top / cover;
+}
+
+.step3 .right .coupon p {
+    color: #fff;
+}
+
+.step3 .right .coupon p.left {
+    float: left;
+    width: 44%;
+    margin-top: 26px;
+    margin-left: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.step3 .right .coupon p.left span {
+    font-size: 16px;
+}
+
+.step3 .right .coupon p.right {
+    float: left;
+    width: 41%;
+    margin-top: 27px;
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.step3 .right .coupon p.right span {
+    margin-right: 3px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.step6 .right .btn a {
+    border: 1px solid #e00006;
+    color: #e00006;
+    border-radius: 0;
+}
+
+/* help e */
+
+/* member_program s */
+.ml_tit {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.member_list dl {
+    padding-top: 10px;
+}
+
+.member_list dt {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/checkCircle_off.png) no-repeat left;
+    background-size: 20px;
+    font-weight: 700;
+}
+
+.member_list .on dt {
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/checkCircle_on.png) no-repeat left;
+    background-size: 20px
+}
+
+.member_list .ontit dt {
+    color: #e0000c;
+}
+
+.member_list dt span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.member_list dd {
+    margin-left: 10px;
+    padding: 0 0 10px 30px;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.member_list .on dd {
+    border-left: 1px solid #e0000c;
+}
+
+.member_list .ontit dd {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.member_list dl:last-child dd {
+    border: none;
+}
+
+.member_list ul {
+    margin-bottom: 30px;
+}
+
+.member_list li.pls {
+    text-decoration: underline;
+}
+
+.bt_info {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+/* member_program e */
+
+/*disabled reset*/
+.zip_dl input[disabled] {
+    background: #fff;
+}
+
+/*ì¶œí’ˆì‚¬-íšŒì›ê°€ìž…ì™„ë£ŒíŽ˜ì´ì§€*/
+.joinus_step4_seller {
+    text-align: center;
+}
+
+.joinus_step4_seller dl {
+    text-align: center;
+}
+
+.joinus_step4_seller dt {
+    margin: 16px 0 24px;
+    font-size: 20px;
+    color: #111;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.joinus_step4_seller dd {
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: #555;
+    line-height: 170%;
+}
+
+.joinus_step4_seller a {
+    display: block;
+    text-align: center;
+    background: #EF3231;
+    border: 1px solid #EF3231;
+    color: #fff;
+    height: 48px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 48px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.joinus_step4_seller button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0 16px;
+    height: 48px;
+}
+
+.joinus_step4_seller button span {
+    font-size: 14px;
+    text-decoration: underline
+}
+
+/*ì¶œí’ˆì‚¬-íšŒì›ê°€ìž…ì™„ë£ŒíŽ˜ì´ì§€*/
+.joinus_step4_seller {
+    text-align: center;
+}
+
+.joinus_step4_seller dl {
+    text-align: center;
+}
+
+.joinus_step4_seller dt {
+    margin: 16px 0 24px;
+    font-size: 20px;
+    color: #111;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.joinus_step4_seller dd {
+    margin-bottom: 48px;
+    font-size: 14px;
+    color: #555;
+    line-height: 170%;
+}
+
+.joinus_step4_seller a {
+    display: block;
+    text-align: center;
+    background: #EF3231;
+    border: 1px solid #EF3231;
+    color: #fff;
+    height: 48px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 48px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.joinus_step4_seller button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 0 16px;
+    height: 48px;
+}
+
+.joinus_step4_seller button span {
+    font-size: 14px;
+    text-decoration: underline
+}
+
+
+.const-mem{
+    max-width: 750px;
+    margin: 150px auto 0 auto;
+}
+
+.back-home{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.back-home a{
+    font-size: 22px;
+}
+
+@media (max-width:1000px) {
+    .const-mem{
+        margin: 50px auto 0 auto;
+    }
+}

@@ -1,0 +1,104 @@
+@extends('admin.layouts.admin')
+@section('content')
+    <?php  $routeName='admin.carmodel' ?>
+
+
+    <div class="card">
+        <div class="card-body">
+            <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
+            <div class="bs-stepper-content">
+                <h5 style="margin-bottom: 15px" class="mb-1">Cars & Model</h5>
+                <div class="table-responsive">
+                    <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5">
+                        <div class="row"><div class="col-sm-12 col-md-6">
+
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div id="example_filter" class="dataTables_filter">
+                                    <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="example" class="table table-striped table-bordered dataTable" style="width: 100%;" role="grid" aria-describedby="example_info">
+                                    <thead>
+                                    <tr role="row">
+                                        <th class="sorting_asc">Id</th>
+                                        <th class="sorting_asc">Car Model</th>
+                                        <th class="sorting_asc">Car Model Image</th>
+                                        <th class="sorting_asc">Aktiv</th>
+                                        <th class="sorting_asc">Duzelis</th>
+                                        <th class="sorting_asc">Sil</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    @foreach($models  as $model)
+                                        <tr role="row" class="even">
+                                            <td class="sorting_1">{{$model->id}}</td>
+                                            <td>{{$model->name}}</td>
+                                            <td><img width="100" height="100" src="{{asset('storage/'.$model->image)}}" alt=""></td>
+                                            <td>
+                                                @if($model->status == 1)
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                @else
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash text-white"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                                                @endif
+                                            </td>
+                                            <td><a href="{{route($routeName.'.edit',$model->id)}}" class="btn btn-warning">Düzəliş</a></td>
+                                            <td>
+                                                <form class="delete-form" action="{{ route($routeName.'.destroy',$model->id) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button style="background-color: #fff;border: none" class="btn btn-danger"><script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+                                                        <lord-icon
+                                                            src="https://cdn.lordicon.com/jmkrnisz.json"
+                                                            trigger="hover"
+                                                            colors="primary:#121331"
+                                                            style="width:25px;height:25px">
+                                                        </lord-icon></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-sm-12 col-md-5">
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                                {{$models->links('pagination::bootstrap-4')}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const searchInput = document.querySelector('input[type="search"]');
+        const table = document.querySelector('#example');
+        const rows = table.querySelectorAll('tbody tr');
+
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                let match = false;
+                cells.forEach(cell => {
+                    if (cell.textContent.toLowerCase().includes(query)) {
+                        match = true;
+                    }
+                });
+                row.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
+
+@endsection

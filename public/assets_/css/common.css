@@ -1,0 +1,2754 @@
+@charset "utf-8";
+/* @import url("normalize.css"); */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+
+/*reset*/
+* {
+    -webkit-text-size-adjust: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    word-break: break-word;
+    outline: none;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+html {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Roboto', '맑은 고딕', sans-serif;
+    font-weight: 400;
+}
+
+select,
+textarea,
+button,
+input {
+    color: #333;
+    font-family: 'Roboto', '맑은 고딕', sans-serif;
+    -webkit-appearance: none;
+}
+
+body {
+    min-width: 320px;
+    height: auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #303030;
+    background-color: #fff;
+    letter-spacing: 0;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+form,
+fieldset,
+input,
+table,
+tr,
+th,
+td,
+button,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1.2
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+hr {
+    display: none;
+}
+
+ul,
+ol,
+dl,
+dt,
+dd,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-weight: normal;
+}
+
+caption {
+    display: block;
+    text-indent: -9999em;
+    overflow: hidden;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+fieldset,
+blockquote,
+iframe,
+button {
+    border: none;
+}
+
+i,
+em,
+u,
+cite {
+    font-style: normal;
+}
+
+p {
+    vertical-align: middle;
+}
+
+strong,
+em,
+b {
+    font-weight: normal;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-image-width: 0;
+}
+
+button:focus {
+    outline: none
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+section,
+nav,
+article,
+aside,
+header,
+footer,
+main {
+    display: block;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="url"] {
+    padding-left: 8px;
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    -webkit-appearance: none;
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="url"]::-webkit-input-placeholder {
+    color: #999;
+}
+
+input[type="text"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="url"]::-moz-placeholder {
+    color: #999;
+}
+
+input[type="text"]:-moz-placeholder,
+input[type="tel"]:-moz-placeholder,
+input[type="password"]:-moz-placeholder,
+input[type="url"]:-moz-placeholder {
+    color: #999;
+}
+
+input[type="text"]:-ms-input-placeholder,
+input[type="tel"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="url"]:-ms-input-placeholder {
+    color: #999;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #111;
+}
+
+textarea::-moz-placeholder {
+    color: #111;
+}
+
+textarea:-moz-placeholder {
+    color: #111;
+}
+
+textarea:-ms-input-placeholder {
+    color: #111;
+}
+
+::-ms-clear,
+::-ms-reveal {
+    display: none;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #e5e5e5;
+    opacity: 1;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    position: relative;
+    z-index: 1;
+    ;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    color: rgba(0, 0, 0, 1);
+    border-color: #111;
+    background-color: #fff
+}
+
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+input[type="checkbox"]+label {
+    font-size: 12px;
+    color: #333;
+    padding-left: 30px;
+    position: relative;
+    word-break: break-all;
+    display: inline-block;
+    min-height: 18px;
+}
+
+input[type="checkbox"]+label:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(/assets/img/ico_check.png) no-repeat 0 0;
+    background-size: 20px 20px
+}
+
+input[type="checkbox"]:checked+label:after {
+    background: url(/assets/img/ico_check_on.png) no-repeat 2px center;
+    background-size: 16px 16px;
+}
+
+input[type="checkbox"]+label span {
+    text-decoration: underline;
+}
+
+input[type="radio"] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+input[type="radio"]+label {
+    font-size: 12px;
+    color: #333;
+    padding-left: 21px;
+    padding-top: 3px;
+    position: relative;
+    word-break: break-all;
+    display: inline-block;
+    text-indent: 0;
+    line-height: 1.3;
+    min-height: 19px
+}
+
+input[type="radio"]+label:after {
+    content: '';
+    width: 19px;
+    height: 19px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/common/radiobtn_off.svg) no-repeat 0 0;
+}
+
+input[type="radio"]:checked+label:after {
+    background: url(../images/common/radiobtn_on.svg) no-repeat 0 0;
+}
+
+select {
+    width: 100%;
+    height: 42px;
+    padding: 0 40px 0 12px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+    line-height: 42px;
+    border: 1px solid #ddd;
+    background: #fff url(https://image.autowini.com/cdn/auction/mobile/images/common/drop_arrow_fill.png) no-repeat center right;
+    background-size: 40px;
+    border-radius: 4px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+.safari input[type="text"],
+.safari input[type="tel"],
+.safari input[type="password"],
+.safari input[type="date"] {
+    line-height: 1 !important;
+}
+
+.undefined input[type="text"],
+.undefined input[type="tel"],
+.undefined input[type="password"],
+.undefined input[type="date"] {
+    line-height: 1 !important;
+}
+
+.onlyNumber {
+    ime-mode: disabled !important;
+}
+
+/*셀렉트 관련*/
+.section {
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 24px 16px 32px;
+    border-bottom: 1px solid #eee;
+}
+
+.section_only {
+    background: #fff;
+    padding: 24px 16px 32px;
+}
+
+.select_area {
+    background: #fff;
+}
+
+.select_area>ul>li {
+    padding-top: 15px;
+}
+
+.select_area>ul>li:first-child {
+    margin-top: 0;
+}
+
+.select_area p.sc_tit {
+    font-size: 12px;
+    color: #303030
+}
+
+.sort_select {
+    display: block;
+    text-align: right;
+    background: #f5f5f5;
+}
+
+.sort_select select {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+}
+
+/* err */
+input[type="text"].err,
+input[type="tel"].err,
+input[type="password"].err,
+select.err,
+.err {
+    border: 1px solid #e00001 !important;
+}
+
+select.wini_chk,
+.wini_chk {
+    border: 1px solid #333 !important;
+    background: #fff
+}
+
+.err_msg {
+    ;
+    visibility: visible;
+    text-align: left;
+    color: #e0000c;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/*clear, reset, float*/
+.clearfix:after {
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+    visibility: hidden;
+}
+
+* html .clearfix {
+    height: 1px;
+}
+
+.clearfix {
+    display: block;
+    min-height: 1px;
+}
+
+.input_jh {
+    position: relative;
+}
+
+.input_jh input[type="text"],
+.input_jh input[type="password"] {
+    padding-right: 40px;
+}
+
+.input_reset {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-top: -20px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/close_icon.png) no-repeat center;
+    background-size: 30px;
+    z-index: 1;
+    text-indent: -99999px;
+    display: none
+}
+
+.fcs .input_reset {
+    display: block;
+}
+
+.input_reset {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-top: -20px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/close_icon.png) no-repeat center;
+    background-size: 30px;
+    z-index: 1;
+    text-indent: -99999px;
+    display: none
+}
+
+/*BG*/
+.btop_overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/*말줄임*/
+.ellips {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word
+}
+
+/*button*/
+.btn_area button {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.btn_area button.btn_txt {
+    font-size: 14px;
+    color: #e0000c;
+    font-weight: 500;
+    width: 100%;
+    height: auto;
+    padding: 10px 0
+}
+
+.btn_area button.btn_txtB {
+    font-size: 14px;
+    color: #303030;
+    font-weight: 500;
+    width: 100%;
+    height: auto;
+    padding: 10px 0
+}
+
+.btn_area button.btn_red {
+    background: #e0000c;
+    border: 1px solid #e0000c;
+    color: #fff;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn_area a.btn_red {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    border-radius: 4px;
+    background: #e0000c;
+    border: 1px solid #e0000c;
+    color: #fff;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn_area button.btn_black {
+    background: #111;
+    border: 1px solid #111;
+    color: #fff;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn_area button.btn_white {
+    background: #fff;
+    border: 1px solid #e0000c;
+    color: #e0000c;
+    font-weight: 500;
+}
+
+.btn_area button.btn_Bwhite {
+    background: #fff;
+    border: 1px solid #000;
+    color: #303030;
+    font-weight: 500;
+}
+
+.btn_area button.btn_Gwhite {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #111;
+    font-weight: 500;
+}
+
+.btn_area button.btn_thin {
+    height: 30px;
+    background: #fff;
+    border: 1px solid #e0000c;
+    color: #e0000c;
+}
+
+.btn_area button.btn_thinB {
+    height: 30px;
+    background: #fff;
+    border: 1px solid #000;
+    color: #303030;
+}
+
+.btn_area button.btn_thinw {
+    height: 30px;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+.btn_area button.btn_thinR {
+    height: 30px;
+    background: #e0000c;
+    border: 1px solid #e0000c;
+    color: #fff;
+}
+
+.btn_area button.btn_mLgray {
+    height: 40px;
+    background: #f4f4f4;
+    color: #303030;
+}
+
+.btn_area button.btn_gray {
+    background: #4a4a4a;
+    color: #fff;
+}
+
+.btn_area button.btn_Lgray {
+    background: #f4f4f4;
+    color: #303030;
+}
+
+.btn_area ul li {
+    margin-top: 5px;
+}
+
+.btn_area ul li:first-child {
+    margin-top: 0 !important;
+}
+
+.btn_area button+button {
+    margin-top: 10px;
+}
+
+.btn_harf li {
+    float: left;
+    width: 50%;
+    padding-left: 6px;
+    margin-top: 0 !important
+}
+
+.btn_harf {
+    margin-left: -6px;
+}
+
+/* color */
+.redtxt {
+    color: #e0000c !important
+}
+
+.blacktxt {
+    color: #303030 !important
+}
+
+/*페이지 레이아웃*/
+.contents {
+    padding-bottom: 52px;
+    overflow: hidden
+}
+
+.mm-panels {
+    height: 100% !important;
+    overflow: hidden;
+}
+
+/*heade.jsp*/
+.nextAc {
+    position: relative;
+}
+
+.nextAc .btn_area {
+    margin: 10px 0 15px;
+}
+
+.nextAc .nextAcTime {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    font-size: 14px;
+    color: #303030
+}
+
+.nextAc .nextAcTime ul>li {
+    float: left;
+    font-size: 12px;
+    padding: 2px 0 0 5px;
+    color: #888;
+    font-weight: 300;
+}
+
+.nextAc h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #303030;
+    text-align: left;
+}
+
+.btn_area button.btn_binLink {
+    border: 1px solid #fff
+}
+
+.new_join {
+    display: inline-block;
+    font-weight: 300;
+    color: #fff
+}
+
+.new_signin {
+    display: inline-block;
+    margin-left: 15px;
+    margin: 20px 20px 15px;
+    font-weight: 300;
+    color: #fff
+}
+
+.ntop_list {
+    margin: -15px;
+}
+
+.ntop_list p span {
+    position: relative;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.ntop_list p .new:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 5px;
+    height: 5px;
+    display: block;
+    background: #e00001;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #e00001;
+}
+
+.watch_mode .btn_area {
+    margin: 10px 0 0
+}
+
+.watch_mode .nextAc span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #808080;
+    text-align: left
+}
+
+.watch_mode .nextAc span strong {
+    color: #000
+}
+
+.btn_nonebid button {
+    background: #f5f5f5;
+    cursor: default;
+    font-weight: 300;
+    color: #ccc
+}
+
+.btn_gra button {
+    position: relative;
+    overflow: hidden;
+    color: #e0000c;
+    background: #fff;
+    border: 1px solid #e0000c
+}
+
+.mem_buyer .btn_gra button {
+    border: none;
+    background: #e0000c;
+    color: #fff
+}
+
+/*팝업 스스크롤 관련*/
+.wrap {
+    position: relative;
+}
+
+.wrap.fix_w {
+    overflow: hidden;
+    height: -webkit-fill-available
+}
+
+.fix_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 3
+}
+
+/* header_top s */
+.headerTop_title {
+    background: #111;
+    height: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.headerTop_title.fixed {
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 200;
+}
+
+.headerTop_title>button {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    left: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.headerTop_title>button.btn_right {
+    left: auto;
+    right: 10px;
+}
+
+.headerTop_title .btn_JoinBack {
+    background-image: url(/assets/img/ico_back_white\ \(1\).svg)
+}
+
+.headerTop_title .goHome {
+    background-image: url(../images/common/ico_home_white.svg);
+    background-size: 26px;
+}
+
+.headerTop_title h2 {
+    color: #fff;
+    font-size: 16px;
+    line-height: 52px;
+    font-weight: 500;
+}
+
+.headerTop_title h3 {
+    color: #fff;
+    font-size: 16px;
+    line-height: 52px;
+    font-weight: 500;
+}
+
+/*.headerTop_title.fixed.review{background:#fff}*/
+/*.headerTop_title.fixed .btn_JoinBack{background-image:url(../images/common/ico_back_black.svg);}*/
+/*.headerTop_title.fixed.review h2{color:#111}*/
+
+
+
+@keyframes twingkle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+@-webkit-keyframes twingkle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+/* 하단 네비 */
+.ft_nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.1);
+    z-index: 200;
+}
+
+.ft_nav ul {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.ft_nav li {
+    flex: 1;
+    text-align: center
+}
+
+.ft_nav a {
+    display: block;
+    position: relative;
+    padding-top: 31px;
+    width: 100%;
+    height: 52px;
+    font-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center 8px;
+    background-size: 24px;
+}
+
+.ft_nav .home a {
+    background-image: url('/assets_/img/ico_nav_home.svg');
+}
+
+/*.ft_nav .home a{background-image:url(../images/common/ico_home.svg);}*/
+.ft_nav .item a {
+    background-image: url('/assets_/img/ico_car.svg');
+    background-size: 23px;
+}
+
+/*.ft_nav .item a{background-image:url(../images/common/ico_hammer.svg);}*/
+.ft_nav .sch a {
+    background-image: url('/assets_/img/ico_nav_search.svg');
+}
+
+.ft_nav .mn a {
+    background-image: url('/assets_/img/ico_nav_menu.svg');
+}
+
+.ft_nav .ntc a {
+    background-image: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_notice.png);
+}
+
+/*.ft_nav .myAuc a{background-image:url(https://image.autowini.com/cdn/auction/web/images/common/ico_myOrder.svg);}*/
+.ft_nav .myAuc a {
+    background-image: url('/assets_/img/ico_myOrder_black.svg');
+}
+
+.ft_nav .alertMark a:after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 28px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: #DD1F26;
+    border-radius: 50%
+}
+
+.list_bt {
+    position: fixed;
+    bottom: -142px;
+    left: 0;
+    width: 100%;
+    z-index: 10
+}
+
+.list_bt.chk:after {
+    display: block;
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1
+}
+
+.list_bt ul {
+    padding: 4px 0 0;
+    text-align: left;
+    background: #fff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.list_bt li {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0
+}
+
+.list_bt li em {
+    float: right;
+    color: #1f1f1f
+}
+
+.list_bt li:first-child a {
+    color: #e0000c
+}
+
+.nextCount {
+    color: #e00001;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.nav_count.onGo {
+    color: #303030
+}
+
+/* menu */
+#menu_left.mm-menu_position-front.mm-menu_opened,
+#menu_right.mm-menu_position-front.mm-menu_opened {
+    opacity: 1
+}
+
+.menu_left .navtop {
+    background: #fff;
+    width: 100%;
+}
+
+.menu_left .navtop .nav_hd {
+    padding: 20px 20px 0;
+    background: #1f1f1f
+}
+
+.menu_left .navtop .nav_tit {
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #181818;
+}
+
+.menu_left .navtop .leftN_close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    background: url('/assets_/img/ico_closeW.png') no-repeat center center;
+    background-size: 45px;
+    z-index: 10;
+}
+
+.menu_left .navtop_box {
+    padding: 18px 20px 20px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0
+}
+
+.menu_left .navtop_box a.join {
+    margin: 20px auto;
+    padding: 14px 0;
+    display: block;
+    border: 1px solid #333;
+    color: #181818;
+    font-size: 14px;
+    letter-spacing: 2px
+}
+
+.menu_left .navtop_box>ul>li {
+    width: 33.3%;
+    float: left;
+}
+
+.menu_left .navtop_box>ul>li a {
+    display: block;
+    color: #181818;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.menu_left .navtop_box>ul>li a img {
+    width: 100%
+}
+
+.new_navtop .nav_st a {
+    display: block;
+}
+
+.new_navtop .nav_st a em {
+    display: block;
+    font-weight: 700;
+}
+
+.new_navtop .nav_st a span {
+    display: inline-block;
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 300;
+    color: #fff
+}
+
+.new_navtop .nav_st a span em {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 12px;
+    color: #707070;
+    font-weight: 300;
+    background: none;
+}
+
+.new_navtop .nav_st a span b {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 1px 17px 0 10px;
+    border: 1px solid #808080;
+    color: #808080;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 17px;
+    border-radius: 30px;
+    letter-spacing: 0.2px;
+    background: url(/resources/images/common/ico_backBr.png) right 6px top 4px no-repeat;
+    background-size: 9px;
+}
+
+.new_navtop .nav_st .mem_status {
+    display: block;
+    margin-bottom: 15px;
+    padding: 0 12px;
+    background: #f4f4f4
+}
+
+.new_navtop .nav_st .mem_status em {
+    display: block;
+    float: left;
+    padding: 12px 0;
+    width: 50%;
+    font-size: 12px;
+}
+
+.new_navtop .nav_st .mem_status .tag {
+    text-align: right;
+    font-weight: 500;
+    color: #1f1f1f
+}
+
+.menu_left .logined.buyer .navtop_box {
+    padding-bottom: 5px
+}
+
+.menu_left .logined .nav_hd {
+    background: #fff
+}
+
+.menu_left .logined .nav_hd .leftN_close {
+    background-image: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_close.png)
+}
+
+.menu_left .logined .nav_hd .nav_st a span {
+    color: #1f1f1f;
+    font-weight: 500;
+}
+
+.menu_left .logined .nav_hd .nav_st a span b {}
+
+.menu_left .logined .nextAc .nextAcTime {
+    top: 0;
+    font-size: 13px;
+    color: #606060
+}
+
+.menu_left .ntop_list li:nth-child(1) a i {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+}
+
+.menu_left .ntop_list li:nth-child(2) a {
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_navsaved.png) no-repeat center 14px;
+    background-size: 30px
+}
+
+.menu_left .ntop_list li:nth-child(3) a {
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_navbids.png) no-repeat center 14px;
+    background-size: 30px;
+}
+
+.menu_left .ntop_list li a span {
+    display: block;
+    padding: 50px 0 13px;
+    font-size: 11px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.menu_left .ntop_list li.off a {
+    pointer-events: none;
+    cursor: default
+}
+
+.menu_left .ntop_list li.off a i {
+    opacity: 0.2;
+}
+
+.menu_left .ntop_list li.off a p {
+    color: rgba(0, 0, 0, 0.2)
+}
+
+.nav_list {
+    width: 100%;
+}
+
+.nav_list li {
+    position: relative;
+}
+
+.nav_list li a {
+    position: relative;
+    font-size: 14px;
+    color: #181818;
+}
+
+.nav_list>ul:after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.nav_list>ul>li>a {
+    margin-top: 0;
+    padding: 15px 60px 15px 20px;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.nav_list>ul>li>a:after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-top: -4px;
+    position: absolute;
+    right: 34px;
+    top: 50%;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    transform: rotate(-45deg);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav_list>ul>li.support>a:after {
+    display: none;
+}
+
+.nav_list>ul>li.active>a:after {
+    transform: rotate(135deg);
+    border-color: #e00001
+}
+
+.nav_list>ul>li.active:after {
+    left: 0;
+    right: 0
+}
+
+.nav_list>ul>li:after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.nav_list li.active>a {
+    background: #f8f8f8
+}
+
+.nav_list .depth2 {
+    padding: 10px 30px 15px;
+    display: none
+}
+
+.nav_list .depth2 li {
+    /* padding-right:100px; */
+}
+
+.nav_list .depth2 li a {
+    padding: 10px 0;
+    display: inline-block;
+    position: relative;
+}
+
+.nav_list .depth2 li a span {
+    display: block;
+    font-size: 10px;
+    line-height: 1;
+    color: #dd1f26;
+    font-weight: 500
+}
+
+.nav_list .depth2 li.new a:after {
+    content: '';
+    position: absolute;
+    right: -13px;
+    top: 14px;
+    font-size: 10px;
+    color: #e00001;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e00001
+}
+
+.nav_list .depth2 li a em {
+    display: inline-block;
+    margin: -4px 0 0 5px;
+    padding: 0 7px;
+    font-size: 11px;
+    line-height: 17px;
+    color: #fff;
+    background: #e0000c;
+    vertical-align: middle;
+    border-radius: 50px;
+}
+
+.nav_list .depth2 li a .fx {
+    background: #1f1f1f
+}
+
+.nav_list .depth2.set_mn dl {
+    padding: 10px 0
+}
+
+.nav_list .depth2.set_mn dt {
+    float: left;
+}
+
+.nav_list .depth2.set_mn dd {
+    float: right;
+    font-weight: 600;
+    color: #1f1f1f
+}
+
+.nav_list .depth2.set_mn .push_no {
+    color: #bbb;
+    font-weight: 300;
+}
+
+.nav_list .depth2.set_mn .time {
+    font-size: 13px;
+}
+
+button.move_h {
+    text-indent: -99999px;
+    width: 46px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 100px;
+    position: relative;
+}
+
+button.move_h.on {
+    background: #e0000c
+}
+
+button.move_h:after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    display: block;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: -11px;
+    transition: all .2s ease
+}
+
+button.move_h.on:after {
+    left: 22px;
+    transition: all .2s ease
+}
+
+.nav_count {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -11px;
+    font-size: 12px;
+}
+
+.nav_logout {
+    margin-bottom: 50px;
+    font-size: 12px;
+    color: #333;
+    padding-top: 20px !important
+}
+
+.logout a {
+    padding: 20px 20px
+}
+
+#menu_left,
+#menu_right {
+    opacity: 0;
+}
+
+.mm-menu_fullscreen #menu_left {
+    max-width: 360px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.mm-wrapper_opened body {
+    overflow: hidden;
+    height: 0
+}
+
+.mm-wrapper_opened #menu_left {
+    opacity: 1;
+    z-index: 10;
+}
+
+/*nodata*/
+li.list_nodata {
+    padding: 0 20px 20px !important;
+}
+
+.list_nodata div {
+    padding: 60px 0;
+    text-align: center
+}
+
+.list_nodata div+div {
+    border-top: 1px solid #dedede;
+}
+
+.list_nodata .nodeta_result {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.list_nodata span {
+    color: #e0000c;
+    padding: 0 5px
+}
+
+/*썸네일*/
+.thumb {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.thumb img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+/*서브공통*/
+.image_area {
+    position: relative;
+    background: #000
+}
+
+.image_area>img {
+    width: 100%;
+    height: 100%
+}
+
+.image_area .img_inner img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: auto;
+    height: 100%;
+    vertical-align: top;
+}
+
+.image_area .img_inner {
+    position: relative;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.image_area span {
+    padding: 5px 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.text_list {
+    margin-top: 15px;
+    position: relative;
+}
+
+.text_list .car_tit {
+    font-size: 14px;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+.text_list dt {
+    padding-right: 100px;
+    font-size: 14px;
+    color: #303030;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+.text_list dd.sum {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #e0000c;
+}
+
+.text_list dd.sum span {
+    font-weight: 700;
+}
+
+/*큰 로딩화면*/
+#loading_m {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 11000;
+    text-align: center;
+}
+
+#loading_m dl {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+#loading_m dl dt img {
+    width: 50px;
+    height: 50px
+}
+
+/*작은 로딩화면*/
+.loading_ms {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 11000;
+    text-align: center;
+}
+
+.loading_ms dl {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0
+}
+
+.loading_ms dt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+.loading_ms dd {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -9px;
+    margin-left: -9px;
+}
+
+.loading_ms dl dt img {
+    width: 50px
+}
+
+.loading_ms dl dd img {
+    width: 18px
+}
+
+/*탑으로, 새로고침*/
+.tbtn_wrap {
+    display: none;
+    z-index: 10;
+    position: relative;
+}
+
+.tbtn_wrap.bar_has .tbtn {
+    bottom: 80px
+}
+
+.tbtn_wrap img {
+    width: 50px;
+    height: 50px
+}
+
+.tbtn {
+    z-index: 12;
+    position: fixed;
+    bottom: 65px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/top_arrow.png) no-repeat center center rgba(256, 256, 256, 0.9);
+    background-size: 18px;
+    text-indent: -99999px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 5px;
+    border: 1px solid #e0e0e0
+}
+
+.tbtn.on {
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/btn_xbtn.png) no-repeat center center;
+    background-size: 50px;
+}
+
+.tbtn {
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -o-transition: all .1s;
+    -ms-transition: all .1s;
+    transition: all .1s;
+}
+
+.tbtn.on .tbtn_list {
+    display: block
+}
+
+.tbtn.on {
+    transform: rotate(90deg);
+}
+
+.top_overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.reBtn {
+    z-index: 12;
+    position: fixed;
+    bottom: 65px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
+    text-indent: -99999px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/reBtn.png) center center / 19px no-repeat rgba(255, 255, 255, 0.9);
+    border-image: initial;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0
+}
+
+/*푸시알림*/
+.noti_area {
+    position: relative;
+    overflow-y: scroll;
+}
+
+.noti_area .title {
+    padding: 18px 0;
+    position: relative;
+    border-bottom: 1px solid #dedede;
+    font-size: 18px;
+    color: #e0000c;
+    text-align: center;
+}
+
+.noti_area .title .rigntN_close {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_back2.png) no-repeat center center;
+    background-size: 30px;
+}
+
+.noti_area li {
+    position: relative;
+}
+
+.noti_area .noti_inner {
+    position: relative;
+}
+
+.noti_area li.active .noti_txtarea {
+    padding-left: 45px;
+}
+
+.noti_area li .noti_txtarea {
+    width: 100%;
+    padding: 9px 35px 7px 20px;
+    z-index: 10;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid #dedede;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.noti_area li .noti_txtarea.on {
+    left: -70px;
+}
+
+.noti_area li .noti_delete a {
+    width: 70px;
+    z-index: 9;
+    right: 0;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_delete.png) no-repeat center center #e0000c;
+    background-size: 20px 20px;
+    text-indent: -99999px;
+}
+
+.noti_area li.active .noti_txtarea:before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    z-index: 20;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    border-radius: 50%;
+    background: #e0000c;
+}
+
+.noti_area .noti_txtarea:after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    margin-top: -7px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    transform: rotate(225deg);
+}
+
+.noti_area .noti_txtarea.on:after {
+    transform: rotate(45deg);
+}
+
+.noti_txtarea p {
+    padding-top: 5px;
+    font-size: 12px;
+    color: #1f1f1f;
+    word-break: break-word;
+}
+
+.noti_txtarea p.txt {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.noti_txtarea p.min {
+    padding-top: 12px;
+    font-size: 10px;
+    color: #9b9b9b;
+}
+
+.noti_area li.active .noti_txtarea p.min {
+    color: #e0000c;
+}
+
+/*뱃지*/
+.badge_common {
+    display: inline-block;
+    font-size: 12px;
+    padding: 1px 4px;
+    font-weight: 400;
+}
+
+.badge_damage {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.badge_high {
+    font-weight: 500;
+}
+
+.badge_high_run {
+    color: #0075d6;
+    background: #e7f4ff;
+    border: 1px solid #71bfff;
+}
+
+.badge_high_engine {
+    color: #fff;
+    background: #222;
+    border: 1px solid #222;
+}
+
+.badge_high_non {
+    background: #ffedee;
+    color: #e0000c;
+    border: 1px solid #ef797f;
+}
+
+.sch_option .badge_damage {
+    background: #f5f5f5;
+    border: 1px solid #e2e2e2;
+    color: #222;
+}
+
+.sch_option .badge_high_run {
+    color: #0075d6;
+    background: #e7f4ff;
+    border: 1px solid #71bfff;
+}
+
+.sch_option .badge_high_engine {
+    color: #fff;
+    background: #222;
+    border: 1px solid #222;
+}
+
+.sch_option .badge_high_non {
+    background: #ffedee;
+    color: #e0000c;
+    border: 1px solid #ef797f;
+}
+
+/*sub.css 미정리 코드*/
+.reddText {
+    padding: 5px 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    font-size: 12px;
+    color: #e0000c;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.editInfo-night {
+    font-weight: bold;
+}
+
+.btn_back {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    background: url(https://image.autowini.com/cdn/auction/mobile/images/common/ico_back2.png) no-repeat center;
+    background-size: 30px;
+    display: block;
+    text-indent: -9999px
+}
+
+/*컴포넌트 검색창*/
+.comp_top_search {
+    position: relative;
+    background: #fff;
+}
+
+.comp_top_search input[type="text"] {
+    padding: 0 48px 0 16px;
+    border: none;
+    font-size: 14px;
+}
+
+.comp_top_search .ico_search {
+    width: 42px;
+    height: 42px;
+    margin-top: -21px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: url(../images/common/ico_search_black_w24.svg) no-repeat center right 16px;
+    background-size: 18px;
+    text-indent: -9999px;
+    z-index: 5;
+}
+
+.comp_top_option {
+    position: relative;
+    padding: 6px 16px;
+}
+
+.comp_top_option select {
+    width: auto;
+    font-size: 11px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 20px 0 6px;
+    border: none;
+    background-size: 34px;
+    background-position: center right -5px;
+}
+
+.comp_top_option .left {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%)
+}
+
+.comp_top_option .right {
+    text-align: right;
+}
+
+/*컴포넌트 상단탭 tab */
+.comp_tab ul.sc3_tab {
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.comp_tab ul.sc3_tab li {
+    float: left;
+    width: 33.33%;
+    position: relative;
+}
+
+.comp_tab ul.sc3_tab.ea2 li {
+    width: 50%;
+}
+
+.comp_tab ul.sc3_tab li a {
+    width: 100%;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.comp_tab ul.sc3_tab li.active a {
+    font-weight: 700;
+    color: #111;
+}
+
+.comp_tab ul.sc3_tab li.active a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    border-bottom: 3px solid #000
+}
+
+/*AUCMOB-279*/
+.section2 {
+    padding: 32px 16px;
+    background: #f5f5f5;
+}
+
+
+.time_zone {
+    margin-top: 12px;
+}
+
+.time_zone span {
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #999;
+    font-size: 13px;
+}
+
+.time_zone select {
+    border-radius: 4px;
+}
+
+/*페이징 관련 css추가*/
+.page_st .number {
+    padding: 24px 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.page_st .number li {
+    margin: 0 2px;
+    padding: 0;
+    border: none
+}
+
+.page_st .number li em {
+    margin: 0 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #909090
+}
+
+.page_st .number li a {
+    display: block;
+    padding: 0 6px;
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #404040;
+    text-align: center;
+    background: #f6f6f6;
+    border-radius: 6px;
+}
+
+.page_st .number li a>img {
+    margin: -2px 0 0;
+    width: 18px;
+    vertical-align: middle
+}
+
+.page_st .number li a:hover {
+    background: #e9eaec
+}
+
+.page_st .number li a.on {
+    color: #fff;
+    background: #e0000c;
+}
+
+.page_st .number li a.off {
+    opacity: 0.2
+}
+
+.page_st .number li:first-child a,
+.page_st .number li:last-child a {
+    background: none
+}
+
+/* .common_overlay{display:block;content:'';position:fixed;bottom:52px;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:99;} */
+
+.ft_nav .liveMsg {
+    display: none;
+    height: 28px;
+    line-height: 28px;
+    background: #EF3231;
+    text-align: center;
+}
+
+.ft_nav .liveMsg:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    z-index: 1;
+    width: 100%;
+    /* animation:liveAuction 2s ease infinite; */
+    /* background: rgba(255,0,11,1); */
+    /* background: radial-gradient(circle,  rgba(255,0,11,.7) 0%, rgba(224,0,12,0) 100%) */
+    ;
+}
+
+.ft_nav .liveMsg a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2
+}
+
+.ft_nav .liveMsg strong {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ft_nav .liveMsg img {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    height: 10px;
+}
+
+/*AUCMOB-339 렌트카뱃지*/
+.badge_rental {
+    color: #fff;
+    background: rgba(0, 178, 44, 0.9) !important;
+}
+
+.badge_rent {
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    padding: 1px 4px 1px 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 6px 0 0 0;
+    background: rgba(224, 0, 12, 0.9);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.badge_rent:before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 6px 9px 0;
+    border-color: rgba(224, 0, 12, 0.95) transparent;
+}
+
+.badge_rent span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 26px;
+    border-radius: 30px 0 0 26px;
+    background: rgba(224, 0, 12, 0.9);
+    z-index: -1;
+}
+
+.badge_rent span:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    width: 6px;
+    height: 10px;
+    border-radius: 8px 0 0px 8px;
+    background: #a20009;
+}
+
+.neon {
+    position: relative;
+    display: inline-block;
+    margin-right: 8px;
+    width: 10px;
+    height: 10px;
+    background: #EF3231;
+    border-radius: 50%;
+}
+
+.neon:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #EF3231;
+    opacity: 0.3;
+    border-radius: 50%;
+    animation: neon 0.7s ease infinite;
+    -moz-animation: neon 0.7s ease infinite;
+    -webkit-animation: neon 0.7s ease infinite;
+    animation-direction: alternate;
+    -moz-animation-direction: neon 0.7s ease infinite;
+    -webkit-animation-direction: neon 0.7s ease infinite;
+}
+
+@keyframes neon {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.8);
+    }
+}
+
+@-webkit-keyframes neon {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.8);
+    }
+}
+
+@keyframes liveAuction {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes twingkle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+@-webkit-keyframes twingkle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+.bgOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0);
+    z-index: 300 !important;
+    opacity: 0;
+}
+
+.bgOverlay.bgOn {
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .3s;
+    opacity: .7
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .7;
+    }
+}
+
+/* my auction */
+.myAuc_mn li {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.myAuc_mn li a {
+    margin-top: 0;
+    padding: 16px 60px 16px 20px;
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    background: #fff url(../images/common/ico_arr_right.svg) no-repeat center right 20px;
+    background-size: 8px
+}
+
+.myAuc_mn li a:after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-top: -4px;
+}
+
+.myAuc_mn li a.alertMark span {
+    position: relative
+}
+
+.myAuc_mn li a.alertMark span:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -8px;
+    top: -1px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #DD1F26
+}
+
+/* 리뉴얼 header */
+.empty_header {
+    background: transparent
+}
+
+.empty_header.border {
+    border-bottom: 1px solid #eee
+}
+
+.empty_header.border h2 {
+    color: #000
+}
+
+.empty_header .btn_JoinBack {
+    background: center / cover no-repeat url(/assets/img/ico_page_back.png);
+    width: 24px;
+    height: 24px
+}
+
+/* cs_staff 노출 모달*/
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.get_help_btn_wrap {
+    display: none;
+    position: fixed;
+    right: 12px;
+    z-index: 11;
+    bottom: 64px;
+}
+
+.get_help_btn_wrap .get_help_btn {
+    background: url(../images/common/ico_get_help.png);
+    width: 104px;
+    height: 32px;
+    background-size: cover;
+    box-shadow: 0 2px 8px rgb(99, 99, 99, 0.54);
+    border-radius: 32px;
+}
+
+.get_help_btn_wrap .get_help_btn span {
+    font-size: 0;
+}
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(69, 69, 69, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.modal-background.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    animation: fadein 0.8s;
+}
+
+.modal-background.hide {
+    animation: fadeout 0.8s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.staff-modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.staff-modal .modal-content {
+    position: relative;
+    background: #fff;
+    width: 328px;
+    padding: 18px 20px 22px;
+    border-radius: 6px;
+}
+
+.staff-modal .modal-content .title::before {
+    width: 26px;
+    height: 19px;
+    background: url(../images/common/ico_talk.png);
+    background-size: cover;
+    display: inline-block;
+    content: '';
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.staff-modal .modal-content .title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000;
+}
+
+.staff-modal .modal-content .intro {
+    font-size: 12px;
+    line-height: 18px;
+    color: #777;
+}
+
+.staff-modal.show {
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.staff-modal .close-btn {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 22px;
+    right: 22px;
+    background: url(../images/common/ico_modal_close.png);
+    background-size: 17px;
+}
+
+.staff_info_list {
+    margin-top: 14px;
+}
+
+.staff_info_list .staff_info_item+.staff_info_item {
+    margin-top: 18px;
+}
+
+.staff_info_list li .profile {
+    display: flex;
+    align-items: center;
+}
+
+.staff_info_list li .profile .profile_content {
+    margin-left: 8px;
+}
+
+.staff_info_list li .profile_name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.staff_info_list li .profile_languages {
+    font-size: 14px;
+    line-height: 18px;
+    color: #555555;
+}
+
+.call_btn_list {
+    margin-top: 2px;
+}
+
+.call_btn_list li .call_btn {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.call_btn_list li .call_btn span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.call_btn.green span::before {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url(../images/common/ico_green_call.png);
+    background-size: 22px;
+    content: '';
+}
+
+.call_btn.purple span::before {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: url(../images/common/ico_purple_call.png);
+    background-size: 22px;
+    content: '';
+}
+
+.call_btn_list li .call_btn.green {
+    color: #25D366;
+    border: 2px solid #25D366;
+}
+
+.call_btn_list li .call_btn.purple {
+    color: #665CAC;
+    border: 2px solid #665CAC;
+}
+
+.call_btn_list li+li {
+    margin-top: 5px;
+}
+
+/* 바이어후기 공유하기 팝업 */
+.modal-wrap.detailShare_pop_new {}
+
+.modal-wrap.detailShare_pop_new .modal-content,
+.modal-wrap.save_pop_new .modal-content {
+    position: absolute;
+    z-index: 100;
+    max-width: unset;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.modal-wrap.detailShare_pop_new dl {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee
+}
+
+.modal-wrap.detailShare_pop_new dt {
+    flex-basis: 60px;
+    margin-right: 10px
+}
+
+.modal-wrap.detailShare_pop_new dt img {
+    height: 40px;
+    width: 50px;
+    border-radius: 4px
+}
+
+/*.modal-wrap.detailShare_pop_new .modal-content{bottom:-300px}*/
+/*.modal-wrap.detailShare_pop_new .modal-content.on{bottom:0px}*/
+.modal-wrap.detailShare_pop_new .modal-content ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px
+}
+
+.modal-wrap.detailShare_pop_new .modal-content li:first-child {
+    margin-right: 50px
+}
+
+.modal-wrap.detailShare_pop_new .modal-content ul button img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px
+}
+
+.modal-wrap.detailShare_pop_new .modal-content ul button span {
+    display: block;
+    margin-top: 5px
+}
+
+.modal-wrap.detailShare_pop_new .modal_popup_close {
+    width: 30px;
+    height: 30px;
+    background-size: 30px
+}
+
+.modal-wrap.save_pop_new .modal-content {
+    padding: 40px 20px;
+    text-align: center
+}
+
+.modal-wrap.save_pop_new .modal-content.on {
+    bottom: 0;
+    transition: all 0.5s ease
+}
+
+.modal-wrap.save_pop_new dt img {
+    height: 50px;
+    width: 50px
+}
+
+.modal-wrap.save_pop_new dd {
+    margin-top: 10px
+}
+
+.modal-wrap.save_pop_new dd span {
+    font-weight: 500
+}
+
+/*
+.markArea:after{content:'';z-index:9;position: absolute;top:0;left:0;right:0;bottom:0;background:url(../images/watermark/wm_320.png) center no-repeat;display: block;}
+.markArea.s:after{background-size: 80%;}
+.markItem:before{content:'';position: absolute;top:0;left:0;right:0;bottom:0;background:url(../images/watermark/wm_320.png) center no-repeat;background-size:50%;display: block;}*/

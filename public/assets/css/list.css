@@ -1,0 +1,1925 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700");
+
+.listWrap {
+    padding: 0 40px;
+    overflow: hidden
+}
+
+.listWrap .filterCon {
+    position: absolute;
+    top: 228px;
+    left: 0;
+    width: 315px;
+    background: #fff;
+    text-align: left;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 2
+}
+
+.listWrap .filterCon.on {
+    position: fixed;
+    top: 0
+}
+
+.filterCon .btnFilter {
+    position: absolute;
+    top: 80px;
+    right: -20px;
+    width: 30px;
+    height: 55px;
+    background: #101010 url(https://image.autowini.com/resources/IMG/common/ico_backw.png) right 1px center no-repeat;
+    background-size: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.filterCon .btnFilter.on {
+    background: #e0000c url(https://image.autowini.com/resources/IMG/common/ico_next_white.png) right 1px center no-repeat;
+    background-size: 20px;
+}
+
+.filterCon .btn_area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 315px;
+}
+
+.listWrap .filterCon .inner {
+    position: relative;
+    padding: 20px 20px;
+    height: calc(100vh - 260px);
+    overflow-y: scroll;
+    overflow-x: clip
+}
+
+.filterCon h3 {
+    padding: 10px 0;
+    background: #fff;
+    font-size: 18px;
+    line-height: 24px;
+    overflow: hidden
+}
+
+.filterCon h3 button {
+    display: block;
+    float: right;
+    font-size: 12px;
+    line-height: 24px;
+    color: #666;
+    cursor: pointer;
+    color: #e0000c
+}
+
+.filterCon ul>li {
+    border-top: 1px solid #eee
+}
+
+.filterCon li dt {
+    font-weight: 700
+}
+
+.filterCon li dt span {
+    position: relative;
+}
+
+.filterCon li dt span img {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 4px
+}
+
+.filterCon li dt.chk span:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 5px;
+    height: 5px;
+    background: #e0000c;
+    border-radius: 10px;
+}
+
+.filterCon li dt a {
+    display: block;
+    position: relative;
+    padding: 10px 0;
+    overflow: hidden
+}
+
+.filterCon li dt a em {
+    display: block;
+    float: right;
+    width: 11px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #808080;
+    font-weight: 300;
+    text-align: center
+}
+
+.filterCon li dt a:hover,
+.filterCon li dt a:hover em {
+    color: #e0000c
+}
+
+.filterCon li.act dt a,
+.filterCon li.act dt em {
+    color: #e0000c;
+}
+
+.filterCon li dd {
+    display: none;
+    position: relative;
+}
+
+.filterCon li dd ol {
+    margin-bottom: 10px;
+    max-height: 160px;
+    overflow-y: scroll;
+}
+
+.filterCon li dd ol:after {
+    display: block;
+    clear: both;
+    content: ''
+}
+
+.filterCon li dd li {
+    margin: 5px 0;
+}
+
+.filterCon li dd li .count {
+    float: right;
+    margin-right: 8px;
+    font-size: 13px;
+    font-weight: 300;
+    color: #666;
+}
+
+.filterCon li dd li input[type="checkbox"]+label {
+    max-width: 205px;
+}
+
+.filterCon li dd p {
+    padding: 15px 10px;
+    background: #f4f4f4;
+    text-align: center;
+    font-size: 12px;
+    color: #666
+}
+
+.filterCon .dbl dl:after {
+    display: block;
+    content: '';
+    clear: both
+}
+
+.filterCon .dbl dt {
+    float: left;
+    padding: 17px 0 0;
+    width: 40%;
+}
+
+.filterCon .dbl dd {
+    display: block;
+    float: right;
+    width: 60%;
+}
+
+.filterCon .tri dt {
+    float: inherit;
+    padding: 10px 0 0;
+    width: auto;
+}
+
+.filterCon .tri dd {
+    float: inherit;
+    width: auto;
+}
+
+.filterCon .dbl ol {
+    margin: 0;
+    padding: 10px 0 5px;
+    background: none;
+    overflow-y: inherit
+}
+
+.filterCon .dbl li {
+    float: left;
+    width: 50%;
+    margin: 0 -1px 8px 0
+}
+
+.filterCon .dbl li label {
+    display: block;
+}
+
+.filterCon .year li:last-child {
+    float: right
+}
+
+.filterCon .dbl select {
+    margin: 0;
+    padding: 0 20px 0 10px;
+    width: 95%;
+    height: 35px;
+    line-height: 35px;
+    background-size: 25px
+}
+
+.filterCon .dbl input[type="text"] {
+    margin: 10px 0;
+    padding-left: 10px;
+    width: 100%;
+    border-color: #fff;
+    background: #f4f4f4
+}
+
+.filterCon .dbl input[type="text"]:focus {
+    border-color: #1f1f1f;
+    background: #fff
+}
+
+.filterCon .dbl button {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    border: 1px solid #fff;
+    background: #f4f4f4
+}
+
+.filterCon .dbl button:hover {
+    border-color: #1f1f1f;
+    z-index: 1
+}
+
+.filterCon .dbl button.act {
+    background: #000;
+    color: #fff;
+    border-color: #000
+}
+
+.filterCon .filterVeri li {
+    width: 70%;
+}
+
+.filterCon .badge_veri {
+    position: absolute;
+    top: 12px;
+    right: 0;
+}
+
+.filterCon .badge_veri img {
+    width: 74px;
+}
+
+.filterCon .auctionTypeFilter ol {
+    display: flex;
+}
+
+.filterCon .auctionTypeFilter li {
+    flex: 1
+}
+
+.listWrap .listCon {
+    float: left;
+    margin-top: 40px;
+    padding-left: 320px;
+    padding-bottom: 60px;
+    width: 100%;
+    text-align: left;
+}
+
+.listWrap .listCon:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.listCon h2 {
+    font-size: 30px;
+    overflow: hidden
+}
+
+.listCon h2 span {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 400
+}
+
+.listCon h2 .timeLeft {
+    float: right;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 400
+}
+
+.listCon h2 .timeLeft em {
+    font-size: 18px;
+    color: #808080;
+}
+
+.listCon h2 .timeLeft span {
+    margin-left: 3px;
+}
+
+.listCon .resultFilter {
+    margin-top: 16px;
+}
+
+.listCon .resultFilter dd li {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    background: #fff;
+}
+
+.resultFilter dl {
+    display: table;
+    width: 100%;
+}
+
+.resultFilter dt {
+    display: table-cell;
+    min-width: 122px;
+    padding: 6px 0;
+}
+
+.resultFilter dt em {
+    display: inline-block;
+    margin-left: 20px;
+    color: #ccc
+}
+
+.resultFilter dd {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.resultFilter dd li {
+    float: left;
+    margin: 4px;
+    padding-left: 10px;
+    font-size: 13px;
+    background: #F8F8F8;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    line-height: 26px;
+    color: #303030;
+    overflow: hidden
+}
+
+.resultFilter dd a {
+    display: block;
+    float: right;
+    margin: 0 3px;
+    width: 21px;
+    text-indent: -9999px;
+    background: url(https://image.autowini.com/resources/IMG/common/ico_del_grey_w20.png) center center no-repeat;
+    background-size: 10px;
+}
+
+.resultFilter dd a:hover {
+    background: url(https://image.autowini.com/resources/IMG/common/ico_del_black_w20.png) center center no-repeat;
+    background-size: 10px;
+}
+
+.listCon .resultTop {
+    position: relative;
+    z-index: 1
+}
+
+.carsale .listCon .resultTop {
+    padding: 40px 24px 10px;
+}
+
+.resultTop .lft {
+    float: left;
+    width: 30%;
+}
+
+.resultTop .lft .btnExcel {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0 45px 0 18px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+    line-height: 40px;
+    border: 1px solid #101010;
+    color: #111;
+    background: #fff url(https://image.autowini.com/resources/IMG/common/ico_download.svg) right 15px top 9px no-repeat;
+    border-radius: 4px;
+}
+
+/* .resultTop .lft .btnExcel:hover{border:1px solid #1f1f1f;color:#303030} */
+.resultTop .lft p {
+    display: inline-block;
+    color: #707070;
+    font-size: 15px;
+    line-height: 35px;
+}
+
+.resultTop .lft p strong {
+    display: inline-block;
+    color: #e0000c
+}
+
+.resultTop .rgt {
+    float: right;
+    width: 68%;
+}
+
+.resultTop .rgt li {
+    float: right;
+}
+
+.resultTop .rgt li:after {
+    display: inline-block;
+    content: '|';
+    margin-left: 10px;
+    font-size: 10px;
+    line-height: 35px;
+    color: #ccc
+}
+
+.resultTop .rgt li.barN:after {
+    display: none
+}
+
+.resultTop .rgt li button {
+    margin-left: 15px;
+    font-size: 13px;
+    line-height: 35px;
+    color: #aaa
+}
+
+.resultTop .rgt li.barN button {
+    margin-right: 15px;
+}
+
+.resultTop .rgt li button:hover {
+    color: #000
+}
+
+.resultTop .rgt li button.act {
+    color: #1f1f1f;
+    font-weight: 500
+}
+
+.resultTop .rgt li select {
+    margin: 0;
+    color: #111;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+    background-color: #fff;
+    border-color: #ddd;
+    padding: 0 30px 0 8px;
+    background-position: center right -8px;
+    border-radius: 4px;
+}
+
+.resultList>li {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    background: #fff
+}
+
+.resultList>li a {
+    display: block;
+    position: relative;
+    height: 150px;
+}
+
+.resultList>li a:after {
+    display: block;
+    clear: both;
+    content: ''
+}
+
+/* .resultList > li a:hover{box-shadow:1px 2px 5px rgba(0,0,0,0.2)} */
+.resultList>li a:hover {
+    background: #f9f9f9;
+}
+
+.resultList>li a>div {
+    float: left;
+    height: 100%;
+    vertical-align: middle
+}
+
+.resultList>li a>div dl {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.resultList>li a .endText {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.resultList .badge {
+    display: inline-block;
+    position: relative;
+    margin-right: 6px;
+}
+
+.resultList .badge+.badge:before {
+    display: inline-block;
+    content: '|';
+    color: #e0e0e0;
+    font-size: 11px;
+    padding-right: 6px;
+}
+
+.resultList .badge .btn {
+    display: inline-block;
+    color: #111;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    vertical-align: middle;
+    cursor: help;
+}
+
+.resultList .badge .btn+.info {
+    display: none;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 380px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #888;
+    color: #111;
+    z-index: 1;
+    font-size: 11px;
+    padding: 3px 4px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.resultList .badge .btn+.info:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0px 6px 6px 6px;
+    border-color: #888 transparent;
+    display: block;
+    width: 0;
+    z-index: 0;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.resultList .badge .btn+.info:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0px 6px 6px 6px;
+    border-color: #FFFFFF transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.resultList .badge .btn:hover+.info {
+    display: block
+}
+
+.resultList .inspected .btn:before {
+    content: '';
+    display: inline-block;
+    margin-right: 2px;
+    width: 17px;
+    height: 17px;
+    background: url(https://image.autowini.com/resources/IMG/common/ic_inspected.png) 0 0 no-repeat;
+    background-size: 14px;
+    vertical-align: middle
+}
+
+.resultList .priceLine .dropped {
+    margin-top: 0
+}
+
+.resultList .dropped .btn {
+    font-size: 13px
+}
+
+.resultList .dropped .btn:before {
+    content: '';
+    display: inline-block;
+    margin-right: 2px;
+    width: 17px;
+    height: 17px;
+    background: url(https://image.autowini.com/resources/IMG/common/ic_dropped.png) 0 0 no-repeat;
+    background-size: 14px;
+    vertical-align: middle
+}
+
+.resultList .dropped .btn+.info {
+    width: 210px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.resultList .img {
+    width: 200px
+}
+
+.resultList .img p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background: #000
+}
+
+.resultList .img {
+    position: relative
+}
+
+.resultList .img .mark {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+}
+
+.resultList .img .mark li {
+    position: relative;
+    font-size: 11px;
+    color: #fff;
+    line-height: 1;
+    padding: 3px 4px 3px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 2px
+}
+
+.resultList .img .mark li.video {
+    background: none;
+    padding: 0;
+    margin-right: 4px
+}
+
+.resultList .img .mark li.video img {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    border-radius: 30px;
+    object-fit: cover;
+}
+
+.resultList .info {
+    width: 24%;
+    position: relative;
+    z-index: 11
+}
+
+.resultList .info dl {
+    padding: 0 15px 0 30px;
+}
+
+.resultList .info dt {
+    overflow: hidden;
+}
+
+.resultList .info dt .tit {
+    display: inline-block;
+    font-size: 17px;
+    color: #101010;
+    font-weight: 500;
+    letter-spacing: -.1px;
+    line-height: 24px;
+}
+
+.resultList .info dt .top {
+    display: flex;
+    align-items: center
+}
+
+.resultList .info dt .lot {
+    font-size: 13px;
+    font-weight: 400;
+    color: #808080;
+}
+
+.resultList .info dt .hotLot {
+    position: relative;
+    background: url(../images/common/ic_clock_red.svg) left center no-repeat;
+    background-size: 16px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #e82020;
+    padding-left: 18px;
+    margin-left: 16px;
+    font-weight: 500;
+}
+
+.resultList .info dt .hotLot:before {
+    content: '•';
+    color: #d0d0d0;
+    position: absolute;
+    top: 0;
+    left: -10px;
+}
+
+.resultList .info dd {
+    position: relative;
+    margin-top: 4px;
+}
+
+
+.resultList .dInfo {
+    width: 20%
+}
+
+.resultList .dInfo ul {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.resultList .dInfo li {
+    padding: 4px 0;
+    overflow: hidden
+}
+
+.resultList .dInfo li span {
+    display: block;
+    float: left;
+;
+    min-width: 110px;
+    color: #999
+}
+
+.resultList .dInfo li em {
+    display: block;
+    float: left;
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.resultList .priceLine {
+    float: right;
+    width: 20%;
+    text-align: center;
+    color: #808080;
+}
+
+.resultList .priceLine span {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+    letter-spacing: -0.4px;
+    color: #000
+}
+
+.resultList .bin dd span {
+    color: #303030
+}
+
+.resultList .bin .booked {
+    padding: 5px 15px 3px;
+    font-size: 22px;
+    color: #0075d6;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 4px solid #71bfff;
+    transform: rotate(-5deg);
+}
+
+.resultList .bin .sold {
+    padding: 5px 25px 3px;
+    color: #e0000c;
+    font-weight: 600;
+    border: 4px solid #e0000c;
+    border-radius: 6px;
+    transform: rotate(-5deg);
+}
+
+.resultList .priceLine dt {
+    color: #999;
+    font-size: 12px
+}
+
+.resultList .priceLine em {
+    font-weight: 500
+}
+
+.resultList .priceLine .droppedRed {
+    color: #e0000c;
+}
+
+.resultList .prevBid {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #808080
+}
+
+.resultList .liveAuc {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: #e0000c;
+    font-weight: 500;
+}
+
+.resultList .watchChk {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.resultList .btnWatch {
+    display: inline-block;
+    margin-top: -2px;
+    width: 35px;
+    height: 35px;
+    background-size: 35px;
+    border-radius: 50%;
+    text-indent: -9999px;
+    vertical-align: top;
+    -webkit-animation: push85-off .2s cubic-bezier(.68, -.55, .265, 1.55);
+    animation: push85-off .2s cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+.resultList .btnWatch.on {
+    background-size: 35px;
+    -webkit-animation: push85 .2s cubic-bezier(.68, -.55, .265, 1.55)
+}
+
+.resultList .btnWatch.off {
+    opacity: 0.6
+}
+
+/* .resultList .btnWatch:hover{background-color:#eee;} */
+@-webkit-keyframes push85 {
+    50% {
+        -webkit-transform: scale(.85);
+        transform: scale(.85);
+    }
+}
+
+@keyframes push85 {
+    50% {
+        -webkit-transform: scale(.85);
+        transform: scale(.85);
+    }
+}
+
+@-webkit-keyframes push85-off {
+    50% {
+        -webkit-transform: scale(.85);
+        transform: scale(.85);
+    }
+}
+
+@keyframes push85-off {
+    50% {
+        -webkit-transform: scale(.85);
+        transform: scale(.85);
+    }
+}
+
+/* 페이지 공통*/
+.paging {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    z-index: 1
+}
+
+.paging li {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: top
+}
+
+.paging li a {
+    display: block;
+    padding: 5px;
+}
+
+.paging li a span {
+    display: inline-block;
+    padding: 0 2px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #303030;
+    font-weight: 500;
+}
+
+.paging li a:hover span {
+    border-bottom: 1px solid #e0000c;
+    color: #e0000c
+}
+
+.paging li a.on span {
+    border-bottom: 1px solid #e0000c;
+    color: #e0000c;
+    font-weight: 600;
+}
+
+.paging li a img {
+    margin-top: 1px;
+    height: 20px;
+    filter: alpha(opacity=20);
+    -ms-filter: "alpha(opacity=20)";
+    -khtml-opacity: 0.2;
+    -moz-opacity: 0.2;
+    opacity: 0.2;
+}
+
+.paging li a.act img {
+    filter: alpha(opacity=100);
+    -ms-filter: "alpha(opacity=100)";
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.paging .arrow {
+    margin: 0
+}
+
+
+/* 리스트 매물없을 때 */
+.noDataTxt {
+    text-align: center;
+    min-height: 150px;
+    line-height: 150px;
+}
+
+/* AUCWEB-144 */
+.noDataTxt.video {
+    line-height: 1.5;
+    text-align: left;
+    padding: 0 40px 50px;
+}
+
+.noDataTxt.video dd {
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+.noDataTxt.video .join {
+    margin-top: 30px;
+}
+
+.noDataTxt.video .join p {
+    float: left;
+    width: 75%;
+    font-size: 15px;
+}
+
+.noDataTxt.video .join .btn_area {
+    float: right;
+    width: 20%;
+}
+
+/* AUCWEB-151 */
+.resultTitle.markHelp {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.resultTitle.markHelp:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: -30px;
+    width: 24px;
+    height: 24px;
+    background: url(https://image.autowini.com/resources/IMG/common/ico_info_w48_gray.png) center no-repeat;
+    background-size: 24px;
+}
+
+.ko .resultTitle.markHelp:after {
+    display: none;
+}
+
+/* AUCWEB-204 */
+.carsale {
+    padding-bottom: 0;
+}
+
+.carsale .listCon>p {
+    margin-top: 8px;
+    color: #8a8a8a;
+}
+
+.resultCon {
+    position: relative;
+    z-index: 1
+}
+
+.resultCon ul {
+    position: relative;
+    z-index: 1
+}
+
+.live_time {
+    background: #fff;
+    border-bottom: 1px solid #303030;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.live_time>ul {
+    display: flex;
+    align-items: center
+}
+
+.live_time li {
+    position: relative;
+    flex: 1
+}
+
+.live_time li:first-child a {
+    border-top-left-radius: 8px;
+    overflow: hidden;
+}
+
+.live_time li a {
+    display: block;
+    border-right: 1px solid #eee;
+    padding: 20px 0;
+    font-size: 15px;
+    text-align: center;
+    color: #303030
+}
+
+.live_time li:first-child a {
+    border-top-left-radius: 8px;
+    overflow: hidden;
+}
+
+.live_time li a {
+    display: block;
+    border-right: 1px solid #eee;
+    padding: 18px 0;
+    font-size: 15px;
+    text-align: center;
+    color: #303030
+}
+
+.live_time li a:last-child {
+    border-right: none !important;
+}
+
+.live_time li a em {
+    font-weight: 400
+}
+
+.live_time li:first-child a {
+    margin-left: 0
+}
+
+.live_time li a:hover {
+    font-weight: 500;
+    color: #1f1f1f
+}
+
+.live_time li.on a {
+    font-weight: 600;
+    color: #fff;
+    background: #303030;
+}
+
+.live_time li.off a {
+    font-weight: 500;
+    color: #111;
+}
+
+.live_time li.off a:hover {
+    color: #e0000c;
+}
+
+.live_time .tool_tip {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    animation: bounceTip .5s cubic-bezier(0.4, 0, 1, 1) infinite alternate;
+    z-index: 300;
+}
+
+.live_time .tool_tip:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid rgba(0, 0, 0, 0.85);
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+
+.live_time .tool_tip li {
+    width: 100%;
+    float: none;
+    margin-bottom: 8px;
+    line-height: 18px;
+}
+
+.live_time .tip2 {
+    width: 280px
+}
+
+.live_time .tool_tip span {
+    display: block;
+    padding: 15px 10px;
+}
+
+.live_time .tip1 {
+    padding-top: 12px;
+    color: #ccc;
+}
+
+.live_time .tip1 em {
+    color: #fff
+}
+
+.live_time .tool_tip strong {
+    display: block;
+    color: #fb3434;
+    font-size: 15px;
+    font-weight: 500
+}
+
+.live_time .tool_tip .dcount {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 2px 16px;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px
+}
+
+.live_time .tool_tip .dcount>span {
+    padding: 2px 1px;
+    display: inline-block;
+}
+
+@keyframes bounceTip {
+    100% {
+        bottom: 57px;
+    }
+}
+
+.resultList .img .mk {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px;
+    gap: 2px
+}
+
+.resultList .img .mkLast {
+    display: inline-block;
+    padding: 0 4px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #303030;
+    font-weight: bold;
+    background: #fff;
+    margin: -6px;
+    border-bottom: 1px solid #a5a5a5;
+    border-right: 1px solid #a5a5a5;
+}
+
+.resultList .img .mkLast img {
+    display: inline-block;
+    height: 18px;
+    vertical-align: top;
+    margin-right: 3px;
+}
+
+.resultList .img .event {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #E6BC5F;
+    padding: 0 20px;
+    font-weight: 500;
+    font-size: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.resultList .img .verifired {
+    display: block;
+    width: 53px;
+    height: 33px;
+    background: url(https://image.autowini.com/resources/IMG/common/ico_mk1.png) 0 0 no-repeat;
+    background-size: 53px;
+}
+
+.resultList .img .vEs {
+    background-image: url(https://image.autowini.com/resources/IMG/common/ico_mk2.png);
+    background-size: 53px;
+}
+
+.resultList .img .vNd {
+    background-image: url(https://image.autowini.com/resources/IMG/common/ico_mk3.png);
+    background-size: 53px;
+}
+
+/*로딩*/
+.filterCon ul>li {
+    position: relative;
+}
+
+.filterCon ul>li .filter_loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 3px solid #e0000c;
+    border-radius: 50%;
+    border-top-color: #ddd;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/*search*/
+.subTxt {
+    margin-top: 8px;
+    color: #8a8a8a;
+}
+
+.list_search {
+    position: relative;
+    margin: 20px 0;
+    z-index: 200;
+}
+
+.list_search_inner {
+    position: relative;
+    width: 400px;
+    float: right;
+}
+
+.list_search .search_con input {
+    width: 400px;
+    padding-right: 45px;
+}
+
+.list_search .search_con button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-left: -1px;
+    width: 45px;
+    height: 43px;
+    background-size: 22px;
+    font-size: 0;
+    text-indent: -9999px;
+    z-index: 200;
+}
+
+.list_search .result_box {
+    display: none;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    width: 400px;
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 16px 0;
+    background: #fff;
+    border: 1px solid #000;
+    border-top: 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.list_search .result_box .border {
+    position: absolute;
+    top: 0;
+    margin-left: 16px;
+    width: 350px;
+    height: 1px;
+    background: #ddd;
+    z-index: 200;
+}
+
+.list_search .result_box li a {
+    display: block;
+    width: 100%;
+    padding: 6px 16px;
+    color: #373A3D;
+}
+
+.list_search .result_box li a:hover {
+    background: #f4f4f4;
+}
+
+.list_search .result_box li .on {
+    font-weight: bold;
+    color: #E31923;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+    display: block;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+.ui-menu .ui-state-active {
+    background-color: #F2F3F6 !important;
+    margin: 0 !important;
+    border: 0;
+    color: #373A3D !important;
+}
+
+.filterCon .btn_area {
+    z-index: 500;
+}
+
+.filterCon .btn_area button.btn_red {
+    border-radius: 0;
+}
+
+/* 차량 상태 A0040 미노출 처리 */
+.hilight_inner_box li:nth-child(4) {
+    display: none;
+}
+
+/*  AUCWEB-339 */
+.tit_list {
+    padding: 10px 0 10px 0;
+    margin: 0 20px 0 20px;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+}
+
+.tit_list li {
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.tit_list.on {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*AUCWEB-359 실시간 경매 리스트*/
+.carsale .resultCon {
+    padding: 0 20px;
+    background: #fff;
+}
+
+.carsale .resultList {
+    padding: 0 20px;
+}
+
+.carsale .resultList>li:first-child {
+    border-top: 1px solid #eee;
+}
+
+.carsale .resultList>li a:hover {
+    background: #f9f9f9;
+}
+
+.carsale .resultList .img {
+    position: relative;
+    width: 200px
+}
+
+.carsale .resultList .info {
+    width: 22%;
+}
+
+.carsale .resultList .priceLine {
+    width: auto;
+    margin-right: 40px;
+}
+
+.carsale .resultList .watchChk {
+    position: absolute;
+    top: 4px;
+    right: 0px;
+}
+
+.carsale .resultList .sub_img {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    width: 100px
+}
+
+.carsale .resultList .sub_img img {
+    flex: 1;
+    width: 100px;
+    margin-left: 2px;
+    height: 74px
+}
+
+.carsale .resultList .auc_time {
+    float: left;
+    width: 20%;
+    text-align: center
+}
+
+.carsale .resultList .auc_time dd {
+    line-height: 20px;
+}
+
+.carsale .resultList .auc_time .auc_date {
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+}
+
+.carsale .resultList .auc_time .auc_date strong {
+    color: #111;
+    font-weight: 500;
+}
+
+.carsale .resultList .auc_time .auc_date .time_zone {
+    display: block;
+    font-weight: 400;
+    color: #333;
+}
+
+.carsale .resultList .auc_time .time_left {
+    display: block;
+    margin-top: 6px;
+    /* padding-left:20px; */
+    font-size: 15px;
+    color: #888;
+    line-height: 18px;
+    /* background:url('https://image.autowini.com/resources/IMG/common/ico_clock.svg') left center no-repeat; */
+}
+
+.carsale .resultList .auc_time .time_left strong:first-child {
+    padding-left: 20px;
+    background: url(https://image.autowini.com/resources/IMG/common/ico_clock.svg) left center no-repeat;
+    background-size: 20px;
+}
+
+.carsale .resultList .auc_time .time_left strong {
+    color: #111;
+    font-weight: 500;
+}
+
+.carsale .resultList .auc_time .time_left strong.finish {
+    color: #999;
+}
+
+.carsale .resultList .auc_time .time_left .progress {
+    padding-left: 0;
+    font-weight: 500;
+    color: #e0000c;
+    background: none;
+}
+
+.carsale .paging {
+    margin-top: 0;
+    padding: 40px 0;
+    background: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/*라이브옥션 뱃지*/
+.carsale .resultList .auc_time {
+    text-align: left;
+}
+
+.carsale .resultList .auc_time dl {
+    position: relative;
+    display: inline-block;
+    padding-left: 50px;
+}
+
+.carsale .resultList .auc_time dl:after {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.carsale .resultList .auc_time dl.aucTime_badge1:after {
+    content: '1st';
+    background-color: #ffed93;
+    color: #7e5f00
+}
+
+.carsale .resultList .auc_time dl.aucTime_badge2:after {
+    content: '2nd';
+    background-color: #ffedee;
+    color: #e0000c;
+}
+
+.carsale .resultList .auc_time dl.aucTime_badge3:after {
+    content: '3rd';
+    background-color: #D2E9FF;
+    color: #0080FF;
+}
+
+.carsale .resultList .auc_time dl.aucTime_badge4:after {
+    content: '4th';
+    background-color: #eee;
+    color: #111;
+}
+
+.carsale .resultList .auc_time dl.aucTime_badge5:after {
+    content: '5th';
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #111;
+}
+
+.carsale .resultList .auc_time dl.aucTime_local:after {
+    content: 'Local';
+    background-color: #5A00EC;
+    border: 1px solid #5A00EC;
+    color: #fff;
+    font-size: 13px
+}
+
+.carsale .resultList .auc_time dl.aucTime_rental:after {
+    content: 'Rental';
+    background-color: #00DADA;
+    border: 1px solid #00DADA;
+    color: #fff;
+    font-size: 13px
+}
+
+.carsale .resultList .auc_time dt {
+    text-align: left;
+}
+
+.carsale .resultList .auc_time dd {
+    text-align: left;
+}
+
+.list_watchList .resultList {
+    padding: 0;
+}
+
+.list_watchList .resultList .watchChk {
+    right: 8px;
+}
+
+.list_watchList .paging {
+    background: none;
+}
+
+.list_watchList .listCon .resultTop {
+    padding: 40px 0 10px;
+    background: none;
+}
+
+.list_watchList .resultCon {
+    padding: 0;
+    background: none;
+}
+
+.list_watchList .now_price span {
+    color: #111;
+}
+
+.filterCon .dbl dt.AuctionTimeType_red_check {
+    width: 100%;
+    float: none;
+}
+
+.filterCon .dbl dd.area_auctiontime {
+    width: 100%;
+    float: none;
+}
+
+.filterCon .dbl dd.area_auctiontime li {
+    width: 25%;
+}
+
+.filterCon .dbl dd.area_auctiontime button {
+    padding: 5px 3px;
+    height: auto;
+    line-height: 14px;
+}
+
+.ar.filterCon .dbl dd.area_auctiontime button {
+    padding: 5px 0;
+}
+
+/*AUCWEB-469 렌트카 뱃지*/
+.resultList .img .badge_rent {
+    position: relative;
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: -6px;
+    padding: 2px 8px 1px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 6px 0 0 0;
+    background: rgba(224, 0, 12, 0.9);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.resultList .img .badge_rent:before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10.5px 6px 12px 0;
+    border-color: rgba(224, 0, 12, 0.9) transparent;
+}
+
+.resultList .img .badge_rent span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 34px;
+    border-radius: 50px 10px 0 55px;
+    background: rgba(224, 0, 12, 0.9);
+    z-index: -1;
+}
+
+.resultList .img .badge_rent span:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 6px;
+    height: 12px;
+    border-radius: 8px 0 0px 8px;
+    background: #a20009;
+}
+
+.resultList .img .badge_rent {}
+
+/* 베이직 회원 띠라벨 */
+.bagicLabelLink {
+    background: #e0e0e0;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+    border-radius: 2px;
+    margin: -16px 0 16px;
+    border: 1px solid #ddd
+}
+
+.bagicLabelLink b {
+    text-decoration: underline;
+    color: #003eff;
+    font-weight: 500;
+}
+
+/*반응형*/
+@media only all and (max-width:1550px) {
+    .resultList .priceLine span {
+        font-size: 20px;
+        color: #000;
+    }
+
+    .resultList .info {
+        width: 28%;
+    }
+
+    .resultList .info dt span {
+        font-size: 16px;
+    }
+
+    .resultList .dInfo {
+        width: 26%;
+    }
+
+    .carsale .resultTitle {
+        padding: 0 20px;
+    }
+
+    .carsale .list_search {
+        padding-right: 20px;
+    }
+
+    .carsale .listCon>p {
+        padding: 0 20px;
+    }
+
+    .carsale .listCon .resultFilter {
+        padding: 0 20px;
+    }
+
+    .carsale .listWrap .listCon {
+        padding-bottom: 0;
+    }
+
+    .carsale .listWrap {
+        padding: 0;
+    }
+
+    .carsale .resultList .info {
+        width: 25%
+    }
+
+    .carsale .resultList .info dl {
+        padding-left: 16px
+    }
+
+    .carsale .resultList .info dt span.tit {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .carsale .resultList>li a {
+        height: 120px;
+    }
+
+    .carsale .resultList .img {
+        width: 160px;
+    }
+
+    .carsale .thumb {
+        width: 160px;
+        height: 120px;
+    }
+
+    .carsale .resultList .auc_time {
+        width: 20%;
+    }
+
+    .carsale .resultList .auc_time dl {
+        padding-left: 42px;
+    }
+
+    .carsale .resultList .auc_time dl:after {
+        width: 35px;
+        height: 33px;
+        line-height: 33px;
+    }
+
+    .carsale .resultList .auc_time dd {
+        line-height: 18px;
+    }
+
+    .carsale .resultList .auc_time dt {
+        display: none
+    }
+
+    .carsale .resultList .auc_time .auc_date {
+        font-size: 13px;
+    }
+
+    .carsale .resultList .auc_time .time_left {
+        padding: 0;
+        font-size: 13px;
+        background: none;
+    }
+
+    .carsale .resultList .priceLine {
+        width: 13%;
+        margin-right: 0;
+    }
+
+    .carsale .resultList .priceLine span {
+        font-size: 20px;
+    }
+
+    .carsale .resultList .dInfo {
+        width: 22%;
+    }
+
+    .carsale .resultList .dInfo li {
+        padding: 2px 0;
+    }
+
+    .carsale .resultList .dInfo li span {
+        min-width: 100px;
+        font-size: 13px;
+    }
+
+    .carsale .resultList .dInfo li em {
+        font-size: 13px;
+    }
+
+    .carsale .resultList .btnWatch {
+        width: 28px;
+        height: 28px;
+        background-size: 28px;
+        right: 0;
+    }
+}
+
+.toolTipCon:before,
+.toolTipCon:after {
+    left: 66px;
+}
+
+.toolTipCon {
+    width: 264px;
+    top: 22px;
+    left: -68px
+}
+
+.head-image{
+    width: 297px;
+    height: 196px;
+}
+.head-image img{
+    width: 100%;
+    height: 100%;
+}
+
+#auc_dat{
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+}
+
+#auc_tim{
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+    color: #888;
+    line-height: 18px;
+}
+
+#src-car{
+    background-size: 20px;
+    color: #111;
+    font-weight: 500;
+}
