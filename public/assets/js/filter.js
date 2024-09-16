@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]');
 
         if (!selected || !label || !content || !searchInput || !notFoundOption || !resetOption) {
-            console.warn('Gerekli elemanlar bulunamadı:', { selected, label, content, searchInput, notFoundOption, resetOption });
+            console.warn( );
             return;
         }
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             }
                         }
 
-                        label.textContent = selectedCities.length > 0 ? selectedCities.join(', ') : 'Şəhər';
+                        label.textContent = selectedCities.length > 0 ? selectedCities.join(', ') : 'Seçilməyib';
                         hiddenInput.value = selectedCities.join(','); // Update hidden input value
                     });
                 } else if (!checkbox) {  // Single select handling

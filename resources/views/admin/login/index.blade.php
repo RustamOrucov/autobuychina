@@ -88,7 +88,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="{{asset('_assets/css/app.css')}}" rel="stylesheet">
     <link href="{{asset('_assets/css/icons.css')}}" rel="stylesheet">
-    <title>Admin Panel Login</title>
+    <title>Login</title>
     <!-- Sexavet Rustem -->
 </head>
 <body class="bg-theme bg-theme2 pace-done">
@@ -101,10 +101,10 @@
                         <div class="card-body">
                             <div class="p-4">
                                 <div class="mb-3 text-center">
-                                    <img src="{{asset('_assets/images/logo-icon.png')}}" width="60" alt="">
+                                    <img src="{{asset('_assets/images/logo.png')}}" width="260" alt="">
                                 </div>
                                 <div class="text-center mb-4">
-                                    <h5 class="">Dashtrans Admin</h5>
+                                    <h5 class=""></h5>
                                     <p class="mb-0">Please log in to your account</p>
                                 </div>
                                 <div class="form-body">

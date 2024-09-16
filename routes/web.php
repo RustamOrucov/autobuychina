@@ -7,6 +7,7 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\AuctionLineController;
 use App\Http\Controllers\Front\CarsCategoryController;
 use App\Http\Controllers\Front\FiltersController;
+use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\NoticeController;
 use App\Http\Controllers\Front\SiteController;
 use App\Http\Controllers\Front\UserController;
@@ -15,7 +16,10 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('detect.mobile')->group(function () {
+
+
+// home route
+Route::get('/',[HomeController::class,'index']);
 
 
 
@@ -44,7 +48,7 @@ Route::post('key_search',[SearchController::class,'keySearch'])->name('key_searc
 
 
 
-});
+
 
 
 

@@ -4,10 +4,10 @@
             <div class="offcanvas-header border-bottom">
                 <div class="d-flex align-items-center">
                     <div class="">
-                        <img src="{{asset('_assets/images/logo-icon.png')}}" class="logo-icon" alt="logo icon">
+                        <img src="" class="logo-icon" alt="logo icon">
                     </div>
                     <div class="">
-                        <h4 class="logo-text">Dashtrans</h4>
+                        <h4 class="logo-text"></h4>
                     </div>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
