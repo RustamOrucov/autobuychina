@@ -3156,12 +3156,16 @@ textarea {
 
 .products-i__top {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    width:220px;
+    height:170px;
 }
 
 .products-i__top img {
     display: block;
-    width: 100%
+    width: 100%;
+    height:100%;
+    object-fit: cover;
 }
 
 .products-i__top.spincar {
@@ -9950,7 +9954,7 @@ div.boolean label::after,
 }
 
 .tz-dropdown__label {
-    color: #8d94ad;
+    color: #000;
     font-size: 15px
 }
 
@@ -10871,7 +10875,7 @@ div.boolean label::after,
 }
 
 .footer__blk--red {
-    background-color: #ca1016
+    background-color: #000;
 }
 
 .footer__blk--bordered {
@@ -10989,7 +10993,7 @@ div.boolean label::after,
 }
 
 .footer__link:hover {
-    color: #ca1016
+    color: green
 }
 
 .footer__contacts-i {
@@ -11035,7 +11039,7 @@ div.boolean label::after,
 }
 
 .footer__contacts-i:hover .footer__contacts-i__icon {
-    fill: #ca1016
+    fill: green
 }
 
 .footer__makes {
@@ -12014,7 +12018,7 @@ div.boolean label::after,
 
 .header-bar:hover,
 .header-bar a:hover {
-    color: #ca1016
+    color: green
 }
 
 .header-bar-container {
@@ -12089,9 +12093,7 @@ div.boolean label::after,
     display: flex
 }
 
-.header-bar-i--bookmarks:hover::before {
-    background: url(//turbo.azstatic.com/assets/application/sprites/main-81621bca022dacba82baf03eb6a48661caa4cadfcac266156ebeadeb662d1b14.svg#bookmarks--red-heart) no-repeat center
-}
+
 
 .header-bar-i--bookmarks::before {
     background: url(//turbo.azstatic.com/assets/application/sprites/main-81621bca022dacba82baf03eb6a48661caa4cadfcac266156ebeadeb662d1b14.svg#bookmarks--grey-heart) no-repeat center
@@ -12118,10 +12120,7 @@ div.boolean label::after,
     background: url(//turbo.azstatic.com/assets/user/profile-user-dark-325c2c79c2eab84e23083960edb6a3a71d8b71c58e6bc4fcbec81cf4d0239c7b.svg) no-repeat center
 }
 
-.header-bar-i--login:hover::before,
-.header-bar-i--authorized-user:hover .authorized-user--logo-default {
-    background: url(//turbo.azstatic.com/assets/user/profile-user-red-fd1696fa26290caf96f26645c926193843b970424ef41be77cc34474637d26fa.svg) no-repeat center
-}
+
 
 .header-bar-i--authorized-user {
     position: relative;
@@ -12205,7 +12204,7 @@ div.boolean label::after,
     display: -ms-flexbox;
     display: flex;
     z-index: 3;
-    background-color: #ca1016
+    background-color: #000;
 }
 
 .header-top--sub-nav {
@@ -12258,7 +12257,7 @@ div.boolean label::after,
 }
 
 .header .nav-i:hover {
-    color: #f5cecd
+    color: green
 }
 
 .header .nav-i--home {
@@ -12281,7 +12280,7 @@ div.boolean label::after,
 }
 
 .header .nav-i--container:hover .nav-i {
-    color: #f5cecd
+    color: green
 }
 
 .header .nav-i--container:hover .header-top--sub-nav {
@@ -12315,6 +12314,10 @@ div.boolean label::after,
     text-align: left
 }
 
+
+
+
+
 .header .nav .rental-dropdown_content a:hover {
     background-color: #f6f7fa
 }
@@ -12331,7 +12334,7 @@ div.boolean label::after,
     justify-content: center;
     -ms-flex-item-align: center;
     align-self: center;
-    background-color: #7ed321;
+    background-color: red;
     height: 40px;
     border-radius: 7px;
     margin: 0 0 0 auto;
@@ -12368,7 +12371,7 @@ div.boolean label::after,
 }
 
 .header-new-btn:hover {
-    background-color: #85c01f
+    background: #FD156B;
 }
 
 .index-products {
@@ -12714,8 +12717,8 @@ div.boolean label::after,
 
 .main-search__control input:checked+label {
     color: #fff;
-    background-color: #ca1016;
-    border-color: #ca1016
+    background-color: green;
+    border-color: green
 }
 
 .main-search__control-tab {
@@ -12826,7 +12829,7 @@ div.boolean label::after,
 }
 
 .main-search__btn.is-active {
-    color: #ca1016
+    color: green
 }
 
 .main-search__btn:hover .count-filters {
@@ -24486,9 +24489,9 @@ div.boolean label::after,
 }
 
 .tz-form__check-input:checked+label {
-    color: #ca1016;
-    border: 1px solid #ca1016;
-    background-color: #ffe6e5
+    color: #000;
+    border: 1px solid #56e872;
+    background-color: #e5ffea
 }
 
 .tz-text {
@@ -24543,12 +24546,12 @@ div.boolean label::after,
 
 .tz-btn--primary {
     color: #fff;
-    background-color: #ca1016 !important;
-    border-color: #ca1016 !important
+    background-color: green !important;
+    border-color: green !important
 }
 
 .tz-btn--primary:hover {
-    background-color: #b80d13 !important
+    background-color: green !important
 }
 
 .tz-btn--primary--outline {
@@ -24619,11 +24622,11 @@ div.boolean label::after,
 }
 
 .tz-btn-link--primary {
-    color: #ca1016
+    color: green
 }
 
 .tz-btn-link--primary:hover {
-    color: #b80d13
+    color: green
 }
 
 .tz-btn-link--arrow {
@@ -24636,18 +24639,18 @@ div.boolean label::after,
     position: absolute;
     right: 20px;
     top: 50%;
-    width: 16px;
-    height: 9px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    width: 23px;
+    height: 20px;
     transform: translateY(-50%);
-    background-image: url(//turbo.azstatic.com/assets/application/icon-arrow-down--red-2b7b7b541dd594f00f7f3ef63fbb0cf3aa4dfb2b4d7b8e8eea7d2b6da15e4de4.svg);
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
-    transition: -webkit-transform 0.2s ease-in-out;
-    -o-transition: transform 0.2s ease-in-out;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%23008000" d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain; /* Adjust size as needed */
+    background-position: center; /* Adjust position as needed */
     transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out
 }
+
+
+
 
 .tz-btn-link--arrow.is-active::after {
     -webkit-transform: translateY(-50%) rotate(180deg);
@@ -24990,3 +24993,53 @@ div.boolean label::after,
 {
 background:transparent;
 }
+.tz-dropdown__search{
+    padding-left:8px !important;
+}
+/*  language dropdown */
+
+
+
+
+/* Drop-down container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Drop-down button */
+.dropbtn {
+    background:transparent;
+    padding-left:15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Drop-down content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 99999;
+    background:white;
+}
+
+/* Links inside the drop-down */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the drop-down menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the drop-down button when the drop-down content is shown */

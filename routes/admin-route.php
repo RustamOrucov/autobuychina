@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoGenerateController;
 use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\Admin\YoutubeVideoController;
+use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\NoticeController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,7 @@ Route::post('/admin/login',[AdminController::class,'login'])->name('admin.login'
 
 
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function () {
+
     Route::get('admin/login-view', [AdminController::class, 'loginView'])->name('admin.login-view');
     Route::get('admin/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');
     Route::post('admin/update/{id}',[AdminController::class,'update'])->name('admin.update');
@@ -72,8 +74,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function
     Route::resource('ban', BanController::class)->except(['show']);
 
 
-
-
     Route::get('carimage/{carId}', [CarImageController::class, 'index'])->name('carimage.index');
     Route::get('carimage/create/{carId}', [CarImageController::class, 'create'])->name('carimage.create');
     Route::post('carimage/store/{carId}', [CarImageController::class, 'store'])->name('carimage.store');
@@ -81,6 +81,14 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function
     Route::put('carimage/update/{carimage}', [CarImageController::class, 'update'])->name('carimage.update');
     Route::delete('carimage/destroy/{carimage}', [CarImageController::class, 'destroy'])->name('carimage.destroy');
 
+
+
+
+// region
+     Route::resource('/region',\App\Http\Controllers\Admin\RegionController::class);
+
+//     markets
+    Route::resource('/market',\App\Http\Controllers\Admin\MarketController::class);
 
 
 //    site setting and meta seo

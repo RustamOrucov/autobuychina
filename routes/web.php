@@ -1,17 +1,12 @@
 <?php
 
-use App\Http\Controllers\Admin\AuctionTimeController;
-use App\Http\Controllers\Auction\BidController;
+
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Front\AboutController;
-use App\Http\Controllers\Front\AuctionLineController;
-use App\Http\Controllers\Front\CarsCategoryController;
-use App\Http\Controllers\Front\FiltersController;
+use App\Http\Controllers\Front\FilterController;
+
+;
 use App\Http\Controllers\Front\HomeController;
-use App\Http\Controllers\Front\NoticeController;
-use App\Http\Controllers\Front\SiteController;
 use App\Http\Controllers\Front\UserController;
-use App\Http\Controllers\Mobile\MobileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 // home route
 Route::get('/',[HomeController::class,'index']);
+
+//load more route
+Route::get('/cars', [HomeController::class, 'loadMoreCars'])->name('cars');
+
+
+// new add listings
+Route::get('/new-add-listings', [HomeController::class, 'newAddListings'])->name('newAddListings');
+
+// main filter route
+Route::post('/main-filter',[HomeController::class,'filter'])->name('mainFilter');
+
+
+
+
+
+
+
+
 
 
 

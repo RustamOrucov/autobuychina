@@ -24,7 +24,7 @@ class CarRequest extends FormRequest
             'cylinder_id' => 'required|integer',
             'youtube_video' => 'nullable|url',
             'ban_id' => 'required|integer',
-            'vincode' => 'required|string',
+            'vincode' => 'nullable|string',
             'odometer_km' => 'required|numeric',
             'steering_wheel' => 'required|boolean',
             'status' => 'required|boolean',

@@ -78,7 +78,7 @@
                         {{--                        engine volume start  --}}
 
                         <div class="form-group col-lg-3">
-                            <label class="form-label">Muherik gucu (cc) *</label>
+                            <label class="form-label">Muherik gucu (L) *</label>
                             <input class="form-control" list="datalistOptions" id="exampleDataList" name="engine_v" required
                                 value="{{ old('engine_v', isset($model) ? $model->engine_v : '') }}">
                         </div>
@@ -245,7 +245,38 @@
                                 value="{{ old('odometer_km', isset($model) ? $model->odometer_km : '') }}" required>
                         </div>
 
-                        <div class="form-group col-lg-3">
+{{-- region and markets --}}
+
+<div class="form-group col-lg-3">
+    <label class="form-label">City</label>
+    <select class="form-select" id="categorySelect" name="region_id" >
+        <option value='' disabled selected>Select a City</option>
+        @foreach($cities as $city)
+            <option value="{{ $city->id }}" {{ old('region_id', isset($model) ? $model->region_id : '') == $city->id ? 'selected' : '' }}>
+                {{ $city->translateOrDefault(app()->getLocale())->name }}
+            </option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group col-lg-3">
+    <label class="form-label">Markets</label>
+    <select class="form-select" id="categorySelect" name="market_id" >
+        <option value="" disabled selected>Select a market</option>
+        @foreach($markets as $market)
+            <option value="{{ $market->id }}" {{ old('market_id', isset($model) ? $model->market_id : '') == $market->id ? 'selected' : '' }}>
+                {{ $market->translateOrDefault(app()->getLocale())->name }}
+            </option>
+        @endforeach
+    </select>
+</div>
+
+
+{{-- region and markets --}}
+
+
+
+                        <div class="form-group col-lg-3 d-flex justify-content-center align-items-center gap-3" style="margin-top:35px">
                             <label class="form-label">Steering wheel *</label>
                             <div style="display: flex; gap:5px">
                                 <div class="form-check">
@@ -264,7 +295,7 @@
 
 
 
-                        <div class="col-3 col-lg-3" style="margin-top:15px">
+                        <div class="col-3 col-lg-3 d-flex justify-content-center" style="margin-top:35px">
                             <label for="status" class="form-label">Aktivlik</label>
                             <input name="status" class="form-check-input" type="checkbox" value="1"
                                 id="status" {{ old('status', isset($model) ? $model->status : 1) ? 'checked' : '' }}>

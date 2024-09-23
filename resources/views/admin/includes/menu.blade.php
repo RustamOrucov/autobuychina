@@ -55,13 +55,17 @@
                             <li><a class="dropdown-item" href="{{route('admin.cylinder.index')}}"><i class="lni lni-car-alt"></i></i>Color</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.drive.index')}}"><i class="lni lni-car-alt"></i></i>Drive </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.ban.index')}}"><i class="lni lni-car-alt"></i></i>Ban</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.region.index')}}"><i class="lni lni-car-alt"></i></i>Region</a></li>
+
+                            <li><a class="dropdown-item" href="{{route('admin.market.index')}}"><i class="lni lni-car-alt"></i></i>Markets</a></li>
+
                             <li><a class="dropdown-item" href="{{route('admin.higlit.index')}}"><i class="lni lni-car-alt"></i></i>Car Equipment </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.odometer.index')}}"><i class="lni lni-car-alt"></i></i>Odometer </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.enginework.index')}}"><i class="lni lni-car-alt"></i></i>Engine Work </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.ros.index')}}"><i class="lni lni-car-alt"></i></i>Currency </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.enginevolume.index')}}"><i class="lni lni-car-alt"></i></i>Engine Volume </a></li>
-                            <li><a class="dropdown-item" href="{{route('admin.damage.index')}}"><i class="lni lni-car-alt"></i></i>Gear Shift</a></li>
-                            <li><a class="dropdown-item" href="{{route('admin.transmission.index')}}"><i class="lni lni-car-alt"></i></i>Transmission </a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.damage.index')}}"><i class="lni lni-car-alt"></i></i>Transmission</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.transmission.index')}}"><i class="lni lni-car-alt"></i></i> Gear Shift</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.enginetype.index')}}"><i class="lni lni-car-alt"></i></i>Engine Type </a></li>
                             <li><a class="dropdown-item" href="{{route('admin.car.index')}}"><i class="lni lni-car-alt"></i></i>Masinlar </a></li>
                         </ul>

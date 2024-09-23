@@ -16,8 +16,10 @@ use App\Models\EngineVolume;
 use App\Models\EngineWork;
 use App\Models\FuelType;
 use App\Models\Higlit;
+use App\Models\Market;
 use App\Models\Modeltype;
 use App\Models\Odometer;
+use App\Models\Region;
 use App\Models\Ro;
 use App\Models\Subcategory;
 use App\Models\Transmission;
@@ -55,8 +57,11 @@ class CarController extends Controller
         $cylinders = Cylinder::all();
         $drives = Drive::all();
         $bans=Ban::all();
+        $cities=Region::all();
+        $markets=Market::all();
+
         return view('admin.car.form',compact('categories', 'higlits',  'odometers','carmodels','modeltypes',
-            'engineworks','ros', 'enginevolumes','damages','fueltypes','transmissions','enginetypes', 'cylinders','drives','bans'));
+            'engineworks','ros', 'enginevolumes','damages','fueltypes','transmissions','enginetypes', 'cylinders','drives','bans','cities','markets'));
     }
         public function store(CarRequest $carRequest)
     {
@@ -82,8 +87,12 @@ class CarController extends Controller
         $cylinders = Cylinder::all();
         $drives = Drive::all();
         $bans=Ban::all();
+        $cities=Region::all();
+        $markets=Market::all();
+
+
         return view('admin.car.form',['model'=>$car],compact('categories', 'higlits',  'odometers','carmodels','modeltypes',
-            'engineworks','ros', 'enginevolumes','damages','fueltypes','transmissions','enginetypes', 'cylinders','drives','bans'));
+            'engineworks','ros', 'enginevolumes','damages','fueltypes','transmissions','enginetypes', 'cylinders','drives','bans','cities','markets'));
     }
     public function update(CarRequest $carRequest,Car $car)
     {

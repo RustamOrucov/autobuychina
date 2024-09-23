@@ -1,32 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Slide-down ve slide-up işlevselliği
     const slideDownButton = document.querySelector(".js-main-search-slide-down");
     const slideUpButton = document.querySelector(".js-main-search-slide-up");
     const searchBlock = document.querySelector(".js-main-search-slide-blk");
 
-    slideDownButton.addEventListener("click", function () {
-      slideDownButton.classList.add("is-hidden");
+    if (slideDownButton && slideUpButton && searchBlock) {
+        slideDownButton.addEventListener("click", function () {
+            slideDownButton.classList.add("is-hidden");
+            slideUpButton.classList.remove("is-hidden");
+            searchBlock.classList.add("is-open");
+        });
 
-      slideUpButton.classList.remove("is-hidden");
+        slideUpButton.addEventListener("click", function () {
+            slideUpButton.classList.add("is-hidden");
+            slideDownButton.classList.remove("is-hidden");
+            searchBlock.classList.remove("is-open");
+        });
+    }
 
-      searchBlock.classList.add("is-open");
-    });
-
-    slideUpButton.addEventListener("click", function () {
-      slideUpButton.classList.add("is-hidden");
-
-      slideDownButton.classList.remove("is-hidden");
-
-      searchBlock.classList.remove("is-open");
-    });
-
-
-
-
-  });
-
-
-  // filter dropdown function start
-document.addEventListener('DOMContentLoaded', function () {
+    // Filter dropdown işlevselliği
     document.querySelectorAll('.tz-dropdown').forEach((dropdown) => {
         const selected = dropdown.querySelector('.tz-dropdown__selected');
         const label = dropdown.querySelector('.tz-dropdown__label');
@@ -36,9 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const notFoundOption = dropdown.querySelector('.tz-dropdown__option--not-found');
         const resetOption = dropdown.querySelector('.tz-dropdown__option--reset');
         const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]');
+        const dropdownValues = dropdown.querySelector('.tz-dropdown__values');
 
-        if (!selected || !label || !content || !searchInput || !notFoundOption || !resetOption) {
-            console.warn( );
+        if (!selected || !label || !content || !searchInput || !notFoundOption || !resetOption || !dropdownValues) {
+            console.warn('Dropdown elements are missing.');
             return;
         }
 
@@ -46,13 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         selected.addEventListener('click', (event) => {
             event.stopPropagation();
-            closeAllDropdowns();
-            dropdown.classList.toggle('is-open');
-            selected.classList.toggle('is-open');
-            label.classList.toggle('is-hidden');
-            content.classList.toggle('is-open');
-            searchInput.classList.toggle('is-hidden');
-            searchInput.focus();
+            toggleDropdown();
         });
 
         searchInput.addEventListener('input', (event) => {
@@ -81,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const checkbox = option.querySelector('.tz-dropdown__option-checkbox');
                 if (optionLabel && checkbox) {
                     option.addEventListener('click', (event) => {
-                        event.stopPropagation(); // Prevent closing the dropdown
+                        event.stopPropagation();
 
                         const selectedText = optionLabel.textContent;
                         const selectedValue = option.getAttribute('data-val');
@@ -97,13 +84,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
 
                         label.textContent = selectedCities.length > 0 ? selectedCities.join(', ') : 'Seçilməyib';
-                        hiddenInput.value = selectedCities.join(','); // Update hidden input value
+                        if (hiddenInput) {
+                            hiddenInput.value = selectedCities.join(','); // Update hidden input value
+                        }
                     });
-                } else if (!checkbox) {  // Single select handling
+                } else if (!checkbox) {
                     option.addEventListener('click', () => {
                         const selectedText = optionLabel.textContent;
                         label.textContent = selectedText;
-                        hiddenInput.value = option.getAttribute('data-val'); // Update hidden input value for single select
+                        if (hiddenInput) {
+                            hiddenInput.value = option.getAttribute('data-val'); // Update hidden input value for single select
+                        }
                         closeAllDropdowns();
                     });
                 }
@@ -111,35 +102,64 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         resetOption.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent closing the dropdown
+            event.stopPropagation();
             label.textContent = dropdown.getAttribute('data-id') === 'q_make' ? "Seçilməyib" : "Seçilməyib";
             selectedCities = [];
             dropdownOptions.forEach((option) => {
                 const checkbox = option.querySelector('.tz-dropdown__option-checkbox');
                 if (checkbox) checkbox.checked = false;
             });
-            hiddenInput.value = ''; // Reset hidden input value
+            if (hiddenInput) {
+                hiddenInput.value = ''; // Reset hidden input value
+            }
             closeAllDropdowns();
         });
+
+        const closeDropdownButton = dropdownValues.querySelector('.tz-dropdown__close-button');
+        if (closeDropdownButton) {
+            closeDropdownButton.addEventListener('click', (event) => {
+                event.stopPropagation();
+                toggleDropdown();
+            });
+        }
 
         document.addEventListener('click', () => {
             closeAllDropdowns();
         });
 
+        function toggleDropdown() {
+            const isOpen = dropdown.classList.contains('is-open');
+            closeAllDropdowns();
+            if (!isOpen) {
+                dropdown.classList.add('is-open');
+                selected.classList.add('is-open');
+                label.classList.add('is-hidden');
+                content.classList.add('is-open');
+                searchInput.classList.remove('is-hidden');
+                searchInput.focus();
+            }
+        }
+
         function closeAllDropdowns() {
             document.querySelectorAll('.tz-dropdown.is-open').forEach((openDropdown) => {
                 openDropdown.classList.remove('is-open');
-                openDropdown.querySelector('.tz-dropdown__selected').classList.remove('is-open');
-                openDropdown.querySelector('.tz-dropdown__label').classList.remove('is-hidden');
-                openDropdown.querySelector('.tz-dropdown__content').classList.remove('is-open');
-                openDropdown.querySelector('.tz-dropdown__search').classList.add('is-hidden');
-                openDropdown.querySelector('.tz-dropdown__search').value = '';
+                const selectedElement = openDropdown.querySelector('.tz-dropdown__selected');
+                if (selectedElement) selectedElement.classList.remove('is-open');
+                const labelElement = openDropdown.querySelector('.tz-dropdown__label');
+                if (labelElement) labelElement.classList.remove('is-hidden');
+                const contentElement = openDropdown.querySelector('.tz-dropdown__content');
+                if (contentElement) contentElement.classList.remove('is-open');
+                const searchInputElement = openDropdown.querySelector('.tz-dropdown__search');
+                if (searchInputElement) {
+                    searchInputElement.classList.add('is-hidden');
+                    searchInputElement.value = ''; // Reset search input value
+                }
                 openDropdown.querySelectorAll('.tz-dropdown__option').forEach((option) => {
                     option.classList.remove('is-hidden');
                 });
-                const notFoundOption = openDropdown.querySelector('.tz-dropdown__option--not-found');
-                if (notFoundOption) {
-                    notFoundOption.classList.add('is-hidden');
+                const notFoundOptionElement = openDropdown.querySelector('.tz-dropdown__option--not-found');
+                if (notFoundOptionElement) {
+                    notFoundOptionElement.classList.add('is-hidden');
                 }
             });
         }
