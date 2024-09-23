@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
+class ComposerStaticInit83a714228e75e5ca90131629ece00adb
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -335,8 +335,8 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         ),
         'Spatie\\Ignition\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
-            1 => __DIR__ . '/..' . '/spatie/ignition/src',
+            0 => __DIR__ . '/..' . '/spatie/ignition/src',
+            1 => __DIR__ . '/..' . '/spatie/error-solutions/legacy/ignition',
         ),
         'Spatie\\FlareClient\\' => 
         array (
@@ -372,8 +372,8 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -592,8 +592,10 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Http\\Controllers\\Admin\\FuelTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/FuelTypeController.php',
         'App\\Http\\Controllers\\Admin\\HiglitController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HiglitController.php',
         'App\\Http\\Controllers\\Admin\\MainSliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MainSliderController.php',
+        'App\\Http\\Controllers\\Admin\\MarketController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/MarketController.php',
         'App\\Http\\Controllers\\Admin\\ModelTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ModelTypeController.php',
         'App\\Http\\Controllers\\Admin\\OdometerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OdometerController.php',
+        'App\\Http\\Controllers\\Admin\\RegionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RegionController.php',
         'App\\Http\\Controllers\\Admin\\RoController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoController.php',
         'App\\Http\\Controllers\\Admin\\SiteSettingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SiteSettingController.php',
         'App\\Http\\Controllers\\Admin\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SocialController.php',
@@ -607,6 +609,7 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
         'App\\Http\\Controllers\\ConfigurationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConfigurationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/HomeController.php',
         'App\\Http\\Controllers\\Front\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/UserController.php',
         'App\\Http\\Controllers\\NoticeController' => __DIR__ . '/../..' . '/app/Http/Controllers/NoticeController.php',
         'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
@@ -641,14 +644,17 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Http\\Requests\\EngineTypeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EngineTypeRequest.php',
         'App\\Http\\Requests\\EngineVolumeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EngineVolumeRequest.php',
         'App\\Http\\Requests\\EngineWorkRequest' => __DIR__ . '/../..' . '/app/Http/Requests/EngineWorkRequest.php',
+        'App\\Http\\Requests\\FilterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FilterRequest.php',
         'App\\Http\\Requests\\FuelTypeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/FuelTypeRequest.php',
         'App\\Http\\Requests\\HiglitRequest' => __DIR__ . '/../..' . '/app/Http/Requests/HiglitRequest.php',
         'App\\Http\\Requests\\LogoUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/LogoUpdateRequest.php',
         'App\\Http\\Requests\\MainSliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MainSliderRequest.php',
+        'App\\Http\\Requests\\MarketRequest' => __DIR__ . '/../..' . '/app/Http/Requests/MarketRequest.php',
         'App\\Http\\Requests\\ModelTypeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ModelTypeRequest.php',
         'App\\Http\\Requests\\NoticeRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NoticeRequest.php',
         'App\\Http\\Requests\\OdometerRequest' => __DIR__ . '/../..' . '/app/Http/Requests/OdometerRequest.php',
         'App\\Http\\Requests\\ProfilUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfilUpdateRequest.php',
+        'App\\Http\\Requests\\RegionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegionRequest.php',
         'App\\Http\\Requests\\RoRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RoRequest.php',
         'App\\Http\\Requests\\SeoUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SeoUpdateRequest.php',
         'App\\Http\\Requests\\SocialRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SocialRequest.php',
@@ -694,12 +700,16 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Models\\Higlit' => __DIR__ . '/../..' . '/app/Models/Higlit.php',
         'App\\Models\\HiglitTranslation' => __DIR__ . '/../..' . '/app/Models/HiglitTranslation.php',
         'App\\Models\\MainSlider' => __DIR__ . '/../..' . '/app/Models/MainSlider.php',
+        'App\\Models\\Market' => __DIR__ . '/../..' . '/app/Models/Market.php',
+        'App\\Models\\MarketTranslation' => __DIR__ . '/../..' . '/app/Models/MarketTranslation.php',
         'App\\Models\\ModelTypeTranslation' => __DIR__ . '/../..' . '/app/Models/ModelTypeTranslation.php',
         'App\\Models\\Modeltype' => __DIR__ . '/../..' . '/app/Models/Modeltype.php',
         'App\\Models\\NoticeModel' => __DIR__ . '/../..' . '/app/Models/NoticeModel.php',
         'App\\Models\\NoticeModelTranslation' => __DIR__ . '/../..' . '/app/Models/NoticeModelTranslation.php',
         'App\\Models\\Odometer' => __DIR__ . '/../..' . '/app/Models/Odometer.php',
         'App\\Models\\OdometerTranslation' => __DIR__ . '/../..' . '/app/Models/OdometerTranslation.php',
+        'App\\Models\\Region' => __DIR__ . '/../..' . '/app/Models/Region.php',
+        'App\\Models\\RegionTranslation' => __DIR__ . '/../..' . '/app/Models/RegionTranslation.php',
         'App\\Models\\Ro' => __DIR__ . '/../..' . '/app/Models/Ro.php',
         'App\\Models\\RoTranslations' => __DIR__ . '/../..' . '/app/Models/RoTranslations.php',
         'App\\Models\\SiteSeo' => __DIR__ . '/../..' . '/app/Models/SiteSeo.php',
@@ -740,8 +750,10 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Repositories\\FuelTypeRepository' => __DIR__ . '/../..' . '/app/Repositories/FuelTypeRepository.php',
         'App\\Repositories\\HiglitRepository' => __DIR__ . '/../..' . '/app/Repositories/HiglitRepository.php',
         'App\\Repositories\\MainSliderRepository' => __DIR__ . '/../..' . '/app/Repositories/MainSliderRepository.php',
+        'App\\Repositories\\MarketRepository' => __DIR__ . '/../..' . '/app/Repositories/MarketRepository.php',
         'App\\Repositories\\ModelTypeRepository' => __DIR__ . '/../..' . '/app/Repositories/ModelTypeRepository.php',
         'App\\Repositories\\OdometerRepository' => __DIR__ . '/../..' . '/app/Repositories/OdometerRepository.php',
+        'App\\Repositories\\RegionRepository' => __DIR__ . '/../..' . '/app/Repositories/RegionRepository.php',
         'App\\Repositories\\RoRepository' => __DIR__ . '/../..' . '/app/Repositories/RoRepository.php',
         'App\\Repositories\\SiteSeoRepository' => __DIR__ . '/../..' . '/app/Repositories/SiteSeoRepository.php',
         'App\\Repositories\\SocialRepository' => __DIR__ . '/../..' . '/app/Repositories/SocialRepository.php',
@@ -768,8 +780,10 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'App\\Services\\RepositoryService\\FuelTypeService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/FuelTypeService.php',
         'App\\Services\\RepositoryService\\HiglitService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/HiglitService.php',
         'App\\Services\\RepositoryService\\MainSliderService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/MainSliderService.php',
+        'App\\Services\\RepositoryService\\MarketService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/MarketService.php',
         'App\\Services\\RepositoryService\\ModelTypeService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/ModelTypeService.php',
         'App\\Services\\RepositoryService\\OdometerService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/OdometerService.php',
+        'App\\Services\\RepositoryService\\RegionService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/RegionService.php',
         'App\\Services\\RepositoryService\\RoService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/RoService.php',
         'App\\Services\\RepositoryService\\SiteSeoService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/SiteSeoService.php',
         'App\\Services\\RepositoryService\\SocialService' => __DIR__ . '/../..' . '/app/Services/RepositoryService/SocialService.php',
@@ -6461,13 +6475,11 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
         'Symfony\\Component\\CssSelector\\Node\\ElementNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/ElementNode.php',
         'Symfony\\Component\\CssSelector\\Node\\FunctionNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/FunctionNode.php',
         'Symfony\\Component\\CssSelector\\Node\\HashNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/HashNode.php',
-        'Symfony\\Component\\CssSelector\\Node\\MatchingNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/MatchingNode.php',
         'Symfony\\Component\\CssSelector\\Node\\NegationNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/NegationNode.php',
         'Symfony\\Component\\CssSelector\\Node\\NodeInterface' => __DIR__ . '/..' . '/symfony/css-selector/Node/NodeInterface.php',
         'Symfony\\Component\\CssSelector\\Node\\PseudoNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/PseudoNode.php',
         'Symfony\\Component\\CssSelector\\Node\\SelectorNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/SelectorNode.php',
         'Symfony\\Component\\CssSelector\\Node\\Specificity' => __DIR__ . '/..' . '/symfony/css-selector/Node/Specificity.php',
-        'Symfony\\Component\\CssSelector\\Node\\SpecificityAdjustmentNode' => __DIR__ . '/..' . '/symfony/css-selector/Node/SpecificityAdjustmentNode.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\CommentHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/CommentHandler.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\HandlerInterface' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HandlerInterface.php',
         'Symfony\\Component\\CssSelector\\Parser\\Handler\\HashHandler' => __DIR__ . '/..' . '/symfony/css-selector/Parser/Handler/HashHandler.php',
@@ -7378,9 +7390,9 @@ class ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc31e88d17070fb0a9cc6077bf16e6ed9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit83a714228e75e5ca90131629ece00adb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit83a714228e75e5ca90131629ece00adb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit83a714228e75e5ca90131629ece00adb::$classMap;
 
         }, null, ClassLoader::class);
     }
