@@ -1,4 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    document.querySelectorAll('.tz-dropdown').forEach((dropdown) => {
+        const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]');
+        const dropdownOptions = dropdown.querySelectorAll('.tz-dropdown__option');
+
+        if (hiddenInput && hiddenInput.value) {
+            const selectedValues = hiddenInput.value.split(',');
+            dropdownOptions.forEach((option) => {
+                const optionValue = option.getAttribute('data-val');
+                if (selectedValues.includes(optionValue)) {
+                    const checkbox = option.querySelector('.tz-dropdown__option-checkbox');
+                    if (checkbox) {
+                        checkbox.checked = true; // Checkbox'ı işaretle
+                    }
+                }
+            });
+        }
+    });
+
+
+
+
     // Slide-down ve slide-up işlevselliği
     const slideDownButton = document.querySelector(".js-main-search-slide-down");
     const slideUpButton = document.querySelector(".js-main-search-slide-up");
@@ -27,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const dropdownOptions = dropdown.querySelectorAll('.tz-dropdown__option');
         const notFoundOption = dropdown.querySelector('.tz-dropdown__option--not-found');
         const resetOption = dropdown.querySelector('.tz-dropdown__option--reset');
-        const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]');
+        const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]'); // Gizli input burada alınır.
         const dropdownValues = dropdown.querySelector('.tz-dropdown__values');
 
         if (!selected || !label || !content || !searchInput || !notFoundOption || !resetOption || !dropdownValues) {
@@ -60,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
             notFoundOption.classList.toggle('is-hidden', hasVisibleOption);
         });
 
-        let selectedCities = [];
+        let selectedCities = []; // Çoklu seçim için.
+        let selectedCityIds = []; // Çoklu seçimde id'leri burada tutacağız.
 
         dropdownOptions.forEach((option) => {
             if (!option.classList.contains('tz-dropdown__option--not-found') && !option.classList.contains('tz-dropdown__option--reset')) {
@@ -71,29 +95,32 @@ document.addEventListener("DOMContentLoaded", function () {
                         event.stopPropagation();
 
                         const selectedText = optionLabel.textContent;
-                        const selectedValue = option.getAttribute('data-val');
+                        const selectedValue = option.getAttribute('data-val'); // Burada id değeri alınıyor
 
                         if (checkbox.checked) {
                             checkbox.checked = false;
                             selectedCities = selectedCities.filter(city => city !== selectedText);
+                            selectedCityIds = selectedCityIds.filter(cityId => cityId !== selectedValue); // Id'yi de çıkarıyoruz
                         } else {
                             checkbox.checked = true;
                             if (!selectedCities.includes(selectedText)) {
                                 selectedCities.push(selectedText);
+                                selectedCityIds.push(selectedValue); // Id'yi ekliyoruz
                             }
                         }
 
                         label.textContent = selectedCities.length > 0 ? selectedCities.join(', ') : 'Seçilməyib';
                         if (hiddenInput) {
-                            hiddenInput.value = selectedCities.join(','); // Update hidden input value
+                            hiddenInput.value = selectedCityIds.join(','); // Backend'e gönderilecek id değerlerini inputa yazıyoruz
                         }
                     });
                 } else if (!checkbox) {
                     option.addEventListener('click', () => {
                         const selectedText = optionLabel.textContent;
+                        const selectedValue = option.getAttribute('data-val'); // Burada id değeri alınıyor
                         label.textContent = selectedText;
                         if (hiddenInput) {
-                            hiddenInput.value = option.getAttribute('data-val'); // Update hidden input value for single select
+                            hiddenInput.value = selectedValue; // Tek seçim olduğunda id değerini gönderiyoruz
                         }
                         closeAllDropdowns();
                     });
@@ -103,14 +130,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         resetOption.addEventListener('click', (event) => {
             event.stopPropagation();
-            label.textContent = dropdown.getAttribute('data-id') === 'q_make' ? "Seçilməyib" : "Seçilməyib";
+            label.textContent = "Seçilməyib";
             selectedCities = [];
+            selectedCityIds = []; // Id listesini de temizliyoruz
             dropdownOptions.forEach((option) => {
                 const checkbox = option.querySelector('.tz-dropdown__option-checkbox');
                 if (checkbox) checkbox.checked = false;
             });
             if (hiddenInput) {
-                hiddenInput.value = ''; // Reset hidden input value
+                hiddenInput.value = ''; // Gizli input sıfırlanıyor
             }
             closeAllDropdowns();
         });
@@ -152,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const searchInputElement = openDropdown.querySelector('.tz-dropdown__search');
                 if (searchInputElement) {
                     searchInputElement.classList.add('is-hidden');
-                    searchInputElement.value = ''; // Reset search input value
+                    searchInputElement.value = ''; // Arama inputunu sıfırla
                 }
                 openDropdown.querySelectorAll('.tz-dropdown__option').forEach((option) => {
                     option.classList.remove('is-hidden');
@@ -160,6 +188,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 const notFoundOptionElement = openDropdown.querySelector('.tz-dropdown__option--not-found');
                 if (notFoundOptionElement) {
                     notFoundOptionElement.classList.add('is-hidden');
+                }
+            });
+        }
+    });
+
+
+    // form selected value
+    document.querySelectorAll('.tz-dropdown').forEach((dropdown) => {
+        const hiddenInput = dropdown.parentElement.querySelector('input[type="hidden"]');
+        const dropdownOptions = dropdown.querySelectorAll('.tz-dropdown__option');
+
+        if (hiddenInput && hiddenInput.value) {
+            const selectedValue = hiddenInput.value.split(',');
+            dropdownOptions.forEach((option) => {
+                const optionValue = option.getAttribute('data-val');
+                if (selectedValue.includes(optionValue)) {
+                    option.classList.add('is-selected');
+                    const checkbox = option.querySelector('.tz-dropdown__option-checkbox');
+                    if (checkbox) checkbox.checked = true;
                 }
             });
         }

@@ -104,9 +104,9 @@
                         {{--                        transmission start   --}}
 
                         <div class="form-group col-lg-3">
-                            <label class="form-label">Transmission *</label>
+                            <label class="form-label">Gear *</label>
                             <select class="form-select" id="categorySelect" name="transmission_id" required>
-                                <option value="">Select Transmission</option>
+                                <option value="">Select Gear</option>
                                 @foreach ($transmissions as $transmission)
                                     <option value="{{ $transmission->id }}"
                                         {{ old('transmission_id', isset($model) ? $model->transmission_id : '') == $transmission->id ? 'selected' : '' }}>
@@ -184,9 +184,9 @@
                         </div>
 
                         <div class="form-group col-lg-3">
-                            <label class="form-label">Gear Shift *</label>
+                            <label class="form-label">Transmission *</label>
                             <select class="form-select" id="categorySelect" name="damage_id" required>
-                                <option></option>
+                                <option>Select Transmission</option>
                                 @foreach ($damages as $damage)
                                     <option value="{{ $damage->id }}"
                                         {{ old('damage_id', isset($model) ? $model->damage_id : '') == $damage->id ? 'selected' : '' }}>

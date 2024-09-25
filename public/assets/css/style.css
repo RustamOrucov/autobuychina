@@ -25043,3 +25043,15 @@ background:transparent;
 }
 
 /* Change the background color of the drop-down button when the drop-down content is shown */
+.tz-dropdown__label {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+.custom-filter-reset-button{
+    background: transparent; border: none; cursor: pointer;text-decoration:none;
+}
