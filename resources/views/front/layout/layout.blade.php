@@ -16,6 +16,9 @@
 
 @include('front.inc.footer')
 
+
+@include('front.inc.scripts')
+
 </body>
 
 </html>

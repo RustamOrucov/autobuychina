@@ -124,5 +124,46 @@ class HomeController extends Controller
     }
 
 
+//    Car Detail
+    public function detail()
+    {
+        return view('front.pages.detail');
+    }
+
+//    New Car
+    public function new()
+    {
+        return view('front.pages.new-car');
+    }
+
+//    All Cars
+    public function allcars()
+    {
+        // Fetch filter data
+        $filters = $this->getFilterData();
+
+        // Fetch cars
+        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel')
+            ->where('status', '1')
+            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
+        return view('front.pages.all-cars', array_merge($filters, compact('cars', 'recentCarCount')));
+    }
+
+//    AvtoSalon
+
+    public function avtosalon()
+    {
+        return view('front.pages.avtosalon');
+    }
+//    AvtoSalon Detail
+
+    public function avtosalondetail()
+    {
+        return view('front.pages.avtosalon-detail');
+    }
 
 }

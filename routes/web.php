@@ -29,7 +29,16 @@ Route::post('/main-filter',[HomeController::class,'filter'])->name('mainFilter')
 
 
 
-
+//Car Detail
+Route::get('/detail',[HomeController::class,'detail']);
+//New Car
+Route::get('/new-car',[HomeController::class,'new']);
+//All Cars
+Route::get('/all-cars',[HomeController::class,'allcars']);
+//AvtoSalon
+Route::get('/avtosalon',[HomeController::class,'avtosalon']);
+//AvtoSalon Detail
+Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
 
 
 
