@@ -9250,7 +9250,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .tz-dropdown__label {
-    color: #8d94ad;
+    color: #000;
     font-size: 15px
 }
 
@@ -11660,7 +11660,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .main-search__btn.is-active {
-    color: #ca1016
+    color: green;
 }
 
 .main-search__btn:hover .count-filters {
@@ -22967,9 +22967,9 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .tz-form__check-input:checked+label {
-    color: #ca1016;
-    border: 1px solid #ca1016;
-    background-color: #ffe6e5
+    color: #000;
+    border: 1px solid lime;
+    background-color: #7ED321
 }
 
 .tz-text {
@@ -23029,7 +23029,9 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .tz-btn--primary:hover {
-    background-color: #b80d13 !important
+    transition:.5s;
+    transform:scale(1.1);
+    background-color: green !important
 }
 
 .tz-btn--primary--outline {
@@ -23104,7 +23106,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .tz-btn-link--primary:hover {
-    color: #b80d13
+    color: green;
 }
 
 .tz-btn-link--arrow {

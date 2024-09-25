@@ -18,12 +18,16 @@ use App\Models\Region;
 use App\Models\Ro;
 use App\Models\Transmission;
 use App\Models\Year;
+use App\Services\CarFilterService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
+    public function __construct(protected CarFilterService $carFilterService)
+    {
+    }
     // Helper method to fetch filter data
     private function getFilterData()
     {
@@ -98,8 +102,25 @@ class HomeController extends Controller
         return abort(404);
     }
 
-    public function filter(Request $request){
-        dd($request->all());
+    public function filter(Request $request)
+    {
+     
+        $filters = $this->getFilterData();
+
+        $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
+
+        $cars = $this->carFilterService
+        ->filter($request->all())
+        ->with('Ro', 'region', 'ModelType', 'carModel')
+        ->where('status', '1')
+        ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image')  // Sadece gerekli sütunlar
+        ->orderBy('created_at', 'desc')
+        ->paginate(20);
+
+        $selectfilters = $request->all();
+
+
+        return view('front.pages.home', array_merge($filters, compact('cars', 'recentCarCount','selectfilters')));
     }
 
 
