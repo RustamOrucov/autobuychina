@@ -16,6 +16,7 @@ use App\Models\Market;
 use App\Models\Modeltype;
 use App\Models\Region;
 use App\Models\Ro;
+use App\Models\Social;
 use App\Models\Transmission;
 use App\Models\Year;
 use App\Services\CarFilterService;
@@ -104,7 +105,7 @@ class HomeController extends Controller
 
     public function filter(Request $request)
     {
-     
+
         $filters = $this->getFilterData();
 
         $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
