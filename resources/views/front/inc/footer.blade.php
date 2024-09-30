@@ -19,7 +19,7 @@
                     src="https://turbo.azstatic.com/assets/application/footer/app-screen-az-ffed34fd4fb1843e1669213a5a2c1e483ec0b3de07f30c11974fd35ae91c2975.png">
             </div> --}}
             <div class="footer__qr-code"><img alt="QR Code" class="footer__qr-code-image"
-                    src="https://turbo.azstatic.com/assets/application/footer/qr-code-4184765837b28cbd7a874abade29a2639d46eb1c575d59ca4c15077a8f315caa.png"><span
+                    src="{{ asset('assets/img/qrcode.png') }}"><span
                     class="footer__qr-code-text">Point your camera at the QR code to download</span></div>
         </div>
     </div>

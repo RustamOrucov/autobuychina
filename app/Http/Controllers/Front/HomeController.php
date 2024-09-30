@@ -26,9 +26,7 @@ use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
-    public function __construct(protected CarFilterService $carFilterService)
-    {
-    }
+    public function __construct(protected CarFilterService $carFilterService) {}
     // Helper method to fetch filter data
     private function getFilterData()
     {
@@ -55,15 +53,14 @@ class HomeController extends Controller
         $filters = $this->getFilterData();
 
         // Fetch cars
-        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel')
+        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
             ->where('status', '1')
-            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image')
+            ->select('id', 'price','vincode', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(12);
 
         $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
 
-        // Pass filters and cars to view
         return view('front.pages.home', array_merge($filters, compact('cars', 'recentCarCount')));
     }
 
@@ -73,10 +70,10 @@ class HomeController extends Controller
         $filters = $this->getFilterData();
 
         // Fetch cars, excluding those from the last 3 days
-        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel')
+        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
             ->where('status', '1')
             ->where('created_at', '<=', Carbon::now()->subDays(5))
-            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image')
+            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
 
@@ -90,17 +87,18 @@ class HomeController extends Controller
     public function loadMoreCars(Request $request)
     {
         $page = $request->input('page', 1);
+        $perPage = 12;
 
-        $cars = Car::with('Ro', 'region', 'ModelType')
-            ->where('status', '1')
-            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id')
-            ->paginate(20, ['*'], 'page', $page);
 
-        if ($request->ajax()) {
-            return response()->json($cars);
-        }
+        $cars = Car::with(['ModelType', 'Ro', 'carModel', 'region'])
+        ->select('id', 'price','vincode', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
+            ->paginate($perPage);
 
-        return abort(404);
+
+        return response()->json([
+            'data' => $cars->items(),
+            'last_page' => $cars->lastPage(),
+        ]);
     }
 
     public function filter(Request $request)
@@ -111,33 +109,50 @@ class HomeController extends Controller
         $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
 
         $cars = $this->carFilterService
-        ->filter($request->all())
-        ->with('Ro', 'region', 'ModelType', 'carModel')
-        ->where('status', '1')
-        ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image')  // Sadece gerekli sütunlar
-        ->orderBy('created_at', 'desc')
-        ->paginate(20);
+            ->filter($request->all())
+            ->with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
+            ->where('status', '1')
+            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+
+
 
         $selectfilters = $request->all();
 
 
-        return view('front.pages.home', array_merge($filters, compact('cars', 'recentCarCount','selectfilters')));
+        return view('front.pages.home', array_merge($filters, compact('cars', 'recentCarCount', 'selectfilters')));
     }
 
 
-//    Car Detail
-    public function detail()
+    //    Car Detail
+    public function detail(Car $car)
     {
-        return view('front.pages.detail');
+
+        $cars = Car::where('car_models_id', $car->car_models_id)
+            ->where('id', '!=', $car->id)
+            ->with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
+            ->where('status', '1')
+            ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        $car->increment('view_count');
+
+        $equipmentIds = json_decode($car->car_equipment);
+        $equipmentIds = array_map('intval', $equipmentIds);
+        $equipments = Higlit::whereIn('id', $equipmentIds)->get();
+
+        return view('front.pages.detail', compact('car', 'equipments', 'cars'));
     }
 
-//    New Car
+    //    New Car
     public function new()
     {
         return view('front.pages.new-car');
     }
 
-//    All Cars
+    //    All Cars
     public function allcars()
     {
         // Fetch filter data
@@ -154,17 +169,16 @@ class HomeController extends Controller
         return view('front.pages.all-cars', array_merge($filters, compact('cars', 'recentCarCount')));
     }
 
-//    AvtoSalon
+    //    AvtoSalon
 
     public function avtosalon()
     {
         return view('front.pages.avtosalon');
     }
-//    AvtoSalon Detail
+    //    AvtoSalon Detail
 
     public function avtosalondetail()
     {
         return view('front.pages.avtosalon-detail');
     }
-
 }

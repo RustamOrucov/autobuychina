@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/catalog.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}">
 
-    <script src="{{ asset('assets/js/filter.js') }}"></script>
 
+
+    <script src="{{ asset('assets/js/filter.js') }}"></script>
+    <script src="{{ asset('assets/js/addfavorite.js') }}"></script>
 </head>

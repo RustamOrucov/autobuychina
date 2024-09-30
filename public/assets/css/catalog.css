@@ -11094,7 +11094,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .header .nav-i:hover {
-    color: #f5cecd
+    color: #7ED321
 }
 
 .header .nav-i--home {
@@ -11117,7 +11117,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .header .nav-i--container:hover .nav-i {
-    color: #f5cecd
+    color: #7ED321
 }
 
 .header .nav-i--container:hover .header-top--sub-nav {
@@ -12527,6 +12527,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .product-bookmarks__link {
+    cursor:pointer;
     position: relative;
     display: inline-block;
     color: #212c3a;
@@ -19795,12 +19796,12 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .session-login-form input[type='submit'],.session-login-form button[type='submit'],.user-password-reset input[type='submit'],.user-password-reset button[type='submit'],.user-password-set input[type='submit'],.user-password-set button[type='submit'] {
-    background-color: #821218;
+    background-color: #7ED321;
     margin-left: 175px
 }
 
 .session-login-form input[type='submit']:hover,.session-login-form button[type='submit']:hover,.user-password-reset input[type='submit']:hover,.user-password-reset button[type='submit']:hover,.user-password-set input[type='submit']:hover,.user-password-set button[type='submit']:hover {
-    background-color: #c71b25
+    background-color: green;
 }
 
 .session-login-form .input,.user-password-reset .input,.user-password-set .input {
@@ -22799,7 +22800,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     display: grid;
     border-radius: 7px;
     border: solid 1px #dfe3e9;
-    background-color: #fff
+    background-color: transparent
 }
 
 .tz-form__group.is-selected {
@@ -23119,17 +23120,13 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     position: absolute;
     right: 20px;
     top: 50%;
-    width: 16px;
-    height: 9px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid green; /* Okun yeşil rengi burada ayarlandı */
     transform: translateY(-50%);
-    background-image: url(//turbo.azstatic.com/assets/application/icon-arrow-down--red-2b7b7b541dd594f00f7f3ef63fbb0cf3aa4dfb2b4d7b8e8eea7d2b6da15e4de4.svg);
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
-    transition: -webkit-transform 0.2s ease-in-out;
-    -o-transition: transform 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out
 }
 
 .tz-btn-link--arrow.is-active::after {
@@ -23467,4 +23464,40 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     font-size: 18px;
     color: #000;
     margin-bottom: 8px
+}
+.custom-register-btn{
+    padding:10px 20px;
+    background:red;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+
+}
+.links-row{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+}
+.custom-login-btn{
+    color:#fff;
+    margin-left:40px;
+   padding:10px 20px;
+   border-radius:5px;
+   background:#7ED321;
+   text-decoration:none;
+}
+.link-forgot-password{
+    margin-left:26px;
+}
+.custom-register-btn{
+    margin-left:200px
+}
+.custom-car-img-container{
+    height:170px;
+    width:229px;
+}
+.custom-car-img-container img{
+    height:100%;
+    width:auto;
+    object-fit:cover;
 }

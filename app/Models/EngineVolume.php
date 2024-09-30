@@ -15,4 +15,9 @@ class EngineVolume extends Model implements TranslatableContract
     protected $guarded=[];
     public $translationModel=EngineVolumeTranslation::class;
     public $translatedAttributes = ['name'];
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class, 'engine_volume_id');
+    }
 }
