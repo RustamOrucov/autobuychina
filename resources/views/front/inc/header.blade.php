@@ -26,8 +26,8 @@
                 </div>
 
                     <a
-                    class="header-bar-i header-bar-i--bookmarks" href="#">Favorites</a><a
-                    class="header-bar-i header-bar-i--login js-auth-link" href="#">Login</a>
+                    class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">Favorites</a><a
+                    class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">Login</a>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 <h1 class="nav-i--home_logo"><img src="{{ asset('storage/' . $logoImages->d_logo) }}" width="160">
                 </h1>
             </a><a class="nav-i" data-stat="header-all-ads-link" href="#">All listings</a><a class="nav-i"
-                data-stat="header-shops-link" href="#">Dealerships</a><a class="nav-i"
+                data-stat="header-shops-link" href="{{ route('dealership') }}">Dealerships</a><a class="nav-i"
                 data-stat="header-autocatalog-link" href="#">Car catalog</a><a class="nav-i"
                 data-stat="header-moto-link" href="#">Moto</a>
             <div class="nav-i--container"><a class="nav-i" target="_blank" data-stat="header-accessories-link"
@@ -70,3 +70,5 @@
         </div>
     </div>
 </div>
+
+

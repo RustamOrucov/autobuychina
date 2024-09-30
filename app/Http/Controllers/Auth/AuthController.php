@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+     public function login(){
+        return view('front.pages.login');
+     }
+
+
+
+
     public function loginProcess(Request $request)
     {
         $request->validate([

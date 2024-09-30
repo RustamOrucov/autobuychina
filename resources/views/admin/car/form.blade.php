@@ -78,7 +78,7 @@
                         {{--                        engine volume start  --}}
 
                         <div class="form-group col-lg-3">
-                            <label class="form-label">Muherik gucu (L) *</label>
+                            <label class="form-label">Power (A.g) *</label>
                             <input class="form-control" list="datalistOptions" id="exampleDataList" name="engine_v" required
                                 value="{{ old('engine_v', isset($model) ? $model->engine_v : '') }}">
                         </div>

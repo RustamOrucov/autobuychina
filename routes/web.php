@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Front\FavoriteController;
 use App\Http\Controllers\Front\FilterController;
 
 ;
@@ -26,47 +27,28 @@ Route::get('/new-add-listings', [HomeController::class, 'newAddListings'])->name
 // main filter route
 Route::post('/main-filter',[HomeController::class,'filter'])->name('mainFilter');
 
+// favorite list
 
+Route::get('/favorite',[FavoriteController::class,'favorite'])->name('favorite');
 
 
 //Car Detail
-Route::get('/detail',[HomeController::class,'detail']);
+Route::get('/detail/{car}',[HomeController::class,'detail'])->name('detail');
 //New Car
 Route::get('/new-car',[HomeController::class,'new']);
 //All Cars
 Route::get('/all-cars',[HomeController::class,'allcars']);
 //AvtoSalon
-Route::get('/avtosalon',[HomeController::class,'avtosalon']);
+Route::get('/dealership',[HomeController::class,'avtosalon'])->name('dealership');
 //AvtoSalon Detail
 Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
 
 
+Route::get('/login',[AuthController::class,'login'])->name('login');
 
 
 
 
-Route::get('/register',[UserController::class,'register'])->name('register');
-Route::post('/register',[UserController::class,'storeClient']);
-
-// Login Proccess
-Route::post('/loginProcess', [AuthController::class, 'loginProcess'])->name('login.process');
-
-// Logout
-Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// Second
-Route::get('/second-route', [SecondController::class, 'secondRoutes']);
-
-//user active root
-Route::post('/change-status', [UserController::class, 'changeStatus'])->name('change.status');
-
-
-// search route
-Route::get('/search',[SearchController::class,'index'])->name('search.index');
-
-
-//keyword search
-Route::post('key_search',[SearchController::class,'keySearch'])->name('key_search');
 
 
 

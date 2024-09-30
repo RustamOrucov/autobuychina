@@ -5,10 +5,11 @@
             <div class="tz-container tz-align-center tz-d-flex">
                 <ul class="breadcrumbs">
                     <li class="breadcrumbs__i"><a class="breadcrumbs__i-link"
-                                                  href="/autos?q%5Bmake%5D%5B%5D=1">Hyundai</a></li>
+                            href="/autos?q%5Bmake%5D%5B%5D=1">{{ $car->carModel->name }}</a></li>
                     <li class="breadcrumbs__i"><a class="breadcrumbs__i-link"
-                                                  href="/autos?q%5Bmake%5D%5B%5D=1&amp;q%5Bmodel%5D%5B%5D=5245">Avante</a></li>
-                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Elan № 8736387</span></li>
+                            href="/autos?q%5Bmake%5D%5B%5D=1&amp;q%5Bmodel%5D%5B%5D=5245">{{ $car->ModelType->name }}</a>
+                    </li>
+                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № 8736387</span></li>
                 </ul>
             </div>
         </div>
@@ -17,18 +18,21 @@
                 <div class="js-product-heading product-heading tz-d-flex tz-align-center tz-justify-between">
                     <div class="tz-container tz-d-flex tz-align-center tz-justify-between">
                         <div class="product-heading__left tz-d-flex tz-align-center">
-                            <h1 class="product-title">BMW M4 TUNED 2.L,2018,25 000 km</h1>
+                            <h1 class="product-title">{{ $car->carModel->name }} {{ $car->ModelType->name }} TUNED
+                                {{ $car->engine_v }}.L,{{ $car->year }},25 000 km</h1>
                         </div>
                         <div class="product-heading__right tz-d-flex tz-align-center">
                             <div class="product-bookmarks">
-                                <a class="product-bookmarks__link added hide js-unbookmark-item-8736387"
-                                   data-remote="true" rel="nofollow" data-method="delete"
-                                   href="/autos/8736387-hyundai-avante/bookmarks"><i style="color: red;"
-                                                                                     class="fa-solid fa-heart"></i> Seçilmişlərdədir</a>
-                                <a class="product-bookmarks__link js-bookmark-item-8736387" data-remote="true"
-                                   rel="nofollow" data-method="post" href="/autos/8736387-hyundai-avante/bookmarks"><i
-                                        class="fa-regular fa-heart"></i> Seçilmişlərdə saxla</a>
+                                <a class="product-bookmarks__link added hide js-unbookmark-item" data-remote="true"
+                                    rel="nofollow" data-id="{{ $car->id }}">In favorites</a>
+                                <a class="product-bookmarks__link js-bookmark-item" data-remote="true" rel="nofollow"
+                                    data-id="{{ $car->id }}">
+                                    Save in favorites</a>
                             </div>
+
+                            <div class="product-report"><a class="product-report__btn js-product-report-btn"
+                                    data-reported-text="Şikayət etmisiniz" data-not-allowed="true"
+                                    href="/autos/8803354-kia-rio-x-line">Report</a></div>
                         </div>
                     </div>
                 </div>
@@ -43,63 +47,23 @@
                             <div class="counter"><span>1/5</span></div>
                             <div class="single-item">
                                 <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw-back.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw-back.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw-back.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw.jpg" alt=""></div>
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                                         src="/assets/img/bmw-back.jpg" alt=""></div>
+                                        src="{{ asset('storage/' . $car->car_image) }}" alt=""></div>
+
+
                             </div>
                         </section>
                         <div class="product-photos__slider-nav">
-                            <div class="product-photos__slider-nav-i js-open-gallery active"
-                                 data-img="/assets/img/bmw-back.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw-back.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery" data-img="/assets/img/bmw.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery"
-                                 data-img="/assets/img/bmw-back.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw-back.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery" data-img="/assets/img/bmw.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery"
-                                 data-img="/assets/img/bmw-back.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw-back.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery" data-img="/assets/img/bmw.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery"
-                                 data-img="/assets/img/bmw-back.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw-back.jpg);"></div>
-                            </div>
-                            <div class="product-photos__slider-nav-i js-open-gallery" data-img="/assets/img/bmw.jpg">
-                                <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url(/assets/img/bmw.jpg);"></div>
-                            </div>
+                            @foreach ($car->carImages as $image)
+                                <div class="product-photos__slider-nav-i js-open-gallery active">
+                                    <div class="product-photos__slider-nav-i_picture"
+                                        style="background-image: url({{ asset('asset/' . $image->image) }});"></div>
+                                </div>
+                            @endforeach
+
+
                             <div class="product-photos__slider-nav-i js-open-gallery">
                                 <div class="product-photos__slider-nav-i_picture"
-                                     style="background-image: url('/assets/img/bmw.jpg')">
+                                    style="background-image: url('/assets/img/bmw.jpg')">
                                     <div
                                         class="product-photos__slider-nav-i_text tz-d-flex tz-align-center tz-justify-center">
                                         +7 şəkil</div>
@@ -108,87 +72,116 @@
                         </div>
                         <div class="product-section product-section--without-border-top">
                             <ul class="product-statistics">
-                                <li class="product-statistics__i"><span class="product-statistics__i-text">Yeniləndi:
-                                        16.09.2024</span></li>
-                                <li class="product-statistics__i"><span class="product-statistics__i-text">Baxışların
-                                        sayı: 2045</span></li>
+                                <li class="product-statistics__i"><span class="product-statistics__i-text">Updated:
+                                        {{ $car->created_at->format('d.m.Y') }}</span></li>
+                                <li class="product-statistics__i"><span class="product-statistics__i-text">View Count :
+                                        {{ $car->view_count }}</span></li>
                             </ul>
                         </div>
                         <div class="product-section product-section--wide">
                             <div class="product-properties tz-d-flex tz-justify-between tz-gap-10">
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Şəhər</label>
-                                        <span class="product-properties__i-value">Baki</span>
+                                        <label for="" class="product-properties__i-name">City</label>
+                                        <span class="product-properties__i-value">{{ $car->region->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Marka</label>
-                                        <span class="product-properties__i-value">BMW</span>
+                                        <label for="" class="product-properties__i-name">Brand</label>
+                                        <span class="product-properties__i-value">{{ $car->carModel->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
                                         <label for="" class="product-properties__i-name">Model</label>
-                                        <span class="product-properties__i-value">M4</span>
+                                        <span class="product-properties__i-value">{{ $car->ModelType->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Buraxılış ili</label>
-                                        <span class="product-properties__i-value">2018</span>
+                                        <label for="" class="product-properties__i-name">Year</label>
+                                        <span class="product-properties__i-value">{{ $car->year }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Rəng</label>
-                                        <span class="product-properties__i-value">Qara</span>
+                                        <label for="" class="product-properties__i-name">Color</label>
+                                        <span class="product-properties__i-value">{{ $car->Cylinder->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Mühərrik</label>
-                                        <span class="product-properties__i-value">2.0 L/Benzin</span>
+                                        <label for="" class="product-properties__i-name">Engine</label>
+                                        <span class="product-properties__i-value">{{ $car->EngineVolume->name / 1000 }}
+                                            L/{{ $car->engine_v }}a.g/{{ $car->FuelType->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Yürüş</label>
-                                        <span class="product-properties__i-value">47 000 km</span>
+                                        <label for="" class="product-properties__i-name">Mileage</label>
+                                        <span class="product-properties__i-value">{{ $car->odometer_km }} km</span>
                                     </div>
                                 </div>
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Sürətlər qutusu</label>
-                                        <span class="product-properties__i-value">Avtomat</span>
+                                        <label for="" class="product-properties__i-name">Transmission</label>
+                                        <span class="product-properties__i-value">{{ $car->Damage->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Ötürücü</label>
-                                        <span class="product-properties__i-value">Arxa</span>
+                                        <label for="" class="product-properties__i-name">Gear</label>
+                                        <span class="product-properties__i-value">{{ $car->Transmission->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Yeni</label>
-                                        <span class="product-properties__i-value">Xeyir</span>
+                                        <label for="" class="product-properties__i-name">New ?</label>
+                                        <span class="product-properties__i-value">
+                                            {{ $car->used === 1 ? 'Yes' : 'No' }}
+                                        </span>
                                     </div>
-                                    <div class="product-properties__i">
+                                    {{-- <div class="product-properties__i">
                                         <label for="" class="product-properties__i-name">Sahiblər</label>
                                         <span class="product-properties__i-value">1</span>
-                                    </div>
+                                    </div> --}}
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Vəziyyəti</label>
+                                        <label for="" class="product-properties__i-name">Condition</label>
                                         <span class="product-properties__i-value">Vuruğu yoxdur, rənglənməyib</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-section product-section--wide">
-                            <div class="product-description-container js-description-container">
-                                <div class="product-description__content js-description-content">
-                                    <p>Orijinal yürüş, istənilən yerdə yoxlanıla bilər. Maşın öz adımadı.</p>
+                        @if ($car->vincode)
+                            <section class="product-section">
+                                <div class="product-vin tz-d-flex tz-align-center tz-justify-between">
+                                    <div class="product-vin__left">
+                                        <div class="tz-d-flex tz-align-center tz-justify-between">
+                                            <div class="product-vin__title">VIN-kod:
+                                                <span class="js-copy-text">{{ $car->vincode }}</span>
+                                            </div>
+                                            <div class="product-vin__copy">
+                                                <div class="product-vin__copy-icon js-copy-icon" style="cursor:pointer;">
+                                                </div>
+                                                <div class="product-vin__copy-text js-copy-copied is-hidden">Copied</div>
+                                            </div>
+                                        </div>
+                                        <div class="product-vin__info">Check the VIN code before buying the car.</div>
+                                    </div>
+                                    <a target="_blank" class="product-vin__check-link"
+                                        href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">Search on the
+                                        internet</a>
+                                </div>
+                            </section>
+                        @endif
+
+                        @if ($car->item_comment !== null)
+                            <div class="product-section product-section--wide">
+                                <div class="product-description-container js-description-container">
+                                    <div class="product-description__content js-description-content">
+                                        <p>{{ $car->item_comment }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
+
                         <div class="product-section product-section--wide">
                             <div class="product-extras tz-d-flex tz-align-center tz-gap-10 tz-wrap-wrap">
-                                <li class="product-extras__i">Yungul lehimli diskler</li>
-                                <li class="product-extras__i">ABS</li>
-                                <li class="product-extras__i">Lyuk</li>
-                                <li class="product-extras__i">Merkezi Qapanma</li>
-                                <li class="product-extras__i">Park radari</li>
-                                <li class="product-extras__i">Kondisoner</li>
-                                <li class="product-extras__i">Deri Salon</li>
+
+
+                                @foreach ($equipments as $equipment)
+                                    <li class="product-extras__i">{{ $equipment->name }}</li>
+                                @endforeach
+
+
                             </div>
                         </div>
-                        <div class="product-section product-section--wide">
+                        {{-- <div class="product-section product-section--wide">
                             <div class="product-actions tz-d-flex tz-align-center tz-justify-between">
                                 <div class="product-actions__left">
                                     <form action="">
@@ -202,40 +195,85 @@
                                     Elanın nömrəsi: 8769791
                                 </div>
                             </div>
-                        </div>
-
+                        </div> --}}
                     </main>
                     <aside class="product-sidebar-container">
                         <div class="product-sidebar js-sticky-sidebar">
-                            <div class="product-sidebar__box">
+                            <div class="product-sidebar__box product-sidebar__box--bordered">
                                 <div class="product-price">
-                                    <div class="product-price__i product-price__i--bold">32 000 USD</div>
-                                    <div class="product-price__i tz-mt-10">≈ 54 400 AZN</div>
+                                    <div class="product-price__i product-price__i--bold">{{ $car->price }}
+                                        {{ $car->Ro->name }}</div>
+                                    <div class="product-price__i tz-mt-10">≈ 169 998 AZN</div>
                                 </div>
-                                <div class="product-owner tz-d-flex tz-align-center tz-justify-between tz-mt-15">
-                                    <div class="product-owner__info">
-                                        <div class="product-owner__info-name">
-                                            Əsgər
+                                {{-- <div class="product-labels tz-d-flex tz-gap-10 tz-mt-15">
+                                    <div class="product-labels__i tz-d-flex tz-align-center">
+                                        <div class="product-labels__i-icon product-labels__i-icon--loan"></div>Kredit
+                                    </div>
+                                    <div class="product-labels__i tz-d-flex tz-align-center">
+                                        <div class="product-labels__i-icon product-labels__i-icon--barter"></div>Barter
+                                    </div>
+                                </div> --}}
+                                <div class="product-shop">
+                                    <div class="product-shop__delimiter tz-mt-15"></div>
+                                    <div class="product-shop__owner tz-d-flex tz-align-center">
+                                        <div class="product-shop__owner-logo"
+                                            style="background-image: url(https://turbo.azstatic.com/uploads/f352x352/2023%2F11%2F15%2F16%2F22%2F13%2F6cfeae00-e63c-4378-b671-3e6e74a22cab%2Fqayalogo.png)">
                                         </div>
-                                        <div class="product-owner__info-region">
-                                            Bakı
+                                        <div class="product-shop__owner-right">
+                                            <div class="product-shop__owner-name">Qaya</div>
                                         </div>
                                     </div>
-                                    <div class="product-owner__logo"></div>
-                                </div>
-                                <div class="product-phones tz-mt-15">
-                                    <div class="js-phones-hidden-block">
-                                        <div class="product-phones__list"><a class="product-phones__list-i"
-                                                                             href="tel:0557351500">(055) 735-15-00</a></div>
-                                        <div
-                                            class="product-warning tz-d-flex tz-align-center tz-justify-between tz-gap-5">
-                                            <div class="product-warning__text"><span class="attention">Diqqət!</span>
-                                                Avtomobilə baxış keçirmədən öncə beh göndərməyin.</div>
+                                    <div class="product-phones tz-mt-15">
+                                        <div class="product-phones__btn js-phones-click-btn" data-log-show-phone="true"
+                                            data-stat="product-call-btn" data-trigger-button="main">
+                                            <div class="product-phones__btn-title">Contact Number :</div>
+                                            <div class="product-phones__btn-value">(010) 555 55 55</div>
                                         </div>
-                                    </div>
-                                </div>
 
+                                    </div>
+                                    <div class="product-shop__delimiter tz-mt-15"></div>
+                                    <div class="product-shop__promo">Məqsədimiz – məmnuniyyətinizdir</div>
+                                    <div class="product-shop__description">Avtosalon "Qaya" – sərfəli barter, kredit və
+                                        lizinq şərtləri. Sifarişlə Almaniya, Koreya və Amerikadan avtomobillərin gətirilməsi
+                                        üzrə xidmətlər.</div>
+                                    <div class="product-shop__count"><a
+                                            class="product-shop__link product-shop__count-value" target="_blank"
+                                            href="/avtosalonlar/avtosalon-qaya">18 listings</a></div>
+                                    <div class="product-shop__delimiter tz-mt-15"></div>
+                                    <div class="product-shop__schedule">Every day: 09:00 AM–09:00 PM</div>
+                                    <div class="product-shop__location"><a target="_blank"
+                                            class="product-shop__link product-shop__location-link"
+                                            href="https://www.google.com/maps?q=40.413436%2C49.952466&amp;ll=40.413436%2C49.952466&amp;z=15">Bakı
+                                            ş., Nizami r., R.Rüstəmov küç. 57a</a></div><a
+                                        class="tz-btn tz-btn--blue tz-btn--full" target="_blank"
+                                        href="/avtosalonlar/avtosalon-qaya">Dealership</a>
+                                </div>
                             </div>
+                            {{-- <div
+                                class="product-services product-services--inline tz-d-flex tz-justify-between tz-align-center tz-gap-5">
+                                <a id="bump_open" class="product-services__i product-services__i--bump"
+                                    data-reveal-id="bump_modal" data-animation="fade" href="#bump_open">
+                                    <div>
+                                        <div class="product-services__i-title">İrəli çək</div>
+                                        <div class="product-services__i-price"><span class="price-val">3</span><span
+                                                class="price-cur">AZN</span>-dən</div>
+                                    </div>
+                                </a><a id="vip_open" class="product-services__i product-services__i--vip"
+                                    data-reveal-id="vip_modal" data-animation="fade" href="#vip_open">
+                                    <div>
+                                        <div class="product-services__i-title">VIP</div>
+                                        <div class="product-services__i-price"><span class="price-val">5</span><span
+                                                class="price-cur">AZN</span>-dən</div>
+                                    </div>
+                                </a><a id="featured_open" class="product-services__i product-services__i--featured"
+                                    data-reveal-id="featured_modal" data-animation="fade" href="#featured_open">
+                                    <div>
+                                        <div class="product-services__i-title">Premium</div>
+                                        <div class="product-services__i-price"><span class="price-val">7</span><span
+                                                class="price-cur">AZN</span>-dən</div>
+                                    </div>
+                                </a></div> --}}
+                            <div class="tz-mt-20"></div>
                         </div>
                     </aside>
                 </div>
@@ -243,157 +281,167 @@
             <div class="product-embed-and-related">
                 <div class="tz-container">
                     <div class="section-title">
-                        <p class="section-title_name">Bənzər elanlar</p><a class="section-title_more" target="_blank"
-                                                                           href="/autos?q%5Bmake%5D%5B%5D=14-lexus&amp;q%5Bmodel%5D%5B%5D=134">Hamısını göstər</a>
+                        <p class="section-title_name">Similar ads</p><a class="section-title_more" target="_blank"
+                            href="/autos?q%5Bmake%5D%5B%5D=14-lexus&amp;q%5Bmodel%5D%5B%5D=134">Show all</a>
                     </div>
                     <div class="products">
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
+
+                        @foreach ($cars as $car)
+                            <div class="products-i"><a class="products-i__link" target="_blank"
+                                    href="{{ route('detail', ['car' => $car->id]) }}"></a>
+
+                                <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow"
+                                    href="#" data-id="{{ $car->id }}" style="display: inline-block;">
+                                    <div class="bookmarking"></div>
+                                </a>
+
+                                <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true" rel="nofollow"
+                                    href="#" data-id="{{ $car->id }}" style="display: none;">
+                                    <div class="bookmarking added"></div>
+                                </a>
+                                <div class="products-i__top"><img alt="{{ $car->ModelType->name }}" loading="lazy"
+                                        src="{{ asset('storage/' . $car->car_image) }}">
+                                    <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
+                                    <div class="products-i__info"></div>
                                 </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
+                                <div class="products-i__bottom">
+                                    <div class="products-i__price products-i__bottom-text">
+                                        <div class="product-price">{{ $car->price }}<span>USD</span></div>
+                                    </div>
+                                    <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}
+                                        {{ $car->ModelType->name }}</div>
+                                    <div class="products-i__attributes products-i__bottom-text">{{ $car->year }},
+                                        {{ $car->EngineVolume->name / 1000 }} L, {{ $car->odometer_km }} km
+                                    </div>
+                                    <div class="products-i__datetime">{{ $car->region->name ?? '' }},
+                                        {{ $car->created_at->diffForHumans() }}</div>
                                 </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
                             </div>
-                        </div>
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
-                                </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
-                                </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
-                            </div>
-                        </div>
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
-                                </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
-                                </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
-                            </div>
-                        </div>
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
-                                </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
-                                </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
-                            </div>
-                        </div>
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
-                                </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
-                                </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
-                            </div>
-                        </div>
-                        <div class="products-i"><a class="products-i__link" target="_blank"
-                                                   href="/autos/8798610-lexus-lx-470"></a><a class="js-bookmark-item-8798610"
-                                                                                             data-remote="true" rel="nofollow" data-method="post"
-                                                                                             href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking"></div>
-                            </a><a class="hide js-unbookmark-item-8798610" data-remote="true" rel="nofollow"
-                                   data-method="delete" href="/autos/8798610-lexus-lx-470/bookmarks">
-                                <div class="bookmarking added"></div>
-                            </a>
-                            <div class="products-i__top"><img alt="Lexus LX 470" loading="lazy"
-                                                              src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F20%2F06%2F31%2F07%2F11667a07-9e49-426d-808e-94d810bd0e5d%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
-                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
-                                <div class="products-i__info"></div>
-                            </div>
-                            <div class="products-i__bottom">
-                                <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">24 500 <span>AZN</span></div>
-                                </div>
-                                <div class="products-i__name products-i__bottom-text">Lexus LX 470</div>
-                                <div class="products-i__attributes products-i__bottom-text">2006, 4.7 L, 350 000 km
-                                </div>
-                                <div class="products-i__datetime">Bakı, bugün 09:09</div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    
+    <div class="reveal-modal report-modal js-modal-report reveal-modal_opened" id="report"
+        style="visibility: visible;">
+        <form class="simple_form default-form new_report" id="new_report"
+            data-auth-url="https://hello.turbo.az/?return_to=aHR0cHM6Ly90dXJiby5hei9hdXRvcy84NzUxMzMyLWxhbmQtcm92ZXItcmFuZ2Utcm92ZXI="
+            novalidate="novalidate" action="/autos/8751332-land-rover-range-rover/reports" accept-charset="UTF-8"
+            data-remote="true" method="post"><input type="hidden" name="access_token" id="access_token"
+                autocomplete="off">
+            <div class="report-modal__header tz-d-flex tz-align-center tz-justify-between">
+                <div class="report-modal__header-title">Şikayət et</div>
+                <div class="close-reveal-modal"></div>
+            </div>
+            <div class="report-modal__content">
+                <div class="input select required report_report_reason"><select
+                        class="select required form-control report-modal__reason-dropdown js-dropdown-report-reason"
+                        data-dropdown-title="Şikayətin səbəbi" data-error-message="Şikayətin səbəbini seçin"
+                        name="report[report_reason_id]" id="report_report_reason_id" style="display: none;">
+                        <option value="" label=" "></option>
+                        <option value="1">Əlaqə saxlamaq olmur</option>
+                        <option value="2">Elan aktual deyil</option>
+                        <option value="3">Yanlış qiymət</option>
+                        <option value="5">Yanlış göstəricilər</option>
+                        <option value="6">Təkrar elan</option>
+                        <option value="7">Yanlış şəhər</option>
+                        <option value="4">Şəkillər düzgün deyil</option>
+                        <option value="42">Avtomobil sifarişlə çatdırılır</option>
+                        <option value="9">Dələduzluqda şübhələr</option>
+                        <option value="8">Avtomobil salondandır</option>
+                    </select>
+                    <div class="tz-dropdown" data-id="report_report_reason_id">
+                        <div class="tz-dropdown__selected">
+                            <div class="tz-dropdown__label">Şikayətin səbəbi</div>
+                            <div class="tz-dropdown__values is-hidden"></div>
+                        </div>
+                        <div class="tz-dropdown__content">
+                            <div class="tz-dropdown__list">
+                                <div class="tz-dropdown__option " data-val="1" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Əlaqə saxlamaq
+                                            olmur</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="2" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Elan aktual deyil</span>
+                                    </div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="3" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış qiymət</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="5" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış göstəricilər</span>
+                                    </div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="6" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Təkrar elan</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="7" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış şəhər</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="4" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Şəkillər düzgün
+                                            deyil</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="42" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Avtomobil sifarişlə
+                                            çatdırılır</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="9" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Dələduzluqda
+                                            şübhələr</span></div>
+                                </div>
+                                <div class="tz-dropdown__option " data-val="8" data-group="">
+                                    <div class="tz-dropdown__option-label"><span class="text">Avtomobil
+                                            salondandır</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="js-report-divider">
+                <div class="input text optional report_description field_with_hint asdeh217ds">
+                    <textarea class="text optional form-control" name="report[description]" id="report_description"></textarea><span class="hint">Do not enter anything here.</span>
+                </div>
+                <div class="input text optional report_body">
+                    <textarea rows="1" class="text optional form-control js-body-input" data-title="Şikayəti təsvir edin"
+                        placeholder="Şikayəti təsvir edin" name="report[body]" id="report_body"></textarea>
+                </div>
+                <hr>
+            </div>
+            <div class="report-modal__footer"><button name="button" type="submit" data-disable-with=""
+                    class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">Göndər</button></div>
+        </form>
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const copyIcon = document.querySelector('.js-copy-icon');
+            const copyText = document.querySelector('.js-copy-text').textContent;
+            const copiedMessage = document.querySelector('.js-copy-copied');
+
+            copyIcon.addEventListener('click', function() {
+                // VIN kodunu panoya kopyala
+                navigator.clipboard.writeText(copyText).then(function() {
+                    // Kopyalama başarılı olduğunda mesajı göster
+                    copiedMessage.classList.remove('is-hidden');
+
+                    // Bir süre sonra mesajı tekrar gizle
+                    setTimeout(function() {
+                        copiedMessage.classList.add('is-hidden');
+                    }, 2000); // 2 saniye sonra gizlenir
+                }).catch(function(err) {
+                    console.error('Kopyalama başarısız oldu: ', err);
+                });
+            });
+        });
+    </script>
 @endsection

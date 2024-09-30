@@ -12258,7 +12258,7 @@ div.boolean label::after,
 }
 
 .header .nav-i:hover {
-    color: #f5cecd
+    color: green;
 }
 
 .header .nav-i--home {
