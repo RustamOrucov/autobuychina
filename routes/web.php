@@ -7,13 +7,13 @@ use App\Http\Controllers\Front\FilterController;
 
 ;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\MobileController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
 
-
-
+Route::middleware('detect.mobile')->group(function () {
 // home route
 Route::get('/',[HomeController::class,'index']);
 
@@ -42,9 +42,14 @@ Route::get('/all-cars',[HomeController::class,'allcars']);
 Route::get('/dealership',[HomeController::class,'avtosalon'])->name('dealership');
 //AvtoSalon Detail
 Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
-
+});
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
+
+//Mobile
+
+Route::get('/mobile',[MobileController::class,'home'])->name('mobile.home');
+
 
 
 
