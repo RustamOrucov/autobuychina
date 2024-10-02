@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Front\DealerController;
 use App\Http\Controllers\Front\FavoriteController;
 use App\Http\Controllers\Front\FilterController;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // home route
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 //load more route
 Route::get('/cars', [HomeController::class, 'loadMoreCars'])->name('cars');
@@ -45,6 +46,11 @@ Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
 
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'loginProcess']);
+
+
+Route::get('/register',[AuthController::class,'registerview'])->name('register');
+Route::post('/registerStore',[DealerController::class,'store'])->name('registerStore');
 
 
 

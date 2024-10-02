@@ -23480,8 +23480,8 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 .custom-login-btn{
     color:#fff;
-    margin-left:40px;
-   padding:10px 20px;
+   padding:10px;
+    margin-left:0 !important;
    border-radius:5px;
    background:#7ED321;
    text-decoration:none;
@@ -23490,7 +23490,8 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     margin-left:26px;
 }
 .custom-register-btn{
-    margin-left:200px
+    margin-left:200px;
+    text-decoration: none;
 }
 .custom-car-img-container{
     height:170px;
@@ -23500,4 +23501,8 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     height:100%;
     width:auto;
     object-fit:cover;
+}
+.custom-login-error{
+    color:red;
+    text-align: center;
 }

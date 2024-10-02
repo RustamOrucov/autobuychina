@@ -4,6 +4,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Models\Dealer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -18,30 +21,41 @@ class AuthController extends Controller
 
 
 
-    public function loginProcess(Request $request)
+    public function loginProcess(LoginRequest $request)
     {
+
         $request->validate([
-            'fin_code' => 'required|string',
+            'email' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        $user = User::where('fin_code', $request->fin_code)->first();
+        $dealer = Dealer::where('email', $request->email)->first();
 
-        if (!$user) {
-            return redirect()->back()->with('error', 'Fin code is incorrect');
+        if (!$dealer) {
+            return redirect()->back()->with('error', 'Email or password is incorrect');
         }
 
-        if (!Hash::check($request->password, $user->password)) {
-            return redirect()->back()->with('error', 'Password is incorrect');
+        if (!Hash::check($request->password, $dealer->password)) {
+            return redirect()->back()->with('error', 'Email or password is incorrect');
         }
 
-        Auth::login($user, $request->has('remember-me'));
+        Auth::login($dealer, $request->has('remember-me'));
         return redirect()->route('home.index');
     }
+
+
+
 
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
     }
+
+
+
+    public function registerview(){
+        return view('front.pages.register');
+    }
+
 }

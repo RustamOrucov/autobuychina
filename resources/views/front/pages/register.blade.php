@@ -1,126 +1,128 @@
 @extends('front.layout.layout')
-@section('content')
-    <?php $hideCommon = false; ?>
-    <?php $hideFooter = true; ?>
-
-
+@section('front_content')
     <div class="contents member" id="contents">
-        <div style="max-width: 750px; margin: 150px auto 0 auto;">
-            <div class="container">
+        <div style="max-width: 750px; margin: 20px auto 0 auto;">
+            <div class="container custom-register-container">
                 <div class="title">
-                    <p>Qeydiyyat</p>
+                    <p>Register Dealer</p>
                 </div>
-                <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('registerStore') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="user_details">
                         <div class="input_box">
-                            <label for="name">Ad</label>
-                            <input type="text" id="name" name="name" value="{{old('name')}}" placeholder="Ad" required>
+                            <label for="name">Name</label>
+                            <input style="padding:0 5px" type="text" id="name" name="name"
+                                value="{{ old('name') }}" placeholder="Name" required>
                             @error('name')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="surname">Soyad</label>
-                            <input type="text" id="surname" name="surname" value="{{old('surname')}}" placeholder="Soyad" required>
+                            <label for="surname">Surname</label>
+                            <input style="padding:  0 5px" type="text" id="surname" name="surname"
+                                value="{{ old('surname') }}" placeholder="Surname" required>
                             @error('surname')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="address">Address</label>
-                            <input type="text" id="address" name="address" placeholder="Address" value="{{old('address')}}" required minlength="10">
-                            @error('address')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <label for="d_name">Dealer Name</label>
+                            <input style="padding: 0 5px" type="text" id="d_name" name="d_name"
+                                placeholder="Dealer Name" value="{{ old('d_name') }}" required>
+                            @error('d_name')
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="username">Fin Kod</label>
-                            <input type="text" name="fin_code" id="username" value="{{old('fin_code')}}" placeholder="Şəxsiyyət Vəsiqə Fin Kod" required>
-                            @error('fin_code')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <label for="adress">Adress</label>
+                            <input style="padding: 0 5px" type="text" name="adress" id="adress"
+                                value="{{ old('adress') }}" placeholder="Adress" required>
+                            @error('adress')
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="email">Email</label>
-                            <input type="email" name="email" value="{{old('email')}}" id="email" placeholder="Email Address" required>
+                            <input style="padding:0 5px" type="email" name="email" value="{{ old('email') }}"
+                                id="email" placeholder="Email Address" required>
                             @error('email')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="phone">Telefon</label>
-                            <input type="text" name="phone" value="{{old('phone')}}" id="phone" placeholder="+994" required>
+                            <label for="phone">Phone number</label>
+                            <input style="padding: 0 5px" type="text" name="phone" value="{{ old('phone') }}"
+                                id="phone" placeholder="+994" required>
                             @error('phone')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Şifrə</label>
+                            <label for="confirmPass">Pssword</label>
                             <div class="inputTx inputPw">
-                                <input type="password" name="password" id="password" class="password required"
-                                       placeholder="Password">
-                                <button type="button" class="btnReset">del</button>
-                                <button type="button" class="btnPw">view</button>
+                                <input style="padding: 0 5px" type="password" name="password" id="password"
+                                    class="password required" placeholder="Password">
+
                             </div>
 
                             @error('password')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
 
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Şifrə Təkrar</label>
+                            <label for="confirmPass">Pssword Confirm</label>
                             <div class="inputTx inputPw">
-                                <input type="password" name="password_confirmation" id="current_password"
-                                       class="password required" placeholder="Password">
-                                <button type="button" class="btnReset">del</button>
-                                <button type="button" class="btnPw">view</button>
+                                <input style="padding:0 5px" type="password" name="password_confirmation"
+                                    id="current_password" class="password required" placeholder="Password">
+
                             </div>
                             @error('password_confirmation')
-                            <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="front_id" class="front_id">Şəxsiyyət Vəsiqəsinin Ön Şəkli</label>
-                            <input type="file" name="passport_front" id="front_id" class="custom-file-input">
+                            <label for="front_id" class="front_id">Front Image of the ID Card *</label>
+                            <input type="file" name="passport_front" id="front_id" class="custom-file-input" required>
                             @error('front_id')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
 
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-front-img"><i
-                                        class="fa-solid fa-xmark"></i></button>
-                                <img id="front_preview" style="width: 100%; object-fit: cover;" src="" alt="">
+                                <button class="clear-img" id="clear-front-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="front_preview" style="width: 100%; object-fit: cover;" src=""
+                                    alt="">
                             </div>
                         </div>
                         <div class="input_box">
-                            <label for="back_id" class="front_id">Şəxsiyyət Vəsiqəsinin Arxa Şəkli</label>
-                            <input type="file" name="passport_back" id="back_id" class="custom-file-input">
+                            <label for="back_id" class="front_id">Back Image of the ID Card *</label>
+                            <input type="file" name="passport_back" id="back_id" class="custom-file-input"
+                                required>
                             @error('back_id')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-back-img"><i
-                                        class="fa-solid fa-xmark"></i></button>
-                                <img id="back_preview" style="width: 100%; object-fit: cover;" src="" alt="">
+                                <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="back_preview" style="width: 100%; object-fit: cover;" src=""
+                                    alt="">
                             </div>
                         </div>
 
                         <div class="private-checked">
-                            <li class="dbl clearfix" style="list-style-type: none;">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="" value="true">
-                                <label for="remember-me">İstifadəçi Şərtləri İlə Razılaşıram</label>
-                            </li>
+                            <div class="dbl clearfix" style="list-style-type: none;">
+                                <input type="checkbox"  id="remember-me" class=""
+                                    value="true">
+                                <label for="remember-me">Terms and Conditions</label>
+                            </div>
                             <div class="private-btn-box">
-                                <a id="prev-policy" href="#" style="color: red;font-weight: bold;">Oxu</a>
+                                <a id="prev-policy" href="#" style="color: red;font-weight: bold;">Read</a>
                             </div>
                         </div>
 
                     </div>
 
                     <div class="reg_btn">
-                        <input type="submit" value="Qeydiyyat" id="submit-btn" class="disabled" disabled>
+                        <input type="submit" value="Register" id="submit-btn" class="disabled" disabled>
                     </div>
                 </form>
             </div>
@@ -133,7 +135,8 @@
 
     <div class="popup-private" id="popup-private">
         <div class="full-w">
-            <button style="position: fixed;" class="close-policy" id="close-policy"><i class="fa-solid fa-xmark"></i></button>
+            <button style="position: fixed;" class="close-policy" id="close-policy"><i
+                    class="fa-solid fa-xmark"></i></button>
             <div class="content-policie">
                 <h2>PRIVACY POLICY</h2>
                 <p><strong>[COMPANY NAME HERE]</strong> (the “Company”) is committed to protecting the privacy of its users.
@@ -183,13 +186,13 @@
                 </ul>
                 <ul>
                     <li><a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies"
-                           target="_blank" rel="noreferrer">Internet Explorer</a></li>
+                            target="_blank" rel="noreferrer">Internet Explorer</a></li>
                     <li><a href="https://support.google.com/accounts/answer/61416" target="_blank"
-                           rel="noreferrer">Chrome</a></li>
+                            rel="noreferrer">Chrome</a></li>
                     <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
-                           target="_blank" rel="noreferrer">Firefox</a></li>
+                            target="_blank" rel="noreferrer">Firefox</a></li>
                     <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac"
-                           target="_blank" rel="noreferrer">Safari</a></li>
+                            target="_blank" rel="noreferrer">Safari</a></li>
                     <li>For any other browser, please directly consult the cookie management help information available on
                         the Internet.</li>
                 </ul>
@@ -217,7 +220,7 @@
                     opened the email; or 3) clicked the email. You may opt out or unsubscribe from our marketing emails if
                     you do not want us to collect this information from you. You may also email us if you would like to be
                     removed. For more information, please review <a href="http://mailchimp.com/legal/privacy/"
-                                                                    rel="noreferrer" target="_blank">Mailchimp’s own Privacy Policy&#8203;</a>.</p>
+                        rel="noreferrer" target="_blank">Mailchimp’s own Privacy Policy&#8203;</a>.</p>
                 <h2>Online Advertising</h2>
                 <p>We participate in a variety of online advertising. This advertising displays our ads to you on the
                     websites and apps that reside outside of this website. </p>
@@ -339,4 +342,38 @@
         </div>
 
     </div>
+
+
+    <script>
+        function toggleModal(displayState) {
+            document.getElementById('popup-private').style.display = displayState;
+        }
+
+        document.querySelector('.private-btn-box').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleModal('block');
+        });
+
+        document.querySelector('#close-policy').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleModal('none');
+        });
+
+
+        // submit button disabled chage function
+
+        const checkbox = document.getElementById('remember-me');
+        const submitBtn = document.getElementById('submit-btn');
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                submitBtn.classList.remove('disabled');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.add('disabled');
+                submitBtn.disabled = true;
+            }
+        });
+        //    function end
+    </script>
 @endsection

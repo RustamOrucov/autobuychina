@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/catalog.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}">
-
+      <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}">
 
 
     <script src="{{ asset('assets/js/filter.js') }}"></script>
