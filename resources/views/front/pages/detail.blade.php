@@ -30,9 +30,10 @@
                                     Save in favorites</a>
                             </div>
 
-                            <div class="product-report"><a class="product-report__btn js-product-report-btn"
-                                    data-reported-text="Şikayət etmisiniz" data-not-allowed="true"
-                                    href="/autos/8803354-kia-rio-x-line">Report</a></div>
+                            <div class="product-report">
+                                <a class="product-report__btn js-product-report-btn" data-reported-text="Şikayət etmisiniz"
+                                    data-not-allowed="true" href="#">Report</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -327,82 +328,35 @@
 
 
 
-    
+
     <div class="reveal-modal report-modal js-modal-report reveal-modal_opened" id="report"
-        style="visibility: visible;">
+        style="visibility: visible;display:none">
         <form class="simple_form default-form new_report" id="new_report"
             data-auth-url="https://hello.turbo.az/?return_to=aHR0cHM6Ly90dXJiby5hei9hdXRvcy84NzUxMzMyLWxhbmQtcm92ZXItcmFuZ2Utcm92ZXI="
             novalidate="novalidate" action="/autos/8751332-land-rover-range-rover/reports" accept-charset="UTF-8"
             data-remote="true" method="post"><input type="hidden" name="access_token" id="access_token"
                 autocomplete="off">
             <div class="report-modal__header tz-d-flex tz-align-center tz-justify-between">
-                <div class="report-modal__header-title">Şikayət et</div>
+                <div class="report-modal__header-title">Complain</div>
                 <div class="close-reveal-modal"></div>
             </div>
             <div class="report-modal__content">
-                <div class="input select required report_report_reason"><select
-                        class="select required form-control report-modal__reason-dropdown js-dropdown-report-reason"
-                        data-dropdown-title="Şikayətin səbəbi" data-error-message="Şikayətin səbəbini seçin"
-                        name="report[report_reason_id]" id="report_report_reason_id" style="display: none;">
-                        <option value="" label=" "></option>
-                        <option value="1">Əlaqə saxlamaq olmur</option>
-                        <option value="2">Elan aktual deyil</option>
-                        <option value="3">Yanlış qiymət</option>
-                        <option value="5">Yanlış göstəricilər</option>
-                        <option value="6">Təkrar elan</option>
-                        <option value="7">Yanlış şəhər</option>
-                        <option value="4">Şəkillər düzgün deyil</option>
-                        <option value="42">Avtomobil sifarişlə çatdırılır</option>
-                        <option value="9">Dələduzluqda şübhələr</option>
-                        <option value="8">Avtomobil salondandır</option>
+                <div>
+                    <select id="mon-menu-deroulant">
+                        <option>Reason for complaint</option>
+                        <option value="option2">It is impossible to stay interested</option>
+                        <option value="option3">The advertisement is not current</option>
+                        <option value="option3">Wrong price</option>
+                        <option value="option3">Wrong indicators</option>
+                        <option value="option3">Repeat advertisement</option>
+                        <option value="option3">Wrong city </option>
+                        <option value="option3">The pictures are not correct </option>
+                        <option value="option3">The car is delivered by order</option>
+                        <option value="option3">Suspicions of fraud</option>
+                        <option value="option3">The car is from the showroom</option>
+
+
                     </select>
-                    <div class="tz-dropdown" data-id="report_report_reason_id">
-                        <div class="tz-dropdown__selected">
-                            <div class="tz-dropdown__label">Şikayətin səbəbi</div>
-                            <div class="tz-dropdown__values is-hidden"></div>
-                        </div>
-                        <div class="tz-dropdown__content">
-                            <div class="tz-dropdown__list">
-                                <div class="tz-dropdown__option " data-val="1" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Əlaqə saxlamaq
-                                            olmur</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="2" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Elan aktual deyil</span>
-                                    </div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="3" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış qiymət</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="5" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış göstəricilər</span>
-                                    </div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="6" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Təkrar elan</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="7" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Yanlış şəhər</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="4" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Şəkillər düzgün
-                                            deyil</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="42" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Avtomobil sifarişlə
-                                            çatdırılır</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="9" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Dələduzluqda
-                                            şübhələr</span></div>
-                                </div>
-                                <div class="tz-dropdown__option " data-val="8" data-group="">
-                                    <div class="tz-dropdown__option-label"><span class="text">Avtomobil
-                                            salondandır</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <hr class="js-report-divider">
                 <div class="input text optional report_description field_with_hint asdeh217ds">
@@ -429,19 +383,41 @@
             const copiedMessage = document.querySelector('.js-copy-copied');
 
             copyIcon.addEventListener('click', function() {
-                // VIN kodunu panoya kopyala
                 navigator.clipboard.writeText(copyText).then(function() {
-                    // Kopyalama başarılı olduğunda mesajı göster
                     copiedMessage.classList.remove('is-hidden');
 
-                    // Bir süre sonra mesajı tekrar gizle
                     setTimeout(function() {
                         copiedMessage.classList.add('is-hidden');
-                    }, 2000); // 2 saniye sonra gizlenir
+                    }, 2000);
                 }).catch(function(err) {
                     console.error('Kopyalama başarısız oldu: ', err);
                 });
             });
         });
+
+
+        // modal show and close function
+        function toggleModal(displayState) {
+            document.getElementById('report').style.display = displayState;
+        }
+
+        document.querySelector('.js-product-report-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleModal('block');
+        });
+
+        document.querySelector('.close-reveal-modal').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleModal('none');
+        });
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('report');
+            if (modal.style.display === 'block' && !modal.contains(event.target) && !event.target.matches(
+                    '.js-product-report-btn')) {
+                toggleModal('none');
+            }
+        });
+
+        // function end
     </script>
 @endsection

@@ -2,19 +2,14 @@
     <div class="header-bar-container">
         <div class="header-bar tz-container tz-d-flex tz-align-center" data-lotriver-wrapper="">
             <div class="header-bar--left"><a target="_blank" class="header-tabs-i header-tabs-i_tap"
-                    href="#">autobuchina.com</a><a target="_blank" class="header-tabs-i header-tabs-i_bina"
-                    href="#">autobuychina.com</a><a target="_blank" class="header-tabs-i header-tabs-i_boss"
-                    href="#">autobuychina.com</a>
+                    href="#">autobuchina.com</a>
             </div>
             <div class="header-bar--right">
                 <div class="header-bar-i header-bar-i_support-phone"><span
                         class="header-bar-i_support-phone-title">Support: </span><span
                         class="header-bar-i_support-phone-list"><span><a data-register-call="true"
                                 href="tel:(012) 555 55 55">(012) 555 55 55</a></span></span></div>
-                <div class="header-bar-i header-bar-advertising"><a data-stat="advertising-landing-header-btn"
-                        class="header-bar-i" href="#">Advertisement</a><span
-                        class="label-new status-new">yeni</span>
-                </div><a class="header-bar-i" href="/help/popular_questions">Assistance</a>
+                <a class="header-bar-i" href="/help/popular_questions">Help</a>
 
                 <div class="dropdown">
                     <button class="dropbtn">EN</button>
@@ -28,6 +23,8 @@
                     <a
                     class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">Favorites</a><a
                     class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">Login</a>
+                    <a
+                    class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">Register</a>
             </div>
         </div>
     </div>

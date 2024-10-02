@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('of_passenger')->nullable();
             $table->string('key')->nullable();
             $table->datetime('registration_date')->nullable();
-            $table->integer('view_count')->nullable();
             $table->text('youtube_video')->nullable();
             $table->string('car_image')->nullable();
             $table->string('price')->nullable();
