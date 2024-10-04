@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -14,16 +13,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-     public function login(){
+    public function login()
+    {
         return view('front.pages.login');
-     }
-
-
-
+    }
 
     public function loginProcess(LoginRequest $request)
     {
-
         $request->validate([
             'email' => 'required|string',
             'password' => 'required|string',
@@ -39,23 +35,19 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Email or password is incorrect');
         }
 
-        Auth::login($dealer, $request->has('remember-me'));
-        return redirect()->route('home.index');
+        Auth::guard('dealer')->login($dealer, $request->has('remember-me'));
+
+        return redirect()->route('dealer-detail');
     }
-
-
-
 
     public function logout()
     {
-        Auth::logout();
-        return redirect()->route('login');
+        Auth::guard('dealer')->logout();
+        return redirect()->route('home');
     }
 
-
-
-    public function registerview(){
+    public function registerview()
+    {
         return view('front.pages.register');
     }
-
 }

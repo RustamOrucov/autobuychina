@@ -10814,7 +10814,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
     color: #fff;
     font-size: 15px;
     border-radius: 8px;
-    background-color: #ca1016;
+    background-color: #7ED321;
     cursor: pointer
 }
 
@@ -10827,7 +10827,7 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 }
 
 .submit-button:hover {
-    background-color: #e71a21
+    background-color: #7ED321
 }
 
 .hidden-block {
@@ -23505,4 +23505,25 @@ div.boolean label::after,.radio_buttons label::after,.checkbox label::after,.aut
 .custom-login-error{
     color:red;
     text-align: center;
+}
+.custom-dealer-name{
+display:flex;
+align-items:center;
+gap:5px;
+  padding:0 10px;
+    color:red !important;
+}
+.custom-dealer-page{
+    padding:10px 20px;
+    background:transparent;
+    border-radius:5px;
+    margin-left:20px;
+    background:#7ED321;
+    cursor:pointer;
+    color:#fff;
+
+}
+.custom-dealer-page:hover{
+    transition:.5s;
+    transform:scale(1.1);
 }

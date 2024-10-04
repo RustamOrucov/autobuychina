@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'adminProvider',
         ],
+        'dealer' => [ // Yeni dealer guard'ı
+            'driver' => 'session',
+            'provider' => 'dealers',
+        ],
     ],
 
     /*
@@ -72,11 +76,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\AdminModel::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'dealers' => [ // Yeni dealer provider'ı
+            'driver' => 'eloquent',
+            'model' => App\Models\Dealer::class,
+        ],
     ],
 
     /*
@@ -101,6 +104,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'dealers' => [ // Yeni dealer şifre sıfırlama ayarları
+            'provider' => 'dealers',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

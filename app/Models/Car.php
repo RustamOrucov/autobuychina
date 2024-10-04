@@ -21,6 +21,10 @@ class Car extends Model implements TranslatableContract
     {
         return $this->belongsTo(Category::class);
     }
+    public function Dealer()
+    {
+        return $this->belongsTo(Dealer::class);
+    }
     public function Higlit()
     {
         return $this->belongsTo(Higlit::class);

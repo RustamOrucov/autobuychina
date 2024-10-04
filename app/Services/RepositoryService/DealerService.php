@@ -2,6 +2,7 @@
 
 namespace App\Services\RepositoryService;
 
+use App\Http\Requests\DelaerProfileUpdateRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Dealer;
@@ -14,10 +15,10 @@ use Illuminate\Support\Facades\Hash;
 
 class DealerService
 {
-    public function __construct(protected DealerRepository $repository,
-                                protected FileUploadService $fileUploadService)
-    {
-    }
+    public function __construct(
+        protected DealerRepository $repository,
+        protected FileUploadService $fileUploadService
+    ) {}
     public function dataAllWithPaginate()
     {
         return $this->repository->paginate(50);
@@ -37,36 +38,42 @@ class DealerService
         self::clearCached();
         return $model;
     }
-//    public function update(UserRequest $userRequest, $model)
-//    {
-//        $data = $userRequest->all();
-//
-//        $data['status'] = $userRequest->has('status') ? 1 : 0;
-//        if ($userRequest->has('passport_front')) {
-//            $data['passport_front'] = $this->fileUploadService->replaceFile($userRequest->passport_front, $model->passport_front, 'passport');
-//        }
-//        if ($userRequest->has('passport_back')) {
-//            $data['passport_back'] = $this->fileUploadService->replaceFile($userRequest->passport_back, $model->passport_back, 'passport');
-//        }
-//
-//        $model = $this->repository->save($data, $model);
-//
-//        self::clearCached();
-//        return $model;
-//    }
-//
-//    public function delete($model)
-//    {
-//        self::ClearCached();
-//        return $this->repository->delete($model);
-//    }
-//
+    public function update(DelaerProfileUpdateRequest $profilerequest, $model)
+    {
+        $data = $profilerequest->all();
+        unset($data['password_confirmation']);
+        if ($profilerequest->has('logo')) {
+            $data['logo'] = $this->fileUploadService->replaceFile($profilerequest->logo, $model->logo, 'logo');
+        }
+        if ($profilerequest->has('background')) {
+            $data['background'] = $this->fileUploadService->replaceFile($profilerequest->background, $model->background, 'background');
+        }
+        if ($profilerequest->filled('password')) {
+            $data['password'] = bcrypt($profilerequest->password);
+        } else {
+            $data['password'] = $model->password; 
+        }
+
+        $model = $this->repository->save($data, $model);
+
+        self::clearCached();
+        return $model;
+    }
+    //
+    //    public function delete($model)
+    //    {
+    //        self::ClearCached();
+    //        return $this->repository->delete($model);
+    //    }
+    //
     public function CachedUser()
     {
-        return Cache::rememberForever('dealer',
-            function (){
+        return Cache::rememberForever(
+            'dealer',
+            function () {
                 return $this->repository->all();
-            });
+            }
+        );
     }
 
     public static function ClearCached()

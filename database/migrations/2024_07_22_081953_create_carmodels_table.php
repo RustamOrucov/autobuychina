@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('carmodels', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
+
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

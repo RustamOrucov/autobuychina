@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Front\CarController;
 use App\Http\Controllers\Front\DealerController;
 use App\Http\Controllers\Front\FavoriteController;
 use App\Http\Controllers\Front\FilterController;
@@ -45,24 +46,24 @@ Route::get('/dealership',[HomeController::class,'avtosalon'])->name('dealership'
 Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
 
 
-Route::get('/login',[AuthController::class,'login'])->name('login');
-Route::post('/login',[AuthController::class,'loginProcess']);
 
 
 Route::get('/register',[AuthController::class,'registerview'])->name('register');
 Route::post('/registerStore',[DealerController::class,'store'])->name('registerStore');
 
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login',[AuthController::class,'loginProcess']);
 
 
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
+Route::get('dealer-detail',[DealerController::class,'detail'])->name('dealer-detail');
+Route::get('dealer-profile',[DealerController::class,'profile'])->name('dealer-profile');
+Route::post('dealer-update/{dealer}',[DealerController::class,'update'])->name('dealer-update');
 
 
-
-
-
-
-
+Route::get('/newcar',[CarController::class,'newcar'])->name('newcar');
 
 
 

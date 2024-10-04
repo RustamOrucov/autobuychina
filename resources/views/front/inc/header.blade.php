@@ -20,11 +20,19 @@
                     </div>
                 </div>
 
-                    <a
-                    class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">Favorites</a><a
-                    class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">Login</a>
-                    <a
-                    class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">Register</a>
+                <a class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">Favorites</a>
+                @if (Auth::guard('dealer')->check())
+                    <a href="{{ route('dealer-profile') }}" class="custom-dealer-name"><img width="20"
+                            src="{{ asset('assets/img/profile.png') }}" alt="">
+                        {{ Auth::guard('dealer')->user()->name }}</a>
+                    <a href="{{ route('logout') }}" style="display: flex;align-items:center;gap:3px"><img width="20"
+                            src="{{ asset('assets/img/logout.png') }}" alt=""> Logout</a>
+                @else
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">Login</a>
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">Register</a>
+                @endif
+
+
             </div>
         </div>
     </div>
@@ -63,9 +71,11 @@
                         və mopedlər</a><a target="_blank" data-stat="rental-commerce_transport" href="#">Xüsusi
                         texnika</a><a target="_blank" data-stat="rental-other" href="#">Digər</a>
                 </div>
-            </div><a class="header-new-btn" href="#"><span>New listing</span></a>
+            </div>
+            @if (Auth::guard('dealer')->check())
+            <a class="header-new-btn" href="{{ route('newcar') }}"><span>New listing</span></a>
+            @else
+            @endif
         </div>
     </div>
 </div>
-
-
