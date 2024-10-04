@@ -10,4 +10,12 @@ class MobileController extends Controller
     {
         return view('mobile.pages.home');
     }
+    public function cardetail()
+    {
+        return view('mobile.pages.car-detail');
+    }
+    public function filterpage()
+    {
+        return view('mobile.pages.filter');
+    }
 }

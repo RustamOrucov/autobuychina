@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\SoldController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\Admin\TranslationsController;
 use App\Http\Controllers\Admin\TransmissionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoGenerateController;
@@ -80,6 +81,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function
     Route::put('carimage/edit/{carimage}', [CarImageController::class, 'edit'])->name('carimage.edit');
     Route::put('carimage/update/{carimage}', [CarImageController::class, 'update'])->name('carimage.update');
     Route::delete('carimage/destroy/{carimage}', [CarImageController::class, 'destroy'])->name('carimage.destroy');
+
+//    Static Translation
+    Route::resource('staticModel', TranslationsController::class)->except('show');
+
 
 
 

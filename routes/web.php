@@ -55,6 +55,8 @@ Route::post('/registerStore',[DealerController::class,'store'])->name('registerS
 //Mobile
 
 Route::get('/mobile',[MobileController::class,'home'])->name('mobile.home');
+Route::get('/mobile/cardetail',[MobileController::class,'cardetail'])->name('mobile.cardetail');
+Route::get('/mobile/filter',[MobileController::class,'filterpage'])->name('mobile.filter');
 
 
 
