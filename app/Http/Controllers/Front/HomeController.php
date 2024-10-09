@@ -9,6 +9,7 @@ use App\Models\Car;
 use App\Models\Carmodel;
 use App\Models\Cylinder;
 use App\Models\Damage;
+use App\Models\Dealer;
 use App\Models\EngineVolume;
 use App\Models\FuelType;
 use App\Models\Higlit;
@@ -132,7 +133,7 @@ class HomeController extends Controller
 
         $cars = Car::where('car_models_id', $car->car_models_id)
             ->where('id', '!=', $car->id)
-            ->with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
+            ->with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume','Dealer')
             ->where('status', '1')
             ->select('id', 'price', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
             ->orderBy('created_at', 'desc')
@@ -174,13 +175,18 @@ class HomeController extends Controller
 
     public function avtosalon()
     {
-        return view('front.pages.avtosalon');
+        $dealers=Dealer::where('status',1)->with('cars')->get();
+        
+        return view('front.pages.avtosalon',['dealers'=>$dealers]);
     }
     //    AvtoSalon Detail
 
-    public function avtosalondetail()
+    public function avtosalondetail($id)
     {
-        return view('front.pages.avtosalon-detail');
+        $cars=Car::where('status',1)->where('dealer_id',$id)->get();
+        $dealer=Dealer::where('id',$id)->first();
+        return view('front.pages.avtosalon-detail',compact('dealer','cars'));
+
     }
 
 
