@@ -25052,3 +25052,19 @@ input[type="file"] {
     height: 100%;
     object-fit: cover;
 }
+
+
+.question{
+    padding-top: 4rem;
+    padding-bottom: 12rem;
+}
+
+.question-text{
+    text-align: center;
+}
+
+.question-button{
+    display: flex;
+    justify-content: center;
+    padding-top:3.5rem
+}

@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\FilterController;
 ;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MobileController;
+use App\Http\Controllers\Front\TraderRegisController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
@@ -46,17 +47,18 @@ Route::get('/dealership',[HomeController::class,'avtosalon'])->name('dealership'
 Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
 
 
+//traider
 
+Route::get('/trader',[HomeController::class,'trader'])->name('home.trader');
 
 
 Route::get('/register',[AuthController::class,'registerview'])->name('register');
 Route::post('/registerStore',[DealerController::class,'store'])->name('registerStore');
+    Route::post('/traderStore',[TraderRegisController::class,'store'])->name('traderStore');
 
 //Mobile
 
-Route::get('/mobile',[MobileController::class,'home'])->name('mobile.home');
-Route::get('/mobile/cardetail',[MobileController::class,'cardetail'])->name('mobile.cardetail');
-Route::get('/mobile/filter',[MobileController::class,'filterpage'])->name('mobile.filter');
+
 
 
 Route::get('/login',[AuthController::class,'login'])->name('login');
@@ -73,6 +75,9 @@ Route::post('dealer-update/{dealer}',[DealerController::class,'update'])->name('
 
 Route::get('/newcar',[CarController::class,'newcar'])->name('newcar');
 
+//Register Question
+Route::get('/question',[HomeController::class,'question'])->name('question');
+
 
 
 });
@@ -83,3 +88,11 @@ Route::get('/useragrement',[HomeController::class,'agrement'])->name('useragreme
 Route::get('/rule',[HomeController::class,'rule'])->name('rule');
 
 Route::post('car-store',[CarController::class,'storeCar'])->name('car-store');
+
+//Mobile Route
+Route::get('/mobile',[MobileController::class,'home'])->name('mobile.home');
+Route::get('/mobile/cardetail',[MobileController::class,'cardetail'])->name('mobile.cardetail');
+Route::get('/mobile/filter',[MobileController::class,'filterpage'])->name('mobile.filter');
+Route::get('/mobile/profile',[MobileController::class,'profilepage'])->name('mobile.profile');
+Route::get('/mobile/dealers',[MobileController::class,'alldealers'])->name('mobile.dealers');
+Route::get('/mobile/add-cars',[MobileController::class,'addcars'])->name('mobile.addcars');
