@@ -1,5 +1,8 @@
 @extends('mobile.layout.layout')
 @section('mobile_content')
+    <?php
+    $showTabBar = true
+    ?>
     <div class="body-inner" style="padding-top: 59.2px;">
         <div class="header home js-header is-sticky-header" style="top: -59.2px;">
             <div class="header__tabs"><a class="header__tabs-i header__tabs-i--turbo az" href="/">

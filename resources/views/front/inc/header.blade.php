@@ -29,7 +29,7 @@
                             src="{{ asset('assets/img/logout.png') }}" alt=""> Logout</a>
                 @else
                     <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">{{ sitekey('home_static', 'text') }}</a>
-                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">{{ sitekey('home_static', 'desc') }}</a>
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('question') }}">{{ sitekey('home_static', 'desc') }}</a>
                 @endif
 
                 </div>

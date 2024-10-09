@@ -15,6 +15,7 @@ use App\Models\FuelType;
 use App\Models\Higlit;
 use App\Models\Market;
 use App\Models\Modeltype;
+use App\Models\Policy;
 use App\Models\Region;
 use App\Models\Ro;
 use App\Models\Social;
@@ -189,11 +190,22 @@ class HomeController extends Controller
     }
 
 
-    public function agrement(){
-        return view('front.pages.useragrement');
+    public function agrement()
+    {
+        $policys = Policy::all();
+        return view('front.pages.useragrement',compact('policys'));
     }
     public function rule(){
-        return view('front.pages.rule');
+        $policys = Policy::all();
+        return view('front.pages.rule',compact('policys'));
+    }
+
+    public function question(){
+        return view('front.pages.question');
+    }
+
+    public function trader(){
+        return view('front.pages.trader');
     }
 
 }

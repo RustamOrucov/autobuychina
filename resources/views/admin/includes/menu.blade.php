@@ -129,7 +129,7 @@
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
                             <div class="parent-icon"><i class='bx bx-cog'></i>
                             </div>
-                            <div class="menu-title d-flex align-items-center">SiteSettings</div>
+                            <div class="menu-title d-flex align-items-center">SiteSettings & Policy</div>
                             <div class="ms-auto dropy-icon"><i class='bx bx-chevron-down'></i></div>
                         </a>
                         <ul class="dropdown-menu">
@@ -137,6 +137,7 @@
                             <li><a class="dropdown-item" href="{{route('admin.seo.form')}}"><i class="lni lni-cogs"></i>Seo</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.social.index')}}"><i class="lni lni-cogs"></i>Social</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.staticModel.index')}}"><i class="lni lni-cogs"></i>Static Tr.</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.policy.index')}}"><i class="lni lni-cogs"></i>Policy</a></li>
 
                         </ul>
                     </li>

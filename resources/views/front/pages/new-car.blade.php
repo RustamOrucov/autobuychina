@@ -119,7 +119,7 @@
                     <div class="left-side tooltips-input"><label class="integer required control-label"
                             for="auto_mileage">Millage<abbr title="required">*</abbr></label>
                         <input data-number="true" required class="string form-control required-element" value="{{ old('odometer_km', isset($model) ? $model->odometer_km : '') }}"
-                            type="text" name="odometer_km">
+                            type="number" name="odometer_km">
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_reg_year"><label class="select required control-label"

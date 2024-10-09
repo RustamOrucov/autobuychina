@@ -7,7 +7,7 @@
 @yield('mobile_content')
 
 @include('mobile.inc.footer')
-@if(View::hasSection('show_tabbar'))
+@if(isset($showTabBar) && $showTabBar)
     @include('mobile.inc.tabbar')
 @endif
 @include('mobile.inc.scripts')

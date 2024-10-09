@@ -35,7 +35,6 @@ class DetectMobileDevice
      */
     protected function isMobile(string $userAgent): bool
     {
-        // Mobil cihazları tespit eden regex
         return preg_match('/(android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini)/i', $userAgent);
     }
 }

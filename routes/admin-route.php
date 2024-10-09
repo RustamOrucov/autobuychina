@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\HiglitController;
 use App\Http\Controllers\Admin\MainSliderController;
 use App\Http\Controllers\Admin\ModelTypeController;
 use App\Http\Controllers\Admin\OdometerController;
+use App\Http\Controllers\Admin\PolicyController;
 use App\Http\Controllers\Admin\RoController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\SocialController;
@@ -84,6 +85,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function
 
 //    Static Translation
     Route::resource('staticModel', TranslationsController::class)->except('show');
+    Route::resource('policy', PolicyController::class)->except('show');
 
 
 

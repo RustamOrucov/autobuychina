@@ -105,28 +105,28 @@
 
     //     change status function
 
-        $(document).ready(function() {
-            $('.form-check-input').on('change', function() {
-                const modelId = $(this).data('model-id');
-                const status = $(this).is(':checked') ? 1 : 0;
+        {{--$(document).ready(function() {--}}
+        {{--    $('.form-check-input').on('change', function() {--}}
+        {{--        const modelId = $(this).data('model-id');--}}
+        {{--        const status = $(this).is(':checked') ? 1 : 0;--}}
 
-                $.ajax({
-                    url: '{{ route("change.status") }}',
-                    type: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: modelId,
-                        status: status
-                    },
-                    success: function(response) {
-                        console.log('Status başarıyla güncellendi:', response);
-                    },
-                    error: function(xhr) {
-                        console.log('Bir hata oluştu:', xhr);
-                    }
-                });
-            });
-        });
+        {{--        $.ajax({--}}
+        {{--            url: '{{ route("change.status") }}',--}}
+        {{--            type: 'POST',--}}
+        {{--            data: {--}}
+        {{--                _token: '{{ csrf_token() }}',--}}
+        {{--                id: modelId,--}}
+        {{--                status: status--}}
+        {{--            },--}}
+        {{--            success: function(response) {--}}
+        {{--                console.log('Status başarıyla güncellendi:', response);--}}
+        {{--            },--}}
+        {{--            error: function(xhr) {--}}
+        {{--                console.log('Bir hata oluştu:', xhr);--}}
+        {{--            }--}}
+        {{--        });--}}
+        {{--    });--}}
+        {{--});--}}
 
     </script>
 @endsection

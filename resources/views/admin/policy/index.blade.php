@@ -1,11 +1,14 @@
 @extends('admin.layouts.admin')
 @section('content')
-    <?php  $routeName='admin.car' ?>
+    <?php  $routeName='admin.policy' ?>
 
 
     <div class="card">
         <div class="card-body">
-            <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
+            @if(\App\Models\Policy::count() >= 1)
+            @else
+                <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
+            @endif
             <div class="bs-stepper-content">
                 <h5 style="margin-bottom: 15px" class="mb-1">Cars & Model</h5>
                 <div class="table-responsive">
@@ -25,10 +28,8 @@
                                     <thead>
                                     <tr role="row">
                                         <th class="sorting_asc">Id</th>
-                                        <th class="sorting_asc">Car Name</th>
-                                        <th class="sorting_asc">Car Price</th>
-                                        <th class="sorting_asc">Car Image</th>
-                                        <th class="sorting_asc">Aktivlik</th>
+                                        <th class="sorting_asc">Agreement</th>
+                                        <th class="sorting_asc">Rules</th>
                                         <th class="sorting_asc">Duzelis</th>
                                         <th class="sorting_asc">Sil</th>
                                     </tr>
@@ -36,20 +37,10 @@
 
                                     <tbody>
                                     @foreach($models  as $model)
-{{--                                        @dd($model->toArray())--}}
                                         <tr role="row" class="even">
                                             <td class="sorting_1">{{$model->id}}</td>
-                                            <td>{{$model->carmodels->name}}</td>
-                                            <td>{{$model->price}}</td>
-                                            <td><a style="font-size: 30px"  class="btn bg-cyan" href="{{ route('admin.carimage.index', ['carId' => $model->id]) }}"><i class="lni lni-gallery"></i></a></td>
-                                            <td>
-                                                @if($model->status == 1)
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                @else
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash text-white"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
-                                                @endif
-                                            </td>
-
+                                            <td> {{ Str::limit($model->agreement, 35) }}</td>
+                                            <td>{{ Str::limit($model->agreement, 35) }}</td>
                                             <td><a href="{{route($routeName.'.edit',$model->id)}}" class="btn btn-warning">Düzəliş</a></td>
                                             <td>
                                                 <form class="delete-form" action="{{ route($routeName.'.destroy',$model->id) }}" method="POST">
@@ -106,7 +97,6 @@
         });
 
     </script>
-
 
 
 @endsection
