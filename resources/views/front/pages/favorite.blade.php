@@ -2,8 +2,8 @@
 @section('front_content')
 
 <div class="main-container bookmarks">
-    <div class="container">
-        <div class="bookmarks-container products-container">
+    <div class="">
+        <div class="">
             <div class="section-title">
                 <h1 class="section-title_name">Favorite Ads</h1>
             </div>

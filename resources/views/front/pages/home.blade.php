@@ -1268,10 +1268,10 @@ function loadMoreCars() {
 
     </script>
 
-        }
+
 
 {{--        //   infiniti scroll function end--}}
-{{--    </script> --}}
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {

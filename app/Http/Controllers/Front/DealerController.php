@@ -35,7 +35,11 @@ class DealerController extends Controller
     public function detail(){
 
        $dealer=Auth::guard('dealer')->user();
-       $cars=Car::where('dealer_id',$dealer->id)->get();
+       $cars=Car::where('dealer_id',$dealer->id)
+               ->with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
+               ->select('id', 'price','vincode', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id','status')
+               ->orderBy('created_at', 'desc')
+           ->get();
         return view('front.pages.avtosalon-detail',['dealer'=>$dealer,'cars'=>$cars]);
     }
 

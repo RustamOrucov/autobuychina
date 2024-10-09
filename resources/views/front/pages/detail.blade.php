@@ -9,7 +9,7 @@
                     <li class="breadcrumbs__i"><a class="breadcrumbs__i-link"
                             href="/autos?q%5Bmake%5D%5B%5D=1&amp;q%5Bmodel%5D%5B%5D=5245">{{ $car->ModelType->name }}</a>
                     </li>
-                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № 8736387</span></li>
+                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № {{ $car->id + 999 }}</span></li>
                 </ul>
             </div>
         </div>
@@ -204,7 +204,7 @@
                                 <div class="product-price">
                                     <div class="product-price__i product-price__i--bold">{{ $car->price }}
                                         {{ $car->Ro->name }}</div>
-                                    <div class="product-price__i tz-mt-10">≈ 169 998 AZN</div>
+
                                 </div>
                                 {{-- <div class="product-labels tz-d-flex tz-gap-10 tz-mt-15">
                                     <div class="product-labels__i tz-d-flex tz-align-center">
@@ -218,10 +218,12 @@
                                     <div class="product-shop__delimiter tz-mt-15"></div>
                                     <div class="product-shop__owner tz-d-flex tz-align-center">
                                         <div class="product-shop__owner-logo"
-                                            style="background-image: url(https://turbo.azstatic.com/uploads/f352x352/2023%2F11%2F15%2F16%2F22%2F13%2F6cfeae00-e63c-4378-b671-3e6e74a22cab%2Fqayalogo.png)">
+                                            style="background-image: url({{ $car->Dealer && $car->Dealer->logo ? asset('storage/' . $car->Dealer->logo) : 'Auto BuyChina' }})">
                                         </div>
                                         <div class="product-shop__owner-right">
-                                            <div class="product-shop__owner-name">Qaya</div>
+                                            <div class="product-shop__owner-name">
+                                                {{ $car->Dealer && $car->Dealer->d_name ? $car->Dealer->d_name : 'Auto BuyChina' }}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="product-phones tz-mt-15">
@@ -233,21 +235,32 @@
 
                                     </div>
                                     <div class="product-shop__delimiter tz-mt-15"></div>
-                                    <div class="product-shop__promo">Məqsədimiz – məmnuniyyətinizdir</div>
-                                    <div class="product-shop__description">Avtosalon "Qaya" – sərfəli barter, kredit və
-                                        lizinq şərtləri. Sifarişlə Almaniya, Koreya və Amerikadan avtomobillərin gətirilməsi
-                                        üzrə xidmətlər.</div>
-                                    <div class="product-shop__count"><a
-                                            class="product-shop__link product-shop__count-value" target="_blank"
-                                            href="/avtosalonlar/avtosalon-qaya">18 listings</a></div>
-                                    <div class="product-shop__delimiter tz-mt-15"></div>
-                                    <div class="product-shop__schedule">Every day: 09:00 AM–09:00 PM</div>
-                                    <div class="product-shop__location"><a target="_blank"
-                                            class="product-shop__link product-shop__location-link"
-                                            href="https://www.google.com/maps?q=40.413436%2C49.952466&amp;ll=40.413436%2C49.952466&amp;z=15">Bakı
-                                            ş., Nizami r., R.Rüstəmov küç. 57a</a></div><a
-                                        class="tz-btn tz-btn--blue tz-btn--full" target="_blank"
-                                        href="/avtosalonlar/avtosalon-qaya">Dealership</a>
+                                    <div class="product-shop__promo">
+                                        {{ $car->Dealer && $car->Dealer->title ? $car->Dealer->title : 'Auto Buy China' }}
+                                    </div>
+                                    <div class="product-shop__description">
+                                        {{ $car->Dealer && $car->Dealer->content ? $car->Dealer->content : ' ' }}</div>
+                                    @if ($car->Dealer && $car->Dealer != null)
+                                        <div class="product-shop__count"><a
+                                                class="product-shop__link product-shop__count-value" target="_blank"
+                                                href="{{ route('avtosalon-detail', ['id' => $car->Dealer->id]) }}">{{ $car->Dealer->cars->count() }}
+                                                listings</a></div>
+
+                                        <div class="product-shop__delimiter tz-mt-15"></div>
+                                        <div class="product-shop__schedule">Every day:
+                                            {{ $car->Dealer && $car->Dealer->opening_time ? substr($car->Dealer->opening_time, 0, 5) : '' }}
+                                            :
+                                            {{ $car->Dealer && $car->Dealer->closing_time ? substr($car->Dealer->closing_time, 0, 5) : '' }}
+                                        </div>
+
+                                        <div class="product-shop__location"><a target="_blank"
+                                                class="product-shop__link product-shop__location-link"
+                                                href="https://www.google.com/maps?q={{ $car->Dealer->latitude }},{{ $car->Dealer->longitude }}&ll={{ $car->Dealer->latitude }},{{ $car->Dealer->longitude }}&z=15">
+                                                {{ $car->Dealer->adress }}</a></div>
+                                        <a class="tz-btn tz-btn--blue tz-btn--full" target="_blank"
+                                            href="{{ route('avtosalon-detail', ['id' => $car->Dealer->id]) }}">Dealership</a>
+                                    @endif
+
                                 </div>
                             </div>
                             {{-- <div
@@ -300,7 +313,8 @@
                                     href="#" data-id="{{ $car->id }}" style="display: none;">
                                     <div class="bookmarking added"></div>
                                 </a>
-                                <div class="products-i__top"><img alt="{{ $car->ModelType->name }}" loading="lazy"
+                                <div class="products-i__top custom-car-img-container"><img
+                                        alt="{{ $car->ModelType->name }}" loading="lazy"
                                         src="{{ asset('storage/' . $car->car_image) }}">
                                     <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
                                     <div class="products-i__info"></div>
@@ -331,45 +345,42 @@
 
     <div class="reveal-modal report-modal js-modal-report reveal-modal_opened" id="report"
         style="visibility: visible;display:none">
-        <form class="simple_form default-form new_report" id="new_report"
-            data-auth-url="https://hello.turbo.az/?return_to=aHR0cHM6Ly90dXJiby5hei9hdXRvcy84NzUxMzMyLWxhbmQtcm92ZXItcmFuZ2Utcm92ZXI="
-            novalidate="novalidate" action="/autos/8751332-land-rover-range-rover/reports" accept-charset="UTF-8"
-            data-remote="true" method="post"><input type="hidden" name="access_token" id="access_token"
-                autocomplete="off">
+        <form action="{{ route('report') }}" class="simple_form default-form new_report" id="new_report" method="post"><input type="hidden"
+                id="access_token" autocomplete="off">
+                @csrf
+                <input type="text" name="trap_field" style="display:none">
             <div class="report-modal__header tz-d-flex tz-align-center tz-justify-between">
                 <div class="report-modal__header-title">Complain</div>
                 <div class="close-reveal-modal"></div>
             </div>
             <div class="report-modal__content">
+                
                 <div>
-                    <select id="mon-menu-deroulant">
-                        <option>Reason for complaint</option>
-                        <option value="option2">It is impossible to stay interested</option>
-                        <option value="option3">The advertisement is not current</option>
-                        <option value="option3">Wrong price</option>
-                        <option value="option3">Wrong indicators</option>
-                        <option value="option3">Repeat advertisement</option>
-                        <option value="option3">Wrong city </option>
-                        <option value="option3">The pictures are not correct </option>
-                        <option value="option3">The car is delivered by order</option>
-                        <option value="option3">Suspicions of fraud</option>
-                        <option value="option3">The car is from the showroom</option>
-
-
+                    <select id="mon-menu-deroulant" name="title" required>
+                        <option value="">Reason for complaint</option>
+                        <option value="It is impossible to stay interested">It is impossible to stay interested</option>
+                        <option value="The advertisement is not current">The advertisement is not current</option>
+                        <option value="Wrong price">Wrong price</option>
+                        <option value="Wrong indicators">Wrong indicators</option>
+                        <option value="Repeat advertisement">Repeat advertisement</option>
+                        <option value="Wrong city">Wrong city </option>
+                        <option value="The pictures are not correct">The pictures are not correct </option>
+                        <option value="The car is delivered by order">The car is delivered by order</option>
+                        <option value="Suspicions of fraud">Suspicions of fraud</option>
+                        <option value="The car is from the showroom">The car is from the showroom</option>
                     </select>
                 </div>
+
                 <hr class="js-report-divider">
-                <div class="input text optional report_description field_with_hint asdeh217ds">
-                    <textarea class="text optional form-control" name="report[description]" id="report_description"></textarea><span class="hint">Do not enter anything here.</span>
-                </div>
+
                 <div class="input text optional report_body">
-                    <textarea rows="1" class="text optional form-control js-body-input" data-title="Şikayəti təsvir edin"
-                        placeholder="Şikayəti təsvir edin" name="report[body]" id="report_body"></textarea>
+                    <textarea required rows="1" class="text optional form-control js-body-input" data-title="Şikayəti təsvir edin"
+                        placeholder="Describe the complaint max:400" name="description" id="report_body"></textarea>
                 </div>
                 <hr>
             </div>
-            <div class="report-modal__footer"><button name="button" type="submit" data-disable-with=""
-                    class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">Göndər</button></div>
+            <div class="report-modal__footer"><button  type="submit" data-disable-with=""
+                    class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">Send</button></div>
         </form>
     </div>
 
@@ -390,7 +401,6 @@
                         copiedMessage.classList.add('is-hidden');
                     }, 2000);
                 }).catch(function(err) {
-                    console.error('Kopyalama başarısız oldu: ', err);
                 });
             });
         });

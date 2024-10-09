@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\FilterController;
 ;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MobileController;
+use App\Http\Controllers\Front\ReportController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
@@ -43,7 +44,7 @@ Route::get('/all-cars',[HomeController::class,'allcars']);
 //AvtoSalon
 Route::get('/dealership',[HomeController::class,'avtosalon'])->name('dealership');
 //AvtoSalon Detail
-Route::get('/avtosalon-detail',[HomeController::class,'avtosalondetail']);
+Route::get('/avtosalon-detail/{id}',[HomeController::class,'avtosalondetail'])->name('avtosalon-detail');
 
 
 
@@ -66,14 +67,14 @@ Route::post('/login',[AuthController::class,'loginProcess']);
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
+
+/////////////////////////////////////////////////////////////   midleware yaz !!!!
+Route::get('/newcar',[CarController::class,'newcar'])->name('newcar');
+
 Route::get('dealer-detail',[DealerController::class,'detail'])->name('dealer-detail');
 Route::get('dealer-profile',[DealerController::class,'profile'])->name('dealer-profile');
 Route::post('dealer-update/{dealer}',[DealerController::class,'update'])->name('dealer-update');
-
-
-Route::get('/newcar',[CarController::class,'newcar'])->name('newcar');
-
-
+/////////////////////////////////////////////////////////
 
 });
 
@@ -83,3 +84,4 @@ Route::get('/useragrement',[HomeController::class,'agrement'])->name('useragreme
 Route::get('/rule',[HomeController::class,'rule'])->name('rule');
 
 Route::post('car-store',[CarController::class,'storeCar'])->name('car-store');
+Route::post('report',[ReportController::class,'store'])->name('report');

@@ -71,26 +71,32 @@
                 <div class="products-i vipped featured salon"><a class="products-i__link" target="_blank" href="{{route('detail',['car'=>$car->id])}}"></a><a class="js-bookmark-item-8647294" data-remote="true" rel="nofollow" data-method="post" href="#">
 
                     </a>
-                    <div class="products-i__top">
-                        <img alt="Hyundai Grandeur" loading="lazy" src="https://turbo.azstatic.com/uploads/f460x343/2024%2F07%2F26%2F13%2F21%2F53%2F5d4c5ab2-88d8-43a8-bd49-4458baa47c34%2F73879_Llsf7HE7T9ZVmMOurKtMGQ.jpg">
+                    <div class="products-i__top custom-car-img-container">
+                        <img alt="Hyundai Grandeur" loading="lazy" src="{{asset('storage/'.$car->car_image)}}">
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
 {{--                            <div class="products-i__label products-i__label--salon">Salon</div>--}}
                         </div>
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
+                            @if($car->status === 1)
                             <div class="products-i__label products-i__label--salon">Active</div>
-                            <div class="products-i__label products-i__label--salon" style="background: red;color:white">Active</div>
+                            @else
+                            <div class="products-i__label products-i__label--salon" style="background: red;color:white">Deactive</div>
+                            @endif
                         </div>
                         <div class="products-i__info">
 
                         </div>
                     </div>
+
                     <div class="products-i__bottom">
                         <div class="products-i__price products-i__bottom-text">
-                            <div class="product-price">77 900 <span>AZN</span></div>
+                            <div class="product-price">{{$car->price}} <span>{{$car->Ro->name}}</span></div>
                         </div>
-                        <div class="products-i__name products-i__bottom-text">Hyundai Grandeur</div>
-                        <div class="products-i__attributes products-i__bottom-text">2024, 1.6 L, 0 km</div>
-                        <div class="products-i__datetime">Bakı, dünən 18:39</div>
+                        <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}   {{ $car->ModelType->name }}</div>
+                        <div class="products-i__attributes products-i__bottom-text">{{ $car->year }},
+                            {{ $car->EngineVolume->name / 1000 }} L, {{ $car->odometer_km }} km</div>
+                        <div class="products-i__datetime">{{ $car->region->name ?? '' }} ,
+                            {{ $car->created_at->diffForHumans() }}</div>
                     </div>
                 </div>
 
