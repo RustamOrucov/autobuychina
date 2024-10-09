@@ -11,21 +11,31 @@ class DetectMobileDevice
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
         $userAgent = $request->header('User-Agent');
 
         if ($this->isMobile($userAgent)) {
-            return redirect()->route('mobile.index');
+            // Mobil cihaza yönlendirme yap
+            return redirect()->route('mobile.home');
         }
 
         return $next($request);
     }
 
-    protected function isMobile($userAgent)
+    /**
+     * User-Agent'ten mobil cihazı tespit eder.
+     *
+     * @param string $userAgent
+     * @return bool
+     */
+    protected function isMobile(string $userAgent): bool
     {
+        // Mobil cihazları tespit eden regex
         return preg_match('/(android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini)/i', $userAgent);
     }
 }

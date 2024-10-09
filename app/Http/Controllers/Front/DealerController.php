@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DelaerProfileUpdateRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Car;
 use App\Models\Dealer;
 use App\Services\RepositoryService\DealerService;
 use App\Services\RepositoryService\UserService;
@@ -34,7 +35,8 @@ class DealerController extends Controller
     public function detail(){
 
        $dealer=Auth::guard('dealer')->user();
-        return view('front.pages.avtosalon-detail',['dealer'=>$dealer]);
+       $cars=Car::where('dealer_id',$dealer->id)->get();
+        return view('front.pages.avtosalon-detail',['dealer'=>$dealer,'cars'=>$cars]);
     }
 
    public function profile(){

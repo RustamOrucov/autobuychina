@@ -16,6 +16,7 @@ use App\Models\Market;
 use App\Models\Modeltype;
 use App\Models\Region;
 use App\Models\Ro;
+use App\Models\Social;
 use App\Models\Transmission;
 use App\Models\Year;
 use App\Services\CarFilterService;
@@ -180,4 +181,13 @@ class HomeController extends Controller
     {
         return view('front.pages.avtosalon-detail');
     }
+
+
+    public function agrement(){
+        return view('front.pages.useragrement');
+    }
+    public function rule(){
+        return view('front.pages.rule');
+    }
+
 }

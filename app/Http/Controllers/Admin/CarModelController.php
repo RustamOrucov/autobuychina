@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class CarModelController extends Controller
 {
-    public function __construct(protected CarModelService $service)
+    public function __construct(protected CarModelService  $service)
     {
 
     }

@@ -14,7 +14,7 @@
                 <div class="shop-header-left">
                     <div class="shop--logo" style="background-image: url({{ asset($dealer->logo ? 'storage/'.$dealer->logo : 'images/default-background.jpg') }})">
                     </div>
-                    <div class="shop--products-count">16 elan</div>
+                    <div class="shop--products-count">{{$cars->count()}} announcement</div>
                 </div>
                 <div class="shop-header-right">
                     <div class="shop-header-text">
@@ -50,7 +50,7 @@
         </div>
         <div class="page-content page-content-shop tz-container">
             <div class="products-title">
-                <p class="products-title-amount">16 elan</p>
+                <p class="products-title-amount">{{$cars->count()}} announcement</p>
                 <div class="products-title-sort js-shop-sort"><select name="sort-variants" id="sort-variants">
                         <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=date" value="date">Tarixə görə
                         </option>
@@ -65,23 +65,23 @@
                     </select></div>
             </div>
             <div class="products">
+            @foreach($cars as $car)
 
 
+                <div class="products-i vipped featured salon"><a class="products-i__link" target="_blank" href="{{route('detail',['car'=>$car->id])}}"></a><a class="js-bookmark-item-8647294" data-remote="true" rel="nofollow" data-method="post" href="#">
 
-                <div class="products-i vipped featured salon"><a class="products-i__link" target="_blank" href="/autos/8647294-hyundai-grandeur"></a><a class="js-bookmark-item-8647294" data-remote="true" rel="nofollow" data-method="post" href="/autos/8647294-hyundai-grandeur/bookmarks">
-                        <div class="bookmarking"></div>
-                    </a><a class="hide js-unbookmark-item-8647294" data-remote="true" rel="nofollow" data-method="delete" href="/autos/8647294-hyundai-grandeur/bookmarks">
-                        <div class="bookmarking added"></div>
                     </a>
-                    <div class="products-i__top"><img alt="Hyundai Grandeur" loading="lazy" src="https://turbo.azstatic.com/uploads/f460x343/2024%2F07%2F26%2F13%2F21%2F53%2F5d4c5ab2-88d8-43a8-bd49-4458baa47c34%2F73879_Llsf7HE7T9ZVmMOurKtMGQ.jpg">
+                    <div class="products-i__top">
+                        <img alt="Hyundai Grandeur" loading="lazy" src="https://turbo.azstatic.com/uploads/f460x343/2024%2F07%2F26%2F13%2F21%2F53%2F5d4c5ab2-88d8-43a8-bd49-4458baa47c34%2F73879_Llsf7HE7T9ZVmMOurKtMGQ.jpg">
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                            <div class="products-i__label products-i__label--salon">Salon</div>
+{{--                            <div class="products-i__label products-i__label--salon">Salon</div>--}}
                         </div>
-                        <div class="products-i__paid"><span class="featured-icon"></span><span class="vipped-icon"></span></div>
+                        <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
+                            <div class="products-i__label products-i__label--salon">Active</div>
+                            <div class="products-i__label products-i__label--salon" style="background: red;color:white">Active</div>
+                        </div>
                         <div class="products-i__info">
-                            <div class="products-i__icon products-i__icon--loan">
-                                <div class="products-i__tooltip products-i__tooltip--loan">Kreditdədir</div>
-                            </div>
+
                         </div>
                     </div>
                     <div class="products-i__bottom">
@@ -94,8 +94,8 @@
                     </div>
                 </div>
 
+            @endforeach
 
-                
             </div>
         </div>
     </div>

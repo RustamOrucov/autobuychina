@@ -6,10 +6,10 @@
             </div>
             <div class="header-bar--right">
                 <div class="header-bar-i header-bar-i_support-phone"><span
-                        class="header-bar-i_support-phone-title">Support: </span><span
+                        class="header-bar-i_support-phone-title">{{ sitekey('home_static', 'name') }} : </span><span
                         class="header-bar-i_support-phone-list"><span><a data-register-call="true"
                                 href="tel:(012) 555 55 55">(012) 555 55 55</a></span></span></div>
-                <a class="header-bar-i" href="/help/popular_questions">Help</a>
+                <a class="header-bar-i" href="/help/popular_questions">{{ sitekey('home_static_two', 'title') }}</a>
 
                 <div class="dropdown">
                     <button class="dropbtn">EN</button>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <a class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">Favorites</a>
+                <a class="header-bar-i header-bar-i--bookmarks" href="{{ route('favorite') }}">{{ sitekey('home_static', 'title') }}</a>
                 @if (Auth::guard('dealer')->check())
                     <a href="{{ route('dealer-profile') }}" class="custom-dealer-name"><img width="20"
                             src="{{ asset('assets/img/profile.png') }}" alt="">
@@ -28,54 +28,47 @@
                     <a href="{{ route('logout') }}" style="display: flex;align-items:center;gap:3px"><img width="20"
                             src="{{ asset('assets/img/logout.png') }}" alt=""> Logout</a>
                 @else
-                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">Login</a>
-                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">Register</a>
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">{{ sitekey('home_static', 'text') }}</a>
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('register') }}">{{ sitekey('home_static', 'desc') }}</a>
                 @endif
 
-
-            </div>
+                </div>
         </div>
     </div>
     <div class="header-top-nav">
         <div class="nav tz-container tz-d-flex tz-align-center"><a class="nav-i nav-i--home" href="/">
                 <h1 class="nav-i--home_logo"><img src="{{ asset('storage/' . $logoImages->d_logo) }}" width="160">
                 </h1>
-            </a><a class="nav-i" data-stat="header-all-ads-link" href="#">All listings</a><a class="nav-i"
-                data-stat="header-shops-link" href="{{ route('dealership') }}">Dealerships</a><a class="nav-i"
-                data-stat="header-autocatalog-link" href="#">Car catalog</a><a class="nav-i"
-                data-stat="header-moto-link" href="#">Moto</a>
+            </a><a class="nav-i" data-stat="header-all-ads-link" href="#">{{ sitekey('home_static_two', 'title') }}</a><a class="nav-i"
+                data-stat="header-shops-link" href="{{ route('dealership') }}">{{ sitekey('home_static_two', 'text') }}</a><a class="nav-i"
+                data-stat="header-autocatalog-link" href="#">{{ sitekey('home_static_two', 'desc') }}</a><a class="nav-i"
+                data-stat="header-moto-link" href="#">{{ sitekey('home_static_two', 'name') }}</a>
             <div class="nav-i--container"><a class="nav-i" target="_blank" data-stat="header-accessories-link"
-                    href="#">Ehtiyat
-                    hissələr və aksesuarlar</a>
+                    href="#">{{ sitekey('home_static_three', 'title') }}</a>
                 <div class="header-top--sub-nav"><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Aksesuarlar</a><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Audio
-                        və video texnika</a><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Avtokosmetika
-                        və avtokimya</a><a class="header-top--sub-nav-i" target="_blank" href="#">Ehtiyat
-                        hissələr</a><a class="header-top--sub-nav-i" target="_blank" href="#">GPS
-                        naviqatorlar</a><a class="header-top--sub-nav-i" target="_blank" href="#">Qeydiyyat
-                        nişanları</a><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Siqnalizasiyalar</a><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Videoqeydiyyatçılar</a><a class="header-top--sub-nav-i" target="_blank"
-                        href="#">Şinlər,
-                        disklər və təkərlər</a><a class="header-top--sub-nav-i" target="_blank" href="#">Digər</a>
+                        href="#">{{ sitekey('home_static_three', 'text') }}</a><a class="header-top--sub-nav-i" target="_blank"
+                        href="#">{{ sitekey('home_static_three', 'desc') }}</a><a class="header-top--sub-nav-i" target="_blank"
+                        href="#">{{ sitekey('home_static_three', 'name') }}</a><a class="header-top--sub-nav-i" target="_blank" href="#">{{ sitekey('home_static_four', 'title') }}</a><a class="header-top--sub-nav-i" target="_blank" href="#">GPS naviqatorlar</a>
+                    <a class="header-top--sub-nav-i" target="_blank" href="#">{{ sitekey('home_static_four', 'text') }}</a><a class="header-top--sub-nav-i" target="_blank"
+                        href="#">{{ sitekey('home_static_four', 'desc') }}</a><a class="header-top--sub-nav-i" target="_blank"
+                        href="#">{{ sitekey('home_static_four', 'name') }}</a><a class="header-top--sub-nav-i" target="_blank"
+                        href="#">{{ sitekey('home_static_five', 'title') }}</a><a class="header-top--sub-nav-i" target="_blank" href="#">{{ sitekey('home_static_six', 'title') }}</a>
                 </div>
             </div>
             <div class="nav-i--container"><a class="nav-i" target="_blank" data-stat="header-rental-link"
-                    href="#">İcarə</a>
+                    href="#">{{ sitekey('home_static_five', 'text') }}</a>
                 <div class="rental-dropdown_content"><a target="_blank" data-stat="rental-cars"
-                        href="#">Avtomobillər</a><a target="_blank" data-stat="rental-buses"
-                        href="#">Avtobus
-                        və mikroavtobuslar</a><a target="_blank" data-stat="rental-bikes" href="#">Motosiklet
-                        və mopedlər</a><a target="_blank" data-stat="rental-commerce_transport" href="#">Xüsusi
-                        texnika</a><a target="_blank" data-stat="rental-other" href="#">Digər</a>
+                        href="#">{{ sitekey('home_static_five', 'desc') }}</a><a target="_blank" data-stat="rental-buses"
+                        href="#">{{ sitekey('home_static_five', 'name') }}</a><a target="_blank" data-stat="rental-bikes" href="#">{{ sitekey('home_static_six', 'text') }}</a>
+                    <a target="_blank" data-stat="rental-commerce_transport" href="#">{{ sitekey('home_static_six', 'desc') }}</a>
+                    <a target="_blank" data-stat="rental-other" href="#">{{ sitekey('home_static_six', 'title') }}</a>
                 </div>
             </div>
             @if (Auth::guard('dealer')->check())
-            <a class="header-new-btn" href="{{ route('newcar') }}"><span>New listing</span></a>
+        <a class="header-new-btn" href="{{ route('newcar') }}"><span>{{ sitekey('home_static_six', 'name') }}</span></a>
             @else
             @endif
+        </div>
         </div>
     </div>
 </div>

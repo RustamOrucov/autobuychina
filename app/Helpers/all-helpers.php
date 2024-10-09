@@ -4,14 +4,12 @@
 //use App\Models\Page;
 use App\Models\StaticModel;
 
-if (!function_exists('smkey')) {
-
-    function smkey($key)
+if (!function_exists('sitekey')) {
+    function sitekey($key, $field = 'title')
     {
-        $smkey = StaticModel::where('key',$key)->first()->title ?? null;
-        return $smkey;
+        $staticModel = StaticModel::where('key', $key)->first();
+        return $staticModel ? $staticModel->{$field} : null;
     }
-
 }
 //if (!function_exists('pages_')) {
 //
