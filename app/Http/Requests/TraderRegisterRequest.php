@@ -21,9 +21,9 @@ class TraderRegisterRequest extends FormRequest
         return [
             'name'=>'required|string|max:200',
             'surname'=>'required|string|max:200',
-            'email'=>'required|email|unique:dealers,email,max:200',
+            'email'=>'required|email|unique:traders,email,max:200',
             'adress'=>'required|string|max:200',
-            'd_name'=>'required|string|unique:dealers,d_name,max:200',
+            't_name'=>'required|string|unique:traders,t_name,max:200',
             'phone'=>'required|string|max:200',
             'license_number'=>'required|string|max:200',
             'password' => 'required|min:3|confirmed',

@@ -7,6 +7,11 @@
                     <p>Register Trader</p>
                 </div>
                 <form action="{{ route('traderStore') }}" method="POST" enctype="multipart/form-data">
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    @endif
                     @csrf
                     <div class="user_details">
                         <div class="input_box">
