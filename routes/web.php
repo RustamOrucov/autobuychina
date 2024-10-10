@@ -54,7 +54,7 @@ Route::get('/trader',[HomeController::class,'trader'])->name('home.trader');
 
 Route::get('/register',[AuthController::class,'registerview'])->name('register');
 Route::post('/registerStore',[DealerController::class,'store'])->name('registerStore');
-    Route::post('/traderStore',[TraderRegisController::class,'store'])->name('traderStore');
+Route::post('/trader/store', [TraderRegisController::class, 'store'])->name('traderStore');
 
 //Mobile
 
