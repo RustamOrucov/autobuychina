@@ -34,9 +34,9 @@ class TraderRegisterService
         $model = $this->repository->save($data, new Traderregis());
 
         self::clearCached();
-        return $model;
+        return redirect()->back()->with('success', 'Registration successful!');
     }
-    public function update(DelaerProfileUpdateRequest $profilerequest, $model)
+    public function update(TraderRegisterRequest $profilerequest, $model)
     {
         $data = $profilerequest->all();
         unset($data['password_confirmation']);
