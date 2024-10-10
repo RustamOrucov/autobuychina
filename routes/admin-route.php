@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\MainSliderController;
 use App\Http\Controllers\Admin\ModelTypeController;
 use App\Http\Controllers\Admin\OdometerController;
 use App\Http\Controllers\Admin\PolicyController;
+use App\Http\Controllers\Admin\ReportStatusController;
 use App\Http\Controllers\Admin\RoController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\SocialController;
@@ -38,14 +39,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('admin/login-view', [AdminController::class, 'loginView'])->name('admin.login-view');
-Route::post('/admin/login',[AdminController::class,'login'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 
 
-Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']], function () {
 
     Route::get('admin/login-view', [AdminController::class, 'loginView'])->name('admin.login-view');
-    Route::get('admin/edit/{id}',[AdminController::class,'edit'])->name('admin.edit');
-    Route::post('admin/update/{id}',[AdminController::class,'update'])->name('admin.update');
+    Route::get('admin/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::post('admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
 
     Route::get('/', [AdminController::class, 'index'])->name('home');
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
@@ -83,55 +84,53 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['admin']],function
     Route::put('carimage/update/{carimage}', [CarImageController::class, 'update'])->name('carimage.update');
     Route::delete('carimage/destroy/{carimage}', [CarImageController::class, 'destroy'])->name('carimage.destroy');
 
-//    Static Translation
+    //    Static Translation
     Route::resource('staticModel', TranslationsController::class)->except('show');
     Route::resource('policy', PolicyController::class)->except('show');
 
+    // report change status
+    Route::get('reportstatus/{id}', [ReportStatusController::class, 'status'])->name('reportstatus');
 
 
 
+    // region
+    Route::resource('/region', \App\Http\Controllers\Admin\RegionController::class);
 
-// region
-     Route::resource('/region',\App\Http\Controllers\Admin\RegionController::class);
-
-//     markets
-    Route::resource('/market',\App\Http\Controllers\Admin\MarketController::class);
+    //     markets
+    Route::resource('/market', \App\Http\Controllers\Admin\MarketController::class);
 
 
-//    site setting and meta seo
+    //    site setting and meta seo
 
-    Route::get('/logo/form',[\App\Http\Controllers\Admin\SiteSettingController::class,'logoForm'])->name('logo.form');
-    Route::post('/logo/update',[\App\Http\Controllers\Admin\SiteSettingController::class,'logoUpdate'])->name('logo.update');
-    Route::get('seo/form',[SiteSettingController::class,'seoform'])->name('seo.form');
-    Route::post('/seo/update',[SiteSettingController::class,'seoupdate'])->name('seo.update');
+    Route::get('/logo/form', [\App\Http\Controllers\Admin\SiteSettingController::class, 'logoForm'])->name('logo.form');
+    Route::post('/logo/update', [\App\Http\Controllers\Admin\SiteSettingController::class, 'logoUpdate'])->name('logo.update');
+    Route::get('seo/form', [SiteSettingController::class, 'seoform'])->name('seo.form');
+    Route::post('/seo/update', [SiteSettingController::class, 'seoupdate'])->name('seo.update');
 
-//    about us
-    Route::get('/top/form', [\App\Http\Controllers\Admin\AboutController::class,'editTop'])->name('top.form');
-    Route::post('/top/form/save',[\App\Http\Controllers\Admin\AboutController::class,'storeTop'])->name('top.form.save');
+    //    about us
+    Route::get('/top/form', [\App\Http\Controllers\Admin\AboutController::class, 'editTop'])->name('top.form');
+    Route::post('/top/form/save', [\App\Http\Controllers\Admin\AboutController::class, 'storeTop'])->name('top.form.save');
 
-    Route::get('/platform/form', [\App\Http\Controllers\Admin\AboutController::class,'editPlatform'])->name('platform.form');
-    Route::post('/platform/form/save',[\App\Http\Controllers\Admin\AboutController::class,'storeplatform'])->name('platform.form.save');
+    Route::get('/platform/form', [\App\Http\Controllers\Admin\AboutController::class, 'editPlatform'])->name('platform.form');
+    Route::post('/platform/form/save', [\App\Http\Controllers\Admin\AboutController::class, 'storeplatform'])->name('platform.form.save');
 
-    Route::get('/globalcount/form', [\App\Http\Controllers\Admin\AboutController::class,'editGlobalcount'])->name('globalcount.form');
-    Route::post('/slider/form/save',[\App\Http\Controllers\Admin\AboutController::class,'storeslider'])->name('slider.form.save');
-    Route::get('/slider/form/destroy/{id}',[\App\Http\Controllers\Admin\AboutController::class,'destroysliderimage'])->name('slider.form.destroy');
+    Route::get('/globalcount/form', [\App\Http\Controllers\Admin\AboutController::class, 'editGlobalcount'])->name('globalcount.form');
+    Route::post('/slider/form/save', [\App\Http\Controllers\Admin\AboutController::class, 'storeslider'])->name('slider.form.save');
+    Route::get('/slider/form/destroy/{id}', [\App\Http\Controllers\Admin\AboutController::class, 'destroysliderimage'])->name('slider.form.destroy');
 
-    Route::post('/globalcount/form/save',[\App\Http\Controllers\Admin\AboutController::class,'storeGlobalcount'])->name('globalcount.form.save');
+    Route::post('/globalcount/form/save', [\App\Http\Controllers\Admin\AboutController::class, 'storeGlobalcount'])->name('globalcount.form.save');
 
     //notice
-    Route::get('/notice/index',[NoticeController::class,'index'])->name('notice.index');
-    Route::post('/notice/store',[NoticeController::class,'store'])->name('notice.store');
-    Route::get('/notice/edit/{id}',[NoticeController::class,'edit'])->name('notice.edit');
-    Route::post('/notice/update/{id}',[NoticeController::class,'update'])->name('notice.update');
-    Route::get('/notice/destroy/{id}',[NoticeController::class,'destroy'])->name('notice.destroy');
+    Route::get('/notice/index', [NoticeController::class, 'index'])->name('notice.index');
+    Route::post('/notice/store', [NoticeController::class, 'store'])->name('notice.store');
+    Route::get('/notice/edit/{id}', [NoticeController::class, 'edit'])->name('notice.edit');
+    Route::post('/notice/update/{id}', [NoticeController::class, 'update'])->name('notice.update');
+    Route::get('/notice/destroy/{id}', [NoticeController::class, 'destroy'])->name('notice.destroy');
 
 
-//    Auction Time
+    //    Auction Time
 
     Route::resource('auctiontime', AuctionTimeController::class)->except(['show']);
 });
 
-    Route::get('videogenerate', [VideoGenerateController::class,'index'])->name('videogenerate.index');
-
-
-
+Route::get('videogenerate', [VideoGenerateController::class, 'index'])->name('videogenerate.index');
