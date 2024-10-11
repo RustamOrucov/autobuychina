@@ -4,3 +4,5 @@
 
 <script src="{{ asset('assets_/js/mobile.js') }}"></script>
 
+<script src="{{ asset('assets/js/addfavorite.js') }}"></script>
+<script src="{{ asset('assets_/js/share.js') }}"></script>

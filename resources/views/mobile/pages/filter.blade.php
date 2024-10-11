@@ -58,7 +58,7 @@
 
     <div class="body-inner" style="padding: 0 15px;">
         <div class="header__nav">
-            <div class="header__nav-left"><span class="header__nav-btn--back js-header-filter-back-btn"></span></div>
+            <div class="header__nav-left"><a href="{{ route('mobile.home') }}" class="header__nav-btn--back js-header-filter-back-btn"></a></div>
             <div class="header__nav-title">Filtrlər</div>
             <div class="header__nav-right">
                 <div class="popup-header__btn popup-header__btn--reset js-filter-header-reset-form">Sıfırla</div>

@@ -5957,7 +5957,6 @@ textarea {
 
 .shop--views {
     margin-bottom: 7px;
-    padding-left: 21px;
     font-weight: bold;
     color: #cacaca;
     position: relative
@@ -17761,13 +17760,7 @@ input[type='checkbox']+label {
     margin-right: 15px
 }
 
-.share-btn.is-ios {
-    background: url(//turbo.azstatic.com/assets/mobile/sprites/main-58e33429b460b8954f9774b6b79d7d004653d7779037c09449f0a6ca33425359.svg#share--icon-share--ios) no-repeat center/30px
-}
 
-.share-btn.is-android {
-    background: url(//turbo.azstatic.com/assets/mobile/sprites/main-58e33429b460b8954f9774b6b79d7d004653d7779037c09449f0a6ca33425359.svg#share--icon-share--android) no-repeat center/27px
-}
 
 .car-models--list {
     width: auto;
@@ -18279,7 +18272,6 @@ input[type='checkbox']+label {
 
 .shop--views {
     font-size: 13px;
-    margin-top: -2px
 }
 
 .font-source-sans .shop--views {
@@ -18507,9 +18499,11 @@ input[type='checkbox']+label {
 
 .short-search select {
     background-image: url(//turbo.azstatic.com/assets/mobile/select-arrow-41fca49c8c87dd331ad8574c01f74b940e6fe9679f3249bbdcb4f0cf5216d1b5.svg);
+    background-size: 18px; /* Arka plan şəklinin ölçüsünü təyin edin */
     opacity: 1;
-    background-position: center right 15px
+    background-position: center right 25px;
 }
+
 
 .short-search .btn {
     position: relative;
@@ -21255,4 +21249,23 @@ select {
     left: 0;
     right: 0;
     z-index: 98
+}
+
+.custom-header-cardetail{
+    background:black;
+}
+.custom-share-button-mobile{
+    margin-right:30px;
+}
+.custom-share-btn-mobile{
+    background:transparent;
+    margin-right:40px;
+}
+.bookmarking {
+    top:3px;
+}
+.custom-view-mobile{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }

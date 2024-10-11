@@ -12,6 +12,7 @@
                     <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № {{ $car->id + 999 }}</span></li>
                 </ul>
             </div>
+            {{-- sdsd --}}
         </div>
         <div class="page-content">
             <div class="product-heading-container">
@@ -354,7 +355,7 @@
                 <div class="close-reveal-modal"></div>
             </div>
             <div class="report-modal__content">
-                
+
                 <div>
                     <select id="mon-menu-deroulant" name="title" required>
                         <option value="">Reason for complaint</option>

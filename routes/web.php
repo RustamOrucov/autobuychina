@@ -14,6 +14,9 @@ use App\Http\Controllers\Front\MobileController;
 use App\Http\Controllers\Front\ReportController;
 use App\Http\Controllers\Front\TraderRegisController;
 use App\Http\Controllers\Front\UserController;
+use App\Http\Controllers\Mobile\DealerController as MobileDealerController;
+use App\Http\Controllers\Mobile\MobileCarController;
+use App\Http\Controllers\Mobile\MobileHomeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
@@ -122,9 +125,13 @@ Route::post('car-store', [CarController::class, 'storeCar'])->name('car-store');
 Route::post('report', [ReportController::class, 'store'])->name('report');
 
 //Mobile Route
-Route::get('/mobile', [MobileController::class, 'home'])->name('mobile.home');
-Route::get('/mobile/cardetail', [MobileController::class, 'cardetail'])->name('mobile.cardetail');
-Route::get('/mobile/filter', [MobileController::class, 'filterpage'])->name('mobile.filter');
-Route::get('/mobile/profile', [MobileController::class, 'profilepage'])->name('mobile.profile');
-Route::get('/mobile/dealers', [MobileController::class, 'alldealers'])->name('mobile.dealers');
-Route::get('/mobile/add-cars', [MobileController::class, 'addcars'])->name('mobile.addcars');
+Route::get('/mobile', [MobileHomeController::class, 'home'])->name('mobile.home');
+Route::get('/mobile/cardetail/{car}', [MobileCarController::class, 'cardetail'])->name('mobile.cardetail');
+Route::get('/mobile/dealer/detail/{dealer}', [MobileDealerController::class, 'detail'])->name('mobile.dealer.detail');
+
+
+
+Route::get('/mobile/filter', [MobileHomeController::class, 'filterpage'])->name('mobile.filter');
+Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
+Route::get('/mobile/dealers', [MobileHomeController::class, 'alldealers'])->name('mobile.dealers');
+Route::get('/mobile/add-cars', [MobileHomeController::class, 'addcars'])->name('mobile.addcars');
