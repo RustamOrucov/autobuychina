@@ -1,5 +1,13 @@
-@extends('front.layout.layout')
-@section('front_content')
+@extends('mobile.layout.layout')
+@section('mobile_content')
+    <div class="header js-header" style="">
+        <div class="header__nav">
+            <div class="header__nav-left">
+                <span class="header__nav-btn--back js-header-back-btn" data-back-to-url="https://turbo.az/"></span>
+            </div>
+
+        </div>
+    </div>
     <div class="contents member" id="contents">
         <div style="max-width: 750px; margin: 20px auto 0 auto;">
             <div class="container custom-register-container">
@@ -12,61 +20,61 @@
                         <div class="input_box">
                             <label for="name">Name</label>
                             <input style="padding:0 5px" type="text" id="name" name="name"
-                                value="{{ old('name') }}" placeholder="Name" required>
+                                   value="{{ old('name') }}" placeholder="Name" required>
                             @error('name')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="surname">Surname</label>
                             <input style="padding:  0 5px" type="text" id="surname" name="surname"
-                                value="{{ old('surname') }}" placeholder="Surname" required>
+                                   value="{{ old('surname') }}" placeholder="Surname" required>
                             @error('surname')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="d_name">Dealer Name</label>
                             <input style="padding: 0 5px" type="text" id="d_name" name="d_name"
-                                placeholder="Dealer Name" value="{{ old('d_name') }}" required>
+                                   placeholder="Dealer Name" value="{{ old('d_name') }}" required>
                             @error('d_name')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="adress">Adress</label>
                             <input style="padding: 0 5px" type="text" name="adress" id="adress"
-                                value="{{ old('adress') }}" placeholder="Adress" required>
+                                   value="{{ old('adress') }}" placeholder="Adress" required>
                             @error('adress')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="email">Email</label>
                             <input style="padding:0 5px" type="email" name="email" value="{{ old('email') }}"
-                                id="email" placeholder="Email Address" required>
+                                   id="email" placeholder="Email Address" required>
                             @error('email')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="phone">Phone number</label>
                             <input style="padding: 0 5px" type="text" name="phone" value="{{ old('phone') }}"
-                                id="phone" placeholder="+994" required>
+                                   id="phone" placeholder="+994" required>
                             @error('phone')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="confirmPass">Pssword</label>
                             <div class="inputTx inputPw">
                                 <input style="padding: 0 5px" type="password" name="password" id="password"
-                                    class="password required" placeholder="Password">
+                                       class="password required" placeholder="Password">
 
                             </div>
 
                             @error('password')
-                                <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
 
                         </div>
@@ -74,11 +82,11 @@
                             <label for="confirmPass">Pssword Confirm</label>
                             <div class="inputTx inputPw">
                                 <input style="padding:0 5px" type="password" name="password_confirmation"
-                                    id="current_password" class="password required" placeholder="Password">
+                                       id="current_password" class="password required" placeholder="Password">
 
                             </div>
                             @error('password_confirmation')
-                                <div class="text-danger">{{ $message }}</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
@@ -109,7 +117,7 @@
                         <div class="private-checked">
                             <div class="dbl clearfix" style="list-style-type: none;">
                                 <input type="checkbox"  id="remember-me" class=""
-                                    value="true">
+                                       value="true">
                                 <label for="remember-me">Terms and Conditions</label>
                             </div>
                             <div class="private-btn-box">
@@ -184,13 +192,13 @@
                 </ul>
                 <ul>
                     <li><a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies"
-                            target="_blank" rel="noreferrer">Internet Explorer</a></li>
+                           target="_blank" rel="noreferrer">Internet Explorer</a></li>
                     <li><a href="https://support.google.com/accounts/answer/61416" target="_blank"
-                            rel="noreferrer">Chrome</a></li>
+                           rel="noreferrer">Chrome</a></li>
                     <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
-                            target="_blank" rel="noreferrer">Firefox</a></li>
+                           target="_blank" rel="noreferrer">Firefox</a></li>
                     <li><a href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac"
-                            target="_blank" rel="noreferrer">Safari</a></li>
+                           target="_blank" rel="noreferrer">Safari</a></li>
                     <li>For any other browser, please directly consult the cookie management help information available on
                         the Internet.</li>
                 </ul>
@@ -218,7 +226,7 @@
                     opened the email; or 3) clicked the email. You may opt out or unsubscribe from our marketing emails if
                     you do not want us to collect this information from you. You may also email us if you would like to be
                     removed. For more information, please review <a href="http://mailchimp.com/legal/privacy/"
-                        rel="noreferrer" target="_blank">Mailchimp’s own Privacy Policy&#8203;</a>.</p>
+                                                                    rel="noreferrer" target="_blank">Mailchimp’s own Privacy Policy&#8203;</a>.</p>
                 <h2>Online Advertising</h2>
                 <p>We participate in a variety of online advertising. This advertising displays our ads to you on the
                     websites and apps that reside outside of this website. </p>
@@ -376,7 +384,7 @@
 
 
 
-    //     preview image
+        //     preview image
         document.addEventListener('DOMContentLoaded', function () {
             function previewImage(input, previewId, clearButtonId) {
                 const file = input.files[0];

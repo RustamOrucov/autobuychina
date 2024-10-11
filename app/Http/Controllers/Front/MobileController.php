@@ -30,4 +30,23 @@ class MobileController extends Controller
     {
         return view('mobile.pages.add-cars');
     }
+
+    public function favorite()
+    {
+        return view('mobile.pages.favorite');
+    }
+
+    public function mquestion()
+    {
+        return view('mobile.pages.question');
+    }
+
+    public function mdealer()
+    {
+        return view('mobile.pages.dealer');
+    }
+    public function mtrader()
+    {
+        return view('mobile.pages.trader');
+    }
 }

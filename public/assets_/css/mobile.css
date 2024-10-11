@@ -21255,3 +21255,53 @@ select {
     right: 0;
     z-index: 98
 }
+
+
+.question{
+    padding-top:5rem;
+    padding-bottom: 10rem;
+}
+
+.question-text {
+    text-align: center;
+}
+
+.question-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 3.5rem;
+}
+
+.tz-btn--primary {
+    color: #fff;
+    background-color: green !important;
+    border-color: green !important;
+}
+
+.main-search__btn {
+    margin-right: 15px;
+}
+
+.tz-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #fff;
+    text-decoration: none;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 7px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}

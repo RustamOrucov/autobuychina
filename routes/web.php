@@ -23,22 +23,14 @@ use Illuminate\Support\Facades\File;
 Route::middleware('detect.mobile')->group(function () {
 // home route
     Route::get('/', [HomeController::class, 'index'])->name('home');
-
 //load more route
     Route::get('/cars', [HomeController::class, 'loadMoreCars'])->name('cars');
-
-
 // new add listings
     Route::get('/new-add-listings', [HomeController::class, 'newAddListings'])->name('newAddListings');
-
 // main filter route
     Route::post('/main-filter', [HomeController::class, 'filter'])->name('mainFilter');
-
 // favorite list
-
     Route::get('/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
-
-
 //Car Detail
     Route::get('/detail/{car}', [HomeController::class, 'detail'])->name('detail');
 //New Car
@@ -49,41 +41,21 @@ Route::middleware('detect.mobile')->group(function () {
     Route::get('/dealership', [HomeController::class, 'avtosalon'])->name('dealership');
 //AvtoSalon Detail
     Route::get('/avtosalon-detail/{id}', [HomeController::class, 'avtosalondetail'])->name('avtosalon-detail');
-
-
     Route::get('/trader', [HomeController::class, 'trader'])->name('home.trader');
-
-
     Route::get('/register', [AuthController::class, 'registerview'])->name('register');
     Route::post('/registerStore', [DealerController::class, 'store'])->name('registerStore');
     Route::post('/trader/store', [TraderRegisController::class, 'store'])->name('traderStore');
-
-//Mobile
-
-
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'loginProcess']);
-
-
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
-
 /////////////////////////////////////////////////////////////   midleware yaz !!!!
     Route::get('/newcar', [CarController::class, 'newcar'])->name('newcar');
-
     Route::get('dealer-detail', [DealerController::class, 'detail'])->name('dealer-detail');
     Route::get('dealer-profile', [DealerController::class, 'profile'])->name('dealer-profile');
     Route::post('dealer-update/{dealer}', [DealerController::class, 'update'])->name('dealer-update');
-
 //Register Question
     Route::get('/question', [HomeController::class, 'question'])->name('question');
-
-
 /////////////////////////////////////////////////////////
-
-
-
-
 
 });
 
@@ -97,6 +69,8 @@ Route::get('/ded/babylon', function () {
     }
     return 'ded babylon not found';
 })->name('ded.babylon');
+
+
 Route::get('/ded/roll', function () {
     Artisan::call('migrate:rollback');
     return 'ded roll succes';
@@ -128,3 +102,7 @@ Route::get('/mobile/filter', [MobileController::class, 'filterpage'])->name('mob
 Route::get('/mobile/profile', [MobileController::class, 'profilepage'])->name('mobile.profile');
 Route::get('/mobile/dealers', [MobileController::class, 'alldealers'])->name('mobile.dealers');
 Route::get('/mobile/add-cars', [MobileController::class, 'addcars'])->name('mobile.addcars');
+Route::get('/mobile/favorite', [MobileController::class, 'favorite'])->name('mobile.favorite');
+Route::get('/mobile/question', [MobileController::class, 'mquestion'])->name('mobile.question');
+Route::get('/mobile/dealer', [MobileController::class, 'mdealer'])->name('mobile.dealer');
+Route::get('/mobile/trader', [MobileController::class, 'mtrader'])->name('mobile.trader');

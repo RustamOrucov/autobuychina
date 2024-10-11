@@ -94,35 +94,32 @@
                             @enderror
 
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-front-img"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="front_preview" style="width: 100%; object-fit: cover;" src=""
-                                     alt="">
+                                <button class="clear-img" id="clear-front-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="front_preview" style="width: 100%; object-fit: cover;" src="" alt="">
                             </div>
                         </div>
+
                         <div class="input_box">
                             <label for="back_id" class="front_id">Back Image of the ID Card *</label>
-                            <input type="file" name="passport_back" id="back_id" class="custom-file-input"
-                                   required>
+                            <input type="file" name="passport_back" id="back_id" class="custom-file-input" required>
                             @error('back_id')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="back_preview" style="width: 100%; object-fit: cover;" src=""
-                                     alt="">
+                                <button class="clear-img" id="clear-back-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="back_preview" style="width: 100%; object-fit: cover;" src="" alt="">
                             </div>
                         </div>
+
                         <div class="input_box">
                             <label for="business_foto" class="front_id">Business foto *</label>
-                            <input type="file" name="business_foto" id="business_foto" class="custom-file-input"
-                                   required>
+                            <input type="file" name="business_foto" id="business_foto" class="custom-file-input" required>
                             @error('business_foto')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="back_preview" style="width: 100%; object-fit: cover;" src=""
-                                     alt="">
+                                <button class="clear-img" id="clear-business-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="business_foto_preview" style="width: 100%; object-fit: cover;" src="" alt="">
                             </div>
                         </div>
                         <div class="input_box">
@@ -398,5 +395,62 @@
                 submitBtn.disabled = true;
             }
         });
+
+
+
+    //     preview photo
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function previewImage(input, previewId, clearButtonId) {
+                const file = input.files[0];
+                const preview = document.getElementById(previewId);
+                const clearButton = document.getElementById(clearButtonId);
+
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        preview.src = e.target.result;
+                        preview.style.display = 'block';
+                        preview.style.height = '150px'
+                        clearButton.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = '';
+                    preview.style.height = ''
+                    preview.style.display = 'none';
+                    clearButton.style.display = 'none';
+                }
+            }
+
+            document.getElementById('front_id').addEventListener('change', function () {
+                previewImage(this, 'front_preview', 'clear-front-img');
+            });
+
+            document.getElementById('back_id').addEventListener('change', function () {
+                previewImage(this, 'back_preview', 'clear-back-img');
+            });
+
+            document.getElementById('business_foto').addEventListener('change', function () {
+                previewImage(this, 'business_foto_preview', 'clear-business-img');
+            });
+
+            function clearImage(button, inputId, previewId) {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const input = document.getElementById(inputId);
+                    const preview = document.getElementById(previewId);
+                    input.value = '';
+                    preview.src = '';
+                    preview.style.display = 'none';
+                    button.style.display = 'none';
+                });
+            }
+
+            clearImage(document.getElementById('clear-front-img'), 'front_id', 'front_preview');
+            clearImage(document.getElementById('clear-back-img'), 'back_id', 'back_preview');
+            clearImage(document.getElementById('clear-business-img'), 'business_foto', 'business_foto_preview');
+        });
+
     </script>
 @endsection
