@@ -13,16 +13,23 @@ return new class extends Migration
     {
         Schema::create('admin_settings', function (Blueprint $table) {
             $table->id();
+            $table->string('website_name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('design_name')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
         Schema::create('admin_settings_translations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('admin_setting_id');
-            $table->string('name')->nullable();
+            $table->string('mobile_footer')->nullable();
+            $table->string('footer_text')->nullable();
+            $table->string('mobile_copyright')->nullable();
             $table->string('locale')->index();
             $table->unique(['admin_setting_id', 'locale']);
             $table->foreign('admin_setting_id')->references('id')->on('admin_settings')->onDelete('cascade');
         });
+
     }
 
     /**

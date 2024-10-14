@@ -134,7 +134,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{route('admin.logo.form')}}"><i class="lni lni-slack"></i>Logo</a></li>
-                            <li><a class="dropdown-item" href="{{route('admin.adminsetting.index')}}"><i class="lni lni-slack"></i>AdminSetting</a></li>
+                            <li><a class="dropdown-item" href="{{route('admin.adminsetting.index')}}"><i class="lni lni-slack"></i>Website Setting</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.seo.form')}}"><i class="lni lni-cogs"></i>Seo</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.social.index')}}"><i class="lni lni-cogs"></i>Social</a></li>
                             <li><a class="dropdown-item" href="{{route('admin.staticModel.index')}}"><i class="lni lni-cogs"></i>Static Tr.</a></li>
