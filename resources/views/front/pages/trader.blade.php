@@ -92,10 +92,10 @@
                             @error('front_id')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
-
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-front-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="front_preview" style="width: 100%; object-fit: cover;" src="" alt="">
+                                <button class="clear-img" id="clear-front-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="front_preview" style="width: 150px; object-fit: cover;" src="" alt="">
+
                             </div>
                         </div>
 
@@ -106,8 +106,9 @@
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-back-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="back_preview" style="width: 100%; object-fit: cover;" src="" alt="">
+                                <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="back_preview" style="width: 150px; object-fit: cover;" src="" alt="">
+
                             </div>
                         </div>
 
@@ -118,8 +119,8 @@
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
-                                <button class="clear-img" id="clear-business-img" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="business_foto_preview" style="width: 100%; object-fit: cover;" src="" alt="">
+                                <button class="clear-img" id="clear-business-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="business_preview" style="width: 150px; object-fit: cover;" src="" alt="">
                             </div>
                         </div>
                         <div class="input_box">
@@ -452,5 +453,50 @@
             clearImage(document.getElementById('clear-business-img'), 'business_foto', 'business_foto_preview');
         });
 
+    </script>
+
+    <script>
+        function previewImage(input, previewId) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById(previewId).src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function clearImage(previewId, inputId) {
+            document.getElementById(previewId).src = "";
+            document.getElementById(inputId).value = "";
+        }
+
+        document.getElementById('front_id').addEventListener('change', function () {
+            previewImage(this, 'front_preview');
+        });
+
+        document.getElementById('back_id').addEventListener('change', function () {
+            previewImage(this, 'back_preview');
+        });
+
+        document.getElementById('business_foto').addEventListener('change', function () {
+            previewImage(this, 'business_preview');
+        });
+
+        document.getElementById('clear-front-img').addEventListener('click', function (e) {
+            e.preventDefault();
+            clearImage('front_preview', 'front_id');
+        });
+
+        document.getElementById('clear-back-img').addEventListener('click', function (e) {
+            e.preventDefault();
+            clearImage('back_preview', 'back_id');
+        });
+
+        document.getElementById('clear-business-img').addEventListener('click', function (e) {
+            e.preventDefault();
+            clearImage('business_preview', 'business_foto');
+        });
     </script>
 @endsection
