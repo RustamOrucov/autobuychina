@@ -5,48 +5,71 @@
             <div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"></div>
             <div id="ad_ph_1" style="display:none;"></div>
         </div>
-        <div class="header js-header" style="">
+        <div class="header js-header custom-header-cardetail" style="">
             <div class="header__nav">
                 <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn"
-                                                    data-back-to-url="https://turbo.az/"></span></div><a class="header__logo header__logo--red"
-                                                                                                         href="/"><img alt="turbo.az"
-                                                                                                                       src="https://turbo.azstatic.com/assets/mobile/logo-4092a1091474f2bf8949a636df94e8eeba6cffb6ce8dbbe17456c86399bd90ea.svg"></a>
-                <div class="header__nav-right">
-                    <div class="share-btn js-share-btn is-android" style="visibility: visible;"></div>
-                    <div class="top-bookmarking"><a
-                            class="top-bookmarking__link top-bookmarking__link--full added hide js-unbookmark-item-8801633"
-                            data-remote="true" rel="nofollow" data-method="delete"
-                            href="/autos/8801633-bmw-328/bookmarks">Seçilmişlərdədir</a><a
-                            class="top-bookmarking__link top-bookmarking__link--empty js-bookmark-item-8801633"
-                            data-remote="true" rel="nofollow" data-method="post"
-                            href="/autos/8801633-bmw-328/bookmarks">Seçilmişlərdə saxla</a></div>
+                        data-back-to-url=""></span></div><a class="header__logo header__logo--red" href="/"><img
+                        alt="autobuychina" width="140" src="{{ asset('storage/' . $logoImages->m_logo) }}"></a>
+                <div class="header__nav-right" >
+                    <button class="custom-share-btn-mobile" onclick="share()">
+                    <img width="20" src="{{ asset('assets_/img/share.png') }}" alt="">
+                </button>
+                    <div class="top-bookmarking">
+                        <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow" href="#"
+                            data-id="{{ $car->id }}" style="display: inline-block;">
+                            <div class="bookmarking"></div>
+                        </a>
+
+                        <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true" rel="nofollow"
+                            href="#" data-id="{{ $car->id }}" style="display: none;">
+                            <div class="bookmarking added"></div>
+                        </a>
+
+                    </div>
+
                 </div>
             </div>
         </div>
         <div class="content">
             <div class="product product--bordered">
                 <ul class="breadcrumbs">
-                    <li class="breadcrumbs__i"><a class="breadcrumbs__i-text" href="/autos?q%5Bmake%5D%5B%5D=3">BMW</a>
+                    <li class="breadcrumbs__i"><a class="breadcrumbs__i-text" href="/autos?q%5Bmake%5D%5B%5D=3">{{ $car->carModel->name }}</a>
                     </li>
                     <li class="breadcrumbs__i"><a class="breadcrumbs__i-text"
-                                                  href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1">328</a></li>
-                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Elan № 8801633</span></li>
+                            href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1">{{ $car->ModelType->name }}</a></li>
+                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № {{ $car->id + 999 }}</span></li>
                 </ul>
+                <a class="product-shop tz-d-flex tz-align-center" href="{{ route('mobile.dealer.detail',['dealer'=>$car->Dealer]) }}">
+                    <div class="product-shop__logo"
+                        style="background-image: url({{ $car->Dealer && $car->Dealer->logo ? asset('storage/' . $car->Dealer->logo) : 'Auto BuyChina' }})">
+                    </div>
+                    <div class="product-shop__info">
+                        <div class="product-shop__info-title">  {{ $car->Dealer && $car->Dealer->d_name ? $car->Dealer->d_name : 'Auto BuyChina' }}</div>
+                        <div class="product-shop__info-count">{{ $car->Dealer->cars->count() }} cars</div>
+                    </div>
+                    <div class="product-shop__arrow"></div>
+                </a>
                 <div class="product-photos">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
-                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;"></div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
+                            <div class="swiper-slide" style="background-image: url('/assets/img/bmw.jpg'); width: 422px;">
+                            </div>
                         </div>
                         <div class="product-photos__slider-counter">1/17</div>
                     </div>
 
                     <div class="reveal-modal product-gallery js-product-gallery tz-d-flex"
-                         style="visibility: visible; display: none;">
+                        style="visibility: visible; display: none;">
                         <div class="product-gallery__header tz-justify-between tz-d-flex tz-align-center">
                             <div class="product-gallery__close js-close-gallery"></div>
                             <div class="product-gallery__counter">4/10</div>
@@ -64,24 +87,24 @@
                                 <div class="pswp__scroll-wrap">
                                     <div class="pswp__container" style="transform: translate3d(-10406px, 0px, 0px);">
                                         <div class="pswp__item"
-                                             style="display: block; transform: translate3d(10879px, 0px, 0px);">
+                                            style="display: block; transform: translate3d(10879px, 0px, 0px);">
                                             <div class="pswp__zoom-wrap"
-                                                 style="transform: translate3d(0px, 84px, 0px) scale(1);"><img
+                                                style="transform: translate3d(0px, 84px, 0px) scale(1);"><img
                                                     class="pswp__img"
                                                     src="https://turbo.azstatic.com/uploads/full/2024%2F09%2F21%2F14%2F29%2F13%2Fe0e28bfe-cddc-4b9b-80ce-d84d0d548f51%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"
                                                     style="opacity: 1; width: 422px; height: 317px;"></div>
                                         </div>
                                         <div class="pswp__item" style="transform: translate3d(9933px, 0px, 0px);">
                                             <div class="pswp__zoom-wrap"
-                                                 style="transform: translate3d(31px, 0px, 0px) scale(1);"><img
+                                                style="transform: translate3d(31px, 0px, 0px) scale(1);"><img
                                                     class="pswp__img"
                                                     src="https://turbo.azstatic.com/uploads/full/2024%2F09%2F21%2F14%2F29%2F14%2Fe7c1527a-ba62-421c-b8c9-34c00892cb80%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"
                                                     style="opacity: 1; width: 360px; height: 484px;"></div>
                                         </div>
                                         <div class="pswp__item"
-                                             style="display: block; transform: translate3d(10406px, 0px, 0px);">
+                                            style="display: block; transform: translate3d(10406px, 0px, 0px);">
                                             <div class="pswp__zoom-wrap"
-                                                 style="transform: translate3d(0px, 84px, 0px) scale(1);"><img
+                                                style="transform: translate3d(0px, 84px, 0px) scale(1);"><img
                                                     class="pswp__img"
                                                     src="https://turbo.azstatic.com/uploads/full/2024%2F09%2F21%2F14%2F29%2F13%2Fb483d23e-3374-4d76-9a1a-c29ffe31aa69%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"
                                                     style="opacity: 1; width: 422px; height: 316px;"></div>
@@ -94,11 +117,11 @@
                                         </div>
 
                                         <button class="pswp__button pswp__button--arrow--left pswp__element--disabled"
-                                                title="Previous (arrow left)">
+                                            title="Previous (arrow left)">
                                         </button>
 
                                         <button class="pswp__button pswp__button--arrow--right pswp__element--disabled"
-                                                title="Next (arrow right)">
+                                            title="Next (arrow right)">
                                         </button>
 
                                         <div class="pswp__caption pswp__element--disabled">
@@ -113,10 +136,11 @@
                                 <div class="product-gallery__info">
                                     <div class="product-gallery__info-price">31 200 AZN</div>
                                     <div class="product-gallery__info-name">BMW 328, <span class="nobr">2.0 L</span>,
-                                        <span class="nobr">2013 il</span>, <span class="nobr">118 000 km</span></div>
+                                        <span class="nobr">2013 il</span>, <span class="nobr">118 000 km</span>
+                                    </div>
                                 </div>
                             </div><a class="product-gallery__phone js-phone-btn" data-phone="(070) 540-34-94"
-                                     data-log-show-phone="true" data-trigger-button="gallery" href="#">Zəng et</a>
+                                data-log-show-phone="true" data-trigger-button="gallery" href="#">Zəng et</a>
                         </div>
                     </div>
                 </div>
@@ -131,11 +155,11 @@
                 </div>
                 <div class="product-installment">
                     <div class="tz-btn tz-btn--primary tz-btn--full js-installment-modal-btn"
-                         data-stat="installment-modal-call-btn">% Hissə-Hissə al</div>
+                        data-stat="installment-modal-call-btn">% Hissə-Hissə al</div>
                     <div class="reveal-modal js-installment-modal installment-modal" id="installment-modal">
                         <div class="close-reveal-modal"></div><iframe frameborder="0" height="100%"
-                                                                      src="https://iframe-turbokredit.cityfinance.az?city=L%C9%99nk%C9%99ran&amp;currency=AZN&amp;engine_hp=245&amp;engine_volume=2.0&amp;id=8801633&amp;make=BMW&amp;mileage=118000&amp;model=328&amp;price=31200.0&amp;release_year=2013&amp;url=https%3A%2F%2Fturbo.az%2Fautos%2F8801633-bmw-328"
-                                                                      width="100%"></iframe>
+                            src="https://iframe-turbokredit.cityfinance.az?city=L%C9%99nk%C9%99ran&amp;currency=AZN&amp;engine_hp=245&amp;engine_volume=2.0&amp;id=8801633&amp;make=BMW&amp;mileage=118000&amp;model=328&amp;price=31200.0&amp;release_year=2013&amp;url=https%3A%2F%2Fturbo.az%2Fautos%2F8801633-bmw-328"
+                            width="100%"></iframe>
                     </div>
                 </div>
                 <div class="product-divider"></div>
@@ -148,17 +172,17 @@
                     <li class="product-table__row">
                         <div class="product-table__row-name">Marka</div>
                         <div class="product-table__row-value"><a target="_blank"
-                                                                 href="/autos?q%5Bmake%5D%5B%5D=3">BMW</a></div>
+                                href="/autos?q%5Bmake%5D%5B%5D=3">BMW</a></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Model</div>
                         <div class="product-table__row-value"><a target="_blank"
-                                                                 href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1">328</a></div>
+                                href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1">328</a></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">İl</div>
                         <div class="product-table__row-value"><a target="_blank"
-                                                                 href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1&amp;q%5Byear_from%5D=2013&amp;q%5Byear_to%5D=2013">2013</a>
+                                href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1&amp;q%5Byear_from%5D=2013&amp;q%5Byear_to%5D=2013">2013</a>
                         </div>
                     </li>
                     <li class="product-table__row">
@@ -196,12 +220,12 @@
                     <li class="product-table__row">
                         <div class="product-table__row-name">Yerlərin sayı</div>
                         <div class="product-table__row-value"><span class="translation_missing"
-                                                                    title="translation missing: az.seats_counts.5">5</span></div>
+                                title="translation missing: az.seats_counts.5">5</span></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Sahiblər</div>
                         <div class="product-table__row-value"><span class="translation_missing"
-                                                                    title="translation missing: az.prior_owners_counts.1">1</span></div>
+                                title="translation missing: az.prior_owners_counts.1">1</span></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Vəziyyəti</div>
@@ -219,8 +243,8 @@
                                 <div class="product-vin__copy-text js-copy-copied is-hidden">Surəti götürüldü</div>
                             </div>
                         </div>
-                        <div class="product-vin__info">Avtomobili almadan öncə VIN-kodu yoxlayın.</div><a
-                            target="_blank" class="product-vin__check-link"
+                        <div class="product-vin__info">Avtomobili almadan öncə VIN-kodu yoxlayın.</div><a target="_blank"
+                            class="product-vin__check-link"
                             href="https://google.com/search?tbm=isch&amp;q=WBA3C1G5XDNR48617">İnternetdə axtar</a>
                     </div>
                 </div>
@@ -291,8 +315,8 @@
                         <div class="product-owner__logo"></div>
                     </div>
                     <div class="product-phones js-owner-phones"><a class="product-phones__i js-product-phones-link"
-                                                                   data-phone="(070) 540-34-94" data-log-show-phone="true" data-trigger-button="contact"
-                                                                   href="#"><span class="product-phones__i-value">(070) 540-34-●●</span><span
+                            data-phone="(070) 540-34-94" data-log-show-phone="true" data-trigger-button="contact"
+                            href="#"><span class="product-phones__i-value">(070) 540-34-●●</span><span
                                 class="product-phones__i-text">Zəng et</span></a></div>
                     <div class="product-warning tz-d-flex tz-align-center tz-justify-between tz-gap-15">
                         <div class="product-warning__text"><span class="attention">Diqqət!</span> Avtomobilə baxış
@@ -321,20 +345,20 @@
                         <div class="reveal-modal--content">
                             <div class="pin-recovery-options">
                                 <div class="via_sms"><label for="pin_recovery_via_sms"><input type="radio"
-                                                                                              name="pin_recovery" id="pin_recovery_via_sms" value="via_sms"><span
+                                            name="pin_recovery" id="pin_recovery_via_sms" value="via_sms"><span
                                             class="radio-label">SMS vasitəsilə</span></label></div>
                                 <div class="via_email"><label for="pin_recovery_via_email"><input type="radio"
-                                                                                                  name="pin_recovery" id="pin_recovery_via_email" value="via_email"><span
+                                            name="pin_recovery" id="pin_recovery_via_email" value="via_email"><span
                                             class="radio-label">Elektron ünvanı vasitəsilə</span></label></div>
                             </div>
                             <div class="email-form-container">Zəhmət olmasa, elektron ünvanınızı qeyd edin.<form
                                     class="email-form" action="/autos/8801633-bmw-328/resend_pin" accept-charset="UTF-8"
                                     data-remote="true" method="post"><input type="hidden" name="authenticity_token"
-                                                                            value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                                            autocomplete="off">
+                                        value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                        autocomplete="off">
                                     <div class="form-row"><input type="text" name="email" id="email"
-                                                                 required="required"><button name="button" type="submit"
-                                                                                             class="submit">Göndərmək</button></div>
+                                            required="required"><button name="button" type="submit"
+                                            class="submit">Göndərmək</button></div>
                                     <div class="error"></div>
                                 </form>
                             </div>
@@ -346,14 +370,13 @@
                 </div>
                 <div class="product-actions product-actions--bordered">
                     <div class="product-actions__top"><a class="product-actions__i js-click-edit" href="#">Düzəliş
-                            et</a><a class="product-actions__i js-click-expire"
-                                     href="/autos/8801633-bmw-328#expire">Elanı sil</a></div>
+                            et</a><a class="product-actions__i js-click-expire" href="/autos/8801633-bmw-328#expire">Elanı
+                            sil</a></div>
                     <div class="product-divider"></div>
                     <div class="product-actions__bottom"><a
                             class="product-actions__i product-actions__i--report js-product-report"
                             data-text="Siz bu elan barədə şikayət etmisiniz." href="#">Şikayət et</a></div>
-                    <div class="reveal-modal reveal-modal--full-height action-modal js-pincode-modal"
-                         id="pincode-modal">
+                    <div class="reveal-modal reveal-modal--full-height action-modal js-pincode-modal" id="pincode-modal">
                         <div class="tz-modal">
                             <div class="tz-modal__header tz-d-flex tz-align-center tz-justify-center">
                                 <div class="tz-modal__header-left"><span
@@ -369,18 +392,18 @@
                                         class="nobr">2013 il</span>, <span class="nobr">118 000 km</span></div>
                             </div>
                             <form class="js-pincode-form" action="/autos/8801633-bmw-328" accept-charset="UTF-8"
-                                  data-remote="true" method="post"><input type="hidden" name="authenticity_token"
-                                                                          value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                                          autocomplete="off">
+                                data-remote="true" method="post"><input type="hidden" name="authenticity_token"
+                                    value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                    autocomplete="off">
                                 <div class="tz-container"><label class="action-modal__label">PIN-kod</label><input
                                         type="number" name="pincode" id="pincode" class="bordered js-non-empty-input"
                                         pattern="[0-9]*"></div>
                                 <div class="tz-modal__btn-container"><button name="button" type="submit"
-                                                                             data-disable-with=""
-                                                                             class="tz-btn tz-btn--blue tz-btn--full js-submit-form tz-btn--disabled"
-                                                                             disabled="disabled">Təsdiqlə</button></div>
+                                        data-disable-with=""
+                                        class="tz-btn tz-btn--blue tz-btn--full js-submit-form tz-btn--disabled"
+                                        disabled="disabled">Təsdiqlə</button></div>
                                 <div class="tz-container tz-text-center"><a class="js-recovery-link tz-modal__link"
-                                                                            href="/autos/8801633-bmw-328">Elanın PIN-kodunu unutmusunuz?</a></div>
+                                        href="/autos/8801633-bmw-328">Elanın PIN-kodunu unutmusunuz?</a></div>
                             </form>
                         </div>
                     </div>
@@ -405,7 +428,7 @@
                         </div>
                     </div>
                     <div class="reveal-modal reveal-modal--full-height action-modal js-pin-recovery-modal"
-                         id="pincode-recovery-modal">
+                        id="pincode-recovery-modal">
                         <div class="tz-modal tz-modal--grey">
                             <div class="tz-modal__header tz-d-flex tz-align-center tz-justify-center">
                                 <div class="tz-modal__header-left"><span
@@ -421,11 +444,11 @@
                                 <div class="tz-modal__blk-title tz-modal__text">PIN-kodun bərpası üsulu</div>
                                 <div class="tz-options js-pin-recovery-options">
                                     <div class="tz-options__i"><input type="radio" name="pincode_recovery"
-                                                                      id="pincode_recovery_via_sms" value="via_sms" checked="checked"><label
+                                            id="pincode_recovery_via_sms" value="via_sms" checked="checked"><label
                                             for="pincode_recovery_via_sms"><span class="tz-options__i-text">SMS
                                                 vasitəsilə</span></label></div>
                                     <div class="tz-options__i"><input type="radio" name="pincode_recovery"
-                                                                      id="pincode_recovery_via_email" value="via_email"><label
+                                            id="pincode_recovery_via_email" value="via_email"><label
                                             for="pincode_recovery_via_email"><span class="tz-options__i-text">Email
                                                 vasitəsilə</span></label></div>
                                 </div>
@@ -436,48 +459,49 @@
                                     <div class="tz-modal__blk-title tz-modal__text">Ödəniş üsulu</div>
                                     <div class="tz-options js-payment-options">
                                         <div class="tz-options__i"><input type="radio" name="payment_provider"
-                                                                          id="payment_provider_yigim" value="yigim" data-href="/yigim"><label
+                                                id="payment_provider_yigim" value="yigim" data-href="/yigim"><label
                                                 for="payment_provider_goldenpay"><span class="tz-options__i-text">Bank
                                                     kartı</span><span
                                                     class="digital-payment-provider digital-payment-provider--google-pay"></span></label>
                                         </div>
                                         <div class="tz-options__i"><input type="radio" name="payment_provider"
-                                                                          id="payment_provider_portmanat" value="portmanat"
-                                                                          data-href="/portmanat"><label for="payment_provider_portmanat"><span
+                                                id="payment_provider_portmanat" value="portmanat"
+                                                data-href="/portmanat"><label for="payment_provider_portmanat"><span
                                                     class="tz-options__i-text">Portmanat</span></label></div>
                                         <div class="tz-options__i"><input type="radio" name="payment_provider"
-                                                                          id="payment_provider_wallet" value="wallet" data-href="/wallet"
-                                                                          data-wallet-value="0"><label for="payment_provider_wallet"><span
+                                                id="payment_provider_wallet" value="wallet" data-href="/wallet"
+                                                data-wallet-value="0"><label for="payment_provider_wallet"><span
                                                     class="tz-options__i-text">Şəxsi hesab (0,00 AZN)</span></label>
                                         </div>
                                         <div class="tz-options__i tz-options__i--terminal js-payment-in-terminals-btn">
-                                            <label><span
-                                                    class="tz-options__i-text tz-options__i-text--blue">Terminallarda
-                                                    ödəniş</span></label></div>
+                                            <label><span class="tz-options__i-text tz-options__i-text--blue">Terminallarda
+                                                    ödəniş</span></label>
+                                        </div>
                                     </div>
                                 </div>
                                 <form class="new_payment" id="new_payment" action="/yigim" accept-charset="UTF-8"
-                                      method="post"><input type="hidden" name="authenticity_token"
-                                                           value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                           autocomplete="off"><input value="true" autocomplete="off" type="hidden"
-                                                                                     name="payment[mobile]" id="payment_mobile"><input value="mobile"
-                                                                                                                                       autocomplete="off" type="hidden" name="payment[medium]"
-                                                                                                                                       id="payment_medium"><input autocomplete="off" type="hidden" value="Ad"
-                                                                                                                                                                  name="payment[target_type]" id="payment_target_type"><input autocomplete="off"
-                                                                                                                                                                                                                              type="hidden" value="8801633" name="payment[target_id]"
-                                                                                                                                                                                                                              id="payment_target_id"><input autocomplete="off" type="hidden"
-                                                                                                                                                                                                                                                            value="pin_recovery" name="payment[service_id]" id="payment_service_id">
+                                    method="post"><input type="hidden" name="authenticity_token"
+                                        value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                        autocomplete="off"><input value="true" autocomplete="off" type="hidden"
+                                        name="payment[mobile]" id="payment_mobile"><input value="mobile"
+                                        autocomplete="off" type="hidden" name="payment[medium]"
+                                        id="payment_medium"><input autocomplete="off" type="hidden" value="Ad"
+                                        name="payment[target_type]" id="payment_target_type"><input autocomplete="off"
+                                        type="hidden" value="8801633" name="payment[target_id]"
+                                        id="payment_target_id"><input autocomplete="off" type="hidden"
+                                        value="pin_recovery" name="payment[service_id]" id="payment_service_id">
                                     <div class="tz-modal__btn-container tz-modal__btn-container--grey tz-container">
                                         <button name="button" type="submit"
-                                                class="tz-btn tz-btn--blue tz-btn--full disabled js-submit-payment"
-                                                disabled="disabled">Ödə</button></div>
+                                            class="tz-btn tz-btn--blue tz-btn--full disabled js-submit-payment"
+                                            disabled="disabled">Ödə</button>
+                                    </div>
                                 </form>
                             </div>
                             <form class="email-form js-email-form is-hidden" action="/autos/8801633-bmw-328/resend_pin"
-                                  accept-charset="UTF-8" data-remote="true" method="post"><input type="hidden"
-                                                                                                 name="authenticity_token"
-                                                                                                 value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                                                                 autocomplete="off">
+                                accept-charset="UTF-8" data-remote="true" method="post"><input type="hidden"
+                                    name="authenticity_token"
+                                    value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                    autocomplete="off">
                                 <div class="tz-modal__blk tz-modal__blk--top-border">
                                     <div class="tz-modal__blk-title tz-modal__text">Elanda qeyd olunan email ünvanı
                                     </div>
@@ -488,9 +512,9 @@
                                             maxlength="60"></div>
                                 </div>
                                 <div class="tz-modal__btn-container tz-modal__btn-container--grey"><button name="button"
-                                                                                                           type="submit" data-disable-with=""
-                                                                                                           class="submit tz-btn--disabled tz-btn tz-btn--blue tz-btn--full"
-                                                                                                           disabled="disabled">Göndər</button></div>
+                                        type="submit" data-disable-with=""
+                                        class="submit tz-btn--disabled tz-btn tz-btn--blue tz-btn--full"
+                                        disabled="disabled">Göndər</button></div>
                             </form>
                         </div>
                     </div>
@@ -501,15 +525,15 @@
                         <div class="tz-confirm-modal__text">Qısa zaman ərzində şikayətə baxılacaq.</div>
                     </div>
                     <div class="tz-confirm-modal__footer"><a class="tz-confirm-modal__btn js-report-modal-close"
-                                                             href="#">Aydındır</a></div>
+                            href="#">Aydındır</a></div>
                 </div>
                 <div class="reveal-modal-bg js-report-reveal-modal-bg" style="display: none; cursor: pointer;"></div>
                 <form class="simple_form default-form new_report" id="new_report" data-advanced-select="true"
-                      data-auth-url="https://hello.turbo.az/?return_to=aHR0cHM6Ly90dXJiby5hei9hdXRvcy84ODAxNjMzLWJtdy0zMjg="
-                      novalidate="novalidate" action="/autos/8801633-bmw-328/reports" accept-charset="UTF-8"
-                      data-remote="true" method="post">
+                    data-auth-url="https://hello.turbo.az/?return_to=aHR0cHM6Ly90dXJiby5hei9hdXRvcy84ODAxNjMzLWJtdy0zMjg="
+                    novalidate="novalidate" action="/autos/8801633-bmw-328/reports" accept-charset="UTF-8"
+                    data-remote="true" method="post">
                     <div class="reveal-modal select-category select-category--rounded select-category--short js-select-category select-category--product-report js-modal-report"
-                         data-select="product-report" id="report">
+                        data-select="product-report" id="report">
                         <div class="select-category__header-container tz-justify-between">
                             <div class="select-category__header--back js-back-popup-btn">İmtina</div>
                             <div class="select-category__header"><span
@@ -562,15 +586,16 @@
                             </div>
                         </div>
                         <div class="select-category__body report__description js-report-description">
-                            <div class="input text optional report_description field_with_hint asdeh217ds"><textarea
-                                    class="text optional form-control" name="report[description]"
-                                    id="report_description"></textarea><span class="hint">Do not enter anything
-                                    here.</span></div>
-                            <div class="input text optional report_body"><textarea rows="6"
-                                                                                   class="text optional form-control" placeholder="Şikayəti təsvir edin"
-                                                                                   name="report[body]" id="report_body"></textarea></div>
+                            <div class="input text optional report_description field_with_hint asdeh217ds">
+                                <textarea class="text optional form-control" name="report[description]" id="report_description"></textarea><span class="hint">Do not enter anything
+                                    here.</span>
+                            </div>
+                            <div class="input text optional report_body">
+                                <textarea rows="6" class="text optional form-control" placeholder="Şikayəti təsvir edin" name="report[body]"
+                                    id="report_body"></textarea>
+                            </div>
                             <div class="tz-container"><button name="button" type="submit"
-                                                              class="tz-btn tz-btn--primary tz-btn--full">Göndərmək</button></div>
+                                    class="tz-btn tz-btn--primary tz-btn--full">Göndərmək</button></div>
                         </div>
                     </div>
                 </form>
@@ -583,21 +608,21 @@
             <div class="tz-divider"></div>
             <div class="tz-section">
                 <div class="tz-section__title tz-d-flex tz-justify-between tz-align-center">
-                    <p class="tz-section__title-name">Bənzər elanlar</p><a class="tz-section__title-more"
-                                                                           target="_blank" href="/autos?q%5Bmake%5D%5B%5D=3-bmw&amp;q%5Bmodel%5D%5B%5D=1">Hamısını
+                    <p class="tz-section__title-name">Bənzər elanlar</p><a class="tz-section__title-more" target="_blank"
+                        href="/autos?q%5Bmake%5D%5B%5D=3-bmw&amp;q%5Bmodel%5D%5B%5D=1">Hamısını
                         göstər</a>
                 </div>
                 <div class="products tz-section__list">
                     <div class="products-i"><a class="products-i__link" target="_self"
-                                               href="/autos/8771524-bmw-328"></a><a class="js-bookmark-item-8771524" data-remote="true"
-                                                                                    rel="nofollow" data-method="post" href="/autos/8771524-bmw-328/bookmarks">
+                            href="/autos/8771524-bmw-328"></a><a class="js-bookmark-item-8771524" data-remote="true"
+                            rel="nofollow" data-method="post" href="/autos/8771524-bmw-328/bookmarks">
                             <div class="bookmarking"></div>
                         </a><a class="hide js-unbookmark-item-8771524" data-remote="true" rel="nofollow"
-                               data-method="delete" href="/autos/8771524-bmw-328/bookmarks">
+                            data-method="delete" href="/autos/8771524-bmw-328/bookmarks">
                             <div class="bookmarking added"></div>
                         </a>
                         <div class="products-i__top"><img alt="BMW 328" loading="lazy"
-                                                          src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F09%2F17%2F50%2F26%2F5c253487-bee5-4539-8cd2-76bd46e1bacc%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
+                                src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F09%2F17%2F50%2F26%2F5c253487-bee5-4539-8cd2-76bd46e1bacc%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
                             <div class="products-i__info"></div>
                         </div>
@@ -611,15 +636,15 @@
                         </div>
                     </div>
                     <div class="products-i salon"><a class="products-i__link" target="_self"
-                                                     href="/autos/8535084-bmw-328"></a><a class="js-bookmark-item-8535084" data-remote="true"
-                                                                                          rel="nofollow" data-method="post" href="/autos/8535084-bmw-328/bookmarks">
+                            href="/autos/8535084-bmw-328"></a><a class="js-bookmark-item-8535084" data-remote="true"
+                            rel="nofollow" data-method="post" href="/autos/8535084-bmw-328/bookmarks">
                             <div class="bookmarking"></div>
                         </a><a class="hide js-unbookmark-item-8535084" data-remote="true" rel="nofollow"
-                               data-method="delete" href="/autos/8535084-bmw-328/bookmarks">
+                            data-method="delete" href="/autos/8535084-bmw-328/bookmarks">
                             <div class="bookmarking added"></div>
                         </a>
                         <div class="products-i__top"><img alt="BMW 328" loading="lazy"
-                                                          src="https://turbo.azstatic.com/uploads/f460x343/2024%2F06%2F15%2F16%2F10%2F07%2F2c1f30ed-81a3-415b-ad69-c655e077ecc4%2F12183_ogtQftp0VNM0b8HrfrDIcQ.jpg">
+                                src="https://turbo.azstatic.com/uploads/f460x343/2024%2F06%2F15%2F16%2F10%2F07%2F2c1f30ed-81a3-415b-ad69-c655e077ecc4%2F12183_ogtQftp0VNM0b8HrfrDIcQ.jpg">
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                                 <div class="products-i__label products-i__label--salon">Salon</div>
                             </div>
@@ -642,15 +667,15 @@
                         </div>
                     </div>
                     <div class="products-i vipped"><a class="products-i__link" target="_self"
-                                                      href="/autos/8801794-bmw-328"></a><a class="js-bookmark-item-8801794" data-remote="true"
-                                                                                           rel="nofollow" data-method="post" href="/autos/8801794-bmw-328/bookmarks">
+                            href="/autos/8801794-bmw-328"></a><a class="js-bookmark-item-8801794" data-remote="true"
+                            rel="nofollow" data-method="post" href="/autos/8801794-bmw-328/bookmarks">
                             <div class="bookmarking"></div>
                         </a><a class="hide js-unbookmark-item-8801794" data-remote="true" rel="nofollow"
-                               data-method="delete" href="/autos/8801794-bmw-328/bookmarks">
+                            data-method="delete" href="/autos/8801794-bmw-328/bookmarks">
                             <div class="bookmarking added"></div>
                         </a>
                         <div class="products-i__top"><img alt="BMW 328" loading="lazy"
-                                                          src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F22%2F14%2F41%2F52%2F9a5396f6-3a63-4876-919c-a368f8dc1a01%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
+                                src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F22%2F14%2F41%2F52%2F9a5396f6-3a63-4876-919c-a368f8dc1a01%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg">
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                                 <div class="products-i__label products-i__label--vin">VIN</div>
                             </div>
@@ -667,15 +692,15 @@
                         </div>
                     </div>
                     <div class="products-i vipped featured"><a class="products-i__link" target="_self"
-                                                               href="/autos/8797875-bmw-328"></a><a class="js-bookmark-item-8797875" data-remote="true"
-                                                                                                    rel="nofollow" data-method="post" href="/autos/8797875-bmw-328/bookmarks">
+                            href="/autos/8797875-bmw-328"></a><a class="js-bookmark-item-8797875" data-remote="true"
+                            rel="nofollow" data-method="post" href="/autos/8797875-bmw-328/bookmarks">
                             <div class="bookmarking"></div>
                         </a><a class="hide js-unbookmark-item-8797875" data-remote="true" rel="nofollow"
-                               data-method="delete" href="/autos/8797875-bmw-328/bookmarks">
+                            data-method="delete" href="/autos/8797875-bmw-328/bookmarks">
                             <div class="bookmarking added"></div>
                         </a>
                         <div class="products-i__top"><img alt="BMW 328" loading="lazy"
-                                                          src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F21%2F18%2F39%2F04%2Fd97de0a0-9a94-4f05-b272-25728bb0897f%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg">
+                                src="https://turbo.azstatic.com/uploads/f460x343/2024%2F09%2F21%2F18%2F39%2F04%2Fd97de0a0-9a94-4f05-b272-25728bb0897f%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg">
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
                             <div class="products-i__paid"><span class="featured-icon"></span><span
                                     class="vipped-icon"></span></div>
@@ -703,7 +728,7 @@
                         <p class="tz-section__title-name">Ehtiyat hissələr və aksesuarlar</p>
                     </a></div>
                 <div class="tz-section__list--wide"><iframe class="embed" frameborder="0"
-                                                            src="https://tap.az/embed/turboaz.mobile?category=parts-accessories&amp;amp;block_type=ad-page"></iframe>
+                        src="https://tap.az/embed/turboaz.mobile?category=parts-accessories&amp;amp;block_type=ad-page"></iframe>
                 </div>
             </div>
             <div class="tz-divider"></div>
@@ -713,7 +738,7 @@
                         <p class="tz-section__title-name">Telefonlar 50 AZN-dən</p>
                     </a></div>
                 <div class="tz-section__list--wide"><iframe class="embed" frameborder="0"
-                                                            src="https://tap.az/embed/turboaz.mobile?category=phones&amp;amp;block_type=ad-page"></iframe>
+                        src="https://tap.az/embed/turboaz.mobile?category=phones&amp;amp;block_type=ad-page"></iframe>
                 </div>
             </div>
             <div class="tz-divider"></div>
@@ -736,28 +761,28 @@
                                 </div>
                                 <div class="az-payments-type-portmanat" id="portmanat"><label
                                         class="providers-radio"><input type="radio" name="payment_provider"
-                                                                       id="payment_provider_portmanat" value="portmanat"
-                                                                       data-href="/portmanat"><span class="radio-label">Portmanat</span></label>
+                                            id="payment_provider_portmanat" value="portmanat"
+                                            data-href="/portmanat"><span class="radio-label">Portmanat</span></label>
                                 </div>
                                 <div class="az-payments-type-wallet" id="wallet"><label class="providers-radio"><input
                                             type="radio" name="payment_provider" id="payment_provider_wallet"
                                             value="wallet" data-href="/wallet" data-wallet-value="0"><span
                                             class="radio-label">Şəxsi hesab (0,00 AZN)</span></label></div>
                                 <div class="az-payments-type-payment-in-terminals js-payment-in-terminals-btn"
-                                     id="payment-in-terminals"><label class="providers-radio"><span
+                                    id="payment-in-terminals"><label class="providers-radio"><span
                                             class="radio-label">Terminallarda ödəniş</span><span
                                             class="providers-radio__info-icon"></span></label></div>
                                 <form class="new_payment" id="new_payment" action="/yigim" accept-charset="UTF-8"
-                                      method="post"><input type="hidden" name="authenticity_token"
-                                                           value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                           autocomplete="off"><input value="true" autocomplete="off" type="hidden"
-                                                                                     name="payment[mobile]" id="payment_mobile"><input value="mobile"
-                                                                                                                                       autocomplete="off" type="hidden" name="payment[medium]"
-                                                                                                                                       id="payment_medium"><input autocomplete="off" type="hidden" value="Ad"
-                                                                                                                                                                  name="payment[target_type]" id="payment_target_type"><input autocomplete="off"
-                                                                                                                                                                                                                              type="hidden" value="8801633" name="payment[target_id]"
-                                                                                                                                                                                                                              id="payment_target_id"><input autocomplete="off" type="hidden"
-                                                                                                                                                                                                                                                            value="pin_recovery" name="payment[service_id]" id="payment_service_id">
+                                    method="post"><input type="hidden" name="authenticity_token"
+                                        value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                        autocomplete="off"><input value="true" autocomplete="off" type="hidden"
+                                        name="payment[mobile]" id="payment_mobile"><input value="mobile"
+                                        autocomplete="off" type="hidden" name="payment[medium]"
+                                        id="payment_medium"><input autocomplete="off" type="hidden" value="Ad"
+                                        name="payment[target_type]" id="payment_target_type"><input autocomplete="off"
+                                        type="hidden" value="8801633" name="payment[target_id]"
+                                        id="payment_target_id"><input autocomplete="off" type="hidden"
+                                        value="pin_recovery" name="payment[service_id]" id="payment_service_id">
                                     <div class="btn-row"><a class="back" href="/autos/8801633-bmw-328">Geri</a><button
                                             name="button" type="submit" class="action disabled"
                                             disabled="disabled">Ödə</button></div>
@@ -839,7 +864,7 @@
                         <div class="terminal-modal__footer terminal-modal__blk">
                             <div class="tz-modal__text tz-modal__text--dark">Xidmət elanınıza dərhal tətbiq olunacaq.
                                 Çətinliklərlə qarşılaşdığınız zaman <a class="tz-modal__link"
-                                                                       href="tel: +994125057755">(012) 505-77-55</a> çağrı mərkəzimizə müraciət edə
+                                    href="tel: +994125057755">(012) 505-77-55</a> çağrı mərkəzimizə müraciət edə
                                 bilərsiniz. Çeki itirməyin.</div>
                         </div>
                     </div>
@@ -856,15 +881,16 @@
                             <div class="profile-wallet_replenishment_header">Şəxsi hesabın balansını artır</div>
                             <div class="profile-wallet_pay">
                                 <div class="pay ui-tabs ui-widget ui-widget-content ui-corner-all">
-                                    <div class="az-payments-form az-payments-form-yigim" data-provider="yigim" style="">
+                                    <div class="az-payments-form az-payments-form-yigim" data-provider="yigim"
+                                        style="">
                                         <form class="new_payment" id="3addc038092febfc8eb6f0a751d9560e_new_payment"
-                                              action="/yigim" accept-charset="UTF-8" method="post"
-                                              data-gtm-form-interact-id="3"><input type="hidden" name="authenticity_token"
-                                                                                   value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                                                   autocomplete="off"><input value="true" autocomplete="off" type="hidden"
-                                                                                                             name="payment[mobile]"
-                                                                                                             id="3addc038092febfc8eb6f0a751d9560e_payment_mobile"><input
-                                                value="mobile" autocomplete="off" type="hidden" name="payment[medium]"
+                                            action="/yigim" accept-charset="UTF-8" method="post"
+                                            data-gtm-form-interact-id="3"><input type="hidden" name="authenticity_token"
+                                                value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
+                                                autocomplete="off"><input value="true" autocomplete="off"
+                                                type="hidden" name="payment[mobile]"
+                                                id="3addc038092febfc8eb6f0a751d9560e_payment_mobile"><input value="mobile"
+                                                autocomplete="off" type="hidden" name="payment[medium]"
                                                 id="3addc038092febfc8eb6f0a751d9560e_payment_medium"><input
                                                 value="yigimcard" autocomplete="off" type="hidden"
                                                 name="payment[source]"
@@ -879,32 +905,31 @@
                                             <div class="custom-amount-service">
                                                 <div class="custom-amount-service_title">Artırılacaq məbləğ, AZN</div>
                                                 <input type="tel" name="amount_custom"
-                                                       class="custom-amount-service_input az-payments-service-input js-custom-amount-service"
-                                                       autocomplete="off" placeholder="Məbləği seçin / daxil edin"
-                                                       data-checked="true" data-placeholder="Məbləği seçin / daxil edin">
+                                                    class="custom-amount-service_input az-payments-service-input js-custom-amount-service"
+                                                    autocomplete="off" placeholder="Məbləği seçin / daxil edin"
+                                                    data-checked="true" data-placeholder="Məbləği seçin / daxil edin">
                                                 <div
                                                     class="custom-amount-service_price-container js-service-price-container">
                                                     <div class="custom-amount-service_price js-service-price"
-                                                         data-price="12" data-provider="yigim">12 AZN</div>
+                                                        data-price="12" data-provider="yigim">12 AZN</div>
                                                     <div class="custom-amount-service_price js-service-price active"
-                                                         data-price="20" data-provider="yigim">20 AZN</div>
+                                                        data-price="20" data-provider="yigim">20 AZN</div>
                                                     <div class="custom-amount-service_price js-service-price"
-                                                         data-price="50" data-provider="yigim">50 AZN</div>
+                                                        data-price="50" data-provider="yigim">50 AZN</div>
                                                 </div>
                                                 <div class="custom-amount-service_payment_method">ÖDƏNİŞ ÜSULUNU SEÇ
                                                 </div>
                                                 <div class="js-custom-price-placeholder"><input type="hidden"
-                                                                                                name="payment[amount]" value="20"><input type="hidden"
-                                                                                                                                         name="payment[service_id]" value="add_balance_custom"></div>
+                                                        name="payment[amount]" value="20"><input type="hidden"
+                                                        name="payment[service_id]" value="add_balance_custom"></div>
                                             </div>
                                             <div class="action"><button name="button" type="submit">Balansı
                                                     artır</button></div>
                                             <div class="reveal-payment-method">ÖDƏNİŞ ÜSULUNU SEÇİN</div>
                                             <div class="az-payments-type">
                                                 <div class="az-payments-form-i az-payments-type-yigim"><input
-                                                        class="az-payments-type-input"
-                                                        data-tab=".az-payments-form-yigim" type="radio" value="yigim"
-                                                        name="payment[payment_provider]"
+                                                        class="az-payments-type-input" data-tab=".az-payments-form-yigim"
+                                                        type="radio" value="yigim" name="payment[payment_provider]"
                                                         id="3addc038092febfc8eb6f0a751d9560e_payment_payment_provider_yigim"
                                                         data-gtm-form-interact-field-id="3"><label
                                                         for="3addc038092febfc8eb6f0a751d9560e_payment_payment_provider_yigim">Bank
@@ -929,21 +954,22 @@
                                                 <div class="terms-profile">«Ödə» düyməsini sıxmaqla siz Turbo.az-ın <a
                                                         target="_blank" href="/pages/terms-and-conditions">İstifadəçi
                                                         razılaşmasını</a> və <a target="_blank"
-                                                                                href="/pages/proposal">Ofertanı</a> qəbul etdiyinizi təsdiqləmiş
+                                                        href="/pages/proposal">Ofertanı</a> qəbul etdiyinizi təsdiqləmiş
                                                     olursunuz.</div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="az-payments-form az-payments-form-portmanat" data-provider="portmanat"
-                                         style="display: none;">
+                                        style="display: none;">
                                         <form class="new_payment" id="45ef8feb4435f92d8136d9e632bc7390_new_payment"
-                                              action="/portmanat" accept-charset="UTF-8" method="post"><input
+                                            action="/portmanat" accept-charset="UTF-8" method="post"><input
                                                 type="hidden" name="authenticity_token"
                                                 value="J-5tqV0DQTMqypFbAdL6z5hlGKxE38d9-_WVi0v7wJFGEQnAWQWPuxMyVzHLkS7tC3wYPoYD-EHDTFstJoEcKg"
-                                                autocomplete="off"><input value="true" autocomplete="off" type="hidden"
-                                                                          name="payment[mobile]"
-                                                                          id="45ef8feb4435f92d8136d9e632bc7390_payment_mobile"><input
-                                                value="mobile" autocomplete="off" type="hidden" name="payment[medium]"
+                                                autocomplete="off"><input value="true" autocomplete="off"
+                                                type="hidden" name="payment[mobile]"
+                                                id="45ef8feb4435f92d8136d9e632bc7390_payment_mobile"><input
+                                                value="mobile" autocomplete="off" type="hidden"
+                                                name="payment[medium]"
                                                 id="45ef8feb4435f92d8136d9e632bc7390_payment_medium"><input
                                                 autocomplete="off" type="hidden" value="User"
                                                 name="payment[target_type]"
@@ -955,23 +981,23 @@
                                             <div class="custom-amount-service">
                                                 <div class="custom-amount-service_title">Artırılacaq məbləğ, AZN</div>
                                                 <input type="tel" name="amount_custom"
-                                                       class="custom-amount-service_input az-payments-service-input js-custom-amount-service"
-                                                       autocomplete="off" placeholder="Məbləği seçin / daxil edin"
-                                                       data-checked="true" data-placeholder="Məbləği seçin / daxil edin">
+                                                    class="custom-amount-service_input az-payments-service-input js-custom-amount-service"
+                                                    autocomplete="off" placeholder="Məbləği seçin / daxil edin"
+                                                    data-checked="true" data-placeholder="Məbləği seçin / daxil edin">
                                                 <div
                                                     class="custom-amount-service_price-container js-service-price-container">
                                                     <div class="custom-amount-service_price js-service-price"
-                                                         data-price="12" data-provider="portmanat">12 AZN</div>
+                                                        data-price="12" data-provider="portmanat">12 AZN</div>
                                                     <div class="custom-amount-service_price js-service-price active"
-                                                         data-price="20" data-provider="portmanat">20 AZN</div>
+                                                        data-price="20" data-provider="portmanat">20 AZN</div>
                                                     <div class="custom-amount-service_price js-service-price"
-                                                         data-price="50" data-provider="portmanat">50 AZN</div>
+                                                        data-price="50" data-provider="portmanat">50 AZN</div>
                                                 </div>
                                                 <div class="custom-amount-service_payment_method">ÖDƏNİŞ ÜSULUNU SEÇ
                                                 </div>
                                                 <div class="js-custom-price-placeholder"><input type="hidden"
-                                                                                                name="payment[amount]" value="20"><input type="hidden"
-                                                                                                                                         name="payment[service_id]" value="add_balance_custom"></div>
+                                                        name="payment[amount]" value="20"><input type="hidden"
+                                                        name="payment[service_id]" value="add_balance_custom"></div>
                                             </div>
                                             <div class="action"><button name="button" type="submit">Balansı
                                                     artır</button></div>
@@ -979,8 +1005,8 @@
                                             <div class="az-payments-type">
                                                 <div class="az-payments-form-i az-payments-type-yigim"><input
                                                         class="az-payments-type-input"
-                                                        data-tab=".az-payments-form-yigim" type="radio" value="yigim"
-                                                        name="payment[payment_provider]"
+                                                        data-tab=".az-payments-form-yigim" type="radio"
+                                                        value="yigim" name="payment[payment_provider]"
                                                         id="45ef8feb4435f92d8136d9e632bc7390_payment_payment_provider_yigim"><label
                                                         for="45ef8feb4435f92d8136d9e632bc7390_payment_payment_provider_yigim">Bank
                                                         kartı<span
@@ -1004,7 +1030,7 @@
                                                 <div class="terms-profile">«Ödə» düyməsini sıxmaqla siz Turbo.az-ın <a
                                                         target="_blank" href="/pages/terms-and-conditions">İstifadəçi
                                                         razılaşmasını</a> və <a target="_blank"
-                                                                                href="/pages/proposal">Ofertanı</a> qəbul etdiyinizi təsdiqləmiş
+                                                        href="/pages/proposal">Ofertanı</a> qəbul etdiyinizi təsdiqləmiş
                                                     olursunuz.</div>
                                             </div>
                                         </form>
@@ -1034,34 +1060,35 @@
         <footer class="footer">
             <div class="footer__blk">
                 <div class="footer__app-promotion"><a class="footer__app-store-btn js-footer-app-link"
-                                                      data-stat="turboaz-app-footer-btn"
-                                                      href="https://play.google.com/store/apps/details?id=org.turboaz.android&amp;hl=az"><img alt=""
-                                                                                                                                              src="https://turbo.azstatic.com/assets/application/footer/turbo-mini-logo-f17279c2912d4cfe3a8996f9c9da67295192e8b0a941db4445d331c919b4a458.svg"></a>
+                        data-stat="turboaz-app-footer-btn"
+                        href="https://play.google.com/store/apps/details?id=org.turboaz.android&amp;hl=az"><img
+                            alt=""
+                            src="https://turbo.azstatic.com/assets/application/footer/turbo-mini-logo-f17279c2912d4cfe3a8996f9c9da67295192e8b0a941db4445d331c919b4a458.svg"></a>
                     <div class="footer__app-promotion-info"><a data-stat="turboaz-app-footer-btn"
-                                                               class="footer__app-promotion-link js-footer-app-link"
-                                                               href="https://play.google.com/store/apps/details?id=org.turboaz.android&amp;hl=az">Turbo.az</a><span>Hər
+                            class="footer__app-promotion-link js-footer-app-link"
+                            href="https://play.google.com/store/apps/details?id=org.turboaz.android&amp;hl=az">Turbo.az</a><span>Hər
                             şey bir tətbiqdə!</span></div>
                 </div>
             </div>
             <div class="footer__blk"><a target="_blank" class="footer__link footer__link--pages"
-                                        href="/pages/rules">Qaydalar</a><a target="_blank" class="footer__link footer__link--pages"
-                                                                           href="/pages/terms-and-conditions">İstifadəçi razılaşması</a><a target="_blank"
-                                                                                                                                           class="footer__link footer__link--pages" href="/pages/advert">Reklam yerləşdirin</a><a
+                    href="/pages/rules">Qaydalar</a><a target="_blank" class="footer__link footer__link--pages"
+                    href="/pages/terms-and-conditions">İstifadəçi razılaşması</a><a target="_blank"
+                    class="footer__link footer__link--pages" href="/pages/advert">Reklam yerləşdirin</a><a
                     target="_blank" class="footer__link footer__link--pages"
                     href="/pages/order-recommendations">Sifarişli avtomobil alan alıcı üçün tövsiyələr</a></div>
             <div class="footer__blk">
                 <div class="footer__title">Dəstək xidməti</div><a class="footer__link footer__link--contact"
-                                                                  href="tel: +994125057755">(012) 505-77-55</a>
+                    href="tel: +994125057755">(012) 505-77-55</a>
                 <p class="footer__opening-hours">İş saatları — Həftə içi: 09:00-19:00 | Şənbə: 09:00-13:00</p><a
                     class="footer__link footer__link--social" href="mailto:turbo@turbo.az"><i
                         class="footer__link--social_icon footer__link--social_icon--email"></i></a><a target="_blank"
-                                                                                                      class="footer__link footer__link--social" href="https://www.facebook.com/www.turbo.az"><i
+                    class="footer__link footer__link--social" href="https://www.facebook.com/www.turbo.az"><i
                         class="footer__link--social_icon footer__link--social_icon--facebook"></i></a><a target="_blank"
-                                                                                                         class="footer__link footer__link--social" href="https://www.instagram.com/turbo.az/"><i
+                    class="footer__link footer__link--social" href="https://www.instagram.com/turbo.az/"><i
                         class="footer__link--social_icon footer__link--social_icon--instagram"></i></a>
             </div>
             <div class="footer__blk"><a class="footer__link footer__link--inline" rel="nofollow"
-                                        href="/autos/8801633-bmw-328?desktop_site=1">Tam versiya</a><a
+                    href="/autos/8801633-bmw-328?desktop_site=1">Tam versiya</a><a
                     class="footer__link footer__link--inline js-lang-switch"
                     href="https://ru.turbo.az/autos/8801633-bmw-328">Русский язык</a>
                 <div class="footer__info">Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların
@@ -1069,8 +1096,8 @@
                 <div class="footer__copyright">© 2006-2024 Digital Classifieds MMC. VÖEN: 1405631661</div>
             </div>
             <div class="bottom-phone-container js-bottom-phone-container"><a id="phone-button"
-                                                                             class="js-bottom-phone js-phone-btn bottom-phone bottom-phone--sticky" data-phone="(070) 540-34-94"
-                                                                             data-log-show-phone="true" data-trigger-button="main" href="#">Zəng et</a></div>
+                    class="js-bottom-phone js-phone-btn bottom-phone bottom-phone--sticky" data-phone="(070) 540-34-94"
+                    data-log-show-phone="true" data-trigger-button="main" href="#">Zəng et</a></div>
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -1078,18 +1105,20 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             on: {
-                slideChange: function () {
+                slideChange: function() {
                     var currentSlide = swiper.realIndex + 1;
                     var totalSlides = swiper.slides.length;
-                    document.querySelector('.product-photos__slider-counter').textContent = currentSlide + '/' + totalSlides;
+                    document.querySelector('.product-photos__slider-counter').textContent = currentSlide + '/' +
+                        totalSlides;
                 }
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var currentSlide = swiper.realIndex + 1;
             var totalSlides = swiper.slides.length;
-            document.querySelector('.product-photos__slider-counter').textContent = currentSlide + '/' + totalSlides;
+            document.querySelector('.product-photos__slider-counter').textContent = currentSlide + '/' +
+                totalSlides;
         });
     </script>
 @endsection

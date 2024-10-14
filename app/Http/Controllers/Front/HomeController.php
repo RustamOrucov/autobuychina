@@ -176,7 +176,7 @@ class HomeController extends Controller
     public function avtosalon()
     {
         $dealers=Dealer::where('status',1)->with('cars')->get();
-        
+
         return view('front.pages.avtosalon',['dealers'=>$dealers]);
     }
     //    AvtoSalon Detail

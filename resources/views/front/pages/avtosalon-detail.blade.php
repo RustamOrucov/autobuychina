@@ -71,6 +71,16 @@
                 <div class="products-i vipped featured salon"><a class="products-i__link" target="_blank" href="{{route('detail',['car'=>$car->id])}}"></a><a class="js-bookmark-item-8647294" data-remote="true" rel="nofollow" data-method="post" href="#">
 
                     </a>
+                    <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow"
+                    href="#" data-id="{{ $car->id }}" style="display: inline-block;">
+                    <div class="bookmarking"></div>
+                </a>
+
+                <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true"
+                    rel="nofollow" href="#" data-id="{{ $car->id }}"
+                    style="display: none;">
+                    <div class="bookmarking added"></div>
+                </a>
                     <div class="products-i__top custom-car-img-container">
                         <img alt="Hyundai Grandeur" loading="lazy" src="{{asset('storage/'.$car->car_image)}}">
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">

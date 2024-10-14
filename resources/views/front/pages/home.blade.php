@@ -1093,6 +1093,16 @@
                                 <div class="products-i vipped featured" data-id="{{ $car->id }}">
                                     <a href="{{route('detail',['car'=>$car->id])}}" class="products-i__link"></a>
                                     <div class="products-i__top">
+                                        <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow"
+                                        href="#" data-id="{{ $car->id }}" style="display: inline-block;">
+                                        <div class="bookmarking"></div>
+                                    </a>
+
+                                    <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true"
+                                        rel="nofollow" href="#" data-id="{{ $car->id }}"
+                                        style="display: none;">
+                                        <div class="bookmarking added"></div>
+                                    </a>
                                         <div class="custom-car-img-container">
                                         <img
                                             src="{{ asset('storage/' . $car->car_image) }}" loading="lazy"
