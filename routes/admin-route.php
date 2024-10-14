@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AuctionTimeController;
 use App\Http\Controllers\Admin\BanController;
 use App\Http\Controllers\Admin\CarController;
@@ -75,6 +76,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
     Route::resource('sold', SoldController::class)->except(['show']);
     Route::resource('social', SocialController::class)->except(['show']);
     Route::resource('ban', BanController::class)->except(['show']);
+    Route::resource('adminsetting', AdminSettingController::class)->except(['show']);
 
 
     Route::get('carimage/{carId}', [CarImageController::class, 'index'])->name('carimage.index');
