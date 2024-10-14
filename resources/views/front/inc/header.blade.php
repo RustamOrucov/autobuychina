@@ -2,13 +2,13 @@
     <div class="header-bar-container">
         <div class="header-bar tz-container tz-d-flex tz-align-center" data-lotriver-wrapper="">
             <div class="header-bar--left"><a target="_blank" class="header-tabs-i header-tabs-i_tap"
-                    href="#">autobuchina.com</a>
+                    href="#">{{$adminSettings->website_name}}</a>
             </div>
             <div class="header-bar--right">
                 <div class="header-bar-i header-bar-i_support-phone"><span
                         class="header-bar-i_support-phone-title">{{ sitekey('home_static', 'name') }} : </span><span
                         class="header-bar-i_support-phone-list"><span><a data-register-call="true"
-                                href="tel:(012) 555 55 55">(012) 555 55 55</a></span></span></div>
+                                href="tel:{{$adminSettings->phone}}">{{$adminSettings->phone}}</a></span></span></div>
                 <a class="header-bar-i" href="#">{{ sitekey('home_static_two', 'title') }}</a>
 
                 <div class="dropdown">

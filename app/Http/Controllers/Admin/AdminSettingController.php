@@ -34,7 +34,7 @@ class AdminSettingController extends Controller
     {
         return view('admin.adminsetting.form',['model'=>$adminsetting]);
     }
-    public function update(AdminSettingRequest $adminSettingRequest,Higlit $adminsetting)
+    public function update(AdminSettingRequest $adminSettingRequest,AdminSetting $adminsetting)
     {
         $this->service->update($adminSettingRequest,$adminsetting);
         return redirect()->back();

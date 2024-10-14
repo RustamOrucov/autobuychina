@@ -77,6 +77,14 @@
                         @enderror
                     </div>
 
+                    <div class="col-12 col-lg-6">
+                        <label for="email" class="form-label">Website Email</label>
+                        <input value="{{ old('email', isset($model) ? $model->email : '') }}" type="text" class="form-control" id="email" placeholder="email" name="email">
+                        @error("email")
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
 
 
                     <div class="col-12 col-lg-6">
