@@ -28,7 +28,7 @@
                     <a href="{{ route('logout') }}" style="display: flex;align-items:center;gap:3px"><img width="20"
                             src="{{ asset('assets/img/logout.png') }}" alt=""> Logout</a>
                 @else
-                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('login') }}">{{ sitekey('home_static', 'text') }}</a>
+                    <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('question.login') }}">{{ sitekey('home_static', 'text') }}</a>
                     <a class="header-bar-i header-bar-i--login js-auth-link" href="{{ route('question') }}">{{ sitekey('home_static', 'desc') }}</a>
                 @endif
 
