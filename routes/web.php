@@ -12,7 +12,7 @@ use App\Http\Controllers\Front\FilterController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MobileController;
 use App\Http\Controllers\Front\ReportController;
-use App\Http\Controllers\Front\TraderRegisController;
+use App\Http\Controllers\Front\TraderController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Mobile\DealerController as MobileDealerController;
 use App\Http\Controllers\Mobile\MobileCarController;
@@ -45,11 +45,11 @@ Route::middleware('detect.mobile')->group(function () {
 //AvtoSalon Detail
     Route::get('/avtosalon-detail/{id}', [HomeController::class, 'avtosalondetail'])->name('avtosalon-detail');
     Route::get('/trader', [HomeController::class, 'trader'])->name('home.trader');
-    Route::get('/register', [AuthController::class, 'registerview'])->name('register');
+    Route::get('/dealer', [AuthController::class, 'dealer'])->name('dealer');
     Route::post('/registerStore', [DealerController::class, 'store'])->name('registerStore');
-    Route::post('/trader/store', [TraderRegisController::class, 'store'])->name('traderStore');
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'loginProcess']);
+    Route::post('/trader/store', [TraderController::class, 'store'])->name('traderStore');
+    Route::get('/login', [AuthController::class, 'dealerLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'dealerLoginProcess']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 /////////////////////////////////////////////////////////////   midleware yaz !!!!
     Route::get('/newcar', [CarController::class, 'newcar'])->name('newcar');
@@ -57,7 +57,14 @@ Route::middleware('detect.mobile')->group(function () {
     Route::get('dealer-profile', [DealerController::class, 'profile'])->name('dealer-profile');
     Route::post('dealer-update/{dealer}', [DealerController::class, 'update'])->name('dealer-update');
 //Register Question
-    Route::get('/question', [HomeController::class, 'question'])->name('question');
+    Route::get('/question-register', [HomeController::class, 'question'])->name('question');
+    Route::get('/question-login', [HomeController::class, 'questionlogin'])->name('question.login');
+    Route::get('/logint', [AuthController::class, 'traderLogin'])->name('logint');
+    Route::post('/logint', [AuthController::class, 'traderLoginProcess']);
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('trader-detail', [TraderController::class, 'detail'])->name('trader-detail');
+    Route::get('trader-profile', [TraderController::class, 'profile'])->name('trader-profile');
+    Route::post('trader-update/{trader}', [TraderController::class, 'update'])->name('trader-update');
 /////////////////////////////////////////////////////////
 
 });

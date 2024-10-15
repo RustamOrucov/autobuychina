@@ -1,8 +1,5 @@
-
 @extends('front.layout.layout')
-
 @section('front_content')
-
 
     <div class="main-container sessions" style="margin-bottom: 9%">
         <div class="section-title section-title--top section-title--grey">
@@ -32,10 +29,10 @@
                 <div class="input"><label for="sessions_password">Password</label><input type="password"
                         name="password" id="sessions_password" required></div>
                 <div class="links-row">
-                   <button type="submit" class="custom-login-btn" href="">Login</button>
 
-                    <a href="{{ route('register') }}" class="custom-register-btn">Register Dealership</a>
+                    <a href="{{ route('dealer') }}" class="custom-register-btn">Register Dealership</a>
 
+                    <button type="submit" class="custom-login-btn" href="">Login</button>
                 </div>
             </form>
         </div>
