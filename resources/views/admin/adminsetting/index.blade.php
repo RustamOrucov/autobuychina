@@ -5,9 +5,14 @@
 
     <div class="card">
         <div class="card-body">
-            <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
+
+           @if(\App\Models\AdminSetting::count() <= 1)
+            @else
+                <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
+           @endif
             <div class="bs-stepper-content">
-                <h5 style="margin-bottom: 15px" class="mb-1">Cars & Model</h5>
+                <h5 style="margin-bottom: 15px" class="mb-1">Admin Setting</h5>
+
                 <div class="table-responsive">
                     <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5">
                         <div class="row"><div class="col-sm-12 col-md-6">
@@ -25,9 +30,9 @@
                                     <thead>
                                     <tr role="row">
                                         <th class="sorting_asc">Id</th>
-                                        <th class="sorting_asc">Mob.Footer</th>
-                                        <th class="sorting_asc">Desk.Footer</th>
-                                        <th class="sorting_asc">Mob.Copyright</th>
+                                        <th class="sorting_asc">Mobile Footer</th>
+                                        <th class="sorting_asc">Footer Text</th>
+                                        <th class="sorting_asc">Mobile Copyright</th>
                                         <th class="sorting_asc">Duzelis</th>
                                         <th class="sorting_asc">Sil</th>
                                     </tr>
@@ -37,8 +42,8 @@
                                     @foreach($models  as $model)
                                         <tr role="row" class="even">
                                             <td class="sorting_1">{{$model->id}}</td>
-                                            <td>{{$model->mobile_footer}}</td>
-                                            <td>{{$model->footer_text}}</td>
+                                            <td>{{Str::limit($model->mobile_footer,20)}}</td>
+                                            <td>{{Str::limit($model->footer_text,20)}}</td>
                                             <td>{{$model->mobile_copyright}}</td>
                                             <td><a href="{{route($routeName.'.edit',$model->id)}}" class="btn btn-warning">Düzəliş</a></td>
                                             <td>

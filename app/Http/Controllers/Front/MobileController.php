@@ -49,4 +49,5 @@ class MobileController extends Controller
     {
         return view('mobile.pages.trader');
     }
+
 }

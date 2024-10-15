@@ -16,7 +16,7 @@ class AdminSettingRequest extends FormRequest
     private function mapLanguageValidations($data){
         foreach (config('app.languages') as $lang){
             $data[$lang]='required|array';
-            $data["$lang.mobile_footer.string"]= "$lang Footer Is Required";
+            $data["$lang.mobile_footer.string"]= "$lang Mobile Footer Is Required";
             $data["$lang.footer_text.string"]= "$lang Footer Text Is Required";
             $data["$lang.mobile_copyright.string"]= "$lang Copyright Is Required";
         }
