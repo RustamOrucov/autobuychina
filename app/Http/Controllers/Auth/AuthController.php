@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Dealer;
+use App\Models\Policy;
 use App\Models\Traderregis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,13 @@ class AuthController extends Controller
 {
     public function dealerLogin()
     {
-        return view('front.pages.dealer-login');
+        $policys = Policy::all();
+        return view('front.pages.dealer-login',compact('policys'));
     }
     public function traderLogin()
     {
-        return view('front.pages.trader-login');
+        $policys = Policy::all();
+        return view('front.pages.trader-login',compact('policys'));
     }
 
     public function dealerLoginProcess(LoginRequest $request)
@@ -74,6 +77,7 @@ class AuthController extends Controller
 
     public function dealer()
     {
-        return view('front.pages.dealer');
+        $policys = Policy::all();
+        return view('front.pages.dealer',compact('policys'));
     }
 }

@@ -1,0 +1,1 @@
+ C:\\Users\\M-Power\\Desktop\\sexavet\\autobuychina\\.dart_tool\\flutter_build\\d31d56ae2a80aa9acbd9274f471c44fd\\native_assets.yaml: 
