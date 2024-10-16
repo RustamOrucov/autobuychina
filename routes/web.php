@@ -12,6 +12,7 @@ use App\Http\Controllers\Front\FilterController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MobileController;
 use App\Http\Controllers\Front\ReportController;
+use App\Http\Controllers\Front\SpareController;
 use App\Http\Controllers\Front\TraderController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Mobile\DealerController as MobileDealerController;
@@ -35,7 +36,7 @@ Route::middleware('detect.mobile')->group(function () {
 // favorite list
     Route::get('/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
 //Car Detail
-    Route::get('/detail/{car}', [HomeController::class, 'detail'])->name('detail');
+    Route::get('/detail/{car}', [HomeController::class, 'cardetail'])->name('detail');
 //New Car
     Route::get('/new-car', [HomeController::class, 'new']);
 //All Cars
@@ -63,8 +64,14 @@ Route::middleware('detect.mobile')->group(function () {
     Route::post('/logint', [AuthController::class, 'traderLoginProcess']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('trader-detail', [TraderController::class, 'detail'])->name('trader-detail');
+    Route::get('trader-detail', [TraderController::class, 'detail'])->name('trader-detail');
     Route::get('trader-profile', [TraderController::class, 'profile'])->name('trader-profile');
     Route::post('trader-update/{trader}', [TraderController::class, 'update'])->name('trader-update');
+    Route::get('/newspare', [SpareController::class, 'newspare'])->name('newspare');
+    Route::post('spare-store', [SpareController::class, 'storeSpare'])->name('spare-store');
+    Route::get('/parts-detail/{spare}', [HomeController::class, 'sparedetail'])->name('parts-detail');
+    Route::get('/all-spares', [HomeController::class, 'allspares'])->name('all-spares');
+
 /////////////////////////////////////////////////////////
 
 });

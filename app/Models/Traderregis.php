@@ -19,8 +19,8 @@ class Traderregis extends Model implements TranslatableContract, Authenticatable
     public $translationModel=TraderregisTranslation::class;
     public $translatedAttributes = ['title','content'];
 
-    public function cars()
+    public function spares()
     {
-        return $this->hasMany(Car::class);
+        return $this->hasMany(Spare::class);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Services\RepositoryService;
 
 
+use App\Http\Requests\TraderProfileUpdateRequest;
 use App\Http\Requests\TraderRegisterRequest;
 use App\Models\Traderregis;
 use App\Repositories\TraderRegisRepository;
@@ -36,18 +37,18 @@ class TraderRegisterService
         self::clearCached();
         return redirect()->back()->with('success', 'Registration successful!');
     }
-    public function update(TraderRegisterRequest $profilerequest, $model)
+    public function update(TraderProfileUpdateRequest $traderProfileUpdateRequest, $model)
     {
-        $data = $profilerequest->all();
+        $data = $traderProfileUpdateRequest->all();
         unset($data['password_confirmation']);
-        if ($profilerequest->has('logo')) {
-            $data['logo'] = $this->fileUploadService->replaceFile($profilerequest->logo, $model->logo, 'logo');
+        if ($traderProfileUpdateRequest->has('logo')) {
+            $data['logo'] = $this->fileUploadService->replaceFile($traderProfileUpdateRequest->logo, $model->logo, 'logo');
         }
-        if ($profilerequest->has('background')) {
-            $data['background'] = $this->fileUploadService->replaceFile($profilerequest->background, $model->background, 'background');
+        if ($traderProfileUpdateRequest->has('background')) {
+            $data['background'] = $this->fileUploadService->replaceFile($traderProfileUpdateRequest->background, $model->background, 'background');
         }
-        if ($profilerequest->filled('password')) {
-            $data['password'] = bcrypt($profilerequest->password);
+        if ($traderProfileUpdateRequest->filled('password')) {
+            $data['password'] = bcrypt($traderProfileUpdateRequest->password);
         } else {
             $data['password'] = $model->password;
         }
