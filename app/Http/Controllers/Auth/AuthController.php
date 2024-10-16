@@ -71,7 +71,12 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth::guard('dealer' )->logout();
+       if ( Auth::guard('dealer' )->check()){
+           Auth::guard('dealer' )->logout();
+       }
+        if ( Auth::guard('trader' )->check()){
+            Auth::guard('trader' )->logout();
+        }
         return redirect()->route('home');
     }
 

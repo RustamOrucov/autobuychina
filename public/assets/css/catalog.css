@@ -23527,7 +23527,7 @@ div.boolean label::after, .radio_buttons label::after, .checkbox label::after, .
     color: red !important;
 }
 
-.custom-dealer-page {
+.custom-dealer-page, .custom-trader-page {
     padding: 10px 20px;
     background: transparent;
     border-radius: 5px;

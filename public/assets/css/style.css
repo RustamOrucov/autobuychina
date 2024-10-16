@@ -25041,7 +25041,7 @@ div.boolean label::after,
 }
 
 input[type="file"] {
-    display: none;
+    display: inline-block;
 }
 
 #previewImage {
