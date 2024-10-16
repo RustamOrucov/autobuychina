@@ -9,7 +9,7 @@
                     <li class="breadcrumbs__i"><a class="breadcrumbs__i-link"
                             href="/autos?q%5Bmake%5D%5B%5D=1&amp;q%5Bmodel%5D%5B%5D=5245">{{ $car->ModelType->name }}</a>
                     </li>
-                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">{{sitekey('car_detail','title')}} № {{ $car->id + 999 }}</span></li>
+                    <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № {{ $car->id + 999 }}</span></li>
                 </ul>
             </div>
             {{-- sdsd --}}
@@ -28,12 +28,12 @@
                                     rel="nofollow" data-id="{{ $car->id }}">In favorites</a>
                                 <a class="product-bookmarks__link js-bookmark-item" data-remote="true" rel="nofollow"
                                     data-id="{{ $car->id }}">
-                                    {{sitekey('car_detail','text',)}}</a>
+                                    Save in favorites</a>
                             </div>
 
                             <div class="product-report">
                                 <a class="product-report__btn js-product-report-btn" data-reported-text="Şikayət etmisiniz"
-                                    data-not-allowed="true" href="#">{{sitekey('car_detail','desc')}}</a>
+                                    data-not-allowed="true" href="#">Report</a>
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                                                 <div class="product-vin__copy-text js-copy-copied is-hidden">Copied</div>
                                             </div>
                                         </div>
-                                        <div class="product-vin__info">{{sitekey('car_detail','name')}}</div>
+                                        <div class="product-vin__info">Check the VIN code before buying the car.</div>
                                     </div>
                                     <a target="_blank" class="product-vin__check-link"
                                         href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">Search on the

@@ -30,7 +30,6 @@
                             <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="tab-{{ $lang }}" role="tabpanel" aria-labelledby="custom-tabs-one-{{ $lang }}-tab">
                                 <div class="row g-3">
                                     <div class="col-12 col-lg-6">
-
                                         <label for="MobileFooter" class="form-label">MobileFooter</label>
                                         <input value="{{ old($lang.'mobile_footer', isset($model) ? $model->translateOrDefault($lang)->mobile_footer : '') }}" type="text" class="form-control" id="MobileFooter" placeholder="MobileFooter" name="{{ $lang }}[mobile_footer]">
                                         @error("$lang.mobile_footer")
@@ -38,7 +37,6 @@
                                         @enderror
                                     </div>
                                     <div class="col-12 col-lg-6">
-
                                         <label for="FooterText" class="form-label">Footer Text</label>
                                         <input value="{{ old($lang.'footer_text', isset($model) ? $model->translateOrDefault($lang)->footer_text : '') }}" type="text" class="form-control" id="FooterText" placeholder="FooterText" name="{{ $lang }}[footer_text]">
                                         @error("$lang.footer_text")
@@ -79,7 +77,6 @@
                         @enderror
                     </div>
 
-
                     <div class="col-12 col-lg-6">
                         <label for="email" class="form-label">Website Email</label>
                         <input value="{{ old('email', isset($model) ? $model->email : '') }}" type="text" class="form-control" id="email" placeholder="email" name="email">
@@ -87,6 +84,8 @@
                         <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
+
 
                     <div class="col-12 col-lg-6">
                         <button type="submit" class="btn btn-light px-5 radius-30"><i class="bx bx-bookmark mr-1"></i>Save</button>

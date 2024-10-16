@@ -31,7 +31,6 @@ class AdminSettingService
     public function update(AdminSettingRequest $adminSettingRequest, $model)
     {
         $data = $adminSettingRequest->all();
-
         $model = $this->repository->save($data, $model);
 
         self::clearCached();

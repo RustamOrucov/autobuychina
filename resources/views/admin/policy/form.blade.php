@@ -59,16 +59,6 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="form-group col-12 mt-3">
-                                        <label>Register Policy(qeydiyyat sertleri)</label>
-                                        <textarea id="summernotesss{{ $index }}" placeholder="rules{{ $lang }}"
-                                                  name="{{ $lang }}[register_policy]" class="form-control">
-                                    {{ old("$lang.register_policy", isset($model) ? $model->translateOrDefault($lang)->register_policy ?? '' : '') }}
-                                </textarea>
-                                        @error("$lang.register_policy")
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -106,23 +96,6 @@
                 function initializeSummernote() {
                     @foreach (config('app.languages') as $index => $lang)
                     $('#summernotess{{ $index }}').summernote({
-                        height: 100
-                    });
-                    @endforeach
-                }
-
-                initializeSummernote();
-
-                $('a[data-toggle="pill"]').on('shown.bs.tab', function(e) {
-                    initializeSummernote();
-                });
-            });
-
-
-            $(document).ready(function() {
-                function initializeSummernote() {
-                    @foreach (config('app.languages') as $index => $lang)
-                    $('#summernotesss{{ $index }}').summernote({
                         height: 100
                     });
                     @endforeach

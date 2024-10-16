@@ -5,14 +5,12 @@
 
     <div class="card">
         <div class="card-body">
-
            @if(\App\Models\AdminSetting::count() <= 1)
             @else
                 <a href="{{ route($routeName.'.create') }}" style="margin-bottom: 15px" type="button" class="btn btn-light px-5 radius-30"><i class="lni lni-plus"></i>Elave Et</a>
            @endif
             <div class="bs-stepper-content">
                 <h5 style="margin-bottom: 15px" class="mb-1">Admin Setting</h5>
-
                 <div class="table-responsive">
                     <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5">
                         <div class="row"><div class="col-sm-12 col-md-6">
@@ -45,6 +43,7 @@
                                             <td>{{Str::limit($model->mobile_footer,20)}}</td>
                                             <td>{{Str::limit($model->footer_text,20)}}</td>
                                             <td>{{$model->mobile_copyright}}</td>
+
                                             <td><a href="{{route($routeName.'.edit',$model->id)}}" class="btn btn-warning">Düzəliş</a></td>
                                             <td>
                                                 <form class="delete-form" action="{{ route($routeName.'.destroy',$model->id) }}" method="POST">

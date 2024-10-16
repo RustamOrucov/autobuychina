@@ -14,5 +14,5 @@ class Policy extends Model implements TranslatableContract
     protected $table='policys';
     protected $guarded=[];
     public $translationModel=PolicyTranslation::class;
-    public $translatedAttributes = ['agreement','rules','register_policy'];
+    public $translatedAttributes = ['agreement','rules'];
 }
