@@ -204,11 +204,19 @@ class HomeController extends Controller
         return view('front.pages.question');
     }
 
-    public function trader(){
-        return view('front.pages.trader');
+    public function questionlogin(){
+        return view('front.pages.question-login');
+    }
+
+    public function trader()
+    {
+        $policys = Policy::all();
+        return view('front.pages.trader',compact('policys'));
     }
 
 
-
+    public function traderlogin(){
+        return view('front.pages.trader-login');
+    }
 
 }

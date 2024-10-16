@@ -4,86 +4,81 @@
         <div style="max-width: 750px; margin: 20px auto 0 auto;">
             <div class="container custom-register-container">
                 <div class="title">
-                    <p>Register Trader</p>
+                    <p>Register Dealer</p>
                 </div>
-                <form action="{{ route('traderStore') }}" method="POST" enctype="multipart/form-data">
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    @endif
+                <form action="{{ route('registerStore') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="user_details">
                         <div class="input_box">
                             <label for="name">Name</label>
                             <input style="padding:0 5px" type="text" id="name" name="name"
-                                   value="{{ old('name') }}" placeholder="Name" required>
+                                value="{{ old('name') }}" placeholder="Name" required>
                             @error('name')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="surname">Surname</label>
                             <input style="padding:  0 5px" type="text" id="surname" name="surname"
-                                   value="{{ old('surname') }}" placeholder="Surname" required>
+                                value="{{ old('surname') }}" placeholder="Surname" required>
                             @error('surname')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="t_name">Trader Name</label>
-                            <input style="padding: 0 5px" type="text" id="t_name" name="t_name"
-                                   placeholder="Trader Name" value="{{ old('t_name') }}" required>
-                            @error('t_name')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                            <label for="d_name">Dealer Name</label>
+                            <input style="padding: 0 5px" type="text" id="d_name" name="d_name"
+                                placeholder="Dealer Name" value="{{ old('d_name') }}" required>
+                            @error('d_name')
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="adress">Adress</label>
                             <input style="padding: 0 5px" type="text" name="adress" id="adress"
-                                   value="{{ old('adress') }}" placeholder="Adress" required>
+                                value="{{ old('adress') }}" placeholder="Adress" required>
                             @error('adress')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="email">Email</label>
                             <input style="padding:0 5px" type="email" name="email" value="{{ old('email') }}"
-                                   id="email" placeholder="Email Address" required>
+                                id="email" placeholder="Email Address" required>
                             @error('email')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
                             <label for="phone">Phone number</label>
                             <input style="padding: 0 5px" type="text" name="phone" value="{{ old('phone') }}"
-                                   id="phone" placeholder="+994" required>
+                                id="phone" placeholder="+994" required>
                             @error('phone')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Password</label>
+                            <label for="confirmPass">Pssword</label>
                             <div class="inputTx inputPw">
                                 <input style="padding: 0 5px" type="password" name="password" id="password"
-                                       class="password required" placeholder="Password">
+                                    class="password required" placeholder="Password">
 
                             </div>
 
                             @error('password')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
+                                <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
 
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Password Confirm</label>
+                            <label for="confirmPass">Pssword Confirm</label>
                             <div class="inputTx inputPw">
                                 <input style="padding:0 5px" type="password" name="password_confirmation"
-                                       id="current_password" class="password required" placeholder="Password">
+                                    id="current_password" class="password required" placeholder="Password">
 
                             </div>
                             @error('password_confirmation')
-                            <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
@@ -108,33 +103,13 @@
                             <div class="img-boxs">
                                 <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
                                 <img id="back_preview" style="width: 150px; object-fit: cover;" src="" alt="">
-
                             </div>
                         </div>
 
-                        <div class="input_box">
-                            <label for="business_foto" class="front_id">Business foto *</label>
-                            <input type="file" name="business_foto" id="business_foto" class="custom-file-input" required>
-                            @error('business_foto')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
-                            @enderror
-                            <div class="img-boxs">
-                                <button class="clear-img" id="clear-business-img"><i class="fa-solid fa-xmark"></i></button>
-                                <img id="business_preview" style="width: 150px; object-fit: cover;" src="" alt="">
-                            </div>
-                        </div>
-                        <div class="input_box">
-                            <label for="license_number">License Number</label>
-                            <input style="padding: 0 5px" type="text" name="license_number" value="{{ old('license_number') }}"
-                                   id="license_number" placeholder="123456789" required>
-                            @error('license_number')
-                            <div class="text-danger" style="color:red">{{ $message }}</div>
-                            @enderror
-                        </div>
                         <div class="private-checked">
                             <div class="dbl clearfix" style="list-style-type: none;">
                                 <input type="checkbox"  id="remember-me" class=""
-                                       value="true">
+                                    value="true">
                                 <label for="remember-me">Terms and Conditions</label>
                             </div>
                             <div class="private-btn-box">
@@ -166,7 +141,6 @@
                         {!! $policy->register_policy !!}
                     @endforeach
                 </p>
-
             </div>
         </div>
 
@@ -189,6 +163,7 @@
         });
 
 
+        // submit button disabled chage function
 
         const checkbox = document.getElementById('remember-me');
         const submitBtn = document.getElementById('submit-btn');
@@ -202,11 +177,11 @@
                 submitBtn.disabled = true;
             }
         });
+        //    function end
 
 
 
-    //     preview photo
-
+    //     preview image
         document.addEventListener('DOMContentLoaded', function () {
             function previewImage(input, previewId, clearButtonId) {
                 const file = input.files[0];
@@ -224,8 +199,8 @@
                     reader.readAsDataURL(file);
                 } else {
                     preview.src = '';
-                    preview.style.height = ''
                     preview.style.display = 'none';
+                    preview.style.height = ''
                     clearButton.style.display = 'none';
                 }
             }
@@ -238,9 +213,7 @@
                 previewImage(this, 'back_preview', 'clear-back-img');
             });
 
-            document.getElementById('business_foto').addEventListener('change', function () {
-                previewImage(this, 'business_foto_preview', 'clear-business-img');
-            });
+
 
             function clearImage(button, inputId, previewId) {
                 button.addEventListener('click', function (e) {
@@ -256,7 +229,6 @@
 
             clearImage(document.getElementById('clear-front-img'), 'front_id', 'front_preview');
             clearImage(document.getElementById('clear-back-img'), 'back_id', 'back_preview');
-            clearImage(document.getElementById('clear-business-img'), 'business_foto', 'business_foto_preview');
         });
 
     </script>
@@ -286,9 +258,7 @@
             previewImage(this, 'back_preview');
         });
 
-        document.getElementById('business_foto').addEventListener('change', function () {
-            previewImage(this, 'business_preview');
-        });
+
 
         document.getElementById('clear-front-img').addEventListener('click', function (e) {
             e.preventDefault();
@@ -300,9 +270,6 @@
             clearImage('back_preview', 'back_id');
         });
 
-        document.getElementById('clear-business-img').addEventListener('click', function (e) {
-            e.preventDefault();
-            clearImage('business_preview', 'business_foto');
-        });
+
     </script>
 @endsection
