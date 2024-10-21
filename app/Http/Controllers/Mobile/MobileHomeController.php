@@ -118,10 +118,7 @@ class MobileHomeController extends Controller
     {
         return view('mobile.pages.profile');
     }
-    public function alldealers()
-    {
-        return view('mobile.pages.all-dealers');
-    }
+   
     public function addcars()
     {
         return view('mobile.pages.add-cars');

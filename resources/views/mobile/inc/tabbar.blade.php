@@ -26,7 +26,7 @@
             <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link" href="/">All
                     cars</a></div>
             <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link"
-                    href="{{ route('mobile.alldealers') }}">Dealers</a></div>
+                    href="{{ route('mobile.dealers') }}">Dealers</a></div>
             <div class="popup__list-i popup__list-i--with-border"><a target="_blank" class="popup__list-i_link"
                     href="#" onclick="return false;">Spare parts and accessories</a></div>
 
@@ -36,10 +36,13 @@
 
         </div>
 
+        @if(auth()->check())
         <div class="popup__list">
-            <div class="popup__list-i"><a class="popup__list-i_link" rel="nofollow" data-method="delete" href="#"
-                    onclick="return false;">Logout</a></div>
+            <div class="popup__list-i">
+                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="#" onclick="return false;">Logout</a>
+            </div>
         </div>
+    @endif
         {{-- <div class="popup__list-i popup__list-i--full-version"><a rel="nofollow" href="/?desktop_site=1">Tam
                 versiya</a></div> --}}
     </div>
@@ -100,7 +103,7 @@
                                 </g>
                             </g>
                         </svg></i><span class="tab-bar__link-text">Favorites</span></a></li>
-            <li><a class="tab-bar__link tab-bar__link--centered" href="#" onclick="return false;"><i
+            <li><a class="tab-bar__link tab-bar__link--centered" href="{{ auth()->check() ? '#' : route('mobile.login') }}"  ><i
                         class="tab-bar__link-icon"><svg height="45" viewBox="0 0 46 45" width="46"
                             xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -119,7 +122,9 @@
                                     fill="#FFF" fill-rule="nonzero" stroke="#FFF" stroke-width="1.171"></path>
                             </g>
                         </svg></i><span class="tab-bar__link-text">New add</span></a></li>
-            <li><a class="tab-bar__link" href="#" onclick="return false;"><i
+            <li>
+
+                <a class="tab-bar__link" href="{{ auth()->check() ? '#' : route('mobile.login') }}"  ><i
                         class="tab-bar__link-icon tab-bar__link-icon--rounded"><svg height="20"
                             viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                             <g fill-rule="evenodd">
@@ -128,7 +133,10 @@
                                     transform="translate(-326 -680) translate(0 655) translate(306 25) translate(20)">
                                 </path>
                             </g>
-                        </svg></i><span class="tab-bar__link-text">Cabinet</span></a></li>
+                        </svg></i><span class="tab-bar__link-text">Cabinet</span></a>
+
+
+                    </li>
             <li>
                 <div class="tab-bar__link js-drawer-open"><i class="tab-bar__link-icon"><svg height="20"
                             viewBox="0 0 28 22" width="26" xmlns="http://www.w3.org/2000/svg">

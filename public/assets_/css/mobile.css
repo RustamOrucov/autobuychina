@@ -10453,7 +10453,7 @@ a.pswp__share--download:hover {
     text-overflow: ellipsis;
     max-width: 250px;
     font-size: 16px;
-    color: #212c3a;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -22162,3 +22162,7 @@ select {
     height:100%;
     object-fit: cover;
 }
+
+
+/* login css */
+

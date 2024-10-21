@@ -11,8 +11,11 @@
                     <h1 class="header__logo header__logo--red"><img src="{{ asset('storage/' . $logoImages->m_logo) }}"
                             width="140"></h1>
                 </a>
-            </div><a class="header__btn header__btn--new" href="#"><img width="26"
-                    src="{{ asset('assets_/img/plus.png') }}" alt=""></a>
+            </div>
+            <a class="header__btn header__btn--new"
+            href="{{ auth()->check() ? '#' : route('mobile.login') }}">
+             <img width="26" src="{{ asset('assets_/img/plus.png') }}" alt="">
+         </a>
         </div>
         <div class="content">
             @if (isset($selectBrand))
