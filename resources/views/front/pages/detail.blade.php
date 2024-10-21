@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="product-report">
-                                <a class="product-report__btn js-product-report-btn" data-reported-text="Şikayət etmisiniz"
+                                <a class="product-report__btn js-product-report-btn" data-reported-text="Report"
                                     data-not-allowed="true" href="#">Report</a>
                             </div>
                         </div>
@@ -84,15 +84,15 @@
                             <div class="product-properties tz-d-flex tz-justify-between tz-gap-10">
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">City</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_two', 'desc')}}</label>
                                         <span class="product-properties__i-value">{{ $car->region->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Brand</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key', 'title')}}</label>
                                         <span class="product-properties__i-value">{{ $car->carModel->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Model</label>
+                                        <label for="" class="product-properties__i-name">{{ sitekey('filter_key', 'text') }}</label>
                                         <span class="product-properties__i-value">{{ $car->ModelType->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
@@ -100,8 +100,12 @@
                                         <span class="product-properties__i-value">{{ $car->year }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Color</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_three', 'name')}}</label>
                                         <span class="product-properties__i-value">{{ $car->Cylinder->name }}</span>
+                                    </div>
+                                    <div class="product-properties__i">
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_three','title')}}</label>
+                                        <span class="product-properties__i-value">{{ $car->ban->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
                                         <label for="" class="product-properties__i-name">Engine</label>
@@ -115,11 +119,11 @@
                                 </div>
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Transmission</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_static_four', 'desc')}}</label>
                                         <span class="product-properties__i-value">{{ $car->Damage->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Gear</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_static_four', 'text')}}</label>
                                         <span class="product-properties__i-value">{{ $car->Transmission->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
@@ -322,7 +326,7 @@
                                 </div>
                                 <div class="products-i__bottom">
                                     <div class="products-i__price products-i__bottom-text">
-                                        <div class="product-price">{{ $car->price }}<span>USD</span></div>
+                                        <div class="product-price">{{ $car->price }}<span>{{ $car->Ro->name }}</span></div>
                                     </div>
                                     <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}
                                         {{ $car->ModelType->name }}</div>
@@ -387,48 +391,4 @@
 
 
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const copyIcon = document.querySelector('.js-copy-icon');
-            const copyText = document.querySelector('.js-copy-text').textContent;
-            const copiedMessage = document.querySelector('.js-copy-copied');
-
-            copyIcon.addEventListener('click', function() {
-                navigator.clipboard.writeText(copyText).then(function() {
-                    copiedMessage.classList.remove('is-hidden');
-
-                    setTimeout(function() {
-                        copiedMessage.classList.add('is-hidden');
-                    }, 2000);
-                }).catch(function(err) {
-                });
-            });
-        });
-
-
-        // modal show and close function
-        function toggleModal(displayState) {
-            document.getElementById('report').style.display = displayState;
-        }
-
-        document.querySelector('.js-product-report-btn').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleModal('block');
-        });
-
-        document.querySelector('.close-reveal-modal').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleModal('none');
-        });
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('report');
-            if (modal.style.display === 'block' && !modal.contains(event.target) && !event.target.matches(
-                    '.js-product-report-btn')) {
-                toggleModal('none');
-            }
-        });
-
-        // function end
-    </script>
 @endsection

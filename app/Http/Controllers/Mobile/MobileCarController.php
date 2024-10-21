@@ -26,4 +26,22 @@ class MobileCarController extends Controller
 
     return view('mobile.pages.car-detail',compact('car', 'equipments', 'cars'));
     }
+
+
+    public function loadMoreCars(Request $request)
+    {
+        $page = $request->input('page', 1);
+        $perPage = 6;
+
+
+        $cars = Car::with(['ModelType', 'Ro', 'carModel', 'region'])
+        ->select('id', 'price','vincode', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
+            ->paginate($perPage);
+
+
+        return response()->json([
+            'data' => $cars->items(),
+            'last_page' => $cars->lastPage(),
+        ]);
+    }
 }

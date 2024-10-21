@@ -13,9 +13,15 @@ class DealerController extends Controller
 
         $cars=Car::where('status',1)->where('dealer_id',$dealer->id)->get();
         $dealer=Dealer::where('id',$dealer->id)->first();
-
+        $dealer->increment('view_count');
 
 
          return view('mobile.pages.dealer-detail',compact('dealer','cars'));
+    }
+
+
+    public function dealers(){
+        $dealers=Dealer::where('status',1)->get();
+        return view('mobile.pages.dealers',compact('dealers'));
     }
 }

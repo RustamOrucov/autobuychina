@@ -13,8 +13,9 @@ document.querySelector('.js-drawer-open').addEventListener('click', function() {
         document.documentElement.style.position = 'fixed';
         document.documentElement.style.top = '0px';
         document.documentElement.style.overflow = 'hidden';
-fautos
+
         document.getElementById('js-drawer').classList.add('open');
+
 
         this.classList.add('active');
     }
@@ -31,4 +32,5 @@ document.querySelector('.js-close-popup-btn').addEventListener('click', function
     document.getElementById('android').style.overflow = "";
     document.querySelector('.select-category--q_make').classList.remove('select-category--open');
 });
+
 

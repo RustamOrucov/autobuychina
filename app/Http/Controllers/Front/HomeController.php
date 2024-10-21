@@ -183,8 +183,10 @@ class HomeController extends Controller
 
     public function avtosalondetail($id)
     {
+
         $cars=Car::where('status',1)->where('dealer_id',$id)->get();
         $dealer=Dealer::where('id',$id)->first();
+        $dealer->increment('view_count');
         return view('front.pages.avtosalon-detail',compact('dealer','cars'));
 
     }

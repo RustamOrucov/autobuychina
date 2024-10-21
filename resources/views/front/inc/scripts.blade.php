@@ -5,3 +5,4 @@
 
 
 <script src="{{ asset('assets/js/slick.js') }}"></script>
+<script src="{{ asset('assets_/js/copy.js') }}"></script>

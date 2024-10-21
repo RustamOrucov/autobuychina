@@ -39,7 +39,7 @@ document.getElementById('close-market').addEventListener('click', function () {
 });
 
 
-document.getElementById('open-qurrency').addEventListener('click', function () {    
+document.getElementById('open-qurrency').addEventListener('click', function () {
     document.getElementById('android-filter').style.overflow = "hidden";
     document.querySelector('.valyuta').classList.add('select-category--open');
 });
@@ -49,7 +49,7 @@ document.getElementById('close-azn').addEventListener('click', function () {
     document.querySelector('.valyuta').classList.remove('select-category--open');
 });
 
-document.getElementById('q_region').addEventListener('click', function () {    
+document.getElementById('q_region').addEventListener('click', function () {
     document.getElementById('android-filter').style.overflow = "hidden";
     document.querySelector('.select-category--q_region').classList.add('select-category--open');
 });
@@ -58,3 +58,8 @@ document.getElementById('close-region').addEventListener('click', function () {
     document.getElementById('android-filter').style.overflow = "";
     document.querySelector('.select-category--q_region').classList.remove('select-category--open');
 });
+
+
+
+// //////////////////////////////////////////////////////////////////////////
+

@@ -16,6 +16,7 @@ use App\Http\Controllers\Front\TraderRegisController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Mobile\DealerController as MobileDealerController;
 use App\Http\Controllers\Mobile\MobileCarController;
+use App\Http\Controllers\Mobile\MobileFavortieController;
 use App\Http\Controllers\Mobile\MobileHomeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
@@ -128,6 +129,7 @@ Route::post('report', [ReportController::class, 'store'])->name('report');
 Route::get('/mobile', [MobileHomeController::class, 'home'])->name('mobile.home');
 Route::get('/mobile/cardetail/{car}', [MobileCarController::class, 'cardetail'])->name('mobile.cardetail');
 Route::get('/mobile/dealer/detail/{dealer}', [MobileDealerController::class, 'detail'])->name('mobile.dealer.detail');
+Route::get('/mobile.alldealers', [MobileDealerController::class, 'dealers'])->name('mobile.alldealers');
 
 
 
@@ -135,3 +137,9 @@ Route::get('/mobile/filter', [MobileHomeController::class, 'filterpage'])->name(
 Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
 Route::get('/mobile/dealers', [MobileHomeController::class, 'alldealers'])->name('mobile.dealers');
 Route::get('/mobile/add-cars', [MobileHomeController::class, 'addcars'])->name('mobile.addcars');
+Route::get('mobile/favorite', [MobileFavortieController::class,'favorite'])->name('mobile.favorite');
+Route::get('/mobile.questions', [MobileFavortieController::class, 'questions'])->name('mobile.questions');
+Route::get('mobile/cars', [MobileCarController::class, 'loadMoreCars'])->name('mobile.cars');
+
+Route::get('mobile/filter/brand/{id}',[MobileHomeController::class,'filterBrand'])->name('mobile.filter.brand');
+Route::get('mobile/filter/model/{brandId}/{modelId}',[MobileHomeController::class,'filterModel'])->name('mobile.filter.model');

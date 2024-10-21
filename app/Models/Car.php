@@ -91,7 +91,6 @@ class Car extends Model implements TranslatableContract
     public function wishlists()
     {
         return $this->hasMany(Wishlist::class);
-
     }
     public function ban()
     {
@@ -99,9 +98,12 @@ class Car extends Model implements TranslatableContract
         return $this->belongsTo(Ban::class);
     }
 
-     public function region(){
-        return $this->belongsTo(Region::class,'region_id');
-     }
-
-
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'region_id');
+    }
+    public function market()
+    {
+        return $this->belongsTo(Market::class, 'market_id');
+    }
 }

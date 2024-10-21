@@ -2,7 +2,7 @@
 @section('mobile_content')
     <div class="header js-header custom-header-cardetail" style="">
         <div class="header__nav">
-            <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn" data-back-to-url=""></span>
+            <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button" data-back-to-url=""></span>
             </div><a class="header__logo header__logo--red" href="/"><img alt="autobuychina" width="140"
                     src="{{ asset('storage/' . $logoImages->m_logo) }}"></a>
             <div class="header__nav-right">
@@ -109,4 +109,12 @@
 
     <div class="bottom-phone-container js-bottom-phone-container"><a class="js-bottom-phone bottom-phone"
             data-log-show-phone="true" data-trigger-button="main" href="tel:(055)555 55 55">Call</a></div>
+
+
+
+            <script>
+                document.querySelector('.back-button').addEventListener('click', function() {
+            window.history.back();
+        });
+            </script>
 @endsection
