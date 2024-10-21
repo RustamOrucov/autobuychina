@@ -49,23 +49,23 @@
                         <path
                             d="M16.983 5.394c-2.195 1.468-3.861 2.609-4.998 3.422-.382.278-.691.494-.929.65a5.756 5.756 0 0 1-.948.476 2.918 2.918 0 0 1-1.104.243h-.02c-.342 0-.71-.081-1.105-.243a5.758 5.758 0 0 1-.948-.476 23.774 23.774 0 0 1-.929-.65C5.1 8.161 3.436 7.021 1.014 5.394A5.3 5.3 0 0 1 0 4.531v7.875c0 .437.157.81.472 1.121.314.311.692.466 1.134.466h14.775c.442 0 .82-.155 1.134-.466.315-.31.472-.684.472-1.12V4.53a5.516 5.516 0 0 1-1.004.863z">
                         </path>
-                    </svg><a class="footer__link" href="mailto:#">autobuychina@info.az</a></div>
+                    </svg><a class="footer__link" href="mailto:{{$adminSettings->email}}">{{$adminSettings->email}}</a></div>
                 <div class="footer__contacts-i footer__contacts-i--phone"><svg class="footer__contacts-i__icon"
                         fill="#8D94AD" height="20" viewBox="0 0 17 17" width="12"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M16.966 13.416a.823.823 0 0 1-.252.72l-2.39 2.375c-.108.12-.248.223-.422.306a1.743 1.743 0 0 1-.512.162c-.012 0-.048.004-.108.01a2.82 2.82 0 0 1-.233.009c-.228 0-.597-.04-1.106-.117-.509-.079-1.132-.27-1.868-.576-.737-.306-1.573-.766-2.507-1.377-.934-.612-1.929-1.452-2.983-2.52-.838-.828-1.533-1.62-2.084-2.376a16.933 16.933 0 0 1-1.33-2.097 11.305 11.305 0 0 1-.755-1.746 9.277 9.277 0 0 1-.341-1.35 4.466 4.466 0 0 1-.072-.891 15.2 15.2 0 0 0 .018-.36 1.74 1.74 0 0 1 .162-.513c.084-.174.185-.315.305-.423L2.878.258a.79.79 0 0 1 .575-.252.67.67 0 0 1 .413.135c.12.09.222.2.306.333l1.922 3.654a.877.877 0 0 1 .09.63c-.048.228-.15.42-.305.576l-.88.882a.3.3 0 0 0-.064.117.445.445 0 0 0-.026.135c.047.252.155.54.323.864.144.288.365.639.665 1.053.3.414.725.89 1.276 1.43.539.553 1.018.982 1.437 1.288a8.3 8.3 0 0 0 1.051.675c.282.144.497.23.647.26l.225.045a.428.428 0 0 0 .117-.027.3.3 0 0 0 .116-.063l1.025-1.044a1.1 1.1 0 0 1 .754-.288c.204 0 .366.036.485.108h.018l3.468 2.052c.252.157.402.355.45.595z">
                         </path>
-                    </svg><a class="footer__link footer__link--phone" href="tel:+994125555555">(012) 555 55 55</a>
+                    </svg><a class="footer__link footer__link--phone" href="tel:{{$adminSettings->phone}}">{{$adminSettings->phone}}</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer__bottom footer__blk footer__blk--thin footer__blk--red">
         <div class="tz-container tz-d-flex tz-align-center tz-justify-between">
-            <div class="footer__responsibility">The website administration is not responsible for the content of advertising banners and posted ads.</div>
+            <div class="footer__responsibility">{{$adminSettings->footer_text}}</div>
             <div class="tz-d-flex tz-align-center">
-                <div class="footer__copyright">Jugaad MMC.</div>
+                <div class="footer__copyright">{{$adminSettings->design_name}}</div>
                 {{-- <a  class="footer__mobile" rel="nofollow" href="#">Mobile version</a> --}}
             </div>
         </div>

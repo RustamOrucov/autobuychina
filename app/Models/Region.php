@@ -26,6 +26,8 @@ class Region extends Model
     public function cars(){
         return $this->hasMany(Car::class,'region_id');
     }
-
+    public function spares(){
+        return $this->hasMany(Spare::class,'region_id');
+    }
 
 }

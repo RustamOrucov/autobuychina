@@ -19,6 +19,8 @@ use App\Models\Policy;
 use App\Models\Region;
 use App\Models\Ro;
 use App\Models\Social;
+use App\Models\Spare;
+use App\Models\Traderregis;
 use App\Models\Transmission;
 use App\Models\Year;
 use App\Services\CarFilterService;
@@ -128,7 +130,7 @@ class HomeController extends Controller
 
 
     //    Car Detail
-    public function detail(Car $car)
+    public function cardetail(Car $car)
     {
 
         $cars = Car::where('car_models_id', $car->car_models_id)
@@ -146,6 +148,19 @@ class HomeController extends Controller
         $equipments = Higlit::whereIn('id', $equipmentIds)->get();
 
         return view('front.pages.detail', compact('car', 'equipments', 'cars'));
+    }
+
+    // Spare Detail
+    public function sparedetail(Spare $spare)
+    {
+
+        $spares = Spare::all()
+            ->where('id', '!=', $spare->id)
+            ->where('status', '1');
+
+        $spare->increment('view_count');
+
+        return view('front.pages.part-detail', compact('spares', 'spare'));
     }
 
     //    New Car
@@ -175,7 +190,7 @@ class HomeController extends Controller
 
     public function avtosalon()
     {
-        $dealers=Dealer::where('status',1)->with('cars')->get();
+        $dealers=Dealer::where('status',0)->with('cars')->get();
 
         return view('front.pages.avtosalon',['dealers'=>$dealers]);
     }
@@ -190,6 +205,14 @@ class HomeController extends Controller
         return view('front.pages.avtosalon-detail',compact('dealer','cars'));
 
     }
+    public function partsdetail($id)
+    {
+        $spares=Spare::where('status',1)->where('trader_id',$id)->get();
+        $trader=Traderregis::where('id',$id)->first();
+        return view('front.pages.partsalon-detail',compact('trader','spares'));
+
+    }
+
 
 
     public function agrement()
@@ -206,8 +229,28 @@ class HomeController extends Controller
         return view('front.pages.question');
     }
 
-    public function trader(){
-        return view('front.pages.trader');
+    public function questionlogin(){
+        return view('front.pages.question-login');
+    }
+
+    public function trader()
+    {
+        $policys = Policy::all();
+        return view('front.pages.trader',compact('policys'));
+    }
+
+
+    public function traderlogin(){
+        return view('front.pages.trader-login');
+    }
+
+
+//    ALL SPARES (EHTYAT HISSELERI)
+
+    public function allspares()
+    {
+        $traders = Traderregis::all();
+        return view('front.pages.spares',compact('traders'));
     }
 
 }
