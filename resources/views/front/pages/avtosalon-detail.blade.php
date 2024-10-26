@@ -82,7 +82,7 @@
                     <div class="bookmarking added"></div>
                 </a>
                     <div class="products-i__top custom-car-img-container">
-                        <img alt="Hyundai Grandeur" loading="lazy" src="{{asset('storage/'.$car->car_image)}}">
+                        <img alt="{{ $car->ModelType->name }}" loading="lazy" src="{{asset('storage/'.$car->car_image)}}">
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
 {{--                            <div class="products-i__label products-i__label--salon">Salon</div>--}}
                         </div>

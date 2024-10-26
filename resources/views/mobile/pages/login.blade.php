@@ -3,16 +3,8 @@
  <?php
     $showLogincss = true;
     ?>
-    <div class="main-container sessions" style="margin-bottom: 9%">
-        @if ($errors->any())
-            <div class="alert alert-danger custom-login-error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+ <link rel="stylesheet" href="{{ asset('assets_/css/login.css') }}">
+    <div class="main-container sessions" >
 
         <div class="header js-header" style="">
             <div class="header__nav">
@@ -23,6 +15,24 @@
                 <div class="header__nav-right"></div>
             </div>
         </div>
+        @if ($errors->any())
+        <div id="error-message" class="alert alert-danger custom-login-error">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li class="custom-error-login">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+
+        <script>
+            setTimeout(function() {
+                var errorMessage = document.getElementById('error-message');
+                if (errorMessage) {
+                    errorMessage.style.display = 'none';
+                }
+            }, 3000);
+        </script>
+    @endif
 
         <!-- Butonlar -->
         <div class="custom-mobile-btn-container">
@@ -32,55 +42,71 @@
 
         <!-- Dealer Formu -->
         <div class="panel panel-dealer" style="display:none;">
-            <div class="state"><br>
-                <h3>AUTOBUYCHINA</h3></div>
-            <div class="session-login-form">
-                <form action="" accept-charset="UTF-8" method="post">
+            <div class="box">
+                <form action="{{ route('mobile.login') }}" method="post">
                     @csrf
-                    <input placeholder='Email' type="text" name="email">
-                    <input placeholder='Password' type="text" name="password">
-                    <button type="submit" class="custom-login-btn" href="">Login</button>
+                    <div class="input-box">
+                        <h2>Sign In</h2>
+                        <input type="email" required name="email">
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required name="password">
+                        <span>Enter Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Login">
+                    <div class="links">
+                        <a href="#">Forgot Password?</a>
+                        <a href="#">Sign Up</a>
+                    </div>
                 </form>
             </div>
-            <div class="forgone"><a href="#"><h4>Forgot password?</h4></a></div>
         </div>
 
         <!-- Traider Formu -->
         <div class="panel panel-traider" style="display:none;">
-            <div class="state"><br>
-                <h3>AUTOBUYCHINA</h3></div>
-            <div class="session-login-form">
-                <form action="" accept-charset="UTF-8" method="post">
-                    @csrf
-                    <input placeholder='Email' type="text" name="email">
-                    <input placeholder='Password' type="text" name="password">
-                    <button type="submit" class="custom-login-btn" href="">Login</button>
+            <div class="box">
+                <form action="">
+                    <div class="input-box">
+                        <h2>Sign In</h2>
+                        <input type="text" required>
+                        <span>Username</span>
+                        <i></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" required>
+                        <span>Enter Password</span>
+                        <i></i>
+                    </div>
+                    <input type="submit" value="Login">
+                    <div class="links">
+                        <a href="#">Forgot Password?</a>
+                        <a href="#">Sign Up</a>
+                    </div>
                 </form>
             </div>
-            <div class="forgone"><a href="#"><h4>Forgot password?</h4></a></div>
         </div>
     </div>
 
 <script>
-    // Butonlar ve formlar
     const dealerBtn = document.getElementById('dealer-btn');
     const traiderBtn = document.getElementById('traider-btn');
     const dealerPanel = document.querySelector('.panel-dealer');
     const traiderPanel = document.querySelector('.panel-traider');
     const buttonContainer = document.querySelector('.custom-mobile-btn-container');
 
-    // Dealer butonuna tıklandığında
     dealerBtn.addEventListener('click', function() {
-        dealerPanel.style.display = 'block'; // Dealer formunu göster
-        traiderPanel.style.display = 'none'; // Traider formunu gizle
-        buttonContainer.style.display = 'none'; // Butonları gizle
+        dealerPanel.style.display = 'block';
+        traiderPanel.style.display = 'none';
+        buttonContainer.style.display = 'none';
     });
 
-    // Traider butonuna tıklandığında
     traiderBtn.addEventListener('click', function() {
-        traiderPanel.style.display = 'block'; // Traider formunu göster
-        dealerPanel.style.display = 'none'; // Dealer formunu gizle
-        buttonContainer.style.display = 'none'; // Butonları gizle
+        traiderPanel.style.display = 'block';
+        dealerPanel.style.display = 'none';
+        buttonContainer.style.display = 'none'; 
     });
 </script>
 

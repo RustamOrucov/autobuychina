@@ -108,6 +108,7 @@ class HomeController extends Controller
     public function filter(Request $request)
     {
 
+
         $filters = $this->getFilterData();
 
         $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();

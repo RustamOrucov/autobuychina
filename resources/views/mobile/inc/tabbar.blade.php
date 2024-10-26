@@ -36,10 +36,15 @@
 
         </div>
 
-        @if(auth()->check())
+        @if(auth('dealer')->check())
         <div class="popup__list">
             <div class="popup__list-i">
-                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="#" onclick="return false;">Logout</a>
+                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">Profile</a>
+            </div>
+        </div>
+        <div class="popup__list">
+            <div class="popup__list-i">
+                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">Logout</a>
             </div>
         </div>
     @endif
@@ -103,7 +108,7 @@
                                 </g>
                             </g>
                         </svg></i><span class="tab-bar__link-text">Favorites</span></a></li>
-            <li><a class="tab-bar__link tab-bar__link--centered" href="{{ auth()->check() ? '#' : route('mobile.login') }}"  ><i
+            <li><a class="tab-bar__link tab-bar__link--centered" href="{{ auth('dealer')->check() ? route('mobile.addcar') : route('mobile.login') }}"  ><i
                         class="tab-bar__link-icon"><svg height="45" viewBox="0 0 46 45" width="46"
                             xmlns="http://www.w3.org/2000/svg">
                             <defs>
@@ -124,7 +129,7 @@
                         </svg></i><span class="tab-bar__link-text">New add</span></a></li>
             <li>
 
-                <a class="tab-bar__link" href="{{ auth()->check() ? '#' : route('mobile.login') }}"  ><i
+                <a class="tab-bar__link" href="{{ auth('dealer')->check() ? route('mobile.cabinet') : route('mobile.login') }}"  ><i
                         class="tab-bar__link-icon tab-bar__link-icon--rounded"><svg height="20"
                             viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
                             <g fill-rule="evenodd">

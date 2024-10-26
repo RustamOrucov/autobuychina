@@ -44,4 +44,20 @@ class MobileCarController extends Controller
             'last_page' => $cars->lastPage(),
         ]);
     }
+
+
+    public function addForm(){
+        return view('mobile.pages.add-cars');
+    }
+
+   public function agrement(){
+
+    return view('mobile.pages.agrement');
+   }
+
+   public function rules(){
+
+    return view('mobile.pages.rules');
+   }
+
 }

@@ -1,5 +1,7 @@
 @extends('mobile.layout.layout')
 @section('mobile_content')
+
+
     <div class="body-inner" style="">
         <div class="lotriver-top-banner" id="js-lotriver-top-banner">
             <div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"></div>
@@ -279,11 +281,11 @@
                                 <div class="product-owner__info">
                                     <div class="product-owner__info-name">{{ $car->Dealer->d_name }}</div>
                                     <div class="product-owner__info-schedule">Every day:
-                                        {{ substr($dealer->opening_time, 0, 5) }} -
-                                        {{ substr($dealer->closing_time, 0, 5) }}</div>
+                                        {{  substr($car->Dealer->opening_time, 0, 5) }} -
+                                        {{  substr($car->Dealer->closing_time, 0, 5) }}</div>
                                 </div>
                                 <div class="product-owner__logo"
-                                    style="background-image: url({{ asset($dealer->logo ? 'storage/' . $dealer->logo : 'images/default-background.jpg') }})">
+                                    style="background-image: url({{ asset($car->Dealer->logo ? 'storage/' . $car->Dealer->logo : 'images/default-background.jpg') }})">
                                 </div>
                             </div>
                         </a>

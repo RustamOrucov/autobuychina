@@ -13,9 +13,9 @@
                 </a>
             </div>
             <a class="header__btn header__btn--new"
-            href="{{ auth()->check() ? '#' : route('mobile.login') }}">
-             <img width="26" src="{{ asset('assets_/img/plus.png') }}" alt="">
-         </a>
+                href="{{ auth('dealer')->check() ? route('mobile.addcar') : route('mobile.login') }}">
+                <img width="26" src="{{ asset('assets_/img/plus.png') }}" alt="">
+            </a>
         </div>
         <div class="content">
             @if (isset($selectBrand))
@@ -28,10 +28,8 @@
                                 for="q_make">Brand</label><input name="q[make][]" type="hidden" value=""
                                 autocomplete="off"><select multiple="multiple" class="select optional form-control"
                                 name="q[make][]" id="q_make">
-                            </select><span class="custom-model-reset-btn">
-                                <a class="custom-reset-model" href="/" > </a>
-                            </span><span
-                                class="tz-form__group-btn tz-form__group-btn--open"></span></div>
+                            </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input" ></span>
+                            <span class="tz-form__group-btn tz-form__group-btn--open"></span></div>
 
                         <div class="select-category select-category--full-height js-select-category select-category--q_make"
                             data-select="q_make">
@@ -61,10 +59,8 @@
                                                     </div>
                                                     <div class="select-category__i-name js-category-select-item-name">
                                                         {{ $brand->name }}</div>
-                                                        <span
-                                                        class="select-category__i-radio @if ($brand->id == $selectBrand->id )
-                                                        green-border
-                                                        @endif"></span>
+                                                    <span
+                                                        class="select-category__i-radio @if ($brand->id == $selectBrand->id) green-border @endif"></span>
                                                 </div>
                                             </a>
                                         @endforeach
@@ -83,21 +79,23 @@
 
                         <div class="toggle-models js-toggle-models" style="display: block;">
                             <div class="tz-form__group tz-form__group--bordered--top js-select-category-open"
-                                data-open="q_model"><input class="tz-form__group-input tz-form__group-input--lower custom-open-model"
-                                    placeholder=" " readonly="" type="text" value="{{ $selectModel->name ?? ''}}"><label
+                                data-open="q_model"><input
+                                    class="tz-form__group-input tz-form__group-input--lower custom-open-model"
+                                    placeholder=" " readonly="" type="text"
+                                    value="{{ $selectModel->name ?? '' }}"><label
                                     class="tz-form__group-label tz-form__group-label--select custom-model-select"
                                     for="q_model">Model</label><input name="q[model][]" type="hidden" value=""
                                     autocomplete="off"><select multiple="multiple"
-                                    class="select optional form-control js-select-model" name="q[model][]"
-                                    id="q_model">
+                                    class="select optional form-control js-select-model" name="q[model][]" id="q_model">
                                 </select>
 
-                                <span
-                                    class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"> <a class="custom-reset-model" href="{{ route('mobile.filter.brand', ['id' => $selectBrand->id]) }}"> </a></span>
+                                <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"> <a
+                                        class="custom-reset-model"
+                                        href="{{ route('mobile.filter.brand', ['id' => $selectBrand->id]) }}"> </a></span>
 
 
-                                    <span
-                                    class="tz-form__group-btn tz-form__group-btn--open"></span></div>
+                                <span class="tz-form__group-btn tz-form__group-btn--open"></span>
+                            </div>
                         </div>
 
                         <div class="select-category select-category--full-height js-select-category js-select-category-models select-category--q_model js-submit-form-on-click"
@@ -105,31 +103,33 @@
                             <div class="select-category__header-container">
                                 <div class="popup-header">
                                     <div class="popup-header__left">
-                                        <div class="popup-header__btn popup-header__btn--back js-close-popup-btn custom-close-btn">
+                                        <div
+                                            class="popup-header__btn popup-header__btn--back js-close-popup-btn custom-close-btn">
                                         </div>
                                     </div>
                                     <div class="popup-header__title">Model</div>
                                     <div class="popup-header__right"></div>
                                 </div>
                                 <div class="select-category__search"><input type="text" name="" id=""
-                                        class="select-category__search-input js-search-input" placeholder="Search model..."
-                                        autocomplete="off"></div>
+                                        class="select-category__search-input js-search-input"
+                                        placeholder="Search model..." autocomplete="off"></div>
                             </div>
 
                             <div
                                 class="select-category__body select-category__body--type-2 select-category__body--with-btn">
                                 <div class="select-category__blk-content js-models-list">
-                                  @foreach ($models as $model )
-                                  <a href="{{ route('mobile.filter.model',['brandId'=>$selectBrand->id,'modelId'=>$model->id]) }}">
-                                  <div class="select-category__i js-category-select-item" data-id="4050"
-                                  style="">
-                                  <div class="select-category__i-name js-category-select-item-name "> {{ $model->name }}
-                                  </div> <span class="select-category__i-radio @if (isset($selectModel) && $model->id == $selectModel->id)
-                                    green-border
-                                @endif"></span>
-                                   </div>
-                                </a>
-                                  @endforeach
+                                    @foreach ($models as $model)
+                                        <a
+                                            href="{{ route('mobile.filter.model', ['brandId' => $selectBrand->id, 'modelId' => $model->id]) }}">
+                                            <div class="select-category__i js-category-select-item" data-id="4050"
+                                                style="">
+                                                <div class="select-category__i-name js-category-select-item-name ">
+                                                    {{ $model->name }}
+                                                </div> <span
+                                                    class="select-category__i-radio @if (isset($selectModel) && $model->id == $selectModel->id) green-border @endif"></span>
+                                            </div>
+                                        </a>
+                                    @endforeach
 
                                 </div>
                             </div>
@@ -140,8 +140,31 @@
 
 
                     </div>
-                    <div class="filters-container"><a class="links-i links-i_full-search"
-                            href="{{ route('mobile.filter') }}">Filters</a>
+                    <div class="filters-container">
+                        @php
+                        $modelId = isset($selectModel) ? $selectModel->id : null;
+                        $brandId = isset($selectBrand) ? $selectBrand->id : null;
+
+                        $routeParams = [];
+
+                        // Model ve marka ID'lerini route parametrelerine ekleyin
+                        if ($modelId) {
+                            $routeParams['model_id'] = $modelId;
+                        }
+                        if ($brandId) {
+                            $routeParams['brand_id'] = $brandId;
+                        }
+
+                        // selectfilters varsa onu da ekleyin
+                        if (isset($selectfilters)) {
+                            $routeParams['selectfilters'] = $selectfilters;
+                        }
+
+                        // Filtre URL'ini oluştur
+                        $filterUrl = route('mobile.filter', $routeParams);
+                    @endphp
+
+                    <a class="links-i links-i_full-search" href="{{ $filterUrl }}">Filters</a>
                         <div class="products-sort styled js-select-category-open" data-open="q_sort"><select
                                 class="select optional form-control" name="q[sort]" id="q_sort"
                                 style="width: 123.9px;">
@@ -153,11 +176,16 @@
                                     value="price_desc">Əvvəlcə bahalı</option>
                                 <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=mileage" value="mileage">
                                     Yürüş</option>
-                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=reg_year"
-                                    value="reg_year">Buraxılış ili</option>
+                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=reg_year" value="reg_year">
+                                    Buraxılış ili</option>
                             </select><span style="display: none;">Tarixə görə</span><span style="display: none;">Tarixə
                                 görə</span></div>
                     </div>
+
+
+
+
+
 
                     <div class="products-search-title">
                         <h1>{{ $selectBrand->name }} sale</h1><span> {{ $cars->count() }} advertsement</span>
@@ -173,8 +201,8 @@
                                 data-open="q_make" data-reset="true"><label
                                     class="tz-form__group-label tz-form__group-label--select" for="q_make">All
                                     Brand</label><input name="q[make][]" type="hidden" value=""
-                                    autocomplete="off"><select multiple="multiple"
-                                    class="select optional form-control" name="q[make][]" id="q_make">
+                                    autocomplete="off"><select multiple="multiple" class="select optional form-control"
+                                    name="q[make][]" id="q_make">
                                     <option value="">All Brand</option>
                                     @foreach ($brands as $brand)
                                         <option value="{{ $brand->id }}">{{ $brand->name }}</option>
@@ -183,9 +211,18 @@
                                 </select><span
                                     class="tz-form__group-btn tz-form__group-btn--open tz-form__group-btn--shown"></span>
                                 <div class="tz-form__group-divider"></div>
-                            </div><a class="links-i links-i_full-search" href="{{ route('mobile.filter') }}">Filters</a><input
-                                autocomplete="off" type="hidden" name="q[sort]" id="q_sort"
-                                style="width: 15px;"><span style="display: none;"></span>
+
+                            </div>
+                            @php
+                            $selectFiltersQuery = isset($selectfilters) ? http_build_query(['selectfilters' => $selectfilters]) : '';
+                            @endphp
+
+                        <a class="links-i links-i_full-search"
+                            href="{{ route('mobile.filter') . ($selectFiltersQuery ? '?' . $selectFiltersQuery : '') }}">Filters</a>
+
+
+                                <input autocomplete="off" type="hidden"
+                                name="q[sort]" id="q_sort" style="width: 15px;"><span style="display: none;"></span>
                         </div>
                     </form>
 
@@ -233,9 +270,9 @@
                 </div>
 
 
-                <div class="moto-nav"><a class="nav-i moto-nav__title" data-stat="main-page-moto-link"
+                {{-- <div class="moto-nav"><a class="nav-i moto-nav__title" data-stat="main-page-moto-link"
                         href="">Moto</a>
-                </div>
+                </div> --}}
                 <div class="autocatalog-nav"><a class="nav-i autocatalog-nav__title" data-stat="header-moto-link"
                         href="">Avtokataloq<span class="label-new">yeni</span></a></div>
             @endif
@@ -271,9 +308,8 @@
                                     <div class="bookmarking"></div>
                                 </a>
 
-                                <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true"
-                                    rel="nofollow" href="#" data-id="{{ $car->id }}"
-                                    style="display: none;">
+                                <a class="js-bookmark-toggle js-unbookmark-item hide" data-remote="true" rel="nofollow"
+                                    href="#" data-id="{{ $car->id }}" style="display: none;">
                                     <div class="bookmarking added"></div>
                                 </a>
 
@@ -407,9 +443,9 @@
                                              alt="${car.car_model ? car.car_model.name : ''}">
                                     </div>
                                     ${car.vincode ? `
-                                                                        <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                                                                            <div class="products-i__label products-i__label--vin">VIN</div>
-                                                                        </div>` : ''}
+                                                                                <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
+                                                                                    <div class="products-i__label products-i__label--vin">VIN</div>
+                                                                                </div>` : ''}
                                 </div>
 
                                 <div class="products-i__bottom">

@@ -55,7 +55,7 @@
                             </div>
                         </section>
                         <div class="product-photos__slider-nav">
-                            @dd($spare->)
+                       
                             @foreach ($car->carImages as $image)
                                 <div class="product-photos__slider-nav-i js-open-gallery active">
                                     <div class="product-photos__slider-nav-i_picture"

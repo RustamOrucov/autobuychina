@@ -23,9 +23,9 @@ class CarFilterService
             $query->where('model_type_id', $filters['q']['model']);
         }
 
-        if (!empty($filters['q']['used'])) {
-            $query->where('used', $filters['q']['used']);
-        }
+        // if (!empty($filters['q']['used'])) {
+        //     $query->where('used', $filters['q']['used']);
+        // }
 
         if (!empty($filters['q']['regions'][0])) {
             $regions = explode(',', $filters['q']['regions'][0]);

@@ -10326,7 +10326,7 @@ a.pswp__share--download:hover {
 }
 
 .header__logo--red {
-    color: #ca1016;
+    color: #008000;
 }
 
 .header__tabs {
@@ -10524,7 +10524,11 @@ a.pswp__share--download:hover {
     text-decoration: none;
     color: #8c8c8c;
 }
-
+.shop--views{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
 .limits--description .text-support span {
     display: inline-block;
 }
@@ -14375,7 +14379,7 @@ input[type="checkbox"] + label {
 }
 
 .profile-items_filters a.active {
-    background-color: #ca1016;
+    background-color: #008013;
     color: #fff;
 }
 
@@ -21724,7 +21728,7 @@ select {
 }
 
 .is-hidden {
-    display: none !important;
+    display: none ;
 }
 
 .no-padding {
@@ -21983,8 +21987,8 @@ select {
     margin-right: 30px;
 }
 .custom-share-btn-mobile {
-    background: transparent;
-    margin-right: 40px;
+    background: transparent !important;
+    margin-right: 40px !important;
 }
 .bookmarking {
     top: 3px;
