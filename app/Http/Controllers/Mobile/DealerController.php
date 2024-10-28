@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Mobile;
 use App\Http\Controllers\Controller;
 use App\Models\Car;
 use App\Models\Dealer;
+use App\Models\Policy;
 use Illuminate\Http\Request;
 
 class DealerController extends Controller
@@ -24,4 +25,6 @@ class DealerController extends Controller
         $dealers=Dealer::where('status',1)->get();
         return view('mobile.pages.dealers',compact('dealers'));
     }
+
+  
 }

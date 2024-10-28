@@ -32,6 +32,7 @@ class DealerService
         $data['password'] = Hash::make($dealerRequest->password);
         $data['passport_front'] = $this->fileUploadService->uploadFile($dealerRequest->passport_front, 'dealer');
         $data['passport_back'] = $this->fileUploadService->uploadFile($dealerRequest->passport_back, 'dealer');
+        $data['business_foto'] = $this->fileUploadService->uploadFile($dealerRequest->business_foto, 'dealer');
 
         $model = $this->repository->save($data, new Dealer());
 
@@ -51,7 +52,7 @@ class DealerService
         if ($profilerequest->filled('password')) {
             $data['password'] = bcrypt($profilerequest->password);
         } else {
-            $data['password'] = $model->password; 
+            $data['password'] = $model->password;
         }
 
         $model = $this->repository->save($data, $model);

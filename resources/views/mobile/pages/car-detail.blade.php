@@ -37,7 +37,6 @@
 
 
 
-
         <div class="content">
             <div class="product product--bordered">
                 @if ($car->dealer != null)
@@ -70,9 +69,11 @@
                             <div class="swiper-slide"
                                 style="background-image: url('{{ asset('storage/' . $car->car_image) }}'); width: 422px;">
                             </div>
-                            @foreach ($car->carImages as $car)
+
+
+                            @foreach ($car->carImages as $img)
                                 <div class="swiper-slide"
-                                    style="background-image: url('{{ asset('storage/' . $car->image) }}'); width: 422px;">
+                                    style="background-image: url('{{ asset('storage/' . $img->image) }}'); width: 422px;">
                                 </div>
                             @endforeach
 
@@ -134,6 +135,8 @@
                     </div>
                 </div>
                 <div class="product-section product-header">
+
+
                     <div class="tz-d-flex">
                         <div class="product-price">
                             <div class="product-price__i product-price__i--bold">{{ $car->price }}

@@ -10,7 +10,7 @@
             <div class="header__nav">
                 <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button" onclick="history.back()"></span></div>
                 <div class="header__nav-title">
-                    <h1 class="custom-mobil-dealers">LOGIN</h1>
+                    <h1 class="custom-mobil-dealers" style="color:#fff">LOGIN</h1>
                 </div>
                 <div class="header__nav-right"></div>
             </div>
@@ -42,6 +42,9 @@
 
         <!-- Dealer Formu -->
         <div class="panel panel-dealer" style="display:none;">
+            @php
+                $dealer='dealer'
+            @endphp
             <div class="box">
                 <form action="{{ route('mobile.login') }}" method="post">
                     @csrf
@@ -57,10 +60,9 @@
                         <i></i>
                     </div>
                     <input type="submit" value="Login">
-                    <div class="links">
-                        <a href="#">Forgot Password?</a>
-                        <a href="#">Sign Up</a>
-                    </div>
+
+                    <a href="{{ route('mobile.register',['costumer'=>$dealer]) }}" class="cm-register-btn">Register</a>
+
                 </form>
             </div>
         </div>
@@ -68,6 +70,9 @@
         <!-- Traider Formu -->
         <div class="panel panel-traider" style="display:none;">
             <div class="box">
+                @php
+                    $traider='traider'
+                @endphp
                 <form action="">
                     <div class="input-box">
                         <h2>Sign In</h2>
@@ -81,10 +86,7 @@
                         <i></i>
                     </div>
                     <input type="submit" value="Login">
-                    <div class="links">
-                        <a href="#">Forgot Password?</a>
-                        <a href="#">Sign Up</a>
-                    </div>
+                    <a href="{{ route('mobile.register',['costumer'=>$traider]) }}" class="cm-register-btn">Register</a>
                 </form>
             </div>
         </div>
@@ -106,7 +108,7 @@
     traiderBtn.addEventListener('click', function() {
         traiderPanel.style.display = 'block';
         dealerPanel.style.display = 'none';
-        buttonContainer.style.display = 'none'; 
+        buttonContainer.style.display = 'none';
     });
 </script>
 

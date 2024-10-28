@@ -5933,7 +5933,7 @@ input:not([type='checkbox']):not([type='radio']), select, button, textarea {
 .featured .shops-i--logo::after {
     background-size: cover;
     content: '';
-    display: inline-block;
+    display: none;
     position: absolute;
     right: 5px;
     top: 5px;
@@ -20445,7 +20445,6 @@ div.boolean label::after, .radio_buttons label::after, .checkbox label::after, .
 }
 
 .featured .shops-i--logo::after {
-    background: url(//turbo.azstatic.com/assets/application/sprites/main-81621bca022dacba82baf03eb6a48661caa4cadfcac266156ebeadeb662d1b14.svg#shops--official) no-repeat center;
     background-size: cover;
     width: 52px;
     height: 20px
@@ -21132,7 +21131,6 @@ div.boolean label::after, .radio_buttons label::after, .checkbox label::after, .
 }
 
 .featured .shops-i--logo::after {
-    background: url(//turbo.azstatic.com/assets/application/sprites/main-81621bca022dacba82baf03eb6a48661caa4cadfcac266156ebeadeb662d1b14.svg#shops--official) no-repeat center;
     background-size: cover;
     width: 52px;
     height: 20px
