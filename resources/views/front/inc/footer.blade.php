@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="tz-container footer__blk--bordered footer__app-promotion">
         <div class="footer__app-promotion-left">
-            <h2 class="promotion-title">Everything in one app!</h2>
+        <h2 class="promotion-title">{{sitekey('detail_car_three','name')}}</h2>
             <div class="promotion-buttons"><a data-stat="app-store-footer-btn" class="footer__app-store-btn"
                     href="#"><img alt="App Store"
                         src="https://turbo.azstatic.com/assets/application/footer/app-store-8fa167a15617db3588574f05639b4e401f7f1a9a8e8a9f1219192c9f792041d7.png"></a><a
@@ -17,12 +17,12 @@
         <div class="footer__app-promotion-right">
             <div class="footer__qr-code"><img alt="QR Code" class="footer__qr-code-image"
                     src="{{ asset('assets/img/qrcode.png') }}"><span
-                    class="footer__qr-code-text">Point your camera at the QR code to download</span></div>
+                    class="footer__qr-code-text">{{sitekey('detail_car_four','title')}}</span></div>
         </div>
     </div>
     <div class="footer__blk footer__blk--thin footer__top">
         <div class="tz-container tz-d-flex tz-align-center tz-justify-between"><a target="_blank"
-                data-stat="advertising-landing-footer-btn" class="footer__link" href="#">Post an advertisement</a>
+                data-stat="advertising-landing-footer-btn" class="footer__link" href="#">{{sitekey('detail_car_four','text')}}</a>
             <div class="footer__contacts tz-d-flex tz-align-center"><a target="_blank"
                     class="footer__contacts-i footer__contacts-i--facebook"
                     href="#"><svg class="footer__contacts-i__icon"

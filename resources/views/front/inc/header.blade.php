@@ -29,7 +29,7 @@
                                                                                             alt="">
                         {{ Auth::guard('dealer')->user()->name }}</a>
                     <a href="{{ route('logout') }}" style="display: flex;align-items:center;gap:3px"><img width="20"
-                                                                                                          alt=""> Logout</a>
+                                                                                                          alt=""> {{sitekey('list_car_2','desc')}}</a>
                 @elseif (Auth::guard('trader')->check())
                     <a href="{{ route('trader-profile') }}" class="custom-dealer-name"><img width="20"
                                                                                             src="{{ asset('assets/img/profile.png') }}"
@@ -37,7 +37,7 @@
                         {{ Auth::guard('trader')->user()->name }}</a>
                     <a href="{{ route('logout') }}" style="display: flex;align-items:center;gap:3px"><img width="20"
                                                                                                           src="{{ asset('assets/img/logout.png') }}"
-                                                                                                          alt=""> Logout</a>
+                                                                                                          alt=""> {{sitekey('list_car_2','desc')}}</a>
                 @else
                     <a class="header-bar-i header-bar-i--login js-auth-link"
                        href="{{ route('question.login') }}">{{ sitekey('home_static', 'text') }}</a>
@@ -75,8 +75,7 @@
                                                                                   href="#">{{ sitekey('home_static_three', 'name') }}</a><a
                         class="header-top--sub-nav-i" target="_blank"
                         href="#">{{ sitekey('home_static_four', 'title') }}</a><a class="header-top--sub-nav-i"
-                                                                                  target="_blank" href="#">GPS
-                        naviqatorlar</a>
+                                                                                  target="_blank" href="#">{{sitekey('list_car_2','name')}}</a>
                     <a class="header-top--sub-nav-i" target="_blank"
                        href="#">{{ sitekey('home_static_four', 'text') }}</a><a class="header-top--sub-nav-i"
                                                                                 target="_blank"
