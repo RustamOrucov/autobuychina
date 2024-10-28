@@ -37,7 +37,7 @@
         <!-- Butonlar -->
         <div class="custom-mobile-btn-container">
             <button class="custom-mobile-login-btn" id="dealer-btn">Dealer ?</button>
-            <button class="custom-mobile-login-btn" id="traider-btn">Traider ?</button>
+            <button class="custom-mobile-login-btn" id="trader-btn">Trader ?</button>
         </div>
 
         <!-- Dealer Formu -->
@@ -66,9 +66,10 @@
         </div>
 
         <!-- Traider Formu -->
-        <div class="panel panel-traider" style="display:none;">
+        <div class="panel panel-trader" style="display:none;">
             <div class="box">
-                <form action="">
+                <form action="{{ route('mobile.login') }}" method="post">
+                    @csrf
                     <div class="input-box">
                         <h2>Sign In</h2>
                         <input type="text" required>
@@ -92,21 +93,21 @@
 
 <script>
     const dealerBtn = document.getElementById('dealer-btn');
-    const traiderBtn = document.getElementById('traider-btn');
+    const traderBtn = document.getElementById('trader-btn');
     const dealerPanel = document.querySelector('.panel-dealer');
-    const traiderPanel = document.querySelector('.panel-traider');
+    const traderPanel = document.querySelector('.panel-trader');
     const buttonContainer = document.querySelector('.custom-mobile-btn-container');
 
     dealerBtn.addEventListener('click', function() {
         dealerPanel.style.display = 'block';
-        traiderPanel.style.display = 'none';
+        traderPanel.style.display = 'none';
         buttonContainer.style.display = 'none';
     });
 
-    traiderBtn.addEventListener('click', function() {
-        traiderPanel.style.display = 'block';
+    traderBtn.addEventListener('click', function() {
+        traderPanel.style.display = 'block';
         dealerPanel.style.display = 'none';
-        buttonContainer.style.display = 'none'; 
+        buttonContainer.style.display = 'none';
     });
 </script>
 

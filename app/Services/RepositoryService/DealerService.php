@@ -51,10 +51,11 @@ class DealerService
         if ($profilerequest->filled('password')) {
             $data['password'] = bcrypt($profilerequest->password);
         } else {
-            $data['password'] = $model->password; 
+            $data['password'] = $model->password;
         }
 
         $model = $this->repository->save($data, $model);
+
 
         self::clearCached();
         return $model;
