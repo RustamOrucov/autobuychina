@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand gap-3">
             <div class="topbar-logo-header d-none d-lg-flex">
                 <div class="">
-                    <img src="{{asset('_assets/images/logo.png')}}" width="160"  alt="logo icon">
+                    <a href="{{route('admin.home.page')}}"><img src="{{asset('_assets/images/logo.png')}}" width="160"  alt="logo icon"></a>
                 </div>
                 <div class="">
                     <h4 class="logo-text"></h4>
