@@ -15,4 +15,8 @@ class Ro extends Model implements TranslatableContract
     protected $guarded=[];
     public $translationModel=RoTranslations::class;
     public $translatedAttributes = ['name'];
+
+    public function cars(){
+        return $this->hasMany(Car::class,'ro_id');
+    }
 }

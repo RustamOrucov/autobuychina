@@ -6,6 +6,7 @@ namespace App\Services\RepositoryService;
 use App\Http\Requests\TraderProfileUpdateRequest;
 use App\Http\Requests\TraderRegisterRequest;
 use App\Models\Traderregis;
+use App\Models\TraderregisTranslation;
 use App\Repositories\TraderRegisRepository;
 use App\Services\FileUploadService;
 use Illuminate\Support\Facades\Cache;

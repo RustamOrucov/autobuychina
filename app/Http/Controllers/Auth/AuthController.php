@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\LoginTraderRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Dealer;
 use App\Models\Policy;
@@ -47,7 +48,9 @@ class AuthController extends Controller
 
         return redirect()->route('dealer-detail');
     }
+
     public function traderLoginProcess(Request $request)
+
     {
 
         $request->validate([

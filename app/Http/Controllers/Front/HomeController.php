@@ -246,7 +246,7 @@ class HomeController extends Controller
     }
 
 
-//    ALL SPARES (EHTYAT HISSELERI)
+//    ALL SPARES (EHTIYAT HISSELERI)
 
     public function allspares()
     {
