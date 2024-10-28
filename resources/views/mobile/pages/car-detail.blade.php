@@ -20,6 +20,7 @@
                     </button>
                     <div class="top-bookmarking">
                         <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow" href="#"
+                        <a class="js-bookmark-toggle js-bookmark-item" data-remote="true" rel="nofollow" href="#"
                             data-id="{{ $car->id }}" style="display: inline-block;">
                             <div class="bookmarking"></div>
                         </a>
@@ -137,20 +138,20 @@
                     <div class="tz-d-flex">
                         <div class="product-price">
                             <div class="product-price__i product-price__i--bold">{{ $car->price }}
-                                {{ $car->Ro->name }}</div>
+                                {{ $car->Ro->name ??'unkown'}}</div>
                         </div>
                     </div>
-                    <h1 class="product-name">{{ $car->carModel->name }}
-                        {{ $car->ModelType->name }}, <span class="nobr">2.0 L</span>, <span
+                    <h1 class="product-name">{{ $car->carModel->name ??'unkown' }}
+                        {{ $car->ModelType->name ??'unkown' }}, <span class="nobr">2.0 L</span>, <span
                             class="nobr">{{ $car->year }}
                             il</span>, <span class="nobr">{{ $car->odometer_km }} km</span><span
-                            class="custom-class-mobile-drive"> {{ $car->Drive->name }}</span></h1>
+                            class="custom-class-mobile-drive"> {{ $car->Drive->name ??'unkown' }}</span></h1>
                 </div>
                 @if ($car->Dealer != null)
                     <a href="{{ route('mobile.dealer.detail', ['dealer' => $car->Dealer]) }}">
                         <div class="product-installment">
                             <div class="tz-btn tz-btn--primary tz-btn--full js-installment-modal-btn"
-                                data-stat="installment-modal-call-btn">{{ $car->Dealer->d_name }}</div>
+                                data-stat="installment-modal-call-btn">{{ $car->Dealer->d_name ??'unkown'}}</div>
 
                         </div>
                     </a>
@@ -165,12 +166,12 @@
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_key', 'title') }}</div>
                         <div class="product-table__row-value"><a target="_blank" href="#"
-                                onclick="return false;">{{ $car->carModel->name }}</a></div>
+                                onclick="return false;">{{ $car->carModel->name ??'unkown' }}</a></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_key', 'text') }}</div>
                         <div class="product-table__row-value"><a target="_blank" href="#"
-                                onclick="return false;">{{ $car->ModelType->name }}</a></div>
+                                onclick="return false;">{{ $car->ModelType->name ??'unkown'}}</a></div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Year</div>
@@ -180,28 +181,28 @@
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_key_three', 'title') }}</div>
-                        <div class="product-table__row-value">{{ $car->ban->name }}</div>
+                        <div class="product-table__row-value">{{ $car->ban->name ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_key_three', 'name') }}</div>
-                        <div class="product-table__row-value">{{ $car->Cylinder->name }}</div>
+                        <div class="product-table__row-value">{{ $car->Cylinder->name ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Engine</div>
                         <div class="product-table__row-value">{{ $car->EngineVolume->name / 1000 }}
-                            L/{{ $car->engine_v }}a.g./{{ $car->FuelType->name }}</div>
+                            L/{{ $car->engine_v }}a.g./{{ $car->FuelType->name ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Millage</div>
-                        <div class="product-table__row-value">{{ $car->odometer_km }} km</div>
+                        <div class="product-table__row-value">{{ $car->odometer_km ??'unkown'}} km</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_static_four', 'text') }}</div>
-                        <div class="product-table__row-value">{{ $car->Transmission->name }}</div>
+                        <div class="product-table__row-value">{{ $car->Transmission->name  ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_static_four', 'desc') }}</div>
-                        <div class="product-table__row-value">{{ $car->Damage->name }}</div>
+                        <div class="product-table__row-value">{{ $car->Damage->name  ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">New</div>
@@ -209,12 +210,12 @@
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">Which market is it collected for</div>
-                        <div class="product-table__row-value">{{ $car->market->name }}</div>
+                        <div class="product-table__row-value">{{ $car->market->name ??'unkown' }}</div>
                     </li>
                     <li class="product-table__row">
                         <div class="product-table__row-name">{{ sitekey('filter_key_six', 'title') }}</div>
                         <div class="product-table__row-value"><span class="translation_missing"
-                                title="translation missing: az.seats_counts.5">{{ $car->of_passenger }}</span></div>
+                                title="translation missing: az.seats_counts.5">{{ $car->of_passenger  ??'unkown'}}</span></div>
                     </li>
 
                     <li class="product-table__row">
