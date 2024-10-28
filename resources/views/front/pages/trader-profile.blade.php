@@ -36,7 +36,7 @@
                     <div class="left-side">
                         <div class="input string required auto_make_id">
                             <label class="string required control-label" for="auto_make_id">Name<abbr
-                                        title="required">*</abbr></label>
+                                    title="required">*</abbr></label>
                             <input class="js_make_id" name="name" type="text"
                                    value="{{ old('name', $trader->name) }}" placeholder="Name" required>
                             @if ($errors->has('name'))
@@ -48,7 +48,7 @@
                     <div class="right-side">
                         <div class="input select required auto_fuel_type"><label class="select required control-label"
                                                                                  for="auto_fuel_type_id">Surname <abbr
-                                        title="required">*</abbr></label>
+                                    title="required">*</abbr></label>
                             <input type="text" name="surname" required class="select required form-control"
                                    value="{{ old('surname', $trader->surname) }}">
                             @if ($errors->has('surname'))
@@ -62,7 +62,7 @@
                     <div class="left-side">
                         <div class="input string required auto_model"><label class="string required control-label"
                                                                              for="auto_model">Address <abbr
-                                        title="required">*</abbr></label>
+                                    title="required">*</abbr></label>
                             <input type="text" class="js_model_id" name="adress" required
                                    value="{{ old('adress', $trader->adress) }}">
                             @if ($errors->has('adress'))
@@ -74,7 +74,7 @@
                     <div class="right-side">
                         <div class="input select required auto_gear"><label class="select required control-label"
                                                                             for="auto_gear_id">Phone <abbr
-                                        title="required">*</abbr></label>
+                                    title="required">*</abbr></label>
                             <input type="text" class="select required form-control" name="phone" required
                                    value="{{ old('phone', $trader->phone) }}">
                             @if ($errors->has('phone'))
@@ -88,7 +88,7 @@
                     <div class="left-side">
                         <div class="input select required auto_category"><label class="select required control-label"
                                                                                 for="auto_category_id">Trader Name <abbr
-                                        title="required">*</abbr></label>
+                                    title="required">*</abbr></label>
                             <input type="text" class="select required form-control" required name="t_name"
                                    value="{{ old('t_name', $trader->t_name) }}">
                             @if ($errors->has('t_name'))
@@ -99,8 +99,8 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_transmission"><label
-                                    class="select required control-label"
-                                    for="auto_transmission_id">Email <abbr title="required">*</abbr></label>
+                                class="select required control-label"
+                                for="auto_transmission_id">Email <abbr title="required">*</abbr></label>
                             <input type="email" class="select required form-control" required name="email"
                                    value="{{ old('email', $trader->email) }}">
                             @if ($errors->has('email'))
@@ -231,8 +231,8 @@
 
                 <div class="new-product-i new-product-i--large--indent new-product-i--uppercase">
                     <div class="input string optional auto_vin"><label for="auto_vin">Title</label><input
-                                class="string optional form-control" type="text" name="title" id="auto_vin"
-                                value="{{ old('title', $trader->title) }}">
+                            class="string optional form-control" type="text" name="title" id="auto_vin"
+                            value="{{ old('title', $trader->title) }}">
                         @if ($errors->has('title'))
                             <span class="text-danger"
                                   style="color:red;font-size:13px">{{ $errors->first('title') }}</span>
@@ -241,7 +241,7 @@
                     </div>
                 </div>
                 @php
-                    $content = old('content', optional($trader->translations[0])->content);
+                    $content = old('content', $trader->content);
                 @endphp
                 <div class="input text optional auto_description field_with_hint">
                     <label class="text optional control-label" for="auto_description">Additional information</label>

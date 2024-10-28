@@ -20,6 +20,7 @@ use App\Http\Controllers\Mobile\LoginController;
 use App\Http\Controllers\Mobile\MobileCarController;
 use App\Http\Controllers\Mobile\MobileFavortieController;
 use App\Http\Controllers\Mobile\MobileHomeController;
+use App\Http\Controllers\Mobile\MobileRegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
@@ -140,7 +141,8 @@ Route::get('mobile/filter/model/{brandId}/{modelId}',[MobileHomeController::clas
 Route::get('mobile/login',[LoginController::class,'login'])->name('mobile.login');
 Route::post('mobile/login',[LoginController::class,'authMobile']);
 Route::get('mobile/logout',[LoginController::class,'logout'])->name('mobile.logout');
-
+Route::get('mobile/register',[MobileRegisterController::class,'register'])->name('mobile.register');
+Route::post('mobile/register',[MobileRegisterController::class,'registerStore']);
 
 // middleware yazz   //////
 Route::get('mobile/addcar',[MobileCarController::class,'addForm'])->name('mobile.addcar');

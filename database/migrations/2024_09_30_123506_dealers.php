@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->required();
             $table->string('surname')->required();
-            $table->string('adress')->required(); // Fixed 'adress' to 'address'
+            $table->string('adress')->required();
             $table->string('phone')->required();
-            $table->string('d_name')->unique()->required(); // Fixed typo in 'unique()' and 'required()'
+            $table->string('d_name')->unique()->required(); 
             $table->string('email')->unique()->required();
             $table->string('password')->required();
             $table->unsignedBigInteger('view_count')->default(0);

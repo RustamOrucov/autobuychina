@@ -1,5 +1,7 @@
 @extends('mobile.layout.layout')
 @section('mobile_content')
+    <script src="{{ asset('assets_/js/car.js') }}"></script>
+
     <div class="body-inner" style="padding-top: 61px;">
         <div class="header js-header is-sticky-header">
             <div class="header__nav">
@@ -26,224 +28,559 @@
                 <form class="simple_form new-product-form product-form js-product-form js-filter-form tz-form"
                     id="new_auto" data-auth-url="" data-advanced-select="true" novalidate="novalidate" enctype=""
                     action="" accept-charset="UTF-8" data-remote="true" method="post">
-                    <div class="tz-form__blk tz-form__blk--top-border">
+                    {{-- select brand start --}}
+                    <div class="tz-form__blk">
                         <div class="tz-form__group tz-form__group--img js-select-category-open" data-open="auto_make_id"
                             data-reset="true">
                             <div class="tz-form__group-img js-make-logo-container"><img
-                                    src="https://turbo.azstatic.com/assets/mobile/icon-make--grey-e8ba093a9424dd0c7f93b5104c401938cb6e3ec4839a463fe35fac41018438f2.svg">
-                            </div>
-                            <input class="tz-form__group-input" placeholder=" " readonly="" type="text"
+                                    src="{{ asset('assets_/img/icon-make--grey-e8ba093a9424dd0c7f93b5104c401938cb6e3ec4839a463fe35fac41018438f2.svg') }}">
+                            </div><input class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_make_id">Marka <abbr title="required">*</abbr></label><select
-                                class="select required form-control is-hidden js_make_id"
-                                data-models-url="https://turbo.az/api/v2/makes/:id/models" name="auto[make_id]"
-                                id="auto_make_id">
+                                class="select required form-control is-hidden js_make_id" data-models-url=""
+                                name="car_models_id" id="auto_make_id">
                                 <option value="" label=" "></option>
-                                <option value="280">Abarth</option>
 
+                                @foreach ($properties['brands'] as $brand)
+                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                @endforeach
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span>
                         </div>
-
-
 
                         <div class="toggle-models js-toggle-models tz-form__group tz-form__group--bordered--top js-select-category-open"
                             data-open="auto_model_id"><input class="tz-form__group-input" placeholder=" " readonly=""
                                 type="text"><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_model">Model <abbr title="required">*</abbr></label><select
-                                class="is-hidden js-select-model js_model_id" name="auto[model_id]" id="auto_model_id">
-                                <option value="">Select</option>
+                                class="is-hidden js-select-model js_model_id" name="car_models_id" id="auto_model_id">
+                                <option value="">Choose</option>
+                                @foreach ($properties['models'] as $model)
+                                    <option value="{{ $model->id }}">{{ $model->name }}</option>
+                                @endforeach
+
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span></div>
 
 
+
                     </div>
+
+                    <div class="select-category select-category--full-height js-select-category select-category--auto_make_id"
+                        data-select="auto_make_id">
+                        <div class="select-category__header-container">
+                            <div class="popup-header">
+                                <div class="popup-header__left">
+                                    <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
+                                </div>
+                                <div class="popup-header__title">Marka</div>
+                                <div class="popup-header__right"></div>
+                            </div>
+                            <div class="select-category__search"><input type="text" name="" id=""
+                                    class="select-category__search-input js-search-input" placeholder="Exapmle, BMW"
+                                    autocomplete="off"></div>
+                        </div>
+                        <div class="select-category__body select-category__body--type-2">
+                            <div class="select-category__blk" id="js-popular-makes-container">
+                                <div class="select-category__blk-content">
+                                    @foreach ($properties['brands'] as $brand)
+                                        <div class="select-category__i select-category__i--with-count js-category-select-item-make"
+                                            data-id="{{ $brand->id }}">
+                                            <div class="select-category__i-logo"><img loading="lazy"
+                                                    src="{{ asset('storage/' . $brand->image) }}">
+                                            </div>
+                                            <div class="select-category__i-name js-category-select-item-name">
+                                                {{ $brand->name }}</div>
+                                            <span class="select-category__i-radio"></span>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="select-category select-category--full-height js-select-category js-select-category-models select-category--auto_model_id"
+                        data-select="auto_model_id">
+                        <div class="select-category__header-container">
+                            <div class="popup-header">
+                                <div class="popup-header__left">
+                                    <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
+                                </div>
+                                <div class="popup-header__title">Model</div>
+                                <div class="popup-header__right"></div>
+                            </div>
+                            <div class="select-category__search"><input type="text" name="" id=""
+                                    class="select-category__search-input js-search-input" placeholder="Model axtar"
+                                    autocomplete="off"></div>
+                        </div>
+                        <div class="select-category__body select-category__body--type-2">
+                            <div class="select-category__blk-content js-models-list js-models-list-disabled-groups">
+                                @foreach ($properties['models'] as $model)
+                                    <div class="select-category__i js-category-select-item"
+                                        data-id="{{ $model->id }}">
+                                        <div class="select-category__i-name js-category-select-item-name ">
+                                            {{ $model->name }}</div>
+                                        <span class="select-category__i-radio"></span>
+                                    </div>
+                                @endforeach
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    {{-- select brand end --}}
+
+
+                    {{-- car images start --}}
                     <div class="tz-form__divider"></div>
+
                     <div class="tz-form__blk">
-                        <div class="input pond pond-grid" data-endpoint=""
-                            data-name="gallery[photo_ids][]" data-target-format="">
+                        <div class="input pond pond-grid" data-endpoint="" data-name="gallery[photo_ids][]"
+                            data-target-format="">
+                            <label for="" class="string optional control-label">Images</label>
                             <div class="pond-inner">
                                 <div class="pond-notice-container">
                                     <div class="pond-notice pond-notice--grey pond-notice--first">
-                                        <div class="pond-notice__title pond-notice__title--red">It is forbidden !</div>
-                                        <div class="pond-notice__text">Screenshots, framed images, and screen images.
+                                        <div class="pond-notice__title pond-notice__title--red">It is forbidden!</div>
+                                        <div class="pond-notice__text">Screenshots, framed images, and screen pictures.
                                         </div>
                                     </div>
-
                                 </div>
-                                <input accept="image/*" class="pond-new-img-field" multiple="true" name="images[]"
-                                    type="file">
-                                <div class="pond-message"></div>
-                                <div class="pond-img-list ui-sortable ui-sortable-disabled">
-                                    <div class="pond-img-card js-pond-img-card pond-img-card--front">
-                                        <span>Front view</span>
+
+                                <div class="pond-img-list ui-sortable" id="imageContainer">
+                                    <div class="custom-hidden" style="display: flex; gap: 10px">
+                                        <input type="file" name="carimages[]" id="carImageInput" multiple
+                                            style="display: none;">
+                                        <label style="width:160px"
+                                            class="pond-img-card js-pond-img-card pond-img-card--front"
+                                            id="backImageUpload">
+                                            <span>Back image</span>
+
+                                        </label>
+                                        <label style="width:160px"
+                                            class="pond-img-card js-pond-img-card pond-img-card--front"
+                                            id="mainImageUpload">
+                                            <span>Main image</span>
+
+                                        </label>
+                                        <div class="pond-img-card js-pond-img-card pond-img-card--dashboard"
+                                            id="frontPanelUpload">
+                                            <span>Front Panel</span>
+                                        </div>
                                     </div>
-                                    <div class="pond-img-card js-pond-img-card pond-img-card--back">
-                                        <span>Back view</span>
-                                    </div>
-                                    <div class="pond-img-card js-pond-img-card pond-img-card--dashboard">
-                                        <span>Front panel</span>
-                                    </div>
-                                    <label class="pond-new-img-button pond-new-img"><span class="icon"></span><span
-                                            class="text text--default">Add image</span></label>
+                                    <label class="pond-new-img-button pond-new-img" id="addImageBtn">
+                                        <span class="icon"></span>
+                                        <span class="text text--default">Add Image</span>
+                                    </label>
                                 </div>
                             </div>
-                            <script id="pond_img_template" type="text/html">
-                                <div class="pond-img">
-                                    <div class="pond-img-thumb-container"></div>
-                                    <div class="pond-img-actions"><a class="pond-img-delete" href="#"
-                                                                     title="Destroy"></a></div>
-                                </div></script>
                         </div>
                     </div>
+
+                    {{-- car images end --}}
+
+                    {{-- car ban start --}}
+
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__blk tz-form__blk--top-border">
+
                         <div class="tz-form__group tz-form__group--bordered--bottom js-select-category-open"
-                            data-open="auto_category_id"><input class="tz-form__group-input" placeholder=" " readonly=""
-                                type="text"><label
+                            data-open="auto_category_id"><input class="tz-form__group-input" placeholder=" "
+                                readonly="" type="text"><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_category">Ban <abbr title="required">*</abbr></label><select
-                                class="select required form-control is-hidden" name="auto[category_id]"
-                                id="auto_category_id">
+                                class="select required form-control is-hidden" name="ban_id" id="auto_category_id">
                                 <option value="" label=" "></option>
-                                <option value="9">Avtobus</option>
+                                @foreach ($properties['bans'] as $ban)
+                                    <option value="{{ $ban->id }}">{{ $ban->name }}</option>
+                                @endforeach
+
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
+                        <div class="select-category select-category--rounded js-select-category select-category--auto_category_id"
+                            data-select="auto_category_id">
+                            <div class="select-category__header-container">
+                                <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
+                                    <div class="select-category__header-title">Ban</div>
+                                    <div class="select-category__header-cancel js-close-popup-btn"></div>
+                                </div>
+                            </div>
+                            @foreach ($properties['bans'] as $ban)
+                                <div class="select-category__body">
+                                    <div class="select-category__i js-category-select-item"
+                                        data-id="{{ $ban->id }}">
+                                        <div class="select-category__i-name">{{ $ban->name }}</div><span
+                                            class="select-category__i-radio"></span>
+                                    </div>
+
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        {{-- select ban end --}}
+
+
                         <div class="tz-form__group-container">
                             <div class="tz-form__group tz-form__group--bordered--bottom"><input
                                     class="string required form-control tz-form__group-input" data-number="true"
-                                    placeholder=" " type="text" name="auto[mileage]" id="auto_mileage"><label
+                                    placeholder=" " type="number" name="odometer_km" id="auto_mileage"><label
                                     class="integer required control-label tz-form__group-label tz-form__group-label--select"
                                     for="auto_mileage">Mileage <abbr title="required">*</abbr></label><span
                                     class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                 <div class="tz-form__group-divider"></div>
                             </div>
                             <div class="tz-form__short tz-d-grid tz-justify-center tz-align-center js-select-category-open"
-                                data-open="auto_mileage_unit"><select name="auto[mileage_unit]" id="auto_mileage_unit">
-                                    <option selected="selected" value="km">km</option>
+                                data-open="auto_mileage_unit"><select name="" id="auto_mileage_unit">
 
+                                    <option selected="selected" value="km">km</option>
                                 </select>
                                 <div class="tz-form__short-btn"></div>
                             </div>
                             <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                         </div>
+
+
+
+
+
+
+
+                        {{-- select year start --}}
+
                         <div class="tz-form__group tz-form__group--bordered--bottom js-select-category-open"
                             data-open="auto_reg_year"><input class="tz-form__group-input" placeholder=" " readonly=""
                                 type="text" value=""><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_reg_year">Year <abbr title="required">*</abbr></label><select wrapper="false"
-                                label="false" class="select required form-control is-hidden" name="auto[reg_year]"
+                                label="false" class="select required form-control is-hidden" name="year"
                                 id="auto_reg_year">
                                 <option value="" label=" "></option>
-                                <option value="2024">2024</option>
+                                @foreach ($properties['years'] as $year)
+                                    <option value="{{ $year->year }}">{{ $year->year }}</option>
+                                @endforeach
+
 
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
+
+
+                        <div class="select-category select-category--rounded js-select-category select-category--auto_reg_year"
+                            data-select="auto_reg_year">
+                            <div class="select-category__header-container">
+                                <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
+                                    <div class="select-category__header-title"><span class="translation_missing"
+                                            title="translation missing: az.activerecord.attributes.ad.year">Year</span>
+                                    </div>
+                                    <div class="select-category__header-cancel js-close-popup-btn"></div>
+                                </div>
+                            </div>
+                            <div class="select-category__body">
+                                @foreach ($properties['years'] as $year)
+                                    <div class="select-category__i js-category-select-item"
+                                        data-id="{{ $year->year }}">
+                                        <div class="select-category__i-name">{{ $year->year }}</div><span
+                                            class="select-category__i-radio"></span>
+                                    </div>
+                                @endforeach
+
+
+
+                            </div>
+                        </div>
+                        {{-- select year end --}}
+
+                        {{-- select  engine start --}}
+
                         <div class="tz-form__group tz-form__group--bordered--bottom js-select-category-open"
                             data-open="auto_engine_volume"><input class="tz-form__group-input" placeholder=" "
                                 readonly="" type="number" value=""><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_engine_volume">Engine capacity, sm<sup>3</sup> <abbr
                                     title="required">*</abbr></label><select wrapper="false"
-                                class="select required form-control is-hidden" label="false" name="auto[engine_volume]"
+                                class="select required form-control is-hidden" label="false" name="cylinder_id"
                                 id="auto_engine_volume">
                                 <option value="" label=" "></option>
-                                <option value="50">50</option>
+                                @foreach ($properties['enginevolumes'] as $engine)
+                                    <option value="{{ $engine->id }}">{{ $engine->name }}</option>
+                                @endforeach
 
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
+
+
+                        <div class="select-category select-category--rounded js-select-category select-category--auto_engine_volume"
+                            data-select="auto_engine_volume">
+                            <div class="select-category__header-container">
+                                <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
+                                    <div class="select-category__header-title">Engine capacity, sm<sup>3</sup> </div>
+                                    <div class="select-category__header-cancel js-close-popup-btn"></div>
+                                </div>
+                            </div>
+                            @foreach ($properties['enginevolumes'] as $engine)
+                                <div class="select-category__body">
+                                    <div class="select-category__i js-category-select-item"
+                                        data-id="{{ $engine->id }}">
+                                        <div class="select-category__i-name">{{ $engine->name }}</div><span
+                                            class="select-category__i-radio"></span>
+                                    </div>
+
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        {{-- select engine end --}}
+
+
+                        {{-- engine power start --}}
+
                         <div class="tz-form__group tz-form__group--bordered--bottom"><input
                                 class="string required form-control tz-form__group-input" data-number="true"
-                                placeholder=" " maxlength="4" size="4" type="text" name="auto[power]"
+                                placeholder=" " maxlength="4" size="4" type="text" name="engine_v"
                                 id="auto_power"><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_power">Engine power, a.g. <abbr title="required">*</abbr></label><span
                                 class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
+
+
+                        {{-- engine power end --}}
+
+                        {{-- color start --}}
                         <div class="tz-form__group js-select-category-open" data-open="auto_color_id"><input
                                 class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
                                 for="auto_color">Color <abbr title="required">*</abbr></label><select
-                                class="select required form-control is-hidden" name="auto[color_id]" id="auto_color_id">
+                                class="select required form-control is-hidden" name="cylinder_id" id="auto_color_id">
                                 <option value="" label=" "></option>
-                                <option value="5">Qara</option>
+                                @foreach ($properties['colors'] as $color)
+                                    <option value="{{ $color->id }}">{{ $color->name }}</option>
+                                @endforeach
+
 
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
+
+                        <div class="select-category select-category--rounded js-select-category select-category--auto_color_id"
+                            data-select="auto_color_id">
+                            <div class="select-category__header-container">
+                                <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
+                                    <div class="select-category__header-title">Color</div>
+                                    <div class="select-category__header-cancel js-close-popup-btn"></div>
+                                </div>
+                            </div>
+                            @foreach ($properties['colors'] as $color)
+                                <div class="select-category__body">
+                                    <div class="select-category__i js-category-select-item select-category__i--color"
+                                        data-id="{{ $color->id }}">
+                                        <div class="select-category__i-color"
+                                            style="background-color: {{ $color->hex }}"></div>
+                                        <div class="select-category__i-name">{{ $color->name }}</div><span
+                                            class="select-category__i-radio"></span>
+                                    </div>
+
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        {{-- color end --}}
+
+                        {{-- markets start --}}
                         <div class="tz-form__group js-select-category-open" data-open="auto_market_id"><input
                                 class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string optional control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_market">Markets</label><select
-                                class="select optional form-control is-hidden" name="auto[market_id]"
-                                id="auto_market_id">
+                                for="auto_market">Markets</label><select class="select optional form-control is-hidden"
+                                name="market_id" id="auto_market_id">
                                 <option value="" label=" "></option>
-                                <option value="1">Amerika</option>
+                                @foreach ($properties['markets'] as $market)
+                                    <option value="{{ $market->id }}">{{ $market->name }}</option>
+                                @endforeach
 
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span><span
                                 class="tz-form__group-btn tz-form__group-btn--open"></span></div>
+
+
+                        <div class="select-category select-category--rounded js-select-category select-category--auto_market_id"
+                            data-select="auto_market_id">
+                            <div class="select-category__header-container">
+                                <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
+                                    <div class="select-category__header-title">Markets</div>
+                                    <div class="select-category__header-cancel js-close-popup-btn"></div>
+                                </div>
+                            </div>
+                            <div class="select-category__body">
+                                @foreach ($properties['markets'] as $market)
+                                    <div class="select-category__i js-category-select-item"
+                                        data-id="{{ $market->id }}">
+                                        <div class="select-category__i-name">{{ $market->name }}</div><span
+                                            class="select-category__i-radio"></span>
+                                    </div>
+                                @endforeach
+
+
+                            </div>
+                        </div>
+
+                        {{-- markets end --}}
                     </div>
+
+
+
+
+
+
                     <div class="tz-form__divider"></div>
+
+
                     <div class="tz-form__blk tz-form__blk--top-border">
                         <div class="tz-form__blk-title">Fuel type<abbr> *</abbr></div>
-                        <div class="tz-form__group tz-form__group--radio"><span class="radio"><input
-                                    class="radio_buttons optional form-control" type="radio" value="1"
-                                    name="auto[fuel_type_id]" id="auto_fuel_type_id_1"><label
-                                    class="collection_radio_buttons" for="auto_fuel_type_id_1">Benzin</label></span></div>
+
+                        <div class="tz-form__group tz-form__group--radio">
+                            @foreach ($properties['fueltypes'] as $fuel)
+                                <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                        value="{{ $fuel->id }}" name="fuel_type_id"
+                                        id="auto_fuel_type_id_{{ $fuel->id }}"><label
+                                        class="collection_radio_buttons"
+                                        for="auto_fuel_type_id_{{ $fuel->id }}">{{ $fuel->name }}</label></span>
+                            @endforeach
+
+
+
+                        </div>
+
                     </div>
+
+
+
+
                     <div class="tz-form__divider"></div>
+
+
                     <div class="tz-form__blk tz-form__blk--top-border">
                         <div class="tz-form__blk-title">Gear shift<abbr> *</abbr></div>
-                        <div class="tz-form__group tz-form__group--radio"><span class="radio"><input
-                                    class="radio_buttons optional form-control" type="radio" value="1"
-                                    name="auto[gear_id]" id="auto_gear_id_1"><label class="collection_radio_buttons"
-                                    for="auto_gear_id_1">Back</label></span></div>
-                    </div>
-                    <div class="tz-form__divider"></div>
-                    <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Transmission<abbr> *</abbr></div>
-                        <div class="tz-form__group tz-form__group--radio"><span class="radio"><input
-                                    class="radio_buttons optional form-control" type="radio" value="2"
-                                    name="auto[transmission_id]" id="auto_transmission_id_2"><label
-                                    class="collection_radio_buttons"
-                                    for="auto_transmission_id_2">Avtomat</label></span>
+                        <div class="tz-form__group tz-form__group--radio">
+                            @foreach ($properties['transmissions'] as $transmission)
+                                <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                        value="{{ $transmission->id }}" name="transmission_id"
+                                        id="auto_gear_id_{{ $transmission->id }}"><label class="collection_radio_buttons"
+                                        for="auto_gear_id_{{ $transmission->id }}">{{ $transmission->name }}</label></span>
+                            @endforeach
+
                         </div>
                     </div>
+
+
+
+
                     <div class="tz-form__divider"></div>
+
+
+                    <div class="tz-form__blk tz-form__blk--top-border">
+                        <div class="tz-form__blk-title">Transmission<abbr> *</abbr></div>
+                        <div class="tz-form__group tz-form__group--radio">
+                            @foreach ($properties['damages'] as $damage)
+                                <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                        value="{{ $damage->id }}" name="damage_id"
+                                        id="auto_transmission_id_{{ $damage->id }}"><label
+                                        class="collection_radio_buttons"
+                                        for="auto_transmission_id_{{ $damage->id }}">{{ $damage->name }}</label></span>
+                            @endforeach
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="tz-form__divider"></div>
+
+
                     <div class="tz-form__blk tz-form__blk--top-border">
                         <div class="tz-form__blk-title">Passenger count</div>
-                        <div class="tz-form__group tz-form__group--radio"><span class="radio"><input
-                                    class="radio_buttons optional form-control" type="radio" value="1"
-                                    name="auto[seats_count]" id="auto_seats_count_1"><label
+                        <div class="tz-form__group tz-form__group--radio">
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="1" name="of_passenger" id="auto_seats_count_1"><label
                                     class="collection_radio_buttons" for="auto_seats_count_1">1</label></span>
-                            <div><span class="radio"><input checked="" class="radio_buttons"
-                                        id="auto_seats_count_0" name="auto[seats_count]" type="radio"
-                                        value=""><label class="collection_radio_buttons"
-                                        for="auto_seats_count_0">Not to be recorded</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="2" name="of_passenger" id="auto_seats_count_2"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_2">2</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="3" name="of_passenger" id="auto_seats_count_3"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_3">3</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="4" name="of_passenger" id="auto_seats_count_4"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_4">4</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="5" name="of_passenger" id="auto_seats_count_5"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_5">5</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="6" name="of_passenger" id="auto_seats_count_6"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_6">6</label></span>
+
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="7" name="of_passenger" id="auto_seats_count_7"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_7">7</label></span>
+                            <span class="radio"><input class="radio_buttons optional form-control" type="radio"
+                                    value="8" name="of_passenger" id="auto_seats_count_8"><label
+                                    class="collection_radio_buttons" for="auto_seats_count_8">8+</label></span>
+                            <div>
+
+                                <span class="radio"><input checked="" class="radio_buttons" id="auto_seats_count_0"
+                                        name="of_passenger" type="radio" value=""><label
+                                        class="collection_radio_buttons" for="auto_seats_count_0">Not to be
+                                        recorded</label></span>
+
+
+
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__blk tz-form__blk--top-border">
                         <div class="tz-form__blk-title">Car equipments</div>
-                        <div class="tz-form__group"><span><input class="tz-form__check-input" type="checkbox"
-                                    value="4" name="auto[extra_ids][]" id="auto_extra_ids_4"><label
-                                    class="tz-form__check-label tz-text tz-text--primary" for="auto_extra_ids_4">Yüngül
-                                    lehimli disklər</label></span>
+                        <div class="tz-form__group">
+                         @foreach ($properties['equipments'] as $equipment )
+
+                         <span><input class="tz-form__check-input" type="checkbox"
+                                 value="{{ $equipment->id }}" name="car_equipment[]" id="auto_extra_ids_{{ $equipment->id }}"><label
+                                 class="tz-form__check-label tz-text tz-text--primary" for="auto_extra_ids_{{ $equipment->id }}">{{ $equipment->name }}</label></span>
+                         @endforeach
+
+
                         </div>
                     </div>
+
+
+
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__blk tz-form__blk--top-border">
@@ -268,7 +605,8 @@
                                     <div class="tz-form__switch-text">Repainted</div>
                                     <div class="tz-form__switch-slider"></div>
                                 </div>
-                                <div class="tz-form__switch-description">One or more parts have been repainted or cosmetic work has been done.
+                                <div class="tz-form__switch-description">One or more parts have been repainted or cosmetic
+                                    work has been done.
                                 </div>
                             </label>
                             <div class="tz-form__group-divider"></div>
@@ -345,9 +683,10 @@
                         <button name="button" type="submit" data-disable-with=""
                             class="tz-btn tz-btn--primary tz-btn--full">Share the ads
                         </button>
-                        <div class="new-product--confirm-rules">By placing an ad, you confirm that you agree with Turbo.az's <a target="_blank"
-                            href="{{ route('mobile.agrement') }}">User Agreement</a> and <a target="_blank" href="{{ route('mobile.rules') }}">Rules</a>.
-                    </div>
+                        <div class="new-product--confirm-rules">By placing an ad, you confirm that you agree with
+                            Turbo.az's <a target="_blank" href="{{ route('mobile.agrement') }}">User Agreement</a> and
+                            <a target="_blank" href="{{ route('mobile.rules') }}">Rules</a>.
+                        </div>
 
                     </div>
                 </form>
@@ -355,4 +694,110 @@
         </div>
 
     </div>
+
+    <script>
+        document.getElementById('addImageBtn').addEventListener('click', function() {
+            document.getElementById('carImageInput').click();
+        });
+
+        const uploadedFiles = [];
+
+        document.getElementById('carImageInput').addEventListener('change', function(event) {
+            const files = Array.from(event.target.files);
+            uploadedFiles.push(...files);
+
+            const element = document.querySelector('.custom-hidden');
+            element.style.display = 'none';
+
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newImageCard = document.createElement('div');
+                    newImageCard.classList.add('pond-img-card', 'js-pond-img-card');
+                    newImageCard.style.position = 'relative';
+
+                    const imageElement = document.createElement('img');
+                    imageElement.src = e.target.result;
+                    imageElement.style.width = '100%';
+                    imageElement.style.height = '100%';
+                    imageElement.style.borderRadius = '5px';
+                    imageElement.style.objectFit = 'cover';
+                    imageElement.style.transition = 'transform 0.3s';
+
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.innerHTML = 'X';
+                    deleteBtn.style.position = 'absolute';
+                    deleteBtn.style.top = '10px';
+                    deleteBtn.style.right = '10px';
+                    deleteBtn.style.fontWeight = 'bold';
+                    deleteBtn.style.color = 'red';
+                    deleteBtn.style.backgroundColor = 'transparent';
+                    deleteBtn.style.border = 'none';
+                    deleteBtn.style.padding = '5px';
+                    deleteBtn.style.cursor = 'pointer';
+
+                    const rotateRightBtn = document.createElement('button');
+                    rotateRightBtn.innerHTML = '⟳';
+                    rotateRightBtn.style.position = 'absolute';
+                    rotateRightBtn.style.bottom = '10px';
+                    rotateRightBtn.style.right = '10px';
+                    rotateRightBtn.style.fontWeight = 'bold';
+                    rotateRightBtn.style.backgroundColor = 'transparent';
+                    rotateRightBtn.style.color = 'blue';
+                    rotateRightBtn.style.border = 'none';
+                    rotateRightBtn.style.padding = '5px';
+                    rotateRightBtn.style.cursor = 'pointer';
+
+                    const rotateLeftBtn = document.createElement('button');
+                    rotateLeftBtn.innerHTML = '⟲';
+                    rotateLeftBtn.style.position = 'absolute';
+                    rotateLeftBtn.style.bottom = '10px';
+                    rotateLeftBtn.style.left = '10px';
+                    rotateLeftBtn.style.fontWeight = 'bold';
+                    rotateLeftBtn.style.backgroundColor = 'transparent';
+                    rotateLeftBtn.style.color = 'blue';
+                    rotateLeftBtn.style.border = 'none';
+                    rotateLeftBtn.style.padding = '5px';
+                    rotateLeftBtn.style.cursor = 'pointer';
+
+                    let rotation = 0;
+
+                    deleteBtn.addEventListener('click', function() {
+                        newImageCard.remove();
+                        const index = uploadedFiles.indexOf(file);
+                        if (index > -1) {
+                            uploadedFiles.splice(index, 1);
+                        }
+                    });
+
+                    rotateRightBtn.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        rotation += 90;
+                        imageElement.style.transform = `rotate(${rotation}deg)`;
+                    });
+
+                    rotateLeftBtn.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        rotation -= 90;
+                        imageElement.style.transform = `rotate(${rotation}deg)`;
+                    });
+
+                    newImageCard.appendChild(imageElement);
+                    newImageCard.appendChild(deleteBtn);
+                    newImageCard.appendChild(rotateRightBtn);
+                    newImageCard.appendChild(rotateLeftBtn);
+
+                    document.getElementById('imageContainer').appendChild(newImageCard);
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+            const dataTransfer = new DataTransfer();
+            uploadedFiles.forEach(file => {
+                dataTransfer.items.add(file);
+            });
+            document.getElementById('carImageInput').files = dataTransfer.files;
+        });
+    </script>
 @endsection

@@ -45,28 +45,27 @@
                         <section class="product-section product-photos" style="position: relative;">
                             <div class="previues"><i class="fa-solid fa-angle-left"></i></div>
                             <div class="next"><i class="fa-solid fa-angle-right"></i></div>
-                            <div class="zoom-img"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>
+{{--                            <div class="zoom-img"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>--}}
                             <div class="counter"><span>1/5</span></div>
                             <div class="single-item">
-                                <div class="im-box"><img id="ma-img" width="100%" height="100%" data-hover=""
-                                        src="{{ asset('storage/' . $car->car_image) }}" alt=""></div>
-
-
+                                <div class="im-box">
+                                    <img id="ma-img" width="100%" height="100%" src="{{ asset('storage/' . $car->car_image) }}" alt="">
+                                </div>
                             </div>
                         </section>
                         <div class="product-photos__slider-nav">
-                       
+
                             @foreach ($car->carImages as $image)
                                 <div class="product-photos__slider-nav-i js-open-gallery active">
                                     <div class="product-photos__slider-nav-i_picture"
-                                        style="background-image: url({{ asset('asset/' . $image->image) }});"></div>
+                                        style="background-image: url({{ asset('storage/' . $image->image) }});"></div>
                                 </div>
                             @endforeach
 
 
                             <div class="product-photos__slider-nav-i js-open-gallery">
                                 <div class="product-photos__slider-nav-i_picture"
-                                    style="background-image: url('/assets/img/bmw.jpg')">
+                                    style="background-image: url('{{ asset('storage/' . $car->car_image) }}')">
                                     <div
                                         class="product-photos__slider-nav-i_text tz-d-flex tz-align-center tz-justify-center">
                                         +7 şəkil</div>
@@ -236,7 +235,7 @@
                                         <div class="product-phones__btn js-phones-click-btn" data-log-show-phone="true"
                                             data-stat="product-call-btn" data-trigger-button="main">
                                             <div class="product-phones__btn-title">Contact Number :</div>
-                                            <div class="product-phones__btn-value">(010) 555 55 55</div>
+                                            <div class="product-phones__btn-value"><a href="tel:{{$car->Dealer->phone}}" style="color: #fff;text-decoration: none">{{$car->Dealer->phone}}</a></div>
                                         </div>
 
                                     </div>
@@ -390,6 +389,42 @@
         </form>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainImage = document.getElementById('ma-img');
+            const thumbnails = Array.from(document.querySelectorAll('.product-photos__slider-nav-i_picture'));
+            const initialImage = "{{ asset('storage/' . $car->car_image) }}";
+            let images = [initialImage, ...thumbnails.map(thumb => thumb.style.backgroundImage.slice(5, -2))];
+            images[images.length - 1] = initialImage;
+            const totalImages = images.length;
+            let currentIndex = 0;
 
+            mainImage.src = images[currentIndex];
+
+            const counterElement = document.querySelector('.counter span');
+            const updateCounter = () => {
+                counterElement.textContent = `${currentIndex + 1}/${totalImages}`;
+            };
+            updateCounter();
+
+            document.querySelector('.previues').addEventListener('click', function () {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                mainImage.src = images[currentIndex];
+                updateCounter();
+            });
+
+            document.querySelector('.next').addEventListener('click', function () {
+                currentIndex = (currentIndex + 1) % totalImages;
+                mainImage.src = images[currentIndex];
+                updateCounter();
+            });
+
+            if (totalImages > 10) {
+                const extraImagesCount = totalImages - 10;
+                const extraImagesElement = document.querySelector('.product-photos__slider-nav-i_text');
+                extraImagesElement.textContent = `+${extraImagesCount} şəkil`;
+            }
+        });
+    </script>
 
 @endsection

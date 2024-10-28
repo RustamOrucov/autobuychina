@@ -84,7 +84,7 @@
                         <div class="input_box">
                             <label for="front_id" class="front_id">Front Image of the ID Card *</label>
                             <input type="file" name="passport_front" id="front_id" class="custom-file-input" required>
-                            @error('front_id')
+                            @error('passport_front')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
@@ -93,17 +93,28 @@
 
                             </div>
                         </div>
-
                         <div class="input_box">
                             <label for="back_id" class="front_id">Back Image of the ID Card *</label>
                             <input type="file" name="passport_back" id="back_id" class="custom-file-input" required>
-                            @error('back_id')
+                            @error('passport_back')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                             <div class="img-boxs">
                                 <button class="clear-img" id="clear-back-img"><i class="fa-solid fa-xmark"></i></button>
                                 <img id="back_preview" style="width: 150px; object-fit: cover;" src="" alt="">
                             </div>
+                        </div>
+                        <div class="input_box">
+                            <label for="business_foto" class="front_id">Business foto *</label>
+                            <input type="file" name="business_foto" id="business_foto" class="custom-file-input" required="">
+                                                        <div class="img-boxs">
+                                <button class="clear-img" id="clear-business-img"><i class="fa-solid fa-xmark"></i></button>
+                                <img id="business_preview" style="width: 150px; object-fit: cover;" src="" alt="">
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <label for="license_number" style="margin:5px 0;">License Number</label>
+                            <input style="padding: 0 10px;margin:5px 0;" type="text" name="license_number" value="{{ old('license_number') }}" id="license_number" placeholder="123456789" required="">
                         </div>
 
                         <div class="private-checked">
@@ -132,7 +143,7 @@
 
 
     <div class="popup-private" id="popup-private">
-        <div class="full-w">
+        <div class="full-w" style="height: 330%">
             <button style="position: fixed;" class="close-policy" id="close-policy"><i
                     class="fa-solid fa-xmark"></i></button>
             <div class="content-policie">
@@ -148,24 +159,79 @@
 
 
     <script>
-        function toggleModal(displayState) {
-            document.getElementById('popup-private').style.display = displayState;
+ document.querySelector('#prev-policy').addEventListener('click', function(){
+    document.querySelector('#popup-private').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.style.overflow = 'hidden';
+   })
+
+   document.querySelector('#close-policy').addEventListener('click', function() {
+    document.body.style.overflow = 'auto';
+    document.querySelector('#popup-private').style.display = 'none';
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    function previewImage(input, previewId, clearButtonId) {
+        const file = input.files[0];
+        const preview = document.getElementById(previewId);
+        const clearButton = document.getElementById(clearButtonId);
+
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                preview.style.height = '150px';
+                clearButton.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = '';
+            preview.style.display = 'none';
+            preview.style.height = '';
+            clearButton.style.display = 'none';
         }
+    }
 
-        document.querySelector('.private-btn-box').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleModal('block');
+    document.getElementById('front_id').addEventListener('change', function () {
+        previewImage(this, 'front_preview', 'clear-front-img');
+    });
+    document.getElementById('back_id').addEventListener('change', function () {
+        previewImage(this, 'back_preview', 'clear-back-img');
+    });
+
+    document.getElementById('business_foto').addEventListener('change', function () {
+        previewImage(this, 'business_preview', 'clear-business-img');
+    });
+    document.getElementById('back_id').addEventListener('change', function () {
+        previewImage(this, 'back_preview', 'clear-back-img');
+    });
+
+    function clearImage(button, inputId, previewId) {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            input.value = '';
+            preview.src = '';
+            preview.style.display = 'none';
+            button.style.display = 'none';
         });
+    }
 
-        document.querySelector('#close-policy').addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleModal('none');
-        });
+    clearImage(document.getElementById('clear-front-img'), 'front_id', 'front_preview');
+    clearImage(document.getElementById('clear-back-img'), 'back_id', 'back_preview');
+
+    clearImage(document.getElementById('clear-business-img'), 'business_foto', 'business_preview');
+    clearImage(document.getElementById('clear-back-img'), 'back_id', 'back_preview');
+});
 
 
-        // submit button disabled chage function
 
-        const checkbox = document.getElementById('remember-me');
+
+const checkbox = document.getElementById('remember-me');
         const submitBtn = document.getElementById('submit-btn');
 
         checkbox.addEventListener('change', function() {
@@ -177,60 +243,6 @@
                 submitBtn.disabled = true;
             }
         });
-        //    function end
-
-
-
-    //     preview image
-        document.addEventListener('DOMContentLoaded', function () {
-            function previewImage(input, previewId, clearButtonId) {
-                const file = input.files[0];
-                const preview = document.getElementById(previewId);
-                const clearButton = document.getElementById(clearButtonId);
-
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        preview.src = e.target.result;
-                        preview.style.display = 'block';
-                        preview.style.height = '150px'
-                        clearButton.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    preview.src = '';
-                    preview.style.display = 'none';
-                    preview.style.height = ''
-                    clearButton.style.display = 'none';
-                }
-            }
-
-            document.getElementById('front_id').addEventListener('change', function () {
-                previewImage(this, 'front_preview', 'clear-front-img');
-            });
-
-            document.getElementById('back_id').addEventListener('change', function () {
-                previewImage(this, 'back_preview', 'clear-back-img');
-            });
-
-
-
-            function clearImage(button, inputId, previewId) {
-                button.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const input = document.getElementById(inputId);
-                    const preview = document.getElementById(previewId);
-                    input.value = '';
-                    preview.src = '';
-                    preview.style.display = 'none';
-                    button.style.display = 'none';
-                });
-            }
-
-            clearImage(document.getElementById('clear-front-img'), 'front_id', 'front_preview');
-            clearImage(document.getElementById('clear-back-img'), 'back_id', 'back_preview');
-        });
-
     </script>
 
     <script>

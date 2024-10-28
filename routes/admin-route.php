@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['admin']],
     Route::post('admin/update/{id}', [AdminController::class, 'update'])->name('admin.update');
 
     Route::get('/', [AdminController::class, 'index'])->name('home');
+    Route::get('/homepage', [AdminController::class, 'homepage'])->name('home.page');
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
     Route::resource('user', UserController::class)->except(['show']);
     Route::resource('category', CategoryController::class)->except(['show']);

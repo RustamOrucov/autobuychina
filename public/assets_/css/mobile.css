@@ -10408,8 +10408,9 @@ a.pswp__share--download:hover {
     max-width: 190px;
 }
 .custom-mobil-dealers {
-    color:#fff ;
+    color:#fff !important;
 }
+
 .header__nav-left,
 .header__nav-right {
     position: relative;
@@ -21993,6 +21994,7 @@ select {
 .bookmarking {
     top: 3px;
 }
+.
 .custom-view-mobile {
     display: flex;
     align-items: center;
@@ -22037,6 +22039,9 @@ select {
     border: 1px solid #e5f3fa;
     border-radius: 10px;
     overflow: hidden;
+}
+.custom-register-container{
+    width:auto;
 }
 
 .accordion__header {
