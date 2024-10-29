@@ -3,7 +3,7 @@
     <div class="main-container pages">
         <div class="section-title section-title--top section-title--grey">
             <div class="tz-container tz-align-center tz-d-flex">
-                <h1 class="section-title_name">Rules</h1>
+                <h1 class="section-title_name">{{sitekey('list_car_eight','name')}}</h1>
                 <div class="lotriver-text-banner" id="js-lotriver-text-banner">
                 </div>
             </div>

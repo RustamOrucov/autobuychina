@@ -15,7 +15,7 @@
     <div class="main-container ads">
         <div class="section-title section-title--top section-title--grey">
             <div class="tz-container tz-align-center tz-d-flex">
-                <h1 class="section-title_name">PLACE AN ADVERTISEMENT</h1>
+                <h1 class="section-title_name">{{sitekey('list_car','title')}}</h1>
                 <div class="lotriver-text-banner" id="js-lotriver-text-banner">
                 </div>
             </div>
@@ -24,7 +24,7 @@
             <div class="limits-container">
                 <div class="limits limits--current-step limits--limit">
                     <div class="limits--description">
-                        <div class="text-success">You are posting an ad from the <span
+                        <div class="text-success">{{sitekey('list_car','text')}} <span
                                 class="phone-num">{{ Auth::guard('trader')->user()->t_name }}</span>.
                         </div>
                     </div>
@@ -39,38 +39,35 @@
                 <div class="new-product-i">
                     <div class="left-side">
                         <div class="input string required auto_make_id"><label class="string required control-label"
-                                                                               for="auto_make_id">Category <abbr
+                                                                               for="auto_make_id">{{sitekey('new_car','title')}} <abbr
                                     title="required">*</abbr></label><select
                                 class="js_make_id required-element" name="category_id" id="auto_make_id" required>
-                                <option value="" disabled selected>Select</option>
+                                <option value="" disabled selected>{{sitekey('list_car','name')}}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{$category->status}}
                                     </option>
                                 @endforeach
-                                <option value="1">Aksesuar</option>
+                                <option value="1">{{sitekey('new_car','text')}}</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div class="new-product-i">
                     <div class="left-side tooltips-input"><label class="string required control-label"
-                                                                 for="auto_price">Price <abbr title="required">*</abbr></label>
+                                                                 for="auto_price">{{sitekey('list_car_two','desc')}} <abbr title="required">*</abbr></label>
                         <div class="tz-d-inline">
                             <input data-number="true" required class="string required form-control required-element"
                                    type="text" value="{{ old('price', isset($model) ? $model->price : '') }}"
                                    name="price" id="auto_price">
                             <div class="tooltips">
-                                <div class="tooltips-body">The full price of the spare must be entered in the price
-                                    section.
-                                    Please enter the price in USD.
-                                </div>
+                                <div class="tooltips-body">{{sitekey('list_car_two','name')}}</div>
                             </div>
                             <div class="input radio_buttons optional auto_currency">
                                 <input type="hidden" name="ro_id" value="" autocomplete="off"><span
                                     class="radio">
                                     <input class="radio_buttons optional form-control" type="radio" value="1"
                                            checked name="ro_id" id="auto_currency_azn"><label
-                                        class="collection_radio_buttons" for="auto_currency_azn">USD</label></span>
+                                        class="collection_radio_buttons" for="auto_currency_azn">{{sitekey('list_car_three','title')}}</label></span>
                             </div>
                         </div>
                     </div>
@@ -79,10 +76,10 @@
                     <div class="left-side tooltips-input">
                         <div class="tz-d-inline">
                             <div class="input select optional auto_market"><label class="select optional control-label"
-                                                                                  for="auto_market_id">City</label><select
+                                                                                  for="auto_market_id">{{sitekey('filter_key_two','desc')}}</label><select
                                     class="select optional form-control"
                                     name="region_id" id="auto_market_id">
-                                    <option>Select</option>
+                                    <option>{{sitekey('list_car','name')}}</option>
                                     @foreach ($regions as $city)
                                         <option
                                             value="{{ $city->id }}"{{ old('region_id', isset($model) ? $model->region_id : '') == $city->id ? 'selected' : '' }}>
@@ -113,7 +110,7 @@
                         <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}" id="tab-{{ $lang }}"
                              role="tabpanel" aria-labelledby="custom-tabs-one-{{ $lang }}-tab">
                             <div class="form-group col-12 mt-3">
-                                <label>Additional information</label>
+                                <label>{{sitekey('car_detail_4','name')}}</label>
                                 <textarea id="summernote{{ $index }}" placeholder="desc{{ $lang }}"
                                           name="{{ $lang }}[item_comment]" class="form-control">
                             {{ old("$lang.item_comment", isset($model) ? $model->translateOrDefault($lang)->item_comment ?? '' : '') }}
@@ -129,12 +126,12 @@
 
 
         <div class="input pond pond-grid" data-endpoint="" data-name="gallery[photo_ids][]"
-             data-target-format=""><label for="" class="string optional control-label">Images</label>
+             data-target-format=""><label for="" class="string optional control-label">{{sitekey('list_car_six','text')}}</label>
             <div class="pond-inner">
                 <div class="pond-notice-container">
                     <div class="pond-notice pond-notice--grey pond-notice--first">
-                        <div class="pond-notice__title pond-notice__title--red">It is forbidden!</div>
-                        <div class="pond-notice__text">Screenshots, framed images, and screen pictures.</div>
+                        <div class="pond-notice__title pond-notice__title--red">{{sitekey('list_car_six','desc')}}</div>
+                        <div class="pond-notice__text">{{sitekey('list_car_six','name')}}</div>
                     </div>
                 </div>
 
@@ -145,22 +142,22 @@
                                style="display: none;">
                         <label class="pond-img-spared js-pond-img-spared pond-img-spared--front"
                                id="backImageUpload">
-                            <span>Back image</span>
+                            <span>{{sitekey('list_car_seven','title')}}</span>
                             <input type="file" name="spareimages[]" class="spareImageInput">
                         </label>
                         <label class="pond-img-spared js-pond-img-spared pond-img-spared--front"
                                id="mainImageUpload">
-                            <span>Main image</span>
+                            <span>{{sitekey('list_car_seven','text')}}</span>
                             <input type="file" name="spareimages[]" class="spareImageInput">
                         </label>
                         <div class="pond-img-spared js-pond-img-spared pond-img-spared--dashboard"
                              id="frontPanelUpload">
-                            <span>Front Panel</span>
+                            <span>{{sitekey('list_car_seven','desc')}}</span>
                         </div>
                     </div>
                     <label class="pond-new-img-button pond-new-img" id="addImageBtn">
                         <span class="icon"></span>
-                        <span class="text text--default">Add Image</span>
+                        <span class="text text--default">{{sitekey('list_car_seven','name')}}</span>
                     </label>
                 </div>
             </div>
@@ -168,16 +165,13 @@
 
         <div class="new-product-i">
             <div class="left-side seller-information">
-                <button type="submit" class="submit-button" data-disable-with="save...">Post an
-                    add
-                </button>
+                <button type="submit" class="submit-button" data-disable-with="save...">{{sitekey('list_car_eight','title')}}</button>
             </div>
             <div class="right-side"></div>
         </div>
-        <div class="new-product--confirm-rules">
-            By posting an ad, you confirm that you agree to autobuychina.com's
-            <a target="_blank" href="{{ route('useragrement') }}">User Agreement</a>
-            and <a target="_blank" href="{{ route('rule') }}">Rules</a>.
+        <div class="new-product--confirm-rules">{{sitekey('list_car_eight','text')}}
+            <a target="_blank" href="{{ route('useragrement') }}">{{sitekey('list_car_eight','desc')}}</a>
+            and <a target="_blank" href="{{ route('rule') }}">{{sitekey('list_car_eight','name')}}</a>.
         </div>
         </form>
     </div>

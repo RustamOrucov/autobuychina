@@ -19,21 +19,21 @@
                 <div class="js-product-heading product-heading tz-d-flex tz-align-center tz-justify-between">
                     <div class="tz-container tz-d-flex tz-align-center tz-justify-between">
                         <div class="product-heading__left tz-d-flex tz-align-center">
-                            <h1 class="product-title">{{ $car->carModel->name }} {{ $car->ModelType->name }} TUNED
+                            <h1 class="product-title">{{ $car->carModel->name }} {{ $car->ModelType->name }} {{sitekey('detail_car_one','title')}}
                                 {{ $car->engine_v }}.L,{{ $car->year }},25 000 km</h1>
                         </div>
                         <div class="product-heading__right tz-d-flex tz-align-center">
                             <div class="product-bookmarks">
                                 <a class="product-bookmarks__link added hide js-unbookmark-item" data-remote="true"
-                                    rel="nofollow" data-id="{{ $car->id }}">In favorites</a>
+                                    rel="nofollow" data-id="{{ $car->id }}">{{sitekey('car_detail','desc')}}</a>
                                 <a class="product-bookmarks__link js-bookmark-item" data-remote="true" rel="nofollow"
                                     data-id="{{ $car->id }}">
-                                    {{sitekey('car_detail','text',)}}</a>
+                                    {{sitekey('car_detail','text')}}</a>
                             </div>
 
                             <div class="product-report">
-                                <a class="product-report__btn js-product-report-btn" data-reported-text="Şikayət etmisiniz"
-                                    data-not-allowed="true" href="#">{{sitekey('car_detail','desc')}}</a>
+                                <a class="product-report__btn js-product-report-btn" data-reported-text="{{sitekey('detail_car_one','text')}}"
+                                    data-not-allowed="true" href="#">{{sitekey('car_detail','name')}}</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <section class="product-section product-photos" style="position: relative;">
                             <div class="previues"><i class="fa-solid fa-angle-left"></i></div>
                             <div class="next"><i class="fa-solid fa-angle-right"></i></div>
-{{--                            <div class="zoom-img"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>--}}
+   {{--                     <div class="zoom-img"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></div>--}}
                             <div class="counter"><span>1/5</span></div>
                             <div class="single-item">
                                 <div class="im-box">
@@ -54,8 +54,8 @@
                             </div>
                         </section>
                         <div class="product-photos__slider-nav">
-
-                            @foreach ($car->carImages as $image)
+                           
+                        @foreach ($car->carImages as $image)
                                 <div class="product-photos__slider-nav-i js-open-gallery active">
                                     <div class="product-photos__slider-nav-i_picture"
                                         style="background-image: url({{ asset('storage/' . $image->image) }});"></div>
@@ -65,18 +65,18 @@
 
                             <div class="product-photos__slider-nav-i js-open-gallery">
                                 <div class="product-photos__slider-nav-i_picture"
-                                    style="background-image: url('{{ asset('storage/' . $car->car_image) }}')">
+                                    style="background-image: url('/assets/img/bmw.jpg')">
                                     <div
                                         class="product-photos__slider-nav-i_text tz-d-flex tz-align-center tz-justify-center">
-                                        +7 şəkil</div>
+                                        +7 {{sitekey('detail_car_one','desc')}}</div>
                                 </div>
                             </div>
                         </div>
                         <div class="product-section product-section--without-border-top">
                             <ul class="product-statistics">
-                                <li class="product-statistics__i"><span class="product-statistics__i-text">Updated:
+                                <li class="product-statistics__i"><span class="product-statistics__i-text">{{sitekey('detail_car','name')}}
                                         {{ $car->created_at->format('d.m.Y') }}</span></li>
-                                <li class="product-statistics__i"><span class="product-statistics__i-text">View Count :
+                                <li class="product-statistics__i"><span class="product-statistics__i-text">{{sitekey('car_detail_one','title')}} :
                                         {{ $car->view_count }}</span></li>
                             </ul>
                         </div>
@@ -84,7 +84,7 @@
                             <div class="product-properties tz-d-flex tz-justify-between tz-gap-10">
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_two', 'desc')}}</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_two','desc')}}</label>
                                         <span class="product-properties__i-value">{{ $car->region->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
@@ -96,11 +96,11 @@
                                         <span class="product-properties__i-value">{{ $car->ModelType->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Year</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('car_detail_one','desc')}}</label>
                                         <span class="product-properties__i-value">{{ $car->year }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_three', 'name')}}</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_three','name')}}</label>
                                         <span class="product-properties__i-value">{{ $car->Cylinder->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
@@ -108,18 +108,18 @@
                                         <span class="product-properties__i-value">{{ $car->ban->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Engine</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('car_detail_one','name')}}</label>
                                         <span class="product-properties__i-value">{{ $car->EngineVolume->name / 1000 }}
                                             L/{{ $car->engine_v }}a.g/{{ $car->FuelType->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Mileage</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('detail_car_two','title')}}</label>
                                         <span class="product-properties__i-value">{{ $car->odometer_km }} km</span>
                                     </div>
                                 </div>
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">{{sitekey('filter_static_four', 'desc')}}</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_static_four','desc')}}</label>
                                         <span class="product-properties__i-value">{{ $car->Damage->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
@@ -127,18 +127,18 @@
                                         <span class="product-properties__i-value">{{ $car->Transmission->name }}</span>
                                     </div>
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">New ?</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('detail_car_two','text')}}</label>
                                         <span class="product-properties__i-value">
                                             {{ $car->used === 1 ? 'Yes' : 'No' }}
                                         </span>
                                     </div>
                                     {{-- <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Sahiblər</label>
+                                        <label for="" class="product-properties__i-name">{{sitekey('detail_car_one','name')}}</label>
                                         <span class="product-properties__i-value">1</span>
                                     </div> --}}
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">Condition</label>
-                                        <span class="product-properties__i-value">Vuruğu yoxdur, rənglənməyib</span>
+                                        <label for="" class="product-properties__i-name">{{sitekey('detail_car_two','desc')}}</label>
+                                        <span class="product-properties__i-value">{{sitekey('detail_car_five','title')}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -148,20 +148,19 @@
                                 <div class="product-vin tz-d-flex tz-align-center tz-justify-between">
                                     <div class="product-vin__left">
                                         <div class="tz-d-flex tz-align-center tz-justify-between">
-                                            <div class="product-vin__title">VIN-kod:
+                                            <div class="product-vin__title">{{sitekey('detail_car_five','text')}}:
                                                 <span class="js-copy-text">{{ $car->vincode }}</span>
                                             </div>
                                             <div class="product-vin__copy">
                                                 <div class="product-vin__copy-icon js-copy-icon" style="cursor:pointer;">
                                                 </div>
-                                                <div class="product-vin__copy-text js-copy-copied is-hidden">Copied</div>
+                                                <div class="product-vin__copy-text js-copy-copied is-hidden">{{sitekey('detail_car_five','desc')}}</div>
                                             </div>
                                         </div>
-                                        <div class="product-vin__info">{{sitekey('car_detail','name')}}</div>
+                                        <div class="product-vin__info">{{sitekey('detail_car_two','name')}}</div>
                                     </div>
                                     <a target="_blank" class="product-vin__check-link"
-                                        href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">Search on the
-                                        internet</a>
+                                        href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">{{sitekey('detail_car_three','title')}}</a>
                                 </div>
                             </section>
                         @endif
@@ -191,14 +190,14 @@
                             <div class="product-actions tz-d-flex tz-align-center tz-justify-between">
                                 <div class="product-actions__left">
                                     <form action="">
-                                        <a href="#" class="product-actions__i js-click-edit-request">Duzelis et</a>
+                                        <a href="#" class="product-actions__i js-click-edit-request">{{sitekey('detail_car_five','name')}}</a>
                                     </form>
                                     <form action="">
-                                        <a href="#" class="product-actions__i js-click-expire-request">Elani Sil</a>
+                                        <a href="#" class="product-actions__i js-click-expire-request">{{sitekey('detail_car_six','title')}}</a>
                                     </form>
                                 </div>
                                 <div class="product-actions__id">
-                                    Elanın nömrəsi: 8769791
+                                {{sitekey('detail_car_six','text')}}: 8769791
                                 </div>
                             </div>
                         </div> --}}
@@ -213,10 +212,10 @@
                                 </div>
                                 {{-- <div class="product-labels tz-d-flex tz-gap-10 tz-mt-15">
                                     <div class="product-labels__i tz-d-flex tz-align-center">
-                                        <div class="product-labels__i-icon product-labels__i-icon--loan"></div>Kredit
+                                        <div class="product-labels__i-icon product-labels__i-icon--loan"></div>{{sitekey('detail_car_six','desc')}}
                                     </div>
                                     <div class="product-labels__i tz-d-flex tz-align-center">
-                                        <div class="product-labels__i-icon product-labels__i-icon--barter"></div>Barter
+                                        <div class="product-labels__i-icon product-labels__i-icon--barter"></div>{{sitekey('detail_car_six','name')}}
                                     </div>
                                 </div> --}}
                                 <div class="product-shop">
@@ -234,7 +233,7 @@
                                     <div class="product-phones tz-mt-15">
                                         <div class="product-phones__btn js-phones-click-btn" data-log-show-phone="true"
                                             data-stat="product-call-btn" data-trigger-button="main">
-                                            <div class="product-phones__btn-title">Contact Number :</div>
+                                            <div class="product-phones__btn-title">{{sitekey('detail_car','text')}} :</div>
                                             <div class="product-phones__btn-value"><a href="tel:{{$car->Dealer->phone}}" style="color: #fff;text-decoration: none">{{$car->Dealer->phone}}</a></div>
                                         </div>
 
@@ -249,10 +248,10 @@
                                         <div class="product-shop__count"><a
                                                 class="product-shop__link product-shop__count-value" target="_blank"
                                                 href="{{ route('avtosalon-detail', ['id' => $car->Dealer->id]) }}">{{ $car->Dealer->cars->count() }}
-                                                listings</a></div>
+                                                {{sitekey('detail_car_seven','title')}}</a></div>
 
                                         <div class="product-shop__delimiter tz-mt-15"></div>
-                                        <div class="product-shop__schedule">Every day:
+                                        <div class="product-shop__schedule">{{sitekey('avto_car','text')}}:
                                             {{ $car->Dealer && $car->Dealer->opening_time ? substr($car->Dealer->opening_time, 0, 5) : '' }}
                                             :
                                             {{ $car->Dealer && $car->Dealer->closing_time ? substr($car->Dealer->closing_time, 0, 5) : '' }}
@@ -263,7 +262,7 @@
                                                 href="https://www.google.com/maps?q={{ $car->Dealer->latitude }},{{ $car->Dealer->longitude }}&ll={{ $car->Dealer->latitude }},{{ $car->Dealer->longitude }}&z=15">
                                                 {{ $car->Dealer->adress }}</a></div>
                                         <a class="tz-btn tz-btn--blue tz-btn--full" target="_blank"
-                                            href="{{ route('avtosalon-detail', ['id' => $car->Dealer->id]) }}">Dealership</a>
+                                            href="{{ route('avtosalon-detail', ['id' => $car->Dealer->id]) }}">{{sitekey('detail_car_seven','text')}}</a>
                                     @endif
 
                                 </div>
@@ -273,23 +272,23 @@
                                 <a id="bump_open" class="product-services__i product-services__i--bump"
                                     data-reveal-id="bump_modal" data-animation="fade" href="#bump_open">
                                     <div>
-                                        <div class="product-services__i-title">İrəli çək</div>
+                                        <div class="product-services__i-title">{{sitekey('detail_car_seven','desc')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">3</span><span
-                                                class="price-cur">AZN</span>-dən</div>
+                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a><a id="vip_open" class="product-services__i product-services__i--vip"
                                     data-reveal-id="vip_modal" data-animation="fade" href="#vip_open">
                                     <div>
-                                        <div class="product-services__i-title">VIP</div>
+                                        <div class="product-services__i-title">{{sitekey('detail_car_eight','title')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">5</span><span
-                                                class="price-cur">AZN</span>-dən</div>
+                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a><a id="featured_open" class="product-services__i product-services__i--featured"
                                     data-reveal-id="featured_modal" data-animation="fade" href="#featured_open">
                                     <div>
-                                        <div class="product-services__i-title">Premium</div>
+                                        <div class="product-services__i-title">{{sitekey('detail_car_eight','text')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">7</span><span
-                                                class="price-cur">AZN</span>-dən</div>
+                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a></div> --}}
                             <div class="tz-mt-20"></div>
@@ -300,8 +299,8 @@
             <div class="product-embed-and-related">
                 <div class="tz-container">
                     <div class="section-title">
-                        <p class="section-title_name">Similar ads</p><a class="section-title_more" target="_blank"
-                            href="/autos?q%5Bmake%5D%5B%5D=14-lexus&amp;q%5Bmodel%5D%5B%5D=134">Show all</a>
+                        <p class="section-title_name">{{sitekey('detail_car_three','text')}}</p><a class="section-title_more" target="_blank"
+                            href="/autos?q%5Bmake%5D%5B%5D=14-lexus&amp;q%5Bmodel%5D%5B%5D=134">{{sitekey('detail_car_three','desc')}}</a>
                     </div>
                     <div class="products">
 
@@ -355,37 +354,37 @@
                 @csrf
                 <input type="text" name="trap_field" style="display:none">
             <div class="report-modal__header tz-d-flex tz-align-center tz-justify-between">
-                <div class="report-modal__header-title">Complain</div>
+                <div class="report-modal__header-title">{{sitekey('car_detail_1','title')}}</div>
                 <div class="close-reveal-modal"></div>
             </div>
             <div class="report-modal__content">
 
                 <div>
                     <select id="mon-menu-deroulant" name="title" required>
-                        <option value="">Reason for complaint</option>
-                        <option value="It is impossible to stay interested">It is impossible to stay interested</option>
-                        <option value="The advertisement is not current">The advertisement is not current</option>
-                        <option value="Wrong price">Wrong price</option>
-                        <option value="Wrong indicators">Wrong indicators</option>
-                        <option value="Repeat advertisement">Repeat advertisement</option>
-                        <option value="Wrong city">Wrong city </option>
-                        <option value="The pictures are not correct">The pictures are not correct </option>
-                        <option value="The car is delivered by order">The car is delivered by order</option>
-                        <option value="Suspicions of fraud">Suspicions of fraud</option>
-                        <option value="The car is from the showroom">The car is from the showroom</option>
+                        <option value="">{{sitekey('car_detail_1','text')}}</option>
+                        <option value="{{sitekey('car_detail_2','title')}}">{{sitekey('car_detail_2','title')}}</option>
+                        <option value="{{sitekey('car_detail_2','text')}}">{{sitekey('car_detail_2','text')}}</option>
+                        <option value="{{sitekey('car_detail_2','desc')}}">{{sitekey('car_detail_2','desc')}}</option>
+                        <option value="{{sitekey('car_detail_2','name')}}">{{sitekey('car_detail_2','name')}}</option>
+                        <option value="{{sitekey('car_detail_3','title')}}">{{sitekey('car_detail_3','title')}}</option>
+                        <option value="{{sitekey('car_detail_3','text')}}">{{sitekey('car_detail_3','text')}}</option>
+                        <option value="{{sitekey('car_detail_3','desc')}}">{{sitekey('car_detail_3','desc')}}</option>
+                        <option value="{{sitekey('car_detail_3','name')}}">{{sitekey('car_detail_3','name')}}</option>
+                        <option value="{{sitekey('car_detail_4','title')}}">{{sitekey('car_detail_4','title')}}</option>
+                        <option value="{{sitekey('car_detail_4','text')}}">{{sitekey('car_detail_4','text')}}</option>
                     </select>
                 </div>
 
                 <hr class="js-report-divider">
 
                 <div class="input text optional report_body">
-                    <textarea required rows="1" class="text optional form-control js-body-input" data-title="Şikayəti təsvir edin"
-                        placeholder="Describe the complaint max:400" name="description" id="report_body"></textarea>
+                    <textarea required rows="1" class="text optional form-control js-body-input" data-title="{{sitekey('detail_car_eight','desc')}}"
+                        placeholder="{{sitekey('car_detail_1','desc')}}" name="description" id="report_body"></textarea>
                 </div>
                 <hr>
             </div>
             <div class="report-modal__footer"><button  type="submit" data-disable-with=""
-                    class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">Send</button></div>
+                    class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">{{sitekey('car_detail_1','name')}}</button></div>
         </form>
     </div>
 

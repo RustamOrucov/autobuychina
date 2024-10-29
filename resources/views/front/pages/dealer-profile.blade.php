@@ -12,8 +12,8 @@
     <div class="main-container ads">
         <div class="section-title section-title--top section-title--grey">
             <div class="tz-container tz-align-center tz-d-flex">
-                <h1 class="section-title_name">Dealer Profile</h1>
-                <a href="{{ route('dealer-detail') }}" class="custom-dealer-page">Detail Page</a>
+                <h1 class="section-title_name">{{sitekey('dealer_car','title')}}</h1>
+                <a href="{{ route('dealer-detail') }}" class="custom-dealer-page">{{sitekey('dealer_car','text')}}</a>
                 <div class="lotriver-text-banner" id="js-lotriver-text-banner">
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="limits-container">
                 <div class="limits limits--current-step limits--limit">
                     <div class="limits--description">
-                        <div class="text-success">Welcome <span class="phone-num">{{ $dealer->name }}</span></div>
+                        <div class="text-success">{{sitekey('dealer_car','desc')}} <span class="phone-num">{{ $dealer->name }}</span></div>
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
                 <div class="new-product-i">
                     <div class="left-side">
                         <div class="input string required auto_make_id">
-                            <label class="string required control-label" for="auto_make_id">Name<abbr
+                            <label class="string required control-label" for="auto_make_id">{{sitekey('register_car_1','text')}}<abbr
                                     title="required">*</abbr></label>
                             <input class="js_make_id" required name="name" type="text"
-                                value="{{ old('name', $dealer->name) }}" placeholder="Name" required>
+                                value="{{ old('name', $dealer->name) }}" placeholder="{{sitekey('register_car_1','text')}}" required>
                             @if ($errors->has('name'))
                                 <span class="text-danger"
                                     style="color:red;font-size:13px">{{ $errors->first('name') }}</span>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_fuel_type"><label class="select required control-label"
-                                for="auto_fuel_type_id">Surname <abbr title="required">*</abbr></label>
+                                for="auto_fuel_type_id">{{sitekey('register_car_1','desc')}}<abbr title="required">*</abbr></label>
                             <input type="text" name="surname" required class="select required form-control"
                                 value="{{ old('surname', $dealer->surname) }}">
                             @if ($errors->has('surname'))
@@ -60,7 +60,7 @@
                 <div class="new-product-i">
                     <div class="left-side">
                         <div class="input string required auto_model"><label class="string required control-label"
-                                for="auto_model">Address <abbr title="required">*</abbr></label>
+                                for="auto_model">{{sitekey('register_car_2','title')}}<abbr title="required">*</abbr></label>
                             <input type="text" class="js_model_id" name="adress" required
                                 value="{{ old('adress', $dealer->adress) }}">
                             @if ($errors->has('adress'))
@@ -71,7 +71,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_gear"><label class="select required control-label"
-                                for="auto_gear_id">Phone <abbr title="required">*</abbr></label>
+                                for="auto_gear_id">{{sitekey('register_car_2','text')}}<abbr title="required">*</abbr></label>
                             <input type="text" class="select required form-control" name="phone" required
                                 value="{{ old('phone', $dealer->phone) }}">
                             @if ($errors->has('phone'))
@@ -84,7 +84,7 @@
                 <div class="new-product-i">
                     <div class="left-side">
                         <div class="input select required auto_category"><label class="select required control-label"
-                                for="auto_category_id">Dealer Name <abbr title="required">*</abbr></label>
+                                for="auto_category_id">{{sitekey('register_car_1','title')}}<abbr title="required">*</abbr></label>
                             <input type="text" class="select required form-control" required name="d_name"
                                 value="{{ old('d_name', $dealer->d_name) }}">
                             @if ($errors->has('d_name'))
@@ -95,7 +95,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_transmission"><label class="select required control-label"
-                                for="auto_transmission_id">Email <abbr title="required">*</abbr></label>
+                                for="auto_transmission_id">{{sitekey('login_car','title')}}<abbr title="required">*</abbr></label>
                             <input type="email" class="select required form-control" required name="email"
                                 value="{{ old('email', $dealer->email) }}">
                             @if ($errors->has('email'))
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <div class="new-product-i">
-                    <div class="left-side tooltips-input"><label class="integer  control-label" for="auto_mileage">Open time
+                    <div class="left-side tooltips-input"><label class="integer  control-label" for="auto_mileage">{{sitekey('dealer_car','name')}}
                         </label>
                         <div class="tz-d-inline" style="border:1px solid gray;border-radius:5px;padding:5px 10px">
                             <input type="time" id="time" name="opening_time"
@@ -119,7 +119,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_reg_year"><label class="select  control-label"
-                                for="auto_reg_year">Close time </label>
+                                for="auto_reg_year">{{sitekey('dealer_car_one','title')}} </label>
                             <input type="time" id="time" name="closing_time"
                                 value="{{ old('closing_time', $dealer->closing_time) }}"
                                 style="border:1px solid gray;border-radius:5px;padding:5px 10px">
@@ -159,7 +159,7 @@
                 <div class="new-product-i">
                     <div class="left-side">
                         <div class="input select required auto_color">
-                            <label class="select control-label" for="auto_color_id">Logo</label>
+                            <label class="select control-label" for="auto_color_id">{{sitekey('dealer_car_one','text')}}</label>
                             <input class="select required form-control" type="file" name="logo" id="logo"
                                 accept="image/*" onchange="previewImage(event, 'logoPreview', '{{ $dealer->logo }}')">
                             <div id="logoPreview" class="image-preview" style="display: flex;justify-content:center">
@@ -177,7 +177,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_engine_volume">
-                            <label class="select control-label" for="auto_engine_volume">Background</label>
+                            <label class="select control-label" for="auto_engine_volume">{{sitekey('dealer_car_one','desc')}}</label>
                             <input class="select required form-control" type="file" name="background" id="background"
                                 accept="image/*"
                                 onchange="previewImage(event, 'backgroundPreview', '{{ $dealer->background }}')">
@@ -199,7 +199,7 @@
 
                 <div class="new-product-i">
                     <div class="left-side tooltips-input">
-                        <label class="string control-label" for="password">Password</label>
+                        <label class="string control-label" for="password">{{sitekey('login_car','text')}}</label>
                         <div class="tz-d-inline">
                             <input type="password" name="password" id="password">
                             @if ($errors->has('password'))
@@ -210,7 +210,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input string required auto_power">
-                            <label class="string control-label" for="password_confirmation">Password Confirm</label>
+                            <label class="string control-label" for="password_confirmation">{{sitekey('register_car_2','desc')}}</label>
                             <input class="string required form-control" type="password" name="password_confirmation"
                                 id="password_confirmation">
                             @if ($errors->has('password_confirmation'))
@@ -224,7 +224,7 @@
 
 
                 <div class="new-product-i new-product-i--large--indent new-product-i--uppercase">
-                    <div class="input string optional auto_vin"><label for="auto_vin">Title</label><input
+                    <div class="input string optional auto_vin"><label for="auto_vin">{{sitekey('dealer_car_one','name')}}</label><input
                             class="string optional form-control" type="text" name="title" id="auto_vin"
                             value="{{ old('title', $dealer->title) }}">
                         @if ($errors->has('title'))
@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div class="input text optional auto_description field_with_hint"><label
-                        class="text optional control-label" for="auto_description">Additional information</label>
+                        class="text optional control-label" for="auto_description">{{sitekey('car_detail_4','name')}}</label>
                     <textarea class="text optional form-control" name="content" id="auto_description">{{ old('content', $dealer->content) }}</textarea>
                     @if ($errors->has('content'))
                         <span class="text-danger" style="color:red;font-size:13px">{{ $errors->first('content') }}</span>
@@ -250,7 +250,7 @@
                 <div class="new-product-i">
                     <div class="left-side seller-information">
                         <input autocomplete="off" type="hidden" id="auto_phones"><button type="submit"
-                            class="submit-button">Save</button>
+                            class="submit-button">{{sitekey('filter_key_eight','title')}}</button>
                     </div>
                     <div class="right-side"></div>
                 </div>

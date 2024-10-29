@@ -3,7 +3,7 @@
     <div class="main-container shops">
         <div class="section-title section-title--top section-title--grey">
             <div class="tz-container tz-align-center tz-d-flex">
-                <p class="section-title_name">All Dealers</p>
+                <p class="section-title_name">{{sitekey('new_car_1','text')}}</p>
                 <div class="lotriver-text-banner" id="js-lotriver-text-banner">
                     <div style="visibility:hidden;height:0px;left:-1000px;position:absolute;"></div>
                     <div id="ad_ph_2" style="display:none;"></div>
@@ -24,7 +24,7 @@
                             </div>
                             <div class="shops-i--contact">(051) 232-32-03, (051) 232-32-04</div>
                             <div class="shops-i--ads-count">{{ $trader->where('status', 1)->count() }}
-                                Advertisement
+                            {{sitekey('user_car','name')}}
                             </div>
 
                         </a>

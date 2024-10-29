@@ -3,7 +3,7 @@
     <div class=" shops">
         <div class="tz-container tz-align-center tz-d-flex breadcrumbs-container">
             <ul class="breadcrumbs">
-                <li class="breadcrumbs__i"><span class="breadcrumbs__i-link" href="#">Trader</span></li>
+                <li class="breadcrumbs__i"><span class="breadcrumbs__i-link" href="#">{{sitekey('register_car','desc')}}</span></li>
                 <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">{{ $trader->name }}</span></li>
             </ul>
         </div>
@@ -16,7 +16,7 @@
                     <div class="shop--logo"
                          style="background-image: url({{ asset($trader->logo ? 'storage/'.$trader->logo : 'images/default-background.jpg') }})">
                     </div>
-                    <div class="shop--products-count">{{$spares->count()}} announcement</div>
+                    <div class="shop--products-count">{{$spares->count()}} {{sitekey('avto_car','desc')}}</div>
                 </div>
                 <div class="shop-header-right">
                     <div class="shop-header-text">
@@ -47,7 +47,7 @@
                                                                   href="tel:{{ $trader->phone }}">{{ $trader->phone }}</a>
                                     </div>
                                 </div>
-                                <div class="shop--schedule">Every day: {{ substr($trader->opening_time, 0, 5) }}
+                                <div class="shop--schedule">{{sitekey('avto_car','text')}}: {{ substr($trader->opening_time, 0, 5) }}
                                     - {{ substr($trader->closing_time, 0, 5) }}</div>
                             </div>
                         </div>
@@ -58,21 +58,13 @@
         </div>
         <div class="page-content page-content-shop tz-container">
             <div class="products-title">
-                <p class="products-title-amount">{{$spares->count()}} announcement</p>
+                <p class="products-title-amount">{{$spares->count()}} {{sitekey('avto_car','desc')}}</p>
                 <div class="products-title-sort js-shop-sort"><select name="sort-variants" id="sort-variants">
-                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=date" value="date">Tarixə görə
-                        </option>
-                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=price_asc" value="price_asc">
-                            Əvvəlcə ucuz
-                        </option>
-                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=price_desc" value="price_desc">
-                            Əvvəlcə bahalı
-                        </option>
-                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=mileage" value="mileage">Yürüş
-                        </option>
-                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=reg_year" value="reg_year">
-                            Buraxılış ili
-                        </option>
+                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=date" value="date">{{sitekey('avto_car_one','title')}}</option>
+                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=price_asc" value="price_asc">{{sitekey('avto_car_one','text')}}</option>
+                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=price_desc" value="price_desc">{{sitekey('avto_car_one','desc')}}</option>
+                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=mileage" value="mileage">{{sitekey('avto_car_two','title')}}</option>
+                        <option data-path="/avtosalonlar/hyundai-azerbaijan?q%5Bsort%5D=reg_year" value="reg_year">{{sitekey('avto_car_one','name')}}</option>
                     </select></div>
             </div>
             <div class="products">
@@ -97,15 +89,14 @@
                         <div class="products-i__top custom-car-img-container">
                             <img alt="Hyundai Grandeur" loading="lazy" src="{{asset('storage/'.$spare->spare_image)}}">
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                                {{--                            <div class="products-i__label products-i__label--salon">Salon</div>--}}
+                                {{--                            <div class="products-i__label products-i__label--salon">{{sitekey('avto_car_two','text')}}</div>--}}
                             </div>
                             <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                                 @if($spare->status === 1)
-                                    <div class="products-i__label products-i__label--salon">Active</div>
+                                    <div class="products-i__label products-i__label--salon">{{sitekey('avto_car_two','desc')}}</div>
                                 @else
                                     <div class="products-i__label products-i__label--salon"
-                                         style="background: red;color:white">Deactive
-                                    </div>
+                                         style="background: red;color:white">{{sitekey('avto_car_two','name')}}</div>
                                 @endif
                             </div>
                             <div class="products-i__info">

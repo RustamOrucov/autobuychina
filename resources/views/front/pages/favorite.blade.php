@@ -5,16 +5,16 @@
     <div class="">
         <div class="">
             <div class="section-title">
-                <h1 class="section-title_name">Favorite Ads</h1>
+                <h1 class="section-title_name">{{sitekey('detail_car_four','name')}}</h1>
             </div>
             <div class="products-title">
-                <p class="products-title-amount">{{ $count }} cars</p>
+                <p class="products-title-amount">{{ $count }} {{sitekey('detail_car_eight','name')}}</p>
                 <div class="products-title-sort"><select name="sort-variants" id="sort-variants">
-                        <option data-path="/bookmarks?sort=date" value="date">Tarixə görə</option>
-                        <option data-path="/bookmarks?sort=price_asc" value="price_asc">Əvvəlcə ucuz</option>
-                        <option data-path="/bookmarks?sort=price_desc" value="price_desc">Əvvəlcə bahalı</option>
-                        <option data-path="/bookmarks?sort=mileage" value="mileage">Yürüş</option>
-                        <option data-path="/bookmarks?sort=reg_year" value="reg_year">Buraxılış ili</option>
+                        <option data-path="/bookmarks?sort=date" value="date">{{sitekey('avto_car_one','title')}}</option>
+                        <option data-path="/bookmarks?sort=price_asc" value="price_asc">{{sitekey('avto_car_one','text')}}</option>
+                        <option data-path="/bookmarks?sort=price_desc" value="price_desc">{{sitekey('avto_car_one','desc')}}</option>
+                        <option data-path="/bookmarks?sort=mileage" value="mileage">{{sitekey('avto_car_two','title')}}</option>
+                        <option data-path="/bookmarks?sort=reg_year" value="reg_year">{{sitekey('avto_car_one','name')}}</option>
                     </select></div>
             </div>
             <div class="products bookmarks" id="js-bookmarks-container">

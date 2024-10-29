@@ -23,21 +23,21 @@
             <form action="{{route('logint')}}" accept-charset="UTF-8" method="post">
                 @csrf
 
-                <div class="input"><label for="sessions_email">E-Mail</label><input type="email" name="email"
+                <div class="input"><label for="sessions_email">{{sitekey('login_car','title')}}</label><input type="email" name="email"
                                                                                     id="sessions_email" required></div>
-                <div class="input"><label for="sessions_password">Password</label><input type="password"
+                <div class="input"><label for="sessions_password">{{sitekey('login_car','text')}}</label><input type="password"
                                                                                          name="password"
                                                                                          id="sessions_password"
                                                                                          required></div>
                 <div class="links-row">
 
-                    <a href="{{ route('home.trader') }}" class="custom-register-btn">Register</a>
+                    <a href="{{ route('home.trader') }}" class="custom-register-btn">{{sitekey('home_static','desc')}}</a>
 
-                    <button type="submit" class="custom-login-btn" href="">Login</button>
+                    <button type="submit" class="custom-login-btn" href="">{{sitekey('home_static','text')}}</button>
                 </div>
             </form>
         </div>
-        <a class="link-forgot-password" href="">I forgot my password.</a>
+        <a class="link-forgot-password" href="">{{sitekey('login_car','name')}}</a>
 
     </div>
 
