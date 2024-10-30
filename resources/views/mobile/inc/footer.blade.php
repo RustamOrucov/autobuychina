@@ -6,12 +6,12 @@
                     src="{{ asset('storage/' . $logoImages->m_logo) }}"></a>
             <div class="footer__app-promotion-info"><a data-stat="turboaz-app-footer-btn"
                     class="footer__app-promotion-link js-footer-app-link"
-                    href="#">AutoBuyChina</a><span>Everything in one app!</span></div>
+                    href="#">{{sitekey('detail_car','title')}}</a><span>{{sitekey('detail_car_three','name')}}</span></div>
         </div>
     </div>
     <div class="footer__blk"><a target="_blank" class="footer__link footer__link--pages"
-            href="#">Rules</a><a target="_blank" class="footer__link footer__link--pages"
-            href="#">User Agreement</a><a target="_blank" class="footer__link footer__link--pages" href="#">Place an advertisement</a></div>
+            href="#">{{sitekey('list_car_eight','name')}}</a><a target="_blank" class="footer__link footer__link--pages"
+            href="#">{{sitekey('list_car_eight','desc')}}</a><a target="_blank" class="footer__link footer__link--pages" href="#">{{sitekey('list_car','title')}}</a></div>
     <div class="footer__blk">
         <div class="footer__title">Support Service</div>
         <a class="footer__link footer__link--contact" href="tel: +994125057755">(055) 555-55-55</a>
