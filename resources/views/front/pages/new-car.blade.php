@@ -82,7 +82,7 @@
                                 required>
                                 <option value="">Select</option>
                                 @foreach ($transmissions as $transmission)
-                                    <option value="{{ $transmission->id }}"{{ old('transmission_id', isset($model) ? $model->transmission_id : '') == $transmission->id ? 'selected' : '' }}>
+                                    <option value="{{ $transmission->id }}" {{ old('transmission_id', isset($model) ? $model->transmission_id : '') == $transmission->id ? 'selected' : '' }}>
                                         {{ $transmission->translateOrDefault(app()->getLocale())->name }}</option>
                                 @endforeach
                             </select></div>
@@ -96,7 +96,7 @@
                                 required>
                                 <option value="">Select</option>
                                 @foreach ($bans as $ban)
-                                    <option value="{{ $ban->id }}"{{ old('ban_id', isset($model) ? $model->ban_id : '') == $ban->id ? 'selected' : '' }}>
+                                    <option value="{{ $ban->id }}" {{ old('ban_id', isset($model) ? $model->ban_id : '') == $ban->id ? 'selected' : '' }}>
                                         {{ $ban->translateOrDefault(app()->getLocale())->name }}</option>
                                 @endforeach
 
@@ -123,7 +123,7 @@
                     </div>
                     <div class="right-side">
                         <div class="input select required auto_reg_year"><label class="select required control-label"
-                                for="auto_reg_year">İl <abbr title="required">*</abbr></label><select
+                                for="auto_reg_year"> Year <abbr title="required">*</abbr></label><select
                                 class="select required form-control required-element" name="year" id="auto_reg_year"
                                 required>
                                 <option value="">Select</option>
@@ -217,7 +217,7 @@
                                                                                                                        name="region_id" id="auto_market_id">
                                 <option>Select</option>
                                 @foreach ($regions as $city)
-                                    <option value="{{ $city->id }}"{{ old('region_id', isset($model) ? $model->region_id : '') == $city->id ? 'selected' : '' }}>
+                                    <option value="{{ $city->id }}" {{ old('region_id', isset($model) ? $model->region_id : '') == $city->id ? 'selected' : '' }}>
                                         {{ $city->translateOrDefault(app()->getLocale())->name }}</option>
                                 @endforeach
 
@@ -232,7 +232,7 @@
                                 name="market_id" id="auto_market_id">
                                 <option>Select</option>
                                 @foreach ($markets as $market)
-                                    <option value="{{ $market->id }}"{{ old('market_id', isset($model) ? $model->market_id : '') == $market->id ? 'selected' : '' }}>
+                                    <option value="{{ $market->id }}" {{ old('market_id', isset($model) ? $model->market_id : '') == $market->id ? 'selected' : '' }}>
                                         {{ $market->translateOrDefault(app()->getLocale())->name }}</option>
                                 @endforeach
 

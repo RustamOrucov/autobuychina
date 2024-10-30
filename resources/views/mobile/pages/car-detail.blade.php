@@ -141,20 +141,20 @@
                     <div class="tz-d-flex">
                         <div class="product-price">
                             <div class="product-price__i product-price__i--bold">{{ $car->price }}
-                                {{ $car->Ro->name ??'unkown'}}</div>
+                                {{ $car->Ro->name ??'USD'}}</div>
                         </div>
                     </div>
                     <h1 class="product-name">{{ $car->carModel->name ??'unkown' }}
                         {{ $car->ModelType->name ??'unkown' }}, <span class="nobr">2.0 L</span>, <span
                             class="nobr">{{ $car->year }}
                             il</span>, <span class="nobr">{{ $car->odometer_km }} km</span><span
-                            class="custom-class-mobile-drive"> {{ $car->Drive->name ??'unkown' }}</span></h1>
+                            class="custom-class-mobile-drive"> {{ $car->Drive->name ??'' }}</span></h1>
                 </div>
                 @if ($car->Dealer != null)
                     <a href="{{ route('mobile.dealer.detail', ['dealer' => $car->Dealer]) }}">
                         <div class="product-installment">
                             <div class="tz-btn tz-btn--primary tz-btn--full js-installment-modal-btn"
-                                data-stat="installment-modal-call-btn">{{ $car->Dealer->d_name ??'unkown'}}</div>
+                                data-stat="installment-modal-call-btn">{{ $car->Dealer->d_name ??''}}</div>
 
                         </div>
                     </a>
@@ -485,7 +485,7 @@
                     </div>
                     <div class="products-i__bottom">
                         <div class="products-i__price products-i__bottom-text">
-                            <div class="product-price">{{ $car->price }} <span>{{ $car->Ro->name}}</span></div>
+                            <div class="product-price">{{ $car->price }} <span>{{ $car->Ro->name ?? 'USD'}}</span></div>
                         </div>
                         <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}
                             {{ $car->ModelType->name }}</div>
