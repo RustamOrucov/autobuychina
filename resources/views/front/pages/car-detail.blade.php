@@ -55,7 +55,7 @@
                             </div>
                         </section>
                         <div class="product-photos__slider-nav">
-                       
+
                             @foreach ($car->carImages as $image)
                                 <div class="product-photos__slider-nav-i js-open-gallery active">
                                     <div class="product-photos__slider-nav-i_picture"
@@ -171,7 +171,7 @@
                             <div class="product-section product-section--wide">
                                 <div class="product-description-container js-description-container">
                                     <div class="product-description__content js-description-content">
-                                        <p>{{ $car->item_comment }}</p>
+                                        <p>{!! $car->item_comment !!}</p>
                                     </div>
                                 </div>
                             </div>

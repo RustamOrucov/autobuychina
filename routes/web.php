@@ -125,25 +125,32 @@ Route::get('/mobile/favorite', [MobileController::class, 'favorite'])->name('mob
 
 
 Route::get('/mobile/filter', [MobileHomeController::class, 'filterpage'])->name('mobile.filter');
-Route::get('/mobile/search', [MobileHomeController::class,'filter'])->name('mobile.search');
+Route::get('/mobile/search', [MobileHomeController::class, 'filter'])->name('mobile.search');
 Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
 Route::get('/mobile/dealers', [MobileDealerController::class, 'dealers'])->name('mobile.dealers');
 Route::get('/mobile/add-cars', [MobileHomeController::class, 'addcars'])->name('mobile.addcars');
-Route::get('mobile/favorite', [MobileFavortieController::class,'favorite'])->name('mobile.favorite');
+Route::get('mobile/favorite', [MobileFavortieController::class, 'favorite'])->name('mobile.favorite');
 Route::get('/mobile.questions', [MobileFavortieController::class, 'questions'])->name('mobile.questions');
 Route::get('mobile/cars', [MobileCarController::class, 'loadMoreCars'])->name('mobile.cars');
 
-Route::get('mobile/filter/brand/{id}',[MobileHomeController::class,'filterBrand'])->name('mobile.filter.brand');
-Route::get('mobile/filter/model/{brandId}/{modelId}',[MobileHomeController::class,'filterModel'])->name('mobile.filter.model');
+Route::get('mobile/filter/brand/{id}', [MobileHomeController::class, 'filterBrand'])->name('mobile.filter.brand');
+Route::get('mobile/filter/model/{brandId}/{modelId}', [MobileHomeController::class, 'filterModel'])->name('mobile.filter.model');
 
 
-Route::get('mobile/login',[LoginController::class,'login'])->name('mobile.login');
-Route::post('mobile/login',[LoginController::class,'authMobile']);
-Route::get('mobile/logout',[LoginController::class,'logout'])->name('mobile.logout');
+Route::get('mobile/login', [LoginController::class, 'login'])->name('mobile.login');
+Route::post('mobile/login', [LoginController::class, 'authMobile']);
+Route::get('mobile/logout', [LoginController::class, 'logout'])->name('mobile.logout');
 
 
 // middleware yazz   //////
-Route::get('mobile/addcar',[MobileCarController::class,'addForm'])->name('mobile.addcar');
-Route::get('mobile.cabinet',[LoginController::class,'cabinet'])->name('mobile.cabinet');
-Route::get('mobile.agrement',[MobileCarController::class,'agrement'])->name('mobile.agrement');
-Route::get('mobile.rules',[MobileCarController::class,'rules'])->name('mobile.rules');
+Route::get('mobile/addcar', [MobileCarController::class, 'addForm'])->name('mobile.addcar');
+Route::get('mobile.cabinet', [LoginController::class, 'cabinet'])->name('mobile.cabinet');
+Route::get('mobile.agrement', [MobileCarController::class, 'agrement'])->name('mobile.agrement');
+Route::get('mobile.rules', [MobileCarController::class, 'rules'])->name('mobile.rules');
+
+
+//Language
+Route::get('/lang/{lang}', function ($lang) {
+    \Illuminate\Support\Facades\Session::put('lang', $lang);
+    return redirect()->back();
+})->name('language-url');

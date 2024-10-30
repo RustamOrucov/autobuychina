@@ -58,6 +58,7 @@
                         </div>
                         <div class="product-shop__info">
                             <div class="product-shop__info-title">
+                            <div class="product-shop__info-title">
                                 {{ $car->Dealer && $car->Dealer->d_name ? $car->Dealer->d_name : 'Auto BuyChina' }}</div>
                             <div class="product-shop__info-count">{{ $car->Dealer->cars->count() }} cars</div>
                         </div>
@@ -66,13 +67,14 @@
                 @endif
                 <div class="product-photos">
                     <div class="swiper mySwiper">
+
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"
                                 style="background-image: url('{{ asset('storage/' . $car->car_image) }}'); width: 422px;">
                             </div>
-                            @foreach ($car->carImages as $car)
+                            @foreach ($car->carImages as $img)
                                 <div class="swiper-slide"
-                                    style="background-image: url('{{ asset('storage/' . $car->image) }}'); width: 422px;">
+                                    style="background-image: url('{{ asset('storage/' . $img->image) }}'); width: 422px;">
                                 </div>
                             @endforeach
 
