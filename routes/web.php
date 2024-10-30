@@ -5,9 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\CarController;
 use App\Http\Controllers\Front\DealerController;
 use App\Http\Controllers\Front\FavoriteController;
-use App\Http\Controllers\Front\FilterController;
-
-;
+use App\Http\Controllers\Front\FilterController;;
 
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\MobileController;
@@ -20,6 +18,7 @@ use App\Http\Controllers\Mobile\LoginController;
 use App\Http\Controllers\Mobile\MobileCarController;
 use App\Http\Controllers\Mobile\MobileFavortieController;
 use App\Http\Controllers\Mobile\MobileHomeController;
+use App\Http\Controllers\Mobile\MobileRegisterController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SecondController;
 use Illuminate\Support\Facades\Route;
@@ -27,25 +26,25 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
 Route::middleware('detect.mobile')->group(function () {
-// home route
+    // home route
     Route::get('/', [HomeController::class, 'index'])->name('home');
-//load more route
+    //load more route
     Route::get('/cars', [HomeController::class, 'loadMoreCars'])->name('cars');
-// new add listings
+    // new add listings
     Route::get('/new-add-listings', [HomeController::class, 'newAddListings'])->name('newAddListings');
-// main filter route
+    // main filter route
     Route::post('/main-filter', [HomeController::class, 'filter'])->name('mainFilter');
-// favorite list
+    // favorite list
     Route::get('/favorite', [FavoriteController::class, 'favorite'])->name('favorite');
-//Car Detail
+    //Car Detail
     Route::get('/detail/{car}', [HomeController::class, 'cardetail'])->name('detail');
-//New Car
+    //New Car
     Route::get('/new-car', [HomeController::class, 'new']);
-//All Cars
+    //All Cars
     Route::get('/all-cars', [HomeController::class, 'allcars']);
-//AvtoSalon
+    //AvtoSalon
     Route::get('/dealership', [HomeController::class, 'avtosalon'])->name('dealership');
-//AvtoSalon Detail
+    //AvtoSalon Detail
     Route::get('/avtosalon-detail/{id}', [HomeController::class, 'avtosalondetail'])->name('avtosalon-detail');
     Route::get('/trader', [HomeController::class, 'trader'])->name('home.trader');
     Route::get('/dealer', [AuthController::class, 'dealer'])->name('dealer');
@@ -54,12 +53,12 @@ Route::middleware('detect.mobile')->group(function () {
     Route::get('/login', [AuthController::class, 'dealerLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'dealerLoginProcess']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-/////////////////////////////////////////////////////////////   midleware yaz !!!!
+    /////////////////////////////////////////////////////////////   midleware yaz !!!!
     Route::get('/newcar', [CarController::class, 'newcar'])->name('newcar');
     Route::get('dealer-detail', [DealerController::class, 'detail'])->name('dealer-detail');
     Route::get('dealer-profile', [DealerController::class, 'profile'])->name('dealer-profile');
     Route::post('dealer-update/{dealer}', [DealerController::class, 'update'])->name('dealer-update');
-//Register Question
+    //Register Question
     Route::get('/question-register', [HomeController::class, 'question'])->name('question');
     Route::get('/question-login', [HomeController::class, 'questionlogin'])->name('question.login');
     Route::get('/logint', [AuthController::class, 'traderLogin'])->name('logint');
@@ -74,8 +73,12 @@ Route::middleware('detect.mobile')->group(function () {
     Route::get('/parts-detail/{spare}', [HomeController::class, 'sparedetail'])->name('parts-detail');
     Route::get('/all-spares', [HomeController::class, 'allspares'])->name('all-spares');
 
-/////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
+    Route::get('/useragrement', [HomeController::class, 'agrement'])->name('useragrement');
+    Route::get('/rule', [HomeController::class, 'rule'])->name('rule');
 
+    Route::post('car-store', [CarController::class, 'storeCar'])->name('car-store');
+    Route::post('report', [ReportController::class, 'store'])->name('report');
 });
 
 
@@ -108,11 +111,7 @@ Route::get('/ded/dat', function () {
 ///////////////////////END///////////////////
 
 
-Route::get('/useragrement', [HomeController::class, 'agrement'])->name('useragrement');
-Route::get('/rule', [HomeController::class, 'rule'])->name('rule');
 
-Route::post('car-store', [CarController::class, 'storeCar'])->name('car-store');
-Route::post('report', [ReportController::class, 'store'])->name('report');
 
 //Mobile Route
 
@@ -126,7 +125,6 @@ Route::get('/mobile/favorite', [MobileController::class, 'favorite'])->name('mob
 
 Route::get('/mobile/filter', [MobileHomeController::class, 'filterpage'])->name('mobile.filter');
 Route::get('/mobile/search', [MobileHomeController::class, 'filter'])->name('mobile.search');
-Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
 Route::get('/mobile/dealers', [MobileDealerController::class, 'dealers'])->name('mobile.dealers');
 Route::get('/mobile/add-cars', [MobileHomeController::class, 'addcars'])->name('mobile.addcars');
 Route::get('mobile/favorite', [MobileFavortieController::class, 'favorite'])->name('mobile.favorite');
@@ -140,17 +138,14 @@ Route::get('mobile/filter/model/{brandId}/{modelId}', [MobileHomeController::cla
 Route::get('mobile/login', [LoginController::class, 'login'])->name('mobile.login');
 Route::post('mobile/login', [LoginController::class, 'authMobile']);
 Route::get('mobile/logout', [LoginController::class, 'logout'])->name('mobile.logout');
+Route::get('mobile/register', [MobileRegisterController::class, 'register'])->name('mobile.register');
+Route::post('mobile/register', [MobileRegisterController::class, 'registerStore']);
 
-
-// middleware yazz   //////
-Route::get('mobile/addcar', [MobileCarController::class, 'addForm'])->name('mobile.addcar');
-Route::get('mobile.cabinet', [LoginController::class, 'cabinet'])->name('mobile.cabinet');
-Route::get('mobile.agrement', [MobileCarController::class, 'agrement'])->name('mobile.agrement');
-Route::get('mobile.rules', [MobileCarController::class, 'rules'])->name('mobile.rules');
-
-
-//Language
-Route::get('/lang/{lang}', function ($lang) {
-    \Illuminate\Support\Facades\Session::put('lang', $lang);
-    return redirect()->back();
-})->name('language-url');
+Route::middleware('check.dealer.trader')->group(function () {
+    Route::get('mobile/addcar', [MobileCarController::class, 'addForm'])->name('mobile.addcar');
+    Route::post('mobile/addcar', [MobileCarController::class, 'carStore']);
+    Route::get('mobile.cabinet', [LoginController::class, 'cabinet'])->name('mobile.cabinet');
+    Route::get('mobile.agrement', [MobileCarController::class, 'agrement'])->name('mobile.agrement');
+    Route::get('mobile.rules', [MobileCarController::class, 'rules'])->name('mobile.rules');
+    Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
+});

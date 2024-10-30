@@ -48,8 +48,11 @@ class AuthController extends Controller
 
         return redirect()->route('dealer-detail');
     }
-    public function traderLoginProcess(LoginTraderRequest $request)
+
+    public function traderLoginProcess(Request $request)
+
     {
+
         $request->validate([
             'email' => 'required|string',
             'password' => 'required|string',
@@ -58,11 +61,12 @@ class AuthController extends Controller
         $trader = Traderregis::where('email', $request->email)->first();
 
         if (!$trader) {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
+            return redirect()->back()->with('error', 'Email or password is incorrect 123');
         }
 
         if (!Hash::check($request->password, $trader->password)) {
-            return redirect()->back()->with('error', 'Email or password is incorrect');
+
+            return redirect()->back()->with('error', 'Email or password is incorrect'   );
         }
 
         Auth::guard('trader')->login($trader, $request->has('remember-me'));

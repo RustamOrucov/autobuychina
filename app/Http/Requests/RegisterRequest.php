@@ -28,6 +28,8 @@ class RegisterRequest extends FormRequest
             'adress'=>'required|string|max:200',
             'd_name'=>'required|string|unique:dealers,d_name,max:200',
             'phone'=>'required|string|max:200',
+            'license_number'=>'required|string|max:200',
+            'business_foto' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:5048',
             'password' => 'required|min:3|confirmed',
             'passport_front' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:5048',
             'passport_back' => 'required|file|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:5048',

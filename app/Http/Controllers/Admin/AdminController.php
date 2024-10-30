@@ -17,9 +17,7 @@ class AdminController extends Controller
     }
     public function loginView()
     {
-
         return view('admin.login.index');
-
     }
     public function login()
     {
@@ -77,6 +75,12 @@ class AdminController extends Controller
 
         }
 
+    }
+
+
+    public function homepage()
+    {
+        return view('admin.home');
     }
 
 

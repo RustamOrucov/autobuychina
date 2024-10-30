@@ -13,7 +13,11 @@
         <div class="content">
             <div class="md-content">
                 <h4>General Rules</h4>
-
+                <p>
+                    @foreach($policys as $policy)
+                    {!! $policy->agreement !!}
+                   @endforeach
+                </p>
 
             </div>
         </div>

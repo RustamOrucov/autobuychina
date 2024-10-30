@@ -27,11 +27,11 @@
     } else {
     }
 
-    // document.addEventListener('click', function(event) {
-    //     const modal = document.getElementById('report');
-    //     if (modal.style.display === 'block' && !modal.contains(event.target) && !event.target.matches(
-    //             '.js-product-report-btn')) {
-    //         toggleModal('none');
-    //     }
-    // });
+    document.addEventListener('click', function(event) {
+        const modal = document.getElementById('report');
+        if (modal.style.display === 'block' && !modal.contains(event.target) && !event.target.matches(
+                '.js-product-report-btn')) {
+            toggleModal('none');
+        }
+    });
 

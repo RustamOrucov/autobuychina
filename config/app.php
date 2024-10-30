@@ -17,7 +17,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    'languages'=>['en','ru','az'],
+    'languages'=>['en','ru','az',],
 //    'languages'=>['en'],
     /*
     |--------------------------------------------------------------------------
