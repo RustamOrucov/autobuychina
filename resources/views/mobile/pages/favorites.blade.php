@@ -7,7 +7,7 @@
     <div class="header js-header">
         <div class="header__nav ">
 
-            <div class="header__nav-title ">Favorites</div>
+            <div class="header__nav-title ">{{sitekey('home_static','title')}}</div>
 
         </div>
     </div>
@@ -31,7 +31,7 @@
                     <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap"></div>
                     @if ($car->vincode !== null)
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                            <div class="products-i__label products-i__label--vin">VIN</div>
+                            <div class="products-i__label products-i__label--vin">{{sitekey('home_car_three','title')}}</div>
                         </div>
                     @endif
                 </div>
@@ -53,7 +53,7 @@
 
     @if ($cars->isEmpty())
     <div class="bookmarks_empty" style="display: block;">
-        <p>Click on the heart icon to add the ads you like to your favorites.</p>
+        <p>{{sitekey('detail_mobile_5','name')}}</p>
     </div>
     @endif
 @endsection

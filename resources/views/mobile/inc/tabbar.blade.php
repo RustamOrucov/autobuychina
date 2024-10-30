@@ -4,34 +4,33 @@
 <div class="popup popup--drawer js-drawer" id="js-drawer">
 
     <div class="popup-header"><span class="header__nav-btn--back js-popup-back-btn"></span>
-        <div class="popup-header__title">More</div>
-        <div class="popup-header__title popup-header__title--settings">Ayarlar</div>
+        <div class="popup-header__title">{{sitekey('footer_mobile_1','desc')}}</div>
+        <div class="popup-header__title popup-header__title--settings">{{sitekey('footer_mobile_1','name')}}</div>
     </div>
     <div class="popup__content">
         <div class="popup__list">
             <div class="popup__list-i"><a class="popup__list-i_link popup__list-i_link--lang js-lang-switch"
-                    href="#" onclick="return false;">Русский язык</a></div>
+                    href="#" onclick="return false;">{{sitekey('tabbar_mobile','title')}}</a></div>
         </div>
         <div class="popup__list">
-            <div class="popup__list-i"><a class="popup__list-i_link" href="{{ route('mobile.questions') }}">Support</a>
+            <div class="popup__list-i"><a class="popup__list-i_link" href="{{ route('mobile.questions') }}">{{sitekey('home_static','name')}}</a>
             </div>
         </div>
         <div class="popup__list">
             <div class="popup__list-i"><a class="popup__list-i_link" data-stat="more-moto-link" href="#"
-                    onclick="return false;">Auto Catalog<span
+                    onclick="return false;">{{sitekey('tabbar_mobile','text')}}<span
                         class="popup__list-i_label popup__list-i_label--az"></span></a></div>
         </div>
 
         <div class="popup__list">
-            <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link" href="/">All
-                    cars</a></div>
+            <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link" href="/">{{sitekey('tabbar_mobile','desc')}}</a></div>
             <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link"
-                    href="{{ route('mobile.dealers') }}">Dealers</a></div>
+                    href="{{ route('mobile.dealers') }}">{{sitekey('register_car','text')}}</a></div>
             <div class="popup__list-i popup__list-i--with-border"><a target="_blank" class="popup__list-i_link"
-                    href="#" onclick="return false;">Spare parts and accessories</a></div>
+                    href="#" onclick="return false;">{{sitekey('tabbar_mobile','name')}}</a></div>
 
             <div class="popup__list-i popup__list-i--with-border"><a class="popup__list-i_link js-popup-drawer-open"
-                    data-open="contacts" id="mobile-contact-open" href="#" onclick='return false;'>Contact Us</a>
+                    data-open="contacts" id="mobile-contact-open" href="#" onclick='return false;'>{{sitekey('tabbar_mobile_1','title')}}</a>
             </div>
 
         </div>
@@ -39,24 +38,23 @@
         @if(auth('dealer')->check())
         <div class="popup__list">
             <div class="popup__list-i">
-                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">Profile</a>
+                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">{{sitekey('tabbar_mobile_1','text')}}</a>
             </div>
         </div>
         <div class="popup__list">
             <div class="popup__list-i">
-                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">Logout</a>
+                <a class="popup__list-i_link" rel="nofollow" data-method="delete" href="{{ route('mobile.logout') }}">{{sitekey('list_car_2','desc')}}</a>
             </div>
         </div>
     @endif
-        {{-- <div class="popup__list-i popup__list-i--full-version"><a rel="nofollow" href="/?desktop_site=1">Tam
-                versiya</a></div> --}}
+        {{-- <div class="popup__list-i popup__list-i--full-version"><a rel="nofollow" href="/?desktop_site=1">{{sitekey('tabbar_mobile_1','desc')}}</a></div> --}}
     </div>
 </div>
 {{-- popuop end --}}
 
 <div class="popup popup--low js-popup-drawer " data-popup-id="contacts">
     <div class="popup-header">
-        <div class="popup-header__title">Contact methods</div>
+        <div class="popup-header__title">{{sitekey('tabbar_mobile_1','name')}}</div>
         <div class="popup-header__right">
             <div class="popup-header__btn popup-header__btn--cancel js-popup-close"></div>
         </div>
@@ -65,16 +63,16 @@
         <div class="popup__list popup__list--no-indent">
             <div class="popup__list-i"><a
                     class="popup__list-i_link popup__list-i_link--with-icon popup__list-i_link--phones js-popup-drawer-open"
-                    data-open="call" href="tel:+1234567890">Call</a></div>
+                    data-open="call" href="tel:+1234567890">{{sitekey('tabbar_mobile_2','title')}}</a></div>
             <div class="popup__list-i"><a
                     class="popup__list-i_link popup__list-i_link--with-icon popup__list-i_link--email"
-                    href="mailto:autobuychina.com">Write a letter</a></div>
+                    href="mailto:autobuychina.com">{{sitekey('tabbar_mobile_2','text')}}</a></div>
             <div class="popup__list-i"><a target="_blank"
                     class="popup__list-i_link popup__list-i_link--with-icon popup__list-i_link--facebook"
-                    href="https://www.facebook.com">Facebook</a></div>
+                    href="https://www.facebook.com">{{sitekey('tabbar_mobile_2','desc')}}</a></div>
             <div class="popup__list-i"><a target="_blank"
                     class="popup__list-i_link popup__list-i_link--with-icon popup__list-i_link--instagram"
-                    href="https://www.instagram.com">Instagram</a></div>
+                    href="https://www.instagram.com">{{sitekey('tabbar_mobile_2','name')}}</a></div>
         </div>
     </div>
 </div>
@@ -95,7 +93,7 @@
                                     d="M29.568.174c.241-.232.623-.232.864 0l9.25 8.866c.206.205.318.475.318.751 0 .574-.468 1.042-1.042 1.042H37.5v7.5c0 .92-.746 1.667-1.667 1.667l-3.85-.001V20h-3.967l-.001-.001h3.968v-5.01c0-.514-.386-.936-.883-.994l-.117-.007h-1.967c-.553 0-1 .448-1 1L28.015 20h-3.848c-.873 0-1.588-.669-1.66-1.522l-.007-.144v-7.5h-1.458c-.574 0-1.042-.468-1.042-1.042 0-.276.112-.546.308-.741z"
                                     transform="translate(-29 -680) translate(0 655) translate(9 25)"></path>
                             </g>
-                        </svg></i><span class="tab-bar__link-text">Home</span></a></li>
+                        </svg></i><span class="tab-bar__link-text">{{sitekey('tabbar_mobile_3','title')}}</span></a></li>
             <li><a class="tab-bar__link @if (Request::is('mobile/favorite')) active @endif"
                     href="{{ route('mobile.favorite') }}"><i class="tab-bar__link-icon"><svg height="20"
                             viewBox="0 0 24 20" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +105,7 @@
                                     </path>
                                 </g>
                             </g>
-                        </svg></i><span class="tab-bar__link-text">Favorites</span></a></li>
+                        </svg></i><span class="tab-bar__link-text">{{sitekey('home_static','title')}}</span></a></li>
             <li><a class="tab-bar__link tab-bar__link--centered" href="{{ auth('dealer')->check() ? route('mobile.addcar') : route('mobile.login') }}"  ><i
                         class="tab-bar__link-icon"><svg height="45" viewBox="0 0 46 45" width="46"
                             xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +124,7 @@
                                     d="M32.619 21.286h-9.31V12.38a.81.81 0 1 0-1.619 0v8.905h-9.309a.81.81 0 1 0 0 1.619h9.31v9.714a.81.81 0 1 0 1.619 0v-9.714h9.309a.81.81 0 1 0 0-1.62z"
                                     fill="#FFF" fill-rule="nonzero" stroke="#FFF" stroke-width="1.171"></path>
                             </g>
-                        </svg></i><span class="tab-bar__link-text">New add</span></a></li>
+                        </svg></i><span class="tab-bar__link-text">{{sitekey('home_mobile','title')}}</span></a></li>
             <li>
 
                 <a class="tab-bar__link" href="{{ auth('dealer')->check() ? route('mobile.cabinet') : route('mobile.login') }}"  ><i
@@ -138,7 +136,7 @@
                                     transform="translate(-326 -680) translate(0 655) translate(306 25) translate(20)">
                                 </path>
                             </g>
-                        </svg></i><span class="tab-bar__link-text">Cabinet</span></a>
+                        </svg></i><span class="tab-bar__link-text">{{sitekey('tabbar_mobile_3','text')}}</span></a>
 
 
                     </li>
@@ -148,7 +146,7 @@
                             <path
                                 d="M25.917 18.005c.598 0 1.083.56 1.083 1.25s-.485 1.25-1.083 1.25H2.083c-.598 0-1.083-.56-1.083-1.25s.485-1.25 1.083-1.25zm0-8c.598 0 1.083.56 1.083 1.25s-.485 1.25-1.083 1.25H2.083c-.598 0-1.083-.56-1.083-1.25s.485-1.25 1.083-1.25zm0-9c.598 0 1.083.56 1.083 1.25s-.485 1.25-1.083 1.25H2.083C1.485 3.505 1 2.945 1 2.255s.485-1.25 1.083-1.25z"
                                 fill-rule="nonzero"></path>
-                        </svg></i><span class="tab-bar__link-text">More</span></div>
+                        </svg></i><span class="tab-bar__link-text">{{sitekey('footer_mobile_1','desc')}}</span></div>
             </li>
         </ul>
     </div>

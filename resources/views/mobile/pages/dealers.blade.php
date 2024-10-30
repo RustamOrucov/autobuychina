@@ -4,7 +4,7 @@
         <div class="header__nav">
             <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button"></span></div>
             <div class="header__nav-title ">
-                <h1 class="custom-mobil-dealers">Dealers</h1>
+                <h1 class="custom-mobil-dealers">{{sitekey('register_car','text')}}</h1>
             </div>
             <div class="header__nav-right"></div>
         </div>
@@ -13,7 +13,7 @@
     <div class="content">
         <div class="main-container">
             <div class="shops-container">
-                <div class="shops--title">All Dealers</div>
+                <div class="shops--title">{{sitekey('detail_car_four','desc')}}</div>
                 <div class="shops">
 
                     @foreach ($dealers as $dealer)
@@ -24,7 +24,7 @@
                         <div class="shops-i--title">{{ $dealer->d_name }}</div>
                         <div class="shops-i--description">{{ $dealer->content }}</div>
                         <div class="shops-i--contact">{{ $dealer->phone }}</div>
-                        <div class="shops-i--ads-count">{{ $dealer->cars->count() }} advertisement</div>
+                        <div class="shops-i--ads-count">{{ $dealer->cars->count() }} {{sitekey('user_car','name')}}</div>
                     </a>
 
                     @endforeach

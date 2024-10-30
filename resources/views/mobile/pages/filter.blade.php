@@ -11,9 +11,9 @@
             <div class="header__nav-left">
                 <spanb class="header__nav-btn--back js-header-filter-back-btn "></spanb>
             </div>
-            <div class="header__nav-title" style="color:#000">Filters</div>
+            <div class="header__nav-title" style="color:#000">{{sitekey('home_mobile','name')}}</div>
             <div class="header__nav-right">
-                <div class="popup-header__btn popup-header__btn--reset js-filter-header-reset-form">Reset</div>
+                <div class="popup-header__btn popup-header__btn--reset js-filter-header-reset-form">{{sitekey('filter_key_seven','title')}}</div>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Search City"
+                                    class="select-category__search-input js-search-input" placeholder="{{sitekey('filter_mobile','title')}}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -132,7 +132,7 @@
 
 
                     {{-- <div class="tz-form__blk tz-form__blk--top-border js-popular-makes">
-                        <div class="tz-form__blk-title">Brand and model</div>
+                        <div class="tz-form__blk-title">{{ sitekey('filter_mobile', 'text') }}</div>
                         <div class="popular-items-list tz-d-grid js-select-category" data-select="q_make">
 
                             <div class="popular-items__i js-popular-item" data-id="4">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="tz-container">
                             <div class="tz-btn tz-btn--full tz-btn--primary--outline js-select-category-open js-popular-btn"
-                                data-open="q_make">Show all brands</div>
+                                data-open="q_make">{{ sitekey('filter_mobile', 'desc') }}</div>
                         </div>
                     </div> --}}
 
@@ -160,7 +160,7 @@
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Search Brand"
+                                    class="select-category__search-input js-search-input" placeholder="{{ sitekey('filter_mobile', 'name') }}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -198,7 +198,7 @@
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Search model"
+                                    class="select-category__search-input js-search-input" placeholder="{{ sitekey('filter_mobile_1', 'title')  }}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -326,14 +326,14 @@
                                 <div class="tz-form__group-fields tz-form__group-fields--2 tz-d-grid">
                                     <div class="tz-form__group-fields__half">
                                         <input class="string optional form-control tz-form__group-input js-val-with-spaces"
-                                               placeholder="min." maxlength="8" pattern="[0-9]*" size="8"
+                                               placeholder="{{ sitekey('filter_mobile_1', 'text')  }}" maxlength="8" pattern="[0-9]*" size="8"
                                                type="text" name="q[mileage_from]" id="q_mileage_from"
                                                value="{{ $mileageFrom }}">
                                         <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                     </div>
                                     <div class="tz-form__group-fields__half">
                                         <input class="string optional form-control tz-form__group-input js-val-with-spaces"
-                                               placeholder="maks." maxlength="8" pattern="[0-9]*" size="8"
+                                               placeholder="{{ sitekey('filter_key_five', 'desc')  }}" maxlength="8" pattern="[0-9]*" size="8"
                                                type="text" name="q[mileage_to]" id="q_mileage_to"
                                                value="{{ $mileageTo }}">
                                         <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
@@ -354,7 +354,7 @@
                                     <div class="tz-form__group-fields tz-form__group-fields--2 tz-d-grid">
                                         <div class="tz-form__group-fields__half js-select-category-open js-tab-content-group"
                                             data-open="q_year_from"><input class="tz-form__group-input"
-                                                placeholder="min." readonly="" type="number" value=""><select
+                                                placeholder="{{ sitekey('filter_mobile_1', 'text')  }}" readonly="" type="number" value=""><select
                                                 wrapper="false" label="false"
                                                 class="select optional form-control is-hidden" name="q[min_year]"
                                                 id="q_year_from">
@@ -366,7 +366,7 @@
                                                 class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                         </div>
                                         <div class="tz-form__group-fields__half js-select-category-open js-tab-content-group"
-                                            data-open="q_year_to"><input class="tz-form__group-input" placeholder="maks."
+                                            data-open="q_year_to"><input class="tz-form__group-input" placeholder="{{ sitekey('filter_key_five', 'desc')  }}"
                                                 readonly="" type="number" value=""><select wrapper="false"
                                                 class="select optional form-control is-hidden" label="false"
                                                 name="q[max_year]" id="q_year_to">
@@ -439,7 +439,7 @@
                                     <div class="tz-form__group-fields tz-form__group-fields--2 tz-d-grid">
                                         <div class="tz-form__group-fields__half js-select-category-open js-tab-content-group"
                                             data-open="q_engine_volume_from"><input class="tz-form__group-input"
-                                                placeholder="min." readonly="" type="number" value=""><select
+                                                placeholder="{{ sitekey('filter_mobile_1', 'text')  }}" readonly="" type="number" value=""><select
                                                 wrapper="false" class="select optional form-control is-hidden"
                                                 label="false" name="q[engine_min]" id="q_engine_volume_from">
                                                 <option value="" label=" "></option>
@@ -453,7 +453,7 @@
                                         </div>
                                         <div class="tz-form__group-fields__half js-select-category-open js-tab-content-group"
                                             data-open="q_engine_volume_to"><input class="tz-form__group-input"
-                                                placeholder="maks." readonly="" type="number" value=""><select
+                                                placeholder="{{ sitekey('filter_key_five', 'desc')  }}" readonly="" type="number" value=""><select
                                                 wrapper="false" class="select optional form-control is-hidden"
                                                 label="false" name="q[engine_max]" id="q_engine_volume_to">
                                                 <option value="" label=" "></option>
@@ -533,7 +533,7 @@
                                     <div class="tz-form__group-fields__half q_power">
                                         <input
                                             class="numeric integer optional form-control tz-form__group-input"
-                                            placeholder="min." maxlength="4" pattern="[0-9]*" type="number"
+                                            placeholder="{{ sitekey('filter_mobile_1', 'text')  }}" maxlength="4" pattern="[0-9]*" type="number"
                                             step="1" size="4" name="q[power_from]" id="q_power_from"
                                             value="{{ $powerFrom }}"><!-- Set the 'power_from' value here -->
                                         <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
@@ -541,7 +541,7 @@
                                     <div class="tz-form__group-fields__half q_power">
                                         <input
                                             class="numeric integer optional form-control tz-form__group-input"
-                                            placeholder="maks." maxlength="4" pattern="[0-9]*" type="number"
+                                            placeholder="{{ sitekey('filter_key_five', 'desc') }}" maxlength="4" pattern="[0-9]*" type="number"
                                             step="1" size="4" name="q[power_to]" id="q_power_to"
                                             value="{{ $powerTo }}"><!-- Set the 'power_to' value here -->
                                         <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
@@ -654,19 +654,19 @@
 
                             <div class="tz-form__blk tz-form__blk--top-border">
                                 <div class="tz-form__group tz-form__group--range tz-form__group--price">
-                                    <label class="tz-form__group-label" for="q_price">Price</label>
+                                    <label class="tz-form__group-label" for="q_price">{{ sitekey('list_car_two', 'desc') }}</label>
                                     <div class="tz-form__group-fields tz-form__group-fields--3 tz-d-grid">
                                         <div class="tz-form__group-fields__half">
                                             <input inputmode="numeric" type="number"
                                                 class="string optional form-control tz-form__group-input js-val-with-spaces"
-                                                placeholder="min." maxlength="11" pattern="[0-9]*" size="11"
+                                                placeholder="{{ sitekey('filter_mobile_1', 'text') }}" maxlength="11" pattern="[0-9]*" size="11"
                                                 name="q[price_min]" id="q_price_from" value="{{ $minPrice }}">
                                             <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                         </div>
                                         <div class="tz-form__group-fields__half">
                                             <input inputmode="numeric" type="number"
                                                 class="string optional form-control tz-form__group-input js-val-with-spaces"
-                                                placeholder="maks." maxlength="11" pattern="[0-9]*" size="11"
+                                                placeholder="{{ sitekey('filter_key_five', 'desc') }}" maxlength="11" pattern="[0-9]*" size="11"
                                                 name="q[price_max]" id="q_price_to" value="{{ $maxPrice }}">
                                             <span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                         </div>
@@ -699,8 +699,7 @@
                         <div class="tz-form__group tz-form__group--radio">
                             <span>
                                 <input checked="checked" id="q_fuel_type_0" name="q[fuel_types][]" type="radio"
-                                    value=""><label class="collection_radio_buttons" for="q_fuel_type_0">Not
-                                    important</label></span>
+                                    value=""><label class="collection_radio_buttons" for="q_fuel_type_0">{{ sitekey('filter_mobile_1', 'desc') }}</label></span>
                             @foreach ($filters['fueltypes'] as $fuel)
                                 <span>
                                     <input type="radio" value="{{ $fuel->id }}" name="q[fuel_types][]"
@@ -722,7 +721,7 @@
                         <div class="tz-form__group tz-form__group--radio">
                             <span>
                                 <input checked="checked" id="q_gear_0" name="q[gears][]" type="radio" value="">
-                                <label class="collection_radio_buttons" for="q_gear_0">Not important</label>
+                                <label class="collection_radio_buttons" for="q_gear_0">{{ sitekey('filter_mobile_1', 'desc') }}</label>
                             </span>
                             @foreach ($filters['transmissions'] as $transmission)
                                 <span>
@@ -747,7 +746,7 @@
                             <div class="tz-form__group-list">
                                 <span>
                                     <input checked="checked" id="q_transmission_0" name="q[transmissions][]" type="radio" value="">
-                                    <label class="collection_radio_buttons" for="q_transmission_0">Not important</label>
+                                    <label class="collection_radio_buttons" for="q_transmission_0">{{ sitekey('filter_mobile_1', 'desc') }}</label>
                                 </span>
                                 @foreach ($filters['damages'] as $gear)
                                     <span>
@@ -835,7 +834,7 @@
 
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Condition</div>
+                        <div class="tz-form__blk-title">{{ sitekey('detail_car_two', 'desc') }}</div>
                         <div class="tz-form__group">
                             <div class="tz-form__group-list">
                                 <input name="q[crashed]" type="hidden" value="0" autocomplete="off">
@@ -860,17 +859,17 @@
                                     <input name="q[only_damaged]" type="hidden" value="0" autocomplete="off">
                                     <input class="boolean optional form-control" type="checkbox" value="1" name="q[only_damaged]" id="q_for_spare_parts"
                                         {{ isset($selectfilters['q']['only_damaged']) && $selectfilters['q']['only_damaged'] == 1 ? 'checked' : '' }}>
-                                    <div class="tz-form__checkbox-text">Damaged or for spare parts</div>
+                                    <div class="tz-form__checkbox-text">{{ sitekey('list_car_four', 'desc') }}</div>
                                     <div class="tz-form__checkbox-tickmark"></div>
                                 </div>
-                                <div class="tz-form__checkbox-description">It needs repair or is completely unusable.</div>
+                                <div class="tz-form__checkbox-description">{{ sitekey('filter_mobile_1', 'name') }}</div>
                             </label>
                         </div>
                     </div>
 
 
                     <div class="tz-container filter__bottom"><button type="submit" data-disable-with=""
-                            class="tz-btn tz-btn--primary tz-btn--full">Search</button></div>
+                            class="tz-btn tz-btn--primary tz-btn--full">{{ sitekey('filter_mobile_2', 'title') }}</button></div>
                 </form>
             </div>
         </div>

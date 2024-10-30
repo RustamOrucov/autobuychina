@@ -6,7 +6,7 @@
     <div class="header js-header" style="">
         <div class="header__nav">
 
-            <div class="custom-mobil-dealers ">Cabinet</div>
+            <div class="custom-mobil-dealers ">{{sitekey('tabbar_mobile_3','text')}}</div>
 
 
         </div>
@@ -44,18 +44,18 @@
                         <div class="profile-items_filters">
                             <a data-stat="all-tab-profile" class="profile-items_filters-i all active" href="#"
                                 onclick="filterProducts('all', this); return false;">
-                                <span class="profile-items_filters-i_label">All deal ({{ $cars->count() }})</span>
+                                <span class="profile-items_filters-i_label">{{sitekey('tabbar_mobile_3','desc')}} ({{ $cars->count() }})</span>
                             </a>
 
                             <a data-stat="published-tab-profile" class="profile-items_filters-i published" href="#"
                                 onclick="filterProducts('active', this); return false;">
-                                <span class="profile-items_filters-i_label">Active
+                                <span class="profile-items_filters-i_label">{{sitekey('avto_car_two','desc')}}
                                     ({{ $cars->where('status', 1)->count() }})</span>
                             </a>
 
                             <a data-stat="expired-tab-profile" class="profile-items_filters-i expired" href="#"
                                 onclick="filterProducts('inactive', this); return false;">
-                                <span class="profile-items_filters-i_label">In Active
+                                <span class="profile-items_filters-i_label">{{sitekey('tabbar_mobile_3','name')}}
                                     ({{ $cars->where('status', 0)->count() }})</span>
                             </a>
                         </div>
@@ -84,14 +84,14 @@
                                 <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                                     <div class="products-i__label products-i__label--salon"
                                         @if ($car->status == 0) style="background: red" @endif>
-                                        {{ $car->status == 1 ? 'Active' : 'InActive' }}</div>
+                                        {{ $car->status == 1 ? '{{sitekey('avto_car_two','desc')}}' : '{{sitekey('tabbar_mobile_3','name')}}' }}</div>
                                 </div>
 
                                 <div class="products-i__info"></div>
                             </div>
                             <div class="products-i__bottom">
                                 <div class="products-i__price products-i__bottom-text">
-                                    <div class="product-price">{{$car->price}} <span>USD</span></div>
+                                    <div class="product-price">{{$car->price}} <span>{{sitekey('list_car_three','title')}}</span></div>
                                 </div>
                                 <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}   {{ $car->ModelType->name }}</div>
                                 <div class="products-i__attributes products-i__bottom-text">{{ $car->year }},
@@ -125,7 +125,7 @@
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                             <div class="products-i__label products-i__label--salon"
                                 @if ($car->status == 0) style="background: red" @endif>
-                                {{ $car->status == 1 ? 'Active' : 'InActive' }}</div>
+                                {{ $car->status == 1 ? '{{sitekey('avto_car_two','desc')}}' : '{{sitekey('tabbar_mobile_3','name')}}' }}</div>
                         </div>
 
                         <div class="products-i__info"></div>
@@ -167,7 +167,7 @@
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                             <div class="products-i__label products-i__label--salon"
                                 @if ($car->status == 0) style="background: red" @endif>
-                                {{ $car->status == 1 ? 'Active' : 'InActive' }}</div>
+                                {{ $car->status == 1 ? '{{sitekey('avto_car_two','desc')}}' : '{{sitekey('tabbar_mobile_3','name')}}' }}</div>
                         </div>
 
                         <div class="products-i__info"></div>

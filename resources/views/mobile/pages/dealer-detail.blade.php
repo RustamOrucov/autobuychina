@@ -29,7 +29,7 @@
                     <h1 class="shop--title">{{ $dealer->d_name }}</h1>
                     <div class="shop--views custom-view-mobile"><img width="20" src="{{ asset('assets_/img/eye.png') }}"
                             alt=""> <span>{{ $dealer->view_count }}</span></div>
-                    <div class="shop--ads-count">{{ $cars->count() }} announcement</div>
+                    <div class="shop--ads-count">{{ $cars->count() }} {{sitekey('avto_car','desc')}}</div>
                 </div>
                 <div class="shop--description">{{ $dealer->content }}</div><a
                     class="shop--special-offer"><span>{{ $dealer->title }}</span></a>
@@ -41,20 +41,18 @@
                     {{ $dealer->adress }}</a></div>
         </div>
         <div class="section-title section-title--shop tz-align-center">
-            <p class="section-title_name">{{ $cars->count() }} announcement</p>
+            <p class="section-title_name">{{ $cars->count() }} {{sitekey('avto_car','desc')}}</p>
             <div class="products-sort styled js-select-category-open js-shops-sort" data-open="q_sort"><select
                     name="sort-variants" id="q_sort" style="width: 124.213px;">
-                    <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=date" value="date">
-                        Tarixə görə</option>
+                    <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=date" value="date">{{sitekey('avto_car_one','title')}}</option>
                     <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=price_asc"
-                        value="price_asc">Əvvəlcə ucuz</option>
+                        value="price_asc">{{sitekey('avto_car_one','text')}}</option>
                     <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=price_desc"
-                        value="price_desc">Əvvəlcə bahalı</option>
-                    <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=mileage" value="mileage">
-                        Yürüş</option>
+                        value="price_desc">{{sitekey('avto_car_one','desc')}}</option>
+                    <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=mileage" value="mileage">{{sitekey('avto_car_two','title')}}</option>
                     <option data-path="/avtosalonlar/avtosalon-badamdar-satish-merkezi?q%5Bsort%5D=reg_year"
-                        value="reg_year">Buraxılış ili</option>
-                </select><span style="display: none;">Tarixə görə</span><span style="display: none;">Tarixə görə</span>
+                        value="reg_year">{{sitekey('avto_car_one','name')}}</option>
+                </select><span style="display: none;">{{sitekey('avto_car_one','title')}}</span><span style="display: none;">{{sitekey('avto_car_one','title')}}</span>
             </div>
         </div>
         <div class="products" data-advanced-select="">
@@ -78,7 +76,7 @@
                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
                             @if ($car->vincode !== null)
                                 <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                                    <div class="products-i__label products-i__label--vin">VIN</div>
+                                    <div class="products-i__label products-i__label--vin">{{sitekey('home_car_three','title')}}</div>
                                 </div>
                             @endif
                         </div>

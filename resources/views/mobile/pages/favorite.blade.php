@@ -7,7 +7,7 @@
         <div class="header js-header">
             <div class="header__nav">
                 <div class="header__nav-left"></div>
-                <div class="header__nav-title">Seçilmişlər</div>
+                <div class="header__nav-title">{{sitekey('detail_mobile_5','text')}}</div>
                 <div class="header__nav-right"></div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="products-i__bottom">
                             <div class="products-i__price products-i__bottom-text">
-                                <div class="product-price">27 500 <span>AZN</span></div>
+                                <div class="product-price">27 500 <span>USD</span></div>
                             </div>
                             <div class="products-i__name products-i__bottom-text">Kia Sorento</div>
                             <div class="products-i__attributes products-i__bottom-text">2011, 2.0 L, 266 000 km</div>
@@ -45,28 +45,28 @@
                 class="select-category select-category--rounded select-category--short js-select-category select-category--q_sort"
                 data-select="q_sort">
                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
-                    <div class="select-category__header-title">Çeşidləmə</div>
+                    <div class="select-category__header-title">{{sitekey('detail_mobile_5','desc')}}</div>
                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                 </div>
                 <div class="select-category__body"><a href="/bookmarks?sort=date">
                         <div class="select-category__i js-category-select-item js-list-i" data-id="date">
-                            <div class="select-category__i-name">Tarixə görə</div>
+                            <div class="select-category__i-name">{{sitekey('avto_car_one','title')}}</div>
                             <span class="select-category__i-radio"></span></div>
                     </a><a href="/bookmarks?sort=price_asc">
                         <div class="select-category__i js-category-select-item js-list-i" data-id="price_asc">
-                            <div class="select-category__i-name">Əvvəlcə ucuz</div>
+                            <div class="select-category__i-name">{{sitekey('avto_car_one','text')}}</div>
                             <span class="select-category__i-radio"></span></div>
                     </a><a href="/bookmarks?sort=price_desc">
                         <div class="select-category__i js-category-select-item js-list-i" data-id="price_desc">
-                            <div class="select-category__i-name">Əvvəlcə bahalı</div>
+                            <div class="select-category__i-name">{{sitekey('avto_car_one','desc')}}</div>
                             <span class="select-category__i-radio"></span></div>
                     </a><a href="/bookmarks?sort=mileage">
                         <div class="select-category__i js-category-select-item js-list-i" data-id="mileage">
-                            <div class="select-category__i-name">Yürüş</div>
+                            <div class="select-category__i-name">{{sitekey('avto_car_two','title')}}</div>
                             <span class="select-category__i-radio"></span></div>
                     </a><a href="/bookmarks?sort=reg_year">
                         <div class="select-category__i js-category-select-item js-list-i" data-id="reg_year">
-                            <div class="select-category__i-name">Buraxılış ili</div>
+                            <div class="select-category__i-name">{{sitekey('avto_car_one','name')}}</div>
                             <span class="select-category__i-radio"></span></div>
                     </a></div>
             </div>

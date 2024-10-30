@@ -25,7 +25,7 @@
                                 class="tz-form__group-input tz-form__group-input--lower" placeholder=" "
                                 value="{{ $selectBrand->name }}" readonly="" type="text"><label
                                 class="tz-form__group-label tz-form__group-label--select "
-                                for="q_make">Brand</label><input name="q[make][]" type="hidden" value=""
+                                for="q_make">{{ sitekey('filter_key', 'title') }}</label><input name="q[make][]" type="hidden" value=""
                                 autocomplete="off"><select multiple="multiple" class="select optional form-control"
                                 name="q[make][]" id="q_make">
                             </select><span class="tz-form__group-btn tz-form__group-btn--reset js-reset-input" ></span>
@@ -38,11 +38,11 @@
                                     <div class="popup-header__left">
                                         <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
                                     </div>
-                                    <div class="popup-header__title">Brand</div>
+                                    <div class="popup-header__title">{{ sitekey('filter_key', 'title') }}</div>
                                     <div class="popup-header__right"></div>
                                 </div>
                                 <div class="select-category__search"><input type="text" name="" id=""
-                                        class="select-category__search-input js-search-input" placeholder="Example, BMW"
+                                        class="select-category__search-input js-search-input" placeholder="{{ sitekey('filter_mobile_2', 'text') }}"
                                         autocomplete="off"></div>
                             </div>
                             <div
@@ -84,7 +84,7 @@
                                     placeholder=" " readonly="" type="text"
                                     value="{{ $selectModel->name ?? '' }}"><label
                                     class="tz-form__group-label tz-form__group-label--select custom-model-select"
-                                    for="q_model">Model</label><input name="q[model][]" type="hidden" value=""
+                                    for="q_model">{{ sitekey('filter_key', 'text') }}</label><input name="q[model][]" type="hidden" value=""
                                     autocomplete="off"><select multiple="multiple"
                                     class="select optional form-control js-select-model" name="q[model][]" id="q_model">
                                 </select>
@@ -107,12 +107,12 @@
                                             class="popup-header__btn popup-header__btn--back js-close-popup-btn custom-close-btn">
                                         </div>
                                     </div>
-                                    <div class="popup-header__title">Model</div>
+                                    <div class="popup-header__title">{{ sitekey('filter_key', 'text') }}</div>
                                     <div class="popup-header__right"></div>
                                 </div>
                                 <div class="select-category__search"><input type="text" name="" id=""
                                         class="select-category__search-input js-search-input"
-                                        placeholder="Search model..." autocomplete="off"></div>
+                                        placeholder="{{ sitekey('filter_mobile_1', 'title') }}..." autocomplete="off"></div>
                             </div>
 
                             <div
@@ -164,22 +164,19 @@
                         $filterUrl = route('mobile.filter', $routeParams);
                     @endphp
 
-                    <a class="links-i links-i_full-search" href="{{ $filterUrl }}">Filters</a>
+                    <a class="links-i links-i_full-search" href="{{ $filterUrl }}">{{ sitekey('home_mobile', 'names') }}</a>
                         <div class="products-sort styled js-select-category-open" data-open="q_sort"><select
                                 class="select optional form-control" name="q[sort]" id="q_sort"
                                 style="width: 123.9px;">
                                 <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=date" selected="selected"
-                                    value="date">To date</option>
+                                    value="date">{{ sitekey('avto_car_one', 'title') }}</option>
                                 <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=price_asc"
-                                    value="price_asc">Əvvəlcə ucuz</option>
+                                    value="price_asc">{{ sitekey('avto_car_one', 'text') }}</option>
                                 <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=price_desc"
-                                    value="price_desc">Əvvəlcə bahalı</option>
-                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=mileage" value="mileage">
-                                    Yürüş</option>
-                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=reg_year" value="reg_year">
-                                    Buraxılış ili</option>
-                            </select><span style="display: none;">Tarixə görə</span><span style="display: none;">Tarixə
-                                görə</span></div>
+                                    value="price_desc">{{ sitekey('avto_car_one', 'desc') }}</option>
+                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=mileage" value="mileage">{{ sitekey('avto_car_two', 'title') }}</option>
+                                <option data-path="/autos?q%5Bmake%5D%5B%5D=5&amp;q%5Bsort%5D=reg_year" value="reg_year">{{ sitekey('avto_car_one', 'name') }}</option>
+                            </select><span style="display: none;">{{ sitekey('avto_car_one', 'title') }}</span><span style="display: none;">{{ sitekey('avto_car_one', 'title') }}</span></div>
                     </div>
 
 
@@ -188,7 +185,7 @@
 
 
                     <div class="products-search-title">
-                        <h1>{{ $selectBrand->name }} sale</h1><span> {{ $cars->count() }} advertsement</span>
+                        <h1>{{ $selectBrand->name }} sale</h1><span> {{ $cars->count() }} {{ sitekey('user_car', 'name') }}</span>
                     </div>
                 </div>
             @else
@@ -199,11 +196,10 @@
                         <div class="tz-form__box">
                             <div class="tz-form__group tz-form__group--bordered--bottom js-select-category-open"
                                 data-open="q_make" data-reset="true"><label
-                                    class="tz-form__group-label tz-form__group-label--select" for="q_make">All
-                                    Brand</label><input name="q[make][]" type="hidden" value=""
+                                    class="tz-form__group-label tz-form__group-label--select" for="q_make">{{ sitekey('home_mobile', 'text') }}</label><input name="q[make][]" type="hidden" value=""
                                     autocomplete="off"><select multiple="multiple" class="select optional form-control"
                                     name="q[make][]" id="q_make">
-                                    <option value="">All Brand</option>
+                                    <option value="">{{ sitekey('home_mobile', 'text') }}</option>
                                     @foreach ($brands as $brand)
                                         <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                     @endforeach
@@ -218,7 +214,7 @@
                             @endphp
 
                         <a class="links-i links-i_full-search"
-                            href="{{ route('mobile.filter') . ($selectFiltersQuery ? '?' . $selectFiltersQuery : '') }}">Filters</a>
+                            href="{{ route('mobile.filter') . ($selectFiltersQuery ? '?' . $selectFiltersQuery : '') }}">{{ sitekey('home_mobile', 'name') }}</a>
 
 
                                 <input autocomplete="off" type="hidden"
@@ -236,12 +232,12 @@
                                         class="popup-header__btn popup-header__btn--back js-close-popup-btn custom-mobile-close">
                                     </div>
                                 </div>
-                                <div class="popup-header__title">Marka</div>
+                                <div class="popup-header__title">{{ sitekey('list_car', 'desc') }}</div>
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search">
                                 <input type="text" id="brand-search"
-                                    class="select-category__search-input js-search-input" placeholder="Example, BMW"
+                                    class="select-category__search-input js-search-input" placeholder="{{ sitekey('filter_mobile_2', 'text') }}"
                                     autocomplete="off" oninput="filterBrands()">
                             </div>
                         </div>
@@ -271,10 +267,10 @@
 
 
                 {{-- <div class="moto-nav"><a class="nav-i moto-nav__title" data-stat="main-page-moto-link"
-                        href="">Moto</a>
+                        href="">{{ sitekey('filter_mobile_2', 'desc') }}</a>
                 </div> --}}
                 <div class="autocatalog-nav"><a class="nav-i autocatalog-nav__title" data-stat="header-moto-link"
-                        href="">Avtokataloq<span class="label-new">yeni</span></a></div>
+                        href="">{{ sitekey('filter_mobile_2', 'name') }}<span class="label-new">{{ sitekey('home_mobile_1', 'title') }}</span></a></div>
             @endif
 
 
@@ -283,7 +279,7 @@
 
             <div class="links links_products">
                 @if (isset($recentCarCount))
-                    <div class="links-i"><span>To day:</span><a href="">{{ $recentCarCount }} new add</a></div>
+                    <div class="links-i"><span>{{ sitekey('home_mobile_1', 'text') }}:</span><a href="">{{ $recentCarCount }} {{ sitekey('home_mobile', 'title') }}</a></div>
                 @endif
             </div>
             <div class="lotriver-top-banner" id="js-lotriver-top-banner">
@@ -292,7 +288,7 @@
             </div>
             <div class="quick-links">
 
-                <a class="quick-links-i" target="_blank" href="#">Aksesuarlar</a>
+                <a class="quick-links-i" target="_blank" href="#">{{ sitekey('home_mobile_1', 'desc') }}</a>
 
             </div>
             <div class="products-container">
@@ -320,7 +316,7 @@
                                     </div>
                                     @if ($car->vincode !== null)
                                         <div class="products-i__label-container tz-d-flex tz-gap-5 tz-wrap-wrap">
-                                            <div class="products-i__label products-i__label--vin">VIN</div>
+                                            <div class="products-i__label products-i__label--vin">{{ sitekey('home_car_three', 'title') }}</div>
                                         </div>
                                     @endif
                                 </div>

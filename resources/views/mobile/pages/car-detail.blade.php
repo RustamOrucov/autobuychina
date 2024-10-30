@@ -48,17 +48,17 @@
                         <li class="breadcrumbs__i"><a class="breadcrumbs__i-text"
                                 href="/autos?q%5Bmake%5D%5B%5D=3&amp;q%5Bmodel%5D%5B%5D=1">{{ $car->ModelType->name }}</a>
                         </li>
-                        <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">Ad number № {{ $car->id + 999 }}</span>
+                        <li class="breadcrumbs__i"><span class="breadcrumbs__i-text">{{sitekey('car_detail','title')}} № {{ $car->id + 999 }}</span>
                         </li>
                     </ul>
                     <a class="product-shop tz-d-flex tz-align-center"
                         href="{{ route('mobile.dealer.detail', ['dealer' => $car->Dealer]) }}">
                         <div class="product-shop__logo"
-                            style="background-image: url({{ $car->Dealer && $car->Dealer->logo ? asset('storage/' . $car->Dealer->logo) : 'Auto BuyChina' }})">
+                            style="background-image: url({{ $car->Dealer && $car->Dealer->logo ? asset('storage/' . $car->Dealer->logo) : '{{sitekey('detail_car','title')}}' }})">
                         </div>
                         <div class="product-shop__info">
                             <div class="product-shop__info-title">
-                                {{ $car->Dealer && $car->Dealer->d_name ? $car->Dealer->d_name : 'Auto BuyChina' }}</div>
+                                {{ $car->Dealer && $car->Dealer->d_name ? $car->Dealer->d_name : '{{sitekey('detail_car','title')}}' }}</div>
                             <div class="product-shop__info-count">{{ $car->Dealer->cars->count() }} cars</div>
                         </div>
                         <div class="product-shop__arrow"></div>
@@ -119,11 +119,11 @@
                                         </div>
 
                                         <button class="pswp__button pswp__button--arrow--left pswp__element--disabled"
-                                            title="Previous (arrow left)">
+                                            title="{{sitekey('detail_mobile','title')}}">
                                         </button>
 
                                         <button class="pswp__button pswp__button--arrow--right pswp__element--disabled"
-                                            title="Next (arrow right)">
+                                            title="{{sitekey('detail_mobile','text')}}">
                                         </button>
 
                                         <div class="pswp__caption pswp__element--disabled">
@@ -177,7 +177,7 @@
                                 onclick="return false;">{{ $car->ModelType->name ??'unkown'}}</a></div>
                     </li>
                     <li class="product-table__row">
-                        <div class="product-table__row-name">Year</div>
+                        <div class="product-table__row-name">{{sitekey('car_detail_one','desc')}}</div>
                         <div class="product-table__row-value"><a target="_blank" href="#"
                                 onclick="return false;">{{ $car->year }}</a>
                         </div>
@@ -191,12 +191,12 @@
                         <div class="product-table__row-value">{{ $car->Cylinder->name ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
-                        <div class="product-table__row-name">Engine</div>
+                        <div class="product-table__row-name">{{sitekey('car_detail_one','name')}}</div>
                         <div class="product-table__row-value">{{ $car->EngineVolume->name / 1000 }}
                             L/{{ $car->engine_v }}a.g./{{ $car->FuelType->name ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
-                        <div class="product-table__row-name">Millage</div>
+                        <div class="product-table__row-name">{{sitekey('list_car_one','text')}}</div>
                         <div class="product-table__row-value">{{ $car->odometer_km ??'unkown'}} km</div>
                     </li>
                     <li class="product-table__row">
@@ -208,11 +208,11 @@
                         <div class="product-table__row-value">{{ $car->Damage->name  ??'unkown'}}</div>
                     </li>
                     <li class="product-table__row">
-                        <div class="product-table__row-name">New</div>
+                        <div class="product-table__row-name">{{ sitekey('filter_key_two', 'title') }}</div>
                         <div class="product-table__row-value"> {{ $car->used === 1 ? 'Yes' : 'No' }}</div>
                     </li>
                     <li class="product-table__row">
-                        <div class="product-table__row-name">Which market is it collected for</div>
+                        <div class="product-table__row-name">{{sitekey('detail_mobile','desc')}}</div>
                         <div class="product-table__row-value">{{ $car->market->name ??'unkown' }}</div>
                     </li>
                     <li class="product-table__row">
@@ -222,7 +222,7 @@
                     </li>
 
                     <li class="product-table__row">
-                        <div class="product-table__row-name">Situation</div>
+                        <div class="product-table__row-name">{{sitekey('detail_mobile','name')}}</div>
                         <div class="product-table__row-value">
                             @if ($car->crashed === 1)
                                 crashed
@@ -240,18 +240,17 @@
                 <div class="product-section">
                     <div class="product-vin">
                         <div class="tz-d-flex tz-align-center">
-                            <div class="product-vin__title">VIN-kod:<span class="js-copy-text">{{ $car->vincode }}</span>
+                            <div class="product-vin__title">{{sitekey('detail_car_five','text')}}:<span class="js-copy-text">{{ $car->vincode }}</span>
                             </div>
                             <div class="product-vin__copy">
                                 <div class="product-vin__copy-icon js-copy-icon" style="cursor:pointer;">
                                 </div>
-                                <div class="product-vin__copy-text js-copy-copied is-hidden">Copied</div>
+                                <div class="product-vin__copy-text js-copy-copied is-hidden">{{sitekey('detail_car_five','desc')}}</div>
                             </div>
                         </div>
-                        <div class="product-vin__info">Check the VIN code before buying the car.</div><a target="_blank"
+                        <div class="product-vin__info">{{sitekey('detail_car_two','name')}}</div><a target="_blank"
                             class="product-vin__check-link"
-                            href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">Search on the
-                            internet</a>
+                            href="https://google.com/search?tbm=isch&amp;q={{ $car->vincode }}">{{sitekey('detail_car_three','title')}}</a>
                     </div>
                 </div>
                 <div class="product-divider"></div>
@@ -260,7 +259,7 @@
                             class="product-description__checkbox input--hidden" id="description-btn"
                             type="checkbox"><label
                             class="product-description__btn product-description__btn--more js-description-show-more"
-                            for="description-btn">Read more</label>
+                            for="description-btn">{{sitekey('detail_mobile_1','title')}}</label>
                         <div class="product-description__content js-description-content">
                             {{ $car->item_comment }}
                         </div>
@@ -284,7 +283,7 @@
                             <div class="product-owner tz-d-flex tz-align-center tz-justify-between">
                                 <div class="product-owner__info">
                                     <div class="product-owner__info-name">{{ $car->Dealer->d_name }}</div>
-                                    <div class="product-owner__info-schedule">Every day:
+                                    <div class="product-owner__info-schedule">{{sitekey('avto_car','text')}}:
                                         {{  substr($car->Dealer->opening_time, 0, 5) }} -
                                         {{  substr($car->Dealer->closing_time, 0, 5) }}</div>
                                 </div>
@@ -297,21 +296,21 @@
                     <div class="product-phones js-owner-phones"><a class="product-phones__i js-product-phones-link"
                             data-phone="{{$adminSettings->phone ?? ''}} " data-log-show-phone="true" data-trigger-button="contact"
                             href="tel:{{$adminSettings->phone ?? ''}}"><span class="product-phones__i-value">{{$adminSettings->phone ?? ''}}</span><span
-                                class="product-phones__i-text">Call</span></a></div>
+                                class="product-phones__i-text">{{sitekey('tabbar_mobile_2','title')}}</span></a></div>
 
                 </div>
                 <div class="product-divider"></div>
                 <section class="product-section product-statistics product-table">
                     <div class="product-table__row">
-                        <div class="product-table__row-name">Listing Number</div>
+                        <div class="product-table__row-name">{{sitekey('detail_mobile_1','text')}}</div>
                         <div class="product-table__row-value">{{ $car->id + 999 }}</div>
                     </div>
                     <div class="product-table__row">
-                        <div class="product-table__row-name">View count</div>
+                        <div class="product-table__row-name">{{sitekey('car_detail_one','title')}}</div>
                         <div class="product-table__row-value">{{ $car->view_count }}</div>
                     </div>
                     <div class="product-table__row">
-                        <div class="product-table__row-name">Updated</div>
+                        <div class="product-table__row-name">{{sitekey('detail_car','name')}}</div>
                         <div class="product-table__row-value">{{ $car->updated_at->format('d.m.Y') }}</div>
                     </div>
                 </section>
@@ -322,7 +321,7 @@
 
                     <div class="product-actions__bottom"><a
                             class="product-actions__i product-actions__i--report js-product-report js-product-report-btn"
-                            href="#" onclick="return false;">Report</a></div>
+                            href="#" onclick="return false;">{{sitekey('car_detail','name')}}</a></div>
                 </div>
 
                 {{-- report modal start  --}}
@@ -334,39 +333,37 @@
                         @csrf
                         <input type="text" name="trap_field" style="display:none">
                         <div class="report-modal__header tz-d-flex tz-align-center tz-justify-between">
-                            <div class="report-modal__header-title">Complain</div>
+                            <div class="report-modal__header-title">{{sitekey('car_detail_1','title')}}</div>
                             <div class="close-reveal-modal"></div>
                         </div>
                         <div class="report-modal__content">
 
                             <div>
                                 <select id="mon-menu-deroulant" name="title" required>
-                                    <option value="">Reason for complaint</option>
-                                    <option value="It is impossible to stay interested">It is impossible to stay interested
-                                    </option>
-                                    <option value="The advertisement is not current">The advertisement is not current
-                                    </option>
-                                    <option value="Wrong price">Wrong price</option>
-                                    <option value="Wrong indicators">Wrong indicators</option>
-                                    <option value="Repeat advertisement">Repeat advertisement</option>
-                                    <option value="Wrong city">Wrong city </option>
-                                    <option value="The pictures are not correct">The pictures are not correct </option>
-                                    <option value="The car is delivered by order">The car is delivered by order</option>
-                                    <option value="Suspicions of fraud">Suspicions of fraud</option>
-                                    <option value="The car is from the showroom">The car is from the showroom</option>
+                                    <option value="">{{sitekey('car_detail_1','text')}}</option>
+                                    <option value="{{sitekey('car_detail_2','title')}}">{{sitekey('car_detail_2','title')}}</option>
+                                    <option value="{{sitekey('car_detail_2','text')}}">{{sitekey('car_detail_2','text')}}</option>
+                                    <option value="{{sitekey('car_detail_2','desc')}}">{{sitekey('car_detail_2','desc')}}</option>
+                                    <option value="{{sitekey('car_detail_2','name')}}">{{sitekey('car_detail_2','name')}}</option>
+                                    <option value="{{sitekey('car_detail_3','title')}}">{{sitekey('car_detail_3','title')}}</option>
+                                    <option value="{{sitekey('car_detail_3','text')}}">{{sitekey('car_detail_3','text')}} </option>
+                                    <option value="{{sitekey('car_detail_3','desc')}}">{{sitekey('car_detail_3','desc')}} </option>
+                                    <option value="{{sitekey('car_detail_3','name')}}">{{sitekey('car_detail_3','name')}}</option>
+                                    <option value="{{sitekey('car_detail_4','title')}}">{{sitekey('car_detail_4','title')}}</option>
+                                    <option value="{{sitekey('car_detail_4','text')}}">{{sitekey('car_detail_4','text')}}</option>
                                 </select>
                             </div>
 
                             <hr class="js-report-divider">
 
                             <div class="input text optional report_body">
-                                <textarea required rows="3" class="text optional form-control js-body-input" data-title="Şikayəti təsvir edin"
-                                    placeholder="Describe the complaint max:400" name="description" id="report_body"></textarea>
+                                <textarea required rows="3" class="text optional form-control js-body-input" data-title="{{sitekey('detail_car_eight','desc')}}"
+                                    placeholder="{{sitekey('car_detail_1','desc')}}" name="description" id="report_body"></textarea>
                             </div>
                             <hr>
                         </div>
                         <div class="report-modal__footer"><button type="submit" data-disable-with=""
-                                class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">Send</button>
+                                class="tz-btn tz-btn--blue tz-btn--full tz-btn--spinner js-auth-iframe-link">{{sitekey('car_detail_1','name')}}</button>
                         </div>
                     </form>
                 </div>
@@ -384,67 +381,66 @@
                     <div class="reveal-modal select-category select-category--rounded select-category--short js-select-category select-category--product-report js-modal-report"
                         data-select="product-report" id="report">
                         <div class="select-category__header-container tz-justify-between">
-                            <div class="select-category__header--back js-back-popup-btn">İmtina</div>
+                            <div class="select-category__header--back js-back-popup-btn">{{sitekey('detail_mobile_1','desc')}}</div>
                             <div class="select-category__header"><span
                                     class="select-category__header--title js-reports-modal-title"
-                                    data-title="Şikayət səbəbi">Şikayət səbəbi</span></div>
+                                    data-title="{{sitekey('detail_mobile_1','name')}}">{{sitekey('detail_mobile_1','name')}}</span></div>
                             <div class="select-category__header-cancel js-close-popup-btn"></div>
                         </div>
                         <div class="select-category__body report__reason js-report-reason"><input
                                 class="js-reports-reason-id" autocomplete="off" type="hidden"
                                 name="report[report_reason_id]" id="report_report_reason_id">
                             <div class="select-category__i js-category-select-item" data-id="1">
-                                <div class="select-category__i-name">Əlaqə saxlamaq olmur</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_2','title')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="2">
-                                <div class="select-category__i-name">Elan aktual deyil</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_2','text')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="3">
-                                <div class="select-category__i-name">Yanlış qiymət</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_2','desc')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="5">
-                                <div class="select-category__i-name">Yanlış göstəricilər</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_2','name')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="6">
-                                <div class="select-category__i-name">Təkrar elan</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_3','title')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="7">
-                                <div class="select-category__i-name">Yanlış şəhər</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_3','text')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="4">
-                                <div class="select-category__i-name">Şəkillər düzgün deyil</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_3','desc')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="42">
-                                <div class="select-category__i-name">Avtomobil sifarişlə çatdırılır</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_3','name')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="9">
-                                <div class="select-category__i-name">Dələduzluqda şübhələr</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_4','title')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                             <div class="select-category__i js-category-select-item" data-id="8">
-                                <div class="select-category__i-name">Avtomobil salondandır</div>
+                                <div class="select-category__i-name">{{sitekey('detail_mobile_4','text')}}</div>
                                 <div class="select-category__i--arrow"></div>
                             </div>
                         </div>
                         <div class="select-category__body report__description js-report-description">
                             <div class="input text optional report_description field_with_hint asdeh217ds">
-                                <textarea class="text optional form-control" name="report[description]" id="report_description"></textarea><span class="hint">Do not enter anything
-                                    here.</span>
+                                <textarea class="text optional form-control" name="report[description]" id="report_description"></textarea><span class="hint">{{sitekey('detail_mobile_4','desc')}}</span>
                             </div>
                             <div class="input text optional report_body">
-                                <textarea rows="6" class="text optional form-control" placeholder="Şikayəti təsvir edin" name="report[body]"
+                                <textarea rows="6" class="text optional form-control" placeholder="{{sitekey('detail_car_eight','text')}}" name="report[body]"
                                     id="report_body"></textarea>
                             </div>
                             <div class="tz-container"><button name="button" type="submit"
-                                    class="tz-btn tz-btn--primary tz-btn--full">Göndərmək</button></div>
+                                    class="tz-btn tz-btn--primary tz-btn--full">{{sitekey('detail_mobile_4','name')}}</button></div>
                         </div>
                     </div>
                 </form>
@@ -459,8 +455,8 @@
 
             <div class="tz-section">
                 <div class="tz-section__title tz-d-flex tz-justify-between tz-align-center">
-                    <p class="tz-section__title-name">Similar listings</p><a class="tz-section__title-more" target="_blank"
-                        href="#" onclick='return false;'>Show all</a>
+                    <p class="tz-section__title-name">{{sitekey('detail_mobile_5','title')}}</p><a class="tz-section__title-more" target="_blank"
+                        href="#" onclick='return false;'>{{sitekey('detail_car_three','desc')}}</a>
                 </div>
                 <div class="products tz-section__list">
 

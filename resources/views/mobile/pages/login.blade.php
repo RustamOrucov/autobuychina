@@ -10,7 +10,7 @@
             <div class="header__nav">
                 <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button" onclick="history.back()"></span></div>
                 <div class="header__nav-title">
-                    <h1 class="custom-mobil-dealers" style="color:#fff">LOGIN</h1>
+                    <h1 class="custom-mobil-dealers" style="color:#fff">{{ sitekey('home_static', 'text') }}</h1>
                 </div>
                 <div class="header__nav-right"></div>
             </div>
@@ -36,8 +36,8 @@
 
         <!-- Butonlar -->
         <div class="custom-mobile-btn-container">
-            <button class="custom-mobile-login-btn" id="dealer-btn">Dealer ?</button>
-            <button class="custom-mobile-login-btn" id="trader-btn">Trader ?</button>
+            <button class="custom-mobile-login-btn" id="dealer-btn">{{ sitekey('avto_car', 'title') }}</button>
+            <button class="custom-mobile-login-btn" id="trader-btn">{{ sitekey('register_car', 'desc') }}</button>
         </div>
 
         <!-- Dealer Formu -->
@@ -49,19 +49,19 @@
                 <form action="{{ route('mobile.login') }}" method="post">
                     @csrf
                     <div class="input-box">
-                        <h2>Sign In</h2>
+                        <h2>{{ sitekey('home_mobile_1', 'name') }}</h2>
                         <input type="email" required name="email">
-                        <span>Email</span>
+                        <span>{{ sitekey('login_car', 'title') }}</span>
                         <i></i>
                     </div>
                     <div class="input-box">
                         <input type="password" required name="password">
-                        <span>Enter Password</span>
+                        <span>{{ sitekey('login_mobile', 'title') }}</span>
                         <i></i>
                     </div>
                     <input type="submit" value="Login">
 
-                    <a href="{{ route('mobile.register',['costumer'=>$dealer]) }}" class="cm-register-btn">Register</a>
+                    <a href="{{ route('mobile.register',['costumer'=>$dealer]) }}" class="cm-register-btn">{{ sitekey('home_static', 'desc') }}</a>
 
                 </form>
             </div>
@@ -77,18 +77,18 @@
                 <form action="{{ route('mobile.login') }}" method="post">
                     @csrf
                     <div class="input-box">
-                        <h2>Sign In</h2>
+                        <h2>{{ sitekey('home_mobile_1', 'name') }}</h2>
                         <input type="text" required>
-                        <span>Username</span>
+                        <span>{{ sitekey('login_car', 'title') }}</span>
                         <i></i>
                     </div>
                     <div class="input-box">
                         <input type="password" required>
-                        <span>Enter Password</span>
+                        <span>{{ sitekey('login_mobile', 'title') }}</span>
                         <i></i>
                     </div>
                     <input type="submit" value="Login">
-                    <a href="{{ route('mobile.register',['costumer'=>$traider]) }}" class="cm-register-btn">Register</a>
+                    <a href="{{ route('mobile.register',['costumer'=>$traider]) }}" class="cm-register-btn">{{ sitekey('home_static', 'desc') }}</a>
                 </form>
             </div>
         </div>

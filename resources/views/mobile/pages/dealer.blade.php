@@ -12,64 +12,64 @@
         <div style="max-width: 750px; margin: 20px auto 0 auto;">
             <div class="container custom-register-container">
                 <div class="title">
-                    <p>Register Dealer</p>
+                    <p>{{sitekey('register_car_1','title')}}</p>
                 </div>
                 <form action="{{ route('registerStore') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="user_details">
                         <div class="input_box">
-                            <label for="name">Name</label>
+                            <label for="name">{{sitekey('register_car_1','text')}}</label>
                             <input style="padding:0 5px" type="text" id="name" name="name"
-                                   value="{{ old('name') }}" placeholder="Name" required>
+                                   value="{{ old('name') }}" placeholder="{{sitekey('register_car_1','text')}}" required>
                             @error('name')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="surname">Surname</label>
+                            <label for="surname">{{sitekey('register_car_1','desc')}}</label>
                             <input style="padding:  0 5px" type="text" id="surname" name="surname"
-                                   value="{{ old('surname') }}" placeholder="Surname" required>
+                                   value="{{ old('surname') }}" placeholder="{{sitekey('register_car_1','desc')}}" required>
                             @error('surname')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="d_name">Dealer Name</label>
+                            <label for="d_name">{{sitekey('register_car_1','name')}}</label>
                             <input style="padding: 0 5px" type="text" id="d_name" name="d_name"
-                                   placeholder="Dealer Name" value="{{ old('d_name') }}" required>
+                                   placeholder="{{sitekey('register_car_1','name')}}" value="{{ old('d_name') }}" required>
                             @error('d_name')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="adress">Adress</label>
+                            <label for="adress">{{sitekey('register_car_2','title')}}</label>
                             <input style="padding: 0 5px" type="text" name="adress" id="adress"
-                                   value="{{ old('adress') }}" placeholder="Adress" required>
+                                   value="{{ old('adress') }}" placeholder="{{sitekey('register_car_2','title')}}" required>
                             @error('adress')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="email">Email</label>
+                            <label for="email">{{sitekey('login_car','title')}}</label>
                             <input style="padding:0 5px" type="email" name="email" value="{{ old('email') }}"
-                                   id="email" placeholder="Email Address" required>
+                                   id="email" placeholder="{{sitekey('register_car','name')}}" required>
                             @error('email')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="phone">Phone number</label>
+                            <label for="phone">{{sitekey('register_car_2','text')}}</label>
                             <input style="padding: 0 5px" type="text" name="phone" value="{{ old('phone') }}"
-                                   id="phone" placeholder="+994" required>
+                                   id="phone" placeholder="{{sitekey('register_car_2','name')}}" required>
                             @error('phone')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Pssword</label>
+                            <label for="confirmPass">{{sitekey('login_car','text')}}</label>
                             <div class="inputTx inputPw">
                                 <input style="padding: 0 5px" type="password" name="password" id="password"
-                                       class="password required" placeholder="Password">
+                                       class="password required" placeholder="{{sitekey('login_car','text')}}">
 
                             </div>
 
@@ -79,10 +79,10 @@
 
                         </div>
                         <div class="input_box">
-                            <label for="confirmPass">Pssword Confirm</label>
+                            <label for="confirmPass">{{sitekey('register_car_2','desc')}}</label>
                             <div class="inputTx inputPw">
                                 <input style="padding:0 5px" type="password" name="password_confirmation"
-                                       id="current_password" class="password required" placeholder="Password">
+                                       id="current_password" class="password required" placeholder="{{sitekey('login_car','text')}}">
 
                             </div>
                             @error('password_confirmation')
@@ -90,7 +90,7 @@
                             @enderror
                         </div>
                         <div class="input_box">
-                            <label for="front_id" class="front_id">Front Image of the ID Card *</label>
+                            <label for="front_id" class="front_id">{{sitekey('register_car_3','text')}} *</label>
                             <input type="file" name="passport_front" id="front_id" class="custom-file-input" required>
                             @error('front_id')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="input_box">
-                            <label for="back_id" class="front_id">Back Image of the ID Card *</label>
+                            <label for="back_id" class="front_id">{{sitekey('register_car_3','text')}} *</label>
                             <input type="file" name="passport_back" id="back_id" class="custom-file-input" required>
                             @error('back_id')
                             <div class="text-danger" style="color:red">{{ $message }}</div>
@@ -118,10 +118,10 @@
                             <div class="dbl clearfix" style="list-style-type: none;">
                                 <input type="checkbox"  id="remember-me" class=""
                                        value="true">
-                                <label for="remember-me">Terms and Conditions</label>
+                                <label for="remember-me">{{sitekey('register_car_3','desc')}}</label>
                             </div>
                             <div class="private-btn-box">
-                                <a id="prev-policy" href="#" style="color: red;font-weight: bold;">Read</a>
+                                <a id="prev-policy" href="#" style="color: red;font-weight: bold;">{{sitekey('register_car_3','name')}}</a>
                             </div>
                         </div>
 
