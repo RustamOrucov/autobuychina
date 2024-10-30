@@ -236,7 +236,7 @@
                                         <div class="product-phones__btn js-phones-click-btn" data-log-show-phone="true"
                                             data-stat="product-call-btn" data-trigger-button="main">
                                             <div class="product-phones__btn-title">Contact Number :</div>
-                                            <div class="product-phones__btn-value"><a href="tel:{{$car->Dealer->phone}}" style="color: #fff;text-decoration: none">{{$car->Dealer->phone}}</a></div>
+                                            <div class="product-phones__btn-value"><a href="tel:{{$adminSettings->phone ?? ''}}" style="color: #fff;text-decoration: none">{{$adminSettings->phone ?? ''}}</a></div>
                                         </div>
 
                                     </div>
