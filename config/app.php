@@ -17,8 +17,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-//    'languages'=>['en','ru','az','ar','zh'],
-    'languages'=>['en'],
+    'languages'=>['en','ru','az','ar','zh'],
+//    'languages'=>['en'],
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -83,7 +83,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
+    
     'locale' => 'en',
 
     /*

@@ -149,3 +149,10 @@ Route::get('mobile/addcar',[MobileCarController::class,'addForm'])->name('mobile
 Route::get('mobile.cabinet',[LoginController::class,'cabinet'])->name('mobile.cabinet');
 Route::get('mobile.agrement',[MobileCarController::class,'agrement'])->name('mobile.agrement');
 Route::get('mobile.rules',[MobileCarController::class,'rules'])->name('mobile.rules');
+
+
+//Language
+Route::get('/lang/{lang}', function ($lang) {
+    \Illuminate\Support\Facades\Session::put('lang',$lang);
+    return redirect()->back();
+})->name('language-url');

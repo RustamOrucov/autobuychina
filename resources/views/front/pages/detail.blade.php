@@ -233,14 +233,16 @@
                                     <div class="product-phones tz-mt-15">
                                         <div class="product-phones__btn js-phones-click-btn" data-log-show-phone="true"
                                             data-stat="product-call-btn" data-trigger-button="main">
+
                                             <div class="product-phones__btn-title">{{sitekey('detail_car','text')}} :</div>
-                                            <div class="product-phones__btn-value"><a href="tel:{{$car->Dealer->phone}}" style="color: #fff;text-decoration: none">{{$car->Dealer->phone}}</a></div>
+                                            <div class="product-phones__btn-value"><a href="tel:{{$adminSettings->phone ?? ''}}" style="color: #fff;text-decoration: none">{{$adminSettings->phone ?? ''}}</a></div>
+
                                         </div>
 
                                     </div>
                                     <div class="product-shop__delimiter tz-mt-15"></div>
                                     <div class="product-shop__promo">
-                                        {{ $car->Dealer && $car->Dealer->title ? $car->Dealer->title : 'Auto Buy China' }}
+                                        {{ $car->Dealer && $car->Dealer->title ? $car->Dealer->title : '{{sitekey('detail_car','desc')}}' }}
                                     </div>
                                     <div class="product-shop__description">
                                         {{ $car->Dealer && $car->Dealer->content ? $car->Dealer->content : ' ' }}</div>

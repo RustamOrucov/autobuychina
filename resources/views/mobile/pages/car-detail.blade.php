@@ -295,8 +295,8 @@
                         </a>
                     @endif
                     <div class="product-phones js-owner-phones"><a class="product-phones__i js-product-phones-link"
-                            data-phone="(055) 555 55 55 " data-log-show-phone="true" data-trigger-button="contact"
-                            href="#"><span class="product-phones__i-value">(055) 555 55 55</span><span
+                            data-phone="{{$adminSettings->phone ?? ''}} " data-log-show-phone="true" data-trigger-button="contact"
+                            href="tel:{{$adminSettings->phone ?? ''}}"><span class="product-phones__i-value">{{$adminSettings->phone ?? ''}}</span><span
                                 class="product-phones__i-text">Call</span></a></div>
 
                 </div>

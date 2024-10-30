@@ -13,11 +13,13 @@
                 <a class="header-bar-i" href="#">{{ sitekey('home_static_two', 'title') }}</a>
 
                 <div class="dropdown">
-                    <button class="dropbtn">EN</button>
+                    <button class="dropbtn">{{ strtoupper(app()->getLocale()) }}</button>
                     <div class="dropdown-content">
-                        <a href="#">RU</a>
-                        <a href="#">EN</a>
-                        <a href="#">FR</a>
+                        @foreach(config('app.languages') as $lang)
+                            @if($lang !== app()->getLocale())
+                            <a href="{{ route('language-url', $lang) }}">{{ strtoupper($lang) }}</a>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
 
