@@ -23,12 +23,44 @@
     text-align: center;
     text-decoration: none;
 }
-
+.cm-item-comment{
+    width:100% !important;
+    height:50px !important;
+    border:1px solid gray !important;
+}
 .container .title{
     padding: 25px;
     background: #f6f8fa;
 }
+#new_report{
+    background:gray;
+   display:flex;
+   flex-direction: column;
+   gap:20px;
+   border-radius:20px;
+   padding:0 20px;
+}
+.report-modal__header{
+    margin-top:10px;
+}
+.report-modal__footer{
+    margin-bottom:20px;
+}
+.top-bookmarking .bookmarking{
+    top:2px;
+}
+#new_report .js-body-input{
+    width:100%;
+    padding:0 2px;
+}
+.custom-share-btn-mobile{
+    background:transparent;
+    margin-right:50px
+}
+#new_report .close-reveal-modal{
+    top:10%;
 
+}
 .container .title p{
     font-size: 25px;
     font-weight: 500;

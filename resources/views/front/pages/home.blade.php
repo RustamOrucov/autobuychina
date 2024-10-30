@@ -1117,7 +1117,7 @@
                                     <div class="products-i__bottom">
                                         <div class="products-i__price products-i__bottom-text">
                                             <div class="product-price">{{ $car->price }}
-                                                <span>{{ $car->Ro->name }}</span>
+                                                <span>{{ $car->Ro->name ?? 'USD' }}</span>
                                             </div>
                                         </div>
                                         <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}
@@ -1193,7 +1193,7 @@
 
         function handleScroll() {
             const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
-          
+
 
             if (nearBottom && !isLoading) {
                 loadMoreCars();

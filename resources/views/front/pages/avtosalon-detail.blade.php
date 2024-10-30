@@ -100,7 +100,7 @@
 
                     <div class="products-i__bottom">
                         <div class="products-i__price products-i__bottom-text">
-                            <div class="product-price">{{$car->price}} <span>{{$car->Ro->name}}</span></div>
+                            <div class="product-price">{{$car->price}} <span>{{$car->Ro->name ?? 'USD'}}</span></div>
                         </div>
                         <div class="products-i__name products-i__bottom-text">{{ $car->carModel->name }}   {{ $car->ModelType->name }}</div>
                         <div class="products-i__attributes products-i__bottom-text">{{ $car->year }},

@@ -69,6 +69,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
         'setLocale' => \App\Http\Middleware\SetLocaleMiddleware::class,
+        'check.dealer.trader' => \App\Http\Middleware\CheckDealerOrTrader::class,
         // 'optimizeImages' => \Spatie\LaravelImageOptimizer\Middlewares\OptimizeImages::class,
     ];
 

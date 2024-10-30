@@ -63,7 +63,7 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
-        $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
+        $recentCarCount = Car::where('created_at', '>=', Carbon::now()->subDays(10))->count();
 
         return view('front.pages.home', array_merge($filters, compact('cars', 'recentCarCount')));
     }
@@ -111,7 +111,7 @@ class HomeController extends Controller
 
         $filters = $this->getFilterData();
 
-        $recentCarCount = Car::where('created_at', '<=', Carbon::now()->subDays(5))->count();
+        $recentCarCount = Car::where('created_at', '>=', Carbon::now()->subDays(10))->count();
 
         $cars = $this->carFilterService
             ->filter($request->all())

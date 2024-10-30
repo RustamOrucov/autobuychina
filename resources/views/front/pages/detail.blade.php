@@ -68,7 +68,9 @@
                                     style="background-image: url('/assets/img/bmw.jpg')">
                                     <div
                                         class="product-photos__slider-nav-i_text tz-d-flex tz-align-center tz-justify-center">
-                                        +7 {{sitekey('detail_car_one','desc')}}</div>
+
+                                        +{{ $car->carImages->count() }} pictures</div>
+
                                 </div>
                             </div>
                         </div>
@@ -84,8 +86,10 @@
                             <div class="product-properties tz-d-flex tz-justify-between tz-gap-10">
                                 <div class="product-properties__column">
                                     <div class="product-properties__i">
-                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_two','desc')}}</label>
-                                        <span class="product-properties__i-value">{{ $car->region->name }}</span>
+
+                                        <label for="" class="product-properties__i-name">{{sitekey('filter_key_two', 'desc')}}</label>
+                                        <span class="product-properties__i-value">{{ $car->region->name ?? '' }}</span>
+
                                     </div>
                                     <div class="product-properties__i">
                                         <label for="" class="product-properties__i-name">{{sitekey('filter_key', 'title')}}</label>
@@ -207,7 +211,7 @@
                             <div class="product-sidebar__box product-sidebar__box--bordered">
                                 <div class="product-price">
                                     <div class="product-price__i product-price__i--bold">{{ $car->price }}
-                                        {{ $car->Ro->name }}</div>
+                                        {{ $car->Ro->name ?? 'USD' }}</div>
 
                                 </div>
                                 {{-- <div class="product-labels tz-d-flex tz-gap-10 tz-mt-15">
@@ -218,6 +222,7 @@
                                         <div class="product-labels__i-icon product-labels__i-icon--barter"></div>{{sitekey('detail_car_six','name')}}
                                     </div>
                                 </div> --}}
+                                @if (isset($car->Dealer))
                                 <div class="product-shop">
                                     <div class="product-shop__delimiter tz-mt-15"></div>
                                     <div class="product-shop__owner tz-d-flex tz-align-center">
@@ -268,6 +273,8 @@
                                     @endif
 
                                 </div>
+                                @endif
+
                             </div>
                             {{-- <div
                                 class="product-services product-services--inline tz-d-flex tz-justify-between tz-align-center tz-gap-5">

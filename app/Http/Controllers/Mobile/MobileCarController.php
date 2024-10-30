@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MobileCarRegisterRequest;
 use App\Models\Ban;
 use App\Models\Car;
 use App\Models\Carmodel;
@@ -13,14 +14,23 @@ use App\Models\FuelType;
 use App\Models\Higlit;
 use App\Models\Market;
 use App\Models\Modeltype;
+use App\Models\Policy;
 use App\Models\Region;
 use App\Models\Ro;
 use App\Models\Transmission;
 use App\Models\Year;
+use App\Services\RepositoryService\MobileCarService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
+
 
 class MobileCarController extends Controller
 {
+    public function __construct(protected MobileCarService $service)
+    {
+
+    }
     private function getFilterData()
     {
         return [
@@ -51,7 +61,7 @@ class MobileCarController extends Controller
         ->paginate(10);
 
 
-       
+
     $car->increment('view_count');
 
     $equipmentIds = json_decode($car->car_equipment);
@@ -85,14 +95,22 @@ class MobileCarController extends Controller
         return view('mobile.pages.add-cars',compact('properties'));
     }
 
-   public function agrement(){
+   public function carStore(MobileCarRegisterRequest $carRequest){
+    //   Log::info('CarRequest Data:', $carRequest->all());
+      $this->service->store($carRequest);
 
-    return view('mobile.pages.agrement');
+      return redirect()->route('mobile.home')->with('success', 'Post add successfuly');
+   }
+
+
+   public function agrement(){
+    $policys = Policy::all();
+    return view('mobile.pages.agrement',compact('policys'));
    }
 
    public function rules(){
-
-    return view('mobile.pages.rules');
+    $policys = Policy::all();
+    return view('mobile.pages.rules',compact('policys'));
    }
 
 }
