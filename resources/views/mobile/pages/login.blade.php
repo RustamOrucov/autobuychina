@@ -1,14 +1,14 @@
 @extends('mobile.layout.layout')
 @section('mobile_content')
- <?php
+    <?php
     $showLogincss = true;
     ?>
- <link rel="stylesheet" href="{{ asset('assets_/css/login.css') }}">
-    <div class="main-container sessions" >
+    <link rel="stylesheet" href="{{ asset('assets_/css/login.css') }}">
+    <div class="main-container sessions">
 
         <div class="header js-header" style="">
             <div class="header__nav">
-                <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button" onclick="history.back()"></span></div>
+                <div class="header__nav-left">@include('mobile.inc.back-button')</div>
                 <div class="header__nav-title">
                     <h1 class="custom-mobil-dealers" style="color:#fff">{{ sitekey('home_static', 'text') }}</h1>
                 </div>
@@ -16,28 +16,30 @@
             </div>
         </div>
         @if ($errors->any())
-        <div id="error-message" class="alert alert-danger custom-login-error">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li class="custom-error-login">{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+            <div id="error-message" class="alert alert-danger custom-login-error">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="custom-error-login">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
 
-        <script>
-            setTimeout(function() {
-                var errorMessage = document.getElementById('error-message');
-                if (errorMessage) {
-                    errorMessage.style.display = 'none';
-                }
-            }, 3000);
-        </script>
-    @endif
+            <script>
+                setTimeout(function () {
+                    var errorMessage = document.getElementById('error-message');
+                    if (errorMessage) {
+                        errorMessage.style.display = 'none';
+                    }
+                }, 3000);
+            </script>
+        @endif
 
         <!-- Butonlar -->
         <div class="custom-mobile-btn-container">
+
             <button class="custom-mobile-login-btn" id="dealer-btn">{{ sitekey('avto_car', 'title') }}</button>
             <button class="custom-mobile-login-btn" id="trader-btn">{{ sitekey('register_car', 'desc') }}</button>
+
         </div>
 
         <!-- Dealer Formu -->
@@ -73,7 +75,7 @@
                 @php
                     $traider='traider'
                 @endphp
-               
+
                 <form action="{{ route('mobile.login') }}" method="post">
                     @csrf
                     <div class="input-box">
@@ -94,24 +96,24 @@
         </div>
     </div>
 
-<script>
-    const dealerBtn = document.getElementById('dealer-btn');
-    const traderBtn = document.getElementById('trader-btn');
-    const dealerPanel = document.querySelector('.panel-dealer');
-    const traderPanel = document.querySelector('.panel-trader');
-    const buttonContainer = document.querySelector('.custom-mobile-btn-container');
+    <script>
+        const dealerBtn = document.getElementById('dealer-btn');
+        const traderBtn = document.getElementById('trader-btn');
+        const dealerPanel = document.querySelector('.panel-dealer');
+        const traderPanel = document.querySelector('.panel-trader');
+        const buttonContainer = document.querySelector('.custom-mobile-btn-container');
 
-    dealerBtn.addEventListener('click', function() {
-        dealerPanel.style.display = 'block';
-        traderPanel.style.display = 'none';
-        buttonContainer.style.display = 'none';
-    });
+        dealerBtn.addEventListener('click', function () {
+            dealerPanel.style.display = 'block';
+            traderPanel.style.display = 'none';
+            buttonContainer.style.display = 'none';
+        });
 
-    traderBtn.addEventListener('click', function() {
-        traderPanel.style.display = 'block';
-        dealerPanel.style.display = 'none';
-        buttonContainer.style.display = 'none';
-    });
-</script>
+        traderBtn.addEventListener('click', function () {
+            traderPanel.style.display = 'block';
+            dealerPanel.style.display = 'none';
+            buttonContainer.style.display = 'none';
+        });
+    </script>
 
 @endsection

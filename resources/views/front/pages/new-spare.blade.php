@@ -1,5 +1,19 @@
 @extends('front.layout.layout')
 @section('front_content')
+    <link href="{{asset('_assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('_assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <style>
+        .note-editor .note-toolbar,
+        .note-popover .popover-content {
+            background-color: #777777 !important;
+        }
+
+        .note-editable {
+            background-color: #ffffff !important;
+            color: #000;
+        }
+    </style>
+
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -122,9 +136,6 @@
                         </div>
                     @endforeach
                 </div>
-
-
-
         <div class="input pond pond-grid" data-endpoint="" data-name="gallery[photo_ids][]"
              data-target-format=""><label for="" class="string optional control-label">{{sitekey('list_car_six','text')}}</label>
             <div class="pond-inner">
@@ -160,9 +171,6 @@
                         <span class="text text--default">{{sitekey('list_car_seven','name')}}</span>
                     </label>
                 </div>
-            </div>
-        </div>
-
         <div class="new-product-i">
             <div class="left-side seller-information">
                 <button type="submit" class="submit-button" data-disable-with="save...">{{sitekey('list_car_eight','title')}}</button>
@@ -175,119 +183,138 @@
         </div>
         </form>
     </div>
+
     </div>
 
-
-    <script>
-        document.getElementById('addImageBtn').addEventListener('click', function () {
-            document.getElementById('spareImageInput').click();
-        });
-
-        const uploadedFiles = [];
-
-        document.getElementById('spareImageInput').addEventListener('change', function (event) {
-            const files = Array.from(event.target.files);
-            uploadedFiles.push(...files);
-
-            const element = document.querySelector('.custom-hidden');
-            element.style.display = 'none';
-
-            files.forEach((file) => {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const newImagespared = document.createElement('div');
-                    newImagespared.classList.add('pond-img-spared', 'js-pond-img-spared');
-                    newImagespared.style.position = 'relative';
-
-                    const imageElement = document.createElement('img');
-                    imageElement.src = e.target.result;
-                    imageElement.style.width = '100%';
-                    imageElement.style.height = '100%';
-                    imageElement.style.borderRadius = '5px';
-                    imageElement.style.objectFit = 'cover';
-                    imageElement.style.transition = 'transform 0.3s';
-
-
-                    const deleteBtn = document.createElement('button');
-                    deleteBtn.innerHTML = 'X';
-                    deleteBtn.style.position = 'absolute';
-                    deleteBtn.style.top = '10px';
-                    deleteBtn.style.right = '10px';
-                    deleteBtn.style.fontWeight = 'bold';
-                    deleteBtn.style.color = 'red';
-                    deleteBtn.style.backgroundColor = 'transparent';
-                    deleteBtn.style.border = 'none';
-                    deleteBtn.style.padding = '5px';
-                    deleteBtn.style.cursor = 'pointer';
-
-
-                    const rotateRightBtn = document.createElement('button');
-                    rotateRightBtn.innerHTML = '⟳';
-                    rotateRightBtn.style.position = 'absolute';
-                    rotateRightBtn.style.bottom = '10px';
-                    rotateRightBtn.style.right = '10px';
-                    rotateRightBtn.style.fontWeight = 'bold';
-                    rotateRightBtn.style.backgroundColor = 'transparent';
-                    rotateRightBtn.style.color = 'blue';
-                    rotateRightBtn.style.border = 'none';
-                    rotateRightBtn.style.padding = '5px';
-                    rotateRightBtn.style.cursor = 'pointer';
-
-
-                    const rotateLeftBtn = document.createElement('button');
-                    rotateLeftBtn.innerHTML = '⟲';
-                    rotateLeftBtn.style.position = 'absolute';
-                    rotateLeftBtn.style.bottom = '10px';
-                    rotateLeftBtn.style.left = '10px';
-                    rotateLeftBtn.style.fontWeight = 'bold';
-                    rotateLeftBtn.style.backgroundColor = 'transparent';
-                    rotateLeftBtn.style.color = 'blue';
-                    rotateLeftBtn.style.border = 'none';
-                    rotateLeftBtn.style.padding = '5px';
-                    rotateLeftBtn.style.cursor = 'pointer';
-
-                    let rotation = 0;
-
-
-                    deleteBtn.addEventListener('click', function () {
-                        newImagespared.remove();
-                        const index = uploadedFiles.indexOf(file);
-                        if (index > -1) {
-                            uploadedFiles.splice(index, 1);
-                        }
+    @push('js')
+        <script>
+            $(document).ready(function () {
+                function initializeSummernote() {
+                    @foreach (config('app.languages') as $index => $lang)
+                    $('#summernote{{ $index }}').summernote({
+                        height: 100
                     });
+                    @endforeach
+                }
 
+                initializeSummernote();
 
-                    rotateRightBtn.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        rotation += 90;
-                        imageElement.style.transform = `rotate(${rotation}deg)`;
-                    });
-
-                    rotateLeftBtn.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        rotation -= 90;
-                        imageElement.style.transform = `rotate(${rotation}deg)`;
-                    });
-
-
-                    newImagespared.appendChild(imageElement);
-                    newImagespared.appendChild(deleteBtn);
-                    newImagespared.appendChild(rotateRightBtn);
-                    newImagespared.appendChild(rotateLeftBtn);
-
-
-                    document.getElementById('imageContainer').appendChild(newImagespared);
-                };
-
-                reader.readAsDataURL(file);
+                $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+                    initializeSummernote();
+                });
             });
 
-            const dataTransfer = new DataTransfer();
-            uploadedFiles.forEach(file => {
-                dataTransfer.items.add(file);
+
+            document.getElementById('addImageBtn').addEventListener('click', function () {
+                document.getElementById('spareImageInput').click();
             });
-            document.getElementById('spareImageInput').files = dataTransfer.files;
-        });
-    </script>
+
+            const uploadedFiles = [];
+
+            document.getElementById('spareImageInput').addEventListener('change', function (event) {
+                const files = Array.from(event.target.files);
+                uploadedFiles.push(...files);
+
+                const element = document.querySelector('.custom-hidden');
+                element.style.display = 'none';
+
+                files.forEach((file) => {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const newImagespared = document.createElement('div');
+                        newImagespared.classList.add('pond-img-spared', 'js-pond-img-spared');
+                        newImagespared.style.position = 'relative';
+
+                        const imageElement = document.createElement('img');
+                        imageElement.src = e.target.result;
+                        imageElement.style.width = '100%';
+                        imageElement.style.height = '100%';
+                        imageElement.style.borderRadius = '5px';
+                        imageElement.style.objectFit = 'cover';
+                        imageElement.style.transition = 'transform 0.3s';
+
+
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.innerHTML = 'X';
+                        deleteBtn.style.position = 'absolute';
+                        deleteBtn.style.top = '10px';
+                        deleteBtn.style.right = '10px';
+                        deleteBtn.style.fontWeight = 'bold';
+                        deleteBtn.style.color = 'red';
+                        deleteBtn.style.backgroundColor = 'transparent';
+                        deleteBtn.style.border = 'none';
+                        deleteBtn.style.padding = '5px';
+                        deleteBtn.style.cursor = 'pointer';
+
+
+                        const rotateRightBtn = document.createElement('button');
+                        rotateRightBtn.innerHTML = '⟳';
+                        rotateRightBtn.style.position = 'absolute';
+                        rotateRightBtn.style.bottom = '10px';
+                        rotateRightBtn.style.right = '10px';
+                        rotateRightBtn.style.fontWeight = 'bold';
+                        rotateRightBtn.style.backgroundColor = 'transparent';
+                        rotateRightBtn.style.color = 'blue';
+                        rotateRightBtn.style.border = 'none';
+                        rotateRightBtn.style.padding = '5px';
+                        rotateRightBtn.style.cursor = 'pointer';
+
+
+                        const rotateLeftBtn = document.createElement('button');
+                        rotateLeftBtn.innerHTML = '⟲';
+                        rotateLeftBtn.style.position = 'absolute';
+                        rotateLeftBtn.style.bottom = '10px';
+                        rotateLeftBtn.style.left = '10px';
+                        rotateLeftBtn.style.fontWeight = 'bold';
+                        rotateLeftBtn.style.backgroundColor = 'transparent';
+                        rotateLeftBtn.style.color = 'blue';
+                        rotateLeftBtn.style.border = 'none';
+                        rotateLeftBtn.style.padding = '5px';
+                        rotateLeftBtn.style.cursor = 'pointer';
+
+                        let rotation = 0;
+
+
+                        deleteBtn.addEventListener('click', function () {
+                            newImagespared.remove();
+                            const index = uploadedFiles.indexOf(file);
+                            if (index > -1) {
+                                uploadedFiles.splice(index, 1);
+                            }
+                        });
+
+
+                        rotateRightBtn.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            rotation += 90;
+                            imageElement.style.transform = `rotate(${rotation}deg)`;
+                        });
+
+                        rotateLeftBtn.addEventListener('click', function (event) {
+                            event.preventDefault();
+                            rotation -= 90;
+                            imageElement.style.transform = `rotate(${rotation}deg)`;
+                        });
+
+
+                        newImagespared.appendChild(imageElement);
+                        newImagespared.appendChild(deleteBtn);
+                        newImagespared.appendChild(rotateRightBtn);
+                        newImagespared.appendChild(rotateLeftBtn);
+
+
+                        document.getElementById('imageContainer').appendChild(newImagespared);
+                    };
+
+                    reader.readAsDataURL(file);
+                });
+
+                const dataTransfer = new DataTransfer();
+                uploadedFiles.forEach(file => {
+                    dataTransfer.items.add(file);
+                });
+                document.getElementById('spareImageInput').files = dataTransfer.files;
+            });
+        </script>
+    @endpush
 @endsection

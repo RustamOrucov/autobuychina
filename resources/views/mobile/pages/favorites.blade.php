@@ -6,9 +6,11 @@
 
     <div class="header js-header">
         <div class="header__nav ">
-
-            <div class="header__nav-title ">{{sitekey('home_static','title')}}</div>
-
+            <div class="header__nav-left">
+                @include('mobile.inc.back-button')
+            </div>
+            <div class="header__nav-title text-center ">{{sitekey('home_static','title')}}</div>
+            <div class="header__nav-right"></div>
         </div>
     </div>
 

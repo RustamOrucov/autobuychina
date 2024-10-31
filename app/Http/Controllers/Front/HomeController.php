@@ -148,7 +148,7 @@ class HomeController extends Controller
         $equipmentIds = array_map('intval', $equipmentIds);
         $equipments = Higlit::whereIn('id', $equipmentIds)->get();
 
-        return view('front.pages.detail', compact('car', 'equipments', 'cars'));
+        return view('front.pages.car-detail', compact('car', 'equipments', 'cars'));
     }
 
     // Spare Detail

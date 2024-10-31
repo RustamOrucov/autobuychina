@@ -3,12 +3,13 @@
     <?php
     $showTabBar = true;
     ?>
-    <div class="header js-header" style="">
-        <div class="header__nav">
-
-            <div class="custom-mobil-dealers ">{{sitekey('tabbar_mobile_3','text')}}</div>
-
-
+     <div class="header js-header" style="">
+        <div class="header__nav ">
+            <div class="header__nav-left">
+                @include('mobile.inc.back-button')
+            </div>
+            <div class="header__nav-title text-center ">{{sitekey('tabbar_mobile_3','text')}}</div>
+            <div class="header__nav-right"></div>
         </div>
     </div>
     <div class="body-inner">

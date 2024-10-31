@@ -150,9 +150,9 @@ Route::middleware('check.dealer.trader')->group(function () {
     Route::get('/mobile/profile', [MobileHomeController::class, 'profilepage'])->name('mobile.profile');
 });
 
-//Language
 
-Route::get('/lang/{lang}',function ($lang){
+//Language
+Route::get('/lang/{lang}', function ($lang) {
     \Illuminate\Support\Facades\Session::put('lang',$lang);
     return redirect()->back();
 })->name('language-url');

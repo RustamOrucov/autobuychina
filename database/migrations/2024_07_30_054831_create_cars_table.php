@@ -61,7 +61,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('car_id');
             $table->string('name')->nullable();
-            $table->text('item_comment')->nullable();;
+            $table->text('item_comment')->nullable();
             $table->string('locale')->index();
             $table->unique(['car_id', 'locale']);
             $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');

@@ -122,7 +122,7 @@
                             <div class="product-section product-section--wide">
                                 <div class="product-description-container js-description-container">
                                     <div class="product-description__content js-description-content">
-                                        <p>{{ $spare->item_comment }}</p>
+                                        <p>{!!  $spare->item_comment !!}</p>
                                     </div>
                                 </div>
                             </div>

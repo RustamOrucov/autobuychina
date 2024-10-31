@@ -52,7 +52,7 @@ class MobileHomeController extends Controller
     public function home()
     {
         $brands = Carmodel::all();
-        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume')
+        $cars = Car::with('Ro', 'region', 'ModelType', 'carModel', 'EngineVolume', 'carImages')
             ->where('status', '1')
             ->select('id', 'price', 'vincode', 'created_at', 'year', 'odometer_km', 'engine_v', 'ro_id', 'region_id', 'model_type_id', 'car_models_id', 'car_image', 'engine_volume_id')
             ->orderBy('created_at', 'desc')

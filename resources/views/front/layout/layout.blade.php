@@ -12,13 +12,12 @@
 
    @yield('front_content')
 
-
-
 @include('front.inc.footer')
 
 
 @include('front.inc.scripts')
 
+@stack('js')
 </body>
 
 </html>

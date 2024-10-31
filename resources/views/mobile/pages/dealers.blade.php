@@ -2,7 +2,9 @@
 @section('mobile_content')
     <div class="header js-header" style="">
         <div class="header__nav">
-            <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button"></span></div>
+            <div class="header__nav-left">
+                @include('mobile.inc.back-button')
+            </div>
             <div class="header__nav-title ">
                 <h1 class="custom-mobil-dealers">{{sitekey('register_car','text')}}</h1>
             </div>
