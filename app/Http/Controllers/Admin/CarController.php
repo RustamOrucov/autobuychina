@@ -96,8 +96,6 @@ class CarController extends Controller
     }
     public function update(CarRequest $carRequest,Car $car)
     {
-
-
         $this->service->update($carRequest,$car);
         return redirect()->back();
     }

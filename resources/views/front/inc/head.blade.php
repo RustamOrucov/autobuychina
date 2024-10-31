@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/detail.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/register.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-
     <script src="{{ asset('assets/js/filter.js') }}"></script>
     <script src="{{ asset('assets/js/addfavorite.js') }}"></script>
+
 </head>

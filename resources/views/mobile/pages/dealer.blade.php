@@ -3,7 +3,7 @@
     <div class="header js-header" style="">
         <div class="header__nav">
             <div class="header__nav-left">
-                <span class="header__nav-btn--back js-header-back-btn"></span>
+                @include('mobile.inc.back-button')
             </div>
 
         </div>

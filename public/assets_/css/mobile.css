@@ -10449,6 +10449,7 @@ a.pswp__share--download:hover {
 
 .header__nav-title {
     overflow: hidden;
+    justify-content:center;
     white-space: nowrap;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
@@ -10464,9 +10465,10 @@ a.pswp__share--download:hover {
     height: 20px;
     margin-left: -5px;
     background-size: 10px 17px;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 17'%3E%3Cpath fill='%238D94AD' fill-rule='nonzero' d='M10 1.45 8.543 0 0 8.5 8.543 17 10 15.55 2.915 8.5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 17'%3E%3Cpath fill='%23008000' fill-rule='nonzero' d='M10 1.45 8.543 0 0 8.5 8.543 17 10 15.55 2.915 8.5z'/%3E%3C/svg%3E");
     background-position: 50%;
     background-repeat: no-repeat;
+    cursor:pointer;
 }
 
 .installment-modal {
@@ -12230,7 +12232,7 @@ input[type="checkbox"] + label {
     background-size: 10px 17px;
     background-position: 50%;
     background-repeat: no-repeat;
-    background-image: url(//turbo.azstatic.com/assets/mobile/icon-back--grey-718100746f7523a5681a825565b4a35a3e2d099086cf2bf26d7d117d3ba3ce77.svg);
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 17'%3E%3Cpath fill='%23008000' fill-rule='nonzero' d='M10 1.45 8.543 0 0 8.5 8.543 17 10 15.55 2.915 8.5z'/%3E%3C/svg%3E");
 }
 
 .popup-header__btn--reset {
@@ -21235,6 +21237,8 @@ select {
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
+    color: #008000;
+    cursor: pointer;
 }
 
 .tz-form__group-btn--shown {
