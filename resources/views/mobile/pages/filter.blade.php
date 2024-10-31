@@ -9,7 +9,7 @@
     <div class="body-inner" style="padding: 0 15px;border-bottom:1px solid black">
         <div class="header__nav">
             <div class="header__nav-left">
-                <spanb class="header__nav-btn--back js-header-filter-back-btn "></spanb>
+                @include('mobile.inc.back-button')
             </div>
             <div class="header__nav-title" style="color:#000">Filters</div>
             <div class="header__nav-right">

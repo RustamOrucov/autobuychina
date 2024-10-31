@@ -3,7 +3,7 @@
     <div class="body-inner" style="padding-top: 61px;">
         <div class="header js-header is-sticky-header is-shown-header" style="top: -61px;">
             <div class="header__nav">
-                <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn"></span></div>
+                <div class="header__nav-left">@include('mobile.inc.back-button')</div>
                 <a class="header__logo header__logo--red" href="/"><img alt="turbo.az" src="https://turbo.azstatic.com/assets/mobile/logo-4092a1091474f2bf8949a636df94e8eeba6cffb6ce8dbbe17456c86399bd90ea.svg"></a>
                 <div class="header__nav-right"></div>
             </div>

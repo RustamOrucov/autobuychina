@@ -3,7 +3,7 @@
 
 <div class="header js-header custom-header-cardetail" style="">
     <div class="header__nav">
-        <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn back-button" data-back-to-url=""></span></div><a class="header__logo header__logo--red" href="/"><img alt="autobuychina" width="140" src="http://127.0.0.1:8000/storage/logoimages/ZOs6TCwbLd.png"></a>
+        <div class="header__nav-left">@include('mobile.inc.back-button')</div><a class="header__logo header__logo--red" href="/"><img alt="autobuychina" width="140" src="http://127.0.0.1:8000/storage/logoimages/ZOs6TCwbLd.png"></a>
         <div class="header__nav-right">
 
             <div class="top-bookmarking">
