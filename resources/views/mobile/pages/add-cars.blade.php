@@ -9,7 +9,7 @@
                 <div class="header__nav-left"><span class="header__nav-btn--back js-header-back-btn"
                         onclick="history.back()"></span></div>
                 <div class="header__nav-title">
-                    <h1>New Ads</h1>
+                    <h1>{{sitekey('register_mobile','desc')}}</h1>
                 </div>
                 <div class="header__nav-right"></div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="limits-container tz-form__blk">
                     <div class="limits limits--current-step limits--limit">
                         <div class="limits--description">
-                            <div class="text-success">You are ads an ad under the name <span class="phone-num">
+                            <div class="text-success">{{sitekey('register_mobile','name')}} <span class="phone-num">
                                     {{ auth('dealer')->user()->d_name }}</span>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                 <div class="tz-form__divider"></div>
                 {{-- @if ($errors->any())
                 <div class="error-summary">
-                    <h4>Formda aşağıdaki hatalar bulundu:</h4>
+                    <h4>{{sitekey('add_mobile','title')}}</h4>
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -51,7 +51,7 @@
                             </div><input class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_make_id">Marka <abbr title="required">*</abbr></label>
+                                for="auto_make_id">{{sitekey('list_car','desc')}} <abbr title="required">*</abbr></label>
 
                                 <select
                                 class="select required form-control is-hidden js_make_id" data-models-url=""
@@ -73,9 +73,9 @@
                             data-open="auto_model_id"><input class="tz-form__group-input" placeholder=" " readonly=""
                                 type="text"><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_model">Model <abbr title="required">*</abbr></label><select
+                                for="auto_model">{{sitekey('filter_key','text')}} <abbr title="required">*</abbr></label><select
                                 class="is-hidden js-select-model js_model_id" name="model_type_id" id="auto_model_id">
-                                <option value="">Choose</option>
+                                <option value="">{{sitekey('add_mobile','text')}}</option>
                                 @foreach ($properties['models'] as $model)
                                     <option value="{{ $model->id }}" {{ old('model_type_id', isset($model) ? $model->model_type_id : '') == $model->id ? 'selected' : '' }}>{{ $model->name }}</option>
                                 @endforeach
@@ -96,11 +96,11 @@
                                 <div class="popup-header__left">
                                     <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
                                 </div>
-                                <div class="popup-header__title">Marka</div>
+                                <div class="popup-header__title">{{sitekey('list_car','desc')}}</div>
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Exapmle, BMW"
+                                    class="select-category__search-input js-search-input" placeholder="{{sitekey('filter_mobile_2','text')}}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -130,11 +130,11 @@
                                 <div class="popup-header__left">
                                     <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
                                 </div>
-                                <div class="popup-header__title">Model</div>
+                                <div class="popup-header__title">{{sitekey('filter_key','text')}}</div>
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Model axtar"
+                                    class="select-category__search-input js-search-input" placeholder="{{sitekey('add_mobile','desc')}}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -162,13 +162,12 @@
                     <div class="tz-form__blk">
                         <div class="input pond pond-grid" data-endpoint="" data-name="gallery[photo_ids][]"
                             data-target-format="">
-                            <label for="" class="string optional control-label">Images</label>
+                            <label for="" class="string optional control-label">{{sitekey('list_car_six','text')}}</label>
                             <div class="pond-inner">
                                 <div class="pond-notice-container">
                                     <div class="pond-notice pond-notice--grey pond-notice--first">
-                                        <div class="pond-notice__title pond-notice__title--red">It is forbidden!</div>
-                                        <div class="pond-notice__text">Screenshots, framed images, and screen pictures.
-                                        </div>
+                                        <div class="pond-notice__title pond-notice__title--red">{{sitekey('list_car_six','desc')}}</div>
+                                        <div class="pond-notice__text">{{sitekey('list_car_six','name')}}</div>
                                     </div>
                                 </div>
 
@@ -179,23 +178,23 @@
                                         <label style="width:160px"
                                             class="pond-img-card js-pond-img-card pond-img-card--front"
                                             id="backImageUpload">
-                                            <span>Back image</span>
+                                            <span>{{sitekey('list_car_seven','title')}}</span>
 
                                         </label>
                                         <label style="width:160px"
                                             class="pond-img-card js-pond-img-card pond-img-card--front"
                                             id="mainImageUpload">
-                                            <span>Main image</span>
+                                            <span>{{sitekey('list_car_seven','text')}}</span>
 
                                         </label>
                                         <div class="pond-img-card js-pond-img-card pond-img-card--dashboard"
                                             id="frontPanelUpload">
-                                            <span>Front Panel</span>
+                                            <span>{{sitekey('list_car_seven','desc')}}</span>
                                         </div>
                                     </div>
                                     <label class="pond-new-img-button pond-new-img" id="addImageBtn">
                                         <span class="icon"></span>
-                                        <span class="text text--default">Add Image</span>
+                                        <span class="text text--default">{{sitekey('list_car_seven','name')}}</span>
                                     </label>
                                 </div>
                             </div>
@@ -217,7 +216,7 @@
                             data-open="auto_category_id"><input class="tz-form__group-input" placeholder=" "
                                 readonly="" type="text"><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_category">Ban <abbr title="required">*</abbr></label><select
+                                for="auto_category">{{sitekey('filter_key_three','title')}} <abbr title="required">*</abbr></label><select
                                 class="select required form-control is-hidden" name="ban_id" id="auto_category_id">
                                 <option value="" label=" "></option>
                                 @foreach ($properties['bans'] as $ban)
@@ -235,7 +234,7 @@
                             data-select="auto_category_id">
                             <div class="select-category__header-container">
                                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
-                                    <div class="select-category__header-title">Ban</div>
+                                    <div class="select-category__header-title">{{sitekey('filter_key_three','title')}}</div>
                                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                                 </div>
                             </div>
@@ -260,7 +259,7 @@
                                     class="string required form-control tz-form__group-input" data-number="true"
                                     placeholder=" " type="number" name="odometer_km" id="auto_mileage" value="{{ old('odometer_km', isset($model) ? $model->odometer_km : '') }}"><label
                                     class="integer required control-label tz-form__group-label tz-form__group-label--select"
-                                    for="auto_mileage" >Mileage <abbr title="required">*</abbr></label><span
+                                    for="auto_mileage" >{{sitekey('detail_car_two','title')}} <abbr title="required">*</abbr></label><span
                                     class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                 <div class="tz-form__group-divider"></div>
                             </div>
@@ -289,7 +288,7 @@
                             data-open="auto_reg_year"><input class="tz-form__group-input" placeholder=" " readonly=""
                                 type="text" value=""><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_reg_year">Year <abbr title="required">*</abbr></label><select wrapper="false"
+                                for="auto_reg_year">{{sitekey('car_detail_one','desc')}} <abbr title="required">*</abbr></label><select wrapper="false"
                                 label="false" class="select required form-control is-hidden" name="year"
                                 id="auto_reg_year">
                                 <option value="" label=" "></option>
@@ -314,7 +313,7 @@
                             <div class="select-category__header-container">
                                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
                                     <div class="select-category__header-title"><span class="translation_missing"
-                                            title="translation missing: az.activerecord.attributes.ad.year">Year</span>
+                                            title="translation missing: az.activerecord.attributes.ad.year">{{sitekey('car_detail_one','desc')}}</span>
                                     </div>
                                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                                 </div>
@@ -340,7 +339,7 @@
                             data-open="auto_engine_volume"><input class="tz-form__group-input" placeholder=" "
                                 readonly="" type="number" value=""><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_engine_volume">Engine capacity, sm<sup>3</sup> <abbr
+                                for="auto_engine_volume">{{sitekey('add_mobile','name')}}<sup>3</sup> <abbr
                                     title="required">*</abbr></label><select wrapper="false"
                                 class="select required form-control is-hidden" label="false" name="engine_volume_id"
                                 id="auto_engine_volume">
@@ -361,7 +360,7 @@
                             data-select="auto_engine_volume">
                             <div class="select-category__header-container">
                                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
-                                    <div class="select-category__header-title">Engine capacity, sm<sup>3</sup> </div>
+                                    <div class="select-category__header-title">{{sitekey('add_mobile','name')}}<sup>3</sup> </div>
                                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                                 </div>
                             </div>
@@ -388,7 +387,7 @@
                                 placeholder=" " maxlength="4" size="4" type="text" name="engine_v"
                                 id="auto_power" value="{{ old('engine_v', isset($model) ? $model->engine_v : '') }}"><label
                                 class="integer required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_power">Engine power, a.g. <abbr title="required">*</abbr></label><span
+                                for="auto_power">{{sitekey('add_mobile_1','title')}} <abbr title="required">*</abbr></label><span
                                 class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
@@ -422,7 +421,7 @@
                             data-select="auto_color_id">
                             <div class="select-category__header-container">
                                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
-                                    <div class="select-category__header-title">Color</div>
+                                    <div class="select-category__header-title">{{sitekey('filter_key_three','name')}}</div>
                                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                                 </div>
                             </div>
@@ -448,7 +447,7 @@
                                 class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string optional control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_market">Markets</label><select class="select optional form-control is-hidden"
+                                for="auto_market">{{sitekey('list_car_three','text')}}</label><select class="select optional form-control is-hidden"
                                 name="market_id" id="auto_market_id" required>
                                 <option value="" label=" "></option>
                                 @foreach ($properties['markets'] as $market)
@@ -466,7 +465,7 @@
                             data-select="auto_market_id">
                             <div class="select-category__header-container">
                                 <div class="select-category__header tz-d-flex tz-align-flex-end tz-justify-center">
-                                    <div class="select-category__header-title">Markets</div>
+                                    <div class="select-category__header-title">{{sitekey('list_car_three','text')}}</div>
                                     <div class="select-category__header-cancel js-close-popup-btn"></div>
                                 </div>
                             </div>
@@ -495,7 +494,7 @@
 
 
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Fuel type<abbr> *</abbr></div>
+                        <div class="tz-form__blk-title">{{sitekey('filter_static_four','title')}}<abbr> *</abbr></div>
 
                         <div class="tz-form__group tz-form__group--radio">
                             @foreach ($properties['fueltypes'] as $fuel)
@@ -521,7 +520,7 @@
 
 
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Gear shift<abbr> *</abbr></div>
+                        <div class="tz-form__blk-title">{{sitekey('add_mobile_1','text')}}<abbr> *</abbr></div>
                         <div class="tz-form__group tz-form__group--radio">
                             @foreach ($properties['transmissions'] as $transmission)
                                 <span class="radio"><input class="radio_buttons optional form-control" type="radio"
@@ -542,7 +541,7 @@
 
 
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Transmission<abbr> *</abbr></div>
+                        <div class="tz-form__blk-title">{{sitekey('filter_static_four','desc')}}<abbr> *</abbr></div>
                         <div class="tz-form__group tz-form__group--radio">
                             @foreach ($properties['damages'] as $damage)
                                 <span class="radio"><input class="radio_buttons optional form-control" type="radio"
@@ -564,7 +563,7 @@
 
 
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Passenger count</div>
+                        <div class="tz-form__blk-title">{{sitekey('add_mobile_1','desc')}}</div>
                         <div class="tz-form__group tz-form__group--radio">
                             <span class="radio"><input class="radio_buttons optional form-control" type="radio"
                                     value="1" name="of_passenger" id="auto_seats_count_1" {{ isset($model) && $model->of_passenger == '1' ? 'selected' : '' }}><label
@@ -600,8 +599,7 @@
 
                                 <span class="radio"><input checked="" class="radio_buttons" id="auto_seats_count_0"
                                         name="of_passenger" type="radio" value=""><label
-                                        class="collection_radio_buttons" for="auto_seats_count_0">Not to be
-                                        recorded</label></span>
+                                        class="collection_radio_buttons" for="auto_seats_count_0">{{sitekey('add_mobile_1','name')}}</label></span>
 
 
 
@@ -617,7 +615,7 @@
 
                     <div class="tz-form__divider"></div>
                     <div class="tz-form__blk tz-form__blk--top-border">
-                        <div class="tz-form__blk-title">Car equipments</div>
+                        <div class="tz-form__blk-title">{{sitekey('add_mobile_2','title')}}</div>
                         <div class="tz-form__group">
                             @foreach ($properties['equipments'] as $equipment)
                                 <span><input class="tz-form__check-input" type="checkbox" value="{{ $equipment->id }}"
@@ -644,11 +642,10 @@
                                     <input name="crashed" type="hidden" value="0" autocomplete="off">
                                     <input class="boolean optional form-control" type="checkbox" value="1"
                                         name="crashed" id="auto_crashed">
-                                    <div class="tz-form__switch-text">Has a dent</div>
+                                    <div class="tz-form__switch-text">{{sitekey('add_mobile_2','text')}}</div>
                                     <div class="tz-form__switch-slider"></div>
                                 </div>
-                                <div class="tz-form__switch-description">One or more parts have been replaced or repaired.
-                                </div>
+                                <div class="tz-form__switch-description">{{sitekey('list_car_three','name')}}</div>
                             </label>
                             <div class="tz-form__group-divider"></div>
                         </div>
@@ -663,12 +660,10 @@
                                         name="painted" type="hidden" value="0" autocomplete="off"><input
                                         class="boolean optional form-control" type="checkbox" value="1"
                                         name="painted" id="auto_painted">
-                                    <div class="tz-form__switch-text">Repainted</div>
+                                    <div class="tz-form__switch-text">{{sitekey('add_mobile_2','desc')}}</div>
                                     <div class="tz-form__switch-slider"></div>
                                 </div>
-                                <div class="tz-form__switch-description">One or more parts have been repainted or cosmetic
-                                    work has been done.
-                                </div>
+                                <div class="tz-form__switch-description">{{sitekey('list_car_four','text')}}</div>
                             </label>
                             <div class="tz-form__group-divider"></div>
                         </div>
@@ -680,11 +675,10 @@
                                         name="for_spare_parts" type="hidden" value="0" autocomplete="off"><input
                                         class="boolean optional form-control" type="checkbox" value="1"
                                         name="for_spare_parts" id="auto_for_spare_parts">
-                                    <div class="tz-form__switch-text">Damaged</div>
+                                    <div class="tz-form__switch-text">{{sitekey('add_mobile_2','name')}}</div>
                                     <div class="tz-form__switch-slider"></div>
                                 </div>
-                                <div class="tz-form__switch-description">It needs repair or is completely unusable.
-                                </div>
+                                <div class="tz-form__switch-description">{{sitekey('filter_mobile_1','name')}}</div>
                             </label></div>
                             @error('for_spare_parts')
                             <span class="error">{{ $message }}</span>
@@ -709,7 +703,7 @@
                                 </ul>
                             </div>
                             <label class="text optional control-label tz-form__group-label tz-form__group-label--textarea"
-                                for="auto_description">Additional information</label>
+                                for="auto_description">{{sitekey('car_detail_4','name')}}</label>
                             @foreach (config('app.languages') as $index => $lang)
                                 <div class="tab-pane fade {{ $loop->first ? 'active show' : '' }}"
                                     id="tab-{{ $lang }}" role="tabpanel"
@@ -734,7 +728,7 @@
                                 class="string optional form-control tz-form__group-input tz-form__group-input--uppercase"
                                 placeholder=" " maxlength="17" size="17" type="text" name="vincode"
                                 id="auto_vin"><label class="tz-form__group-label tz-form__group-label--select"
-                                for="auto_vin">VIN-code</label><span
+                                for="auto_vin">{{sitekey('list_car_five','desc')}}</label><span
                                 class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                             <div class="tz-form__group-divider"></div>
                         </div>
@@ -750,13 +744,13 @@
                                     class="string required form-control tz-form__group-input" data-number="true"
                                     placeholder=" " type="text" name="price" id="auto_price"><label
                                     class="string required control-label tz-form__group-label tz-form__group-label--select"
-                                    for="auto_price">Price <abbr title="required">*</abbr></label><span
+                                    for="auto_price">{{sitekey('list_car_two','desc')}} <abbr title="required">*</abbr></label><span
                                     class="tz-form__group-btn tz-form__group-btn--reset js-reset-input"></span>
                                 <div class="tz-form__group-divider"></div>
                             </div>
                             <div class="tz-form__short tz-d-grid tz-justify-center tz-align-center js-select-category-open"
                                 data-open="auto_currency"><select name="" id="auto_currency">
-                                    <option selected value="usd">USD</option>
+                                    <option selected value="usd">{{sitekey('list_car_three','title')}}</option>
                                 </select>
                                 <div class="tz-form__short-btn"></div>
                             </div>
@@ -774,7 +768,7 @@
                                 class="tz-form__group-input" placeholder=" " readonly="" type="text"
                                 value=""><label
                                 class="string required control-label tz-form__group-label tz-form__group-label--select"
-                                for="auto_region">City <abbr title="required">*</abbr></label><select
+                                for="auto_region">{{sitekey('filter_key_two','desc')}} <abbr title="required">*</abbr></label><select
                                 class="select required form-control is-hidden" name="region_id" id="auto_region_id">
                                 @foreach ($properties['regions'] as $region)
                                     <option value="{{ $region->id }}">{{ $region->name }}</option>
@@ -794,11 +788,11 @@
                                 <div class="popup-header__left">
                                     <div class="popup-header__btn popup-header__btn--back js-close-popup-btn"></div>
                                 </div>
-                                <div class="popup-header__title">City</div>
+                                <div class="popup-header__title">{{sitekey('filter_key_two','desc')}}</div>
                                 <div class="popup-header__right"></div>
                             </div>
                             <div class="select-category__search"><input type="text" name="" id=""
-                                    class="select-category__search-input js-search-input" placeholder="Search City"
+                                    class="select-category__search-input js-search-input" placeholder="{{sitekey('filter_mobile','title')}}"
                                     autocomplete="off"></div>
                         </div>
                         <div class="select-category__body select-category__body--type-2">
@@ -816,11 +810,8 @@
                     <div class="tz-form__divider"></div>
                     <div class="tz-container tz-form__bottom">
                         <button type="submit"
-                            class="tz-btn tz-btn--primary tz-btn--full">Share the ads
-                        </button>
-                        <div class="new-product--confirm-rules">By placing an ad, you confirm that you agree with
-                            AutoBuyChina's <a target="_blank" href="{{ route('mobile.agrement') }}">User Agreement</a> and
-                            <a target="_blank" href="{{ route('mobile.rules') }}">Rules</a>.
+                            class="tz-btn tz-btn--primary tz-btn--full">{{sitekey('add_mobile_3','title')}}</button>
+                        <div class="new-product--confirm-rules">{{sitekey('list_car_eight','text')}}<a target="_blank" href="{{ route('mobile.agrement') }}">{{sitekey('list_car_eight','desc')}}</a>{{sitekey('list_car_1','title')}}<a target="_blank" href="{{ route('mobile.rules') }}">{{sitekey('list_car_eight','name')}}</a>.
                         </div>
 
                     </div>
