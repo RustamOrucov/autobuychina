@@ -810,7 +810,7 @@
                     <div class="tz-form__divider"></div>
                     <div class="tz-container tz-form__bottom">
                         <button type="submit"
-                            class="tz-btn tz-btn--primary tz-btn--full">{{sitekey('add_mobile_3','title')}}</button>
+                            class="tz-btn tz-btn--primary tz-btn--full">{{sitekey('car_detail_one','text')}}</button>
                         <div class="new-product--confirm-rules">{{sitekey('list_car_eight','text')}}<a target="_blank" href="{{ route('mobile.agrement') }}">{{sitekey('list_car_eight','desc')}}</a>{{sitekey('list_car_1','title')}}<a target="_blank" href="{{ route('mobile.rules') }}">{{sitekey('list_car_eight','name')}}</a>.
                         </div>
 
