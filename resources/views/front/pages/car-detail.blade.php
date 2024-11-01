@@ -318,14 +318,14 @@
                                     <div>
                                         <div class="product-services__i-title">{{sitekey('detail_car_eight','title')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">5</span><span
-                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
+                                                class="price-cur">{{sitekey('list_car_three','title')}}</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a><a id="featured_open" class="product-services__i product-services__i--featured"
                                     data-reveal-id="featured_modal" data-animation="fade" href="#featured_open">
                                     <div>
                                         <div class="product-services__i-title">{{sitekey('detail_car_eight','text')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">7</span><span
-                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
+                                                class="price-cur">{{sitekey('list_car_three','title')}}</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a></div> --}}
                             <div class="tz-mt-20"></div>
