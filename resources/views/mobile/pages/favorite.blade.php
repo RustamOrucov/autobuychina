@@ -32,7 +32,7 @@
                         </div>
                         <div class="products-i__bottom">
                             <div class="products-i__price products-i__bottom-text">
-                                <div class="product-price">27 500 <span>USD</span></div>
+                                <div class="product-price">27 500 <span>{{sitekey('list_car_three','title')}}</span></div>
                             </div>
                             <div class="products-i__name products-i__bottom-text">Kia Sorento</div>
                             <div class="products-i__attributes products-i__bottom-text">2011, 2.0 L, 266 000 km</div>

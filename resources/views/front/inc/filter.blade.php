@@ -188,8 +188,8 @@
 
 
             <div class="main-search__item">
-                <select class="select optional form-control js-search-select-make" data-dropdown-title="USD"
-                        data-dropdown-reset="{{sitekey('home_car_one', 'text')}}" data-dropdown-placeholder="USD"
+                <select class="select optional form-control js-search-select-make" data-dropdown-title="{{sitekey('list_car_three','title')}}"
+                        data-dropdown-reset="{{sitekey('home_car_one', 'text')}}" data-dropdown-placeholder="{{sitekey('list_car_three','title')}}"
                         data-dropdown-not-found="{{sitekey('home_car_one', 'name')}}" id="q_currency" style="display: none;">
                     <option value="" label=" "></option>
                     @foreach ($currencies as $currency)

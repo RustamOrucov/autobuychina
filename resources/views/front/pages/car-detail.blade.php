@@ -311,7 +311,7 @@
                                     <div>
                                         <div class="product-services__i-title">{{sitekey('detail_car_seven','desc')}}</div>
                                         <div class="product-services__i-price"><span class="price-val">3</span><span
-                                                class="price-cur">USD</span>{{sitekey('detail_car_seven','name')}}</div>
+                                                class="price-cur">{{sitekey('list_car_three','title')}}</span>{{sitekey('detail_car_seven','name')}}</div>
                                     </div>
                                 </a><a id="vip_open" class="product-services__i product-services__i--vip"
                                     data-reveal-id="vip_modal" data-animation="fade" href="#vip_open">

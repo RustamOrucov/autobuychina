@@ -673,7 +673,7 @@
                                         <div class="filter__short tz-form__short tz-d-grid tz-justify-center tz-align-center js-select-category-open"
                                             data-open="q_currency">
                                             <select name="q[price_model]" id="q_currency">
-                                                <option value="usd" {{ $priceModel === 'usd' ? 'selected' : '' }}>USD</option>
+                                                <option value="usd" {{ $priceModel === 'usd' ? 'selected' : '' }}>{{sitekey('list_car_three','title')}}</option>
                                                 <!-- Add other currency options here if needed -->
                                                 <option value="eur" {{ $priceModel === 'eur' ? 'selected' : '' }}>EUR</option>
                                                 <option value="azn" {{ $priceModel === 'azn' ? 'selected' : '' }}>AZN</option>
